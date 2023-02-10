@@ -6,6 +6,7 @@ public class ConveyerBelt : MonoBehaviour
 {
     public float moveSpeed = 2;
     public bool moveX = true;
+    bool touchBelt;
 
     // Start is called before the first frame update
     void Start()
@@ -16,19 +17,21 @@ public class ConveyerBelt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (moveX == true)
+
+        if (moveX == true & touchBelt == true)
         {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Wall"))
+        print("collided");
+        if (collision.gameObject.CompareTag("Belt"))
         {
-            print("collided");
-            moveX = false;
+            print ("collided");
+            moveX = true;
+            touchBelt = true;
         }
     }
 }
