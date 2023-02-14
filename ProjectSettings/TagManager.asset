@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OvenOn
+  - StartBelt
+  - StopBelt
+  - OvenOff
+  - OvenDoor
+  - BatterButton
+  - FrostingButton
   layers:
   - Default
   - TransparentFX
