@@ -24,6 +24,7 @@ public class CakeOrder : MonoBehaviour
     Material tOrder;
     Material sOrder;
     Material lOrder;
+    Material playerBatter;
     public Material confettiM;
     public Material chocolateM;
     public Material lemonM;
@@ -106,6 +107,8 @@ public class CakeOrder : MonoBehaviour
         }
         
         //GetComponent<MeshRenderer>().material = Material1
+
+        //if playerBatter ==
 
 
 
