@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - OvenOn
+  - StartBelt
+  - StopBelt
+  - OvenOff
+  - OvenDoor
+  - BatterButton
+  - FrostingButton
+  - Fire
+  - Counter
+  - OrderBatter
+  - OrderFrosting
+  - OrderTopping
+  - RoomLight
+  - SamplesInfoPanel
+  - OrderSprinkles
+  - OrderLiquid
+  - OredrBatter2
+  - OrderFrosting2
+  - OredrTopping2
+  - OredrSprinkles2
+  - OredrLiquid2
+  - OrderBatter3
+  - OrderFrosting3
+  - OrderTopping3
+  - OrderSprinkles3
+  - OrderLiquid3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

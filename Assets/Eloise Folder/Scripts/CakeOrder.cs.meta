@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: e6fe0202a01c34480939bd1de5b3e457
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - confettiM: {fileID: 2100000, guid: 9b78754dc5d61468f88cdb1962bd7ff5, type: 2}
+  - chocolateM: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
+  - lemonM: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
+  - redF: {fileID: 2100000, guid: ab63ddf37061244d1b55923d73baf3a6, type: 2}
+  - orangeF: {fileID: 2100000, guid: 9f9ebafe7a087431d87e8ec7e1075309, type: 2}
+  - yellowF: {fileID: 2100000, guid: aca4ee5c96e4f4e368cc459b2b8d8cf5, type: 2}
+  - greenF: {fileID: 2100000, guid: 93b8d4e54696248b8813e09cd82f74ce, type: 2}
+  - blueF: {fileID: 2100000, guid: 0c10d536a2d784ccc8901f653e5b105e, type: 2}
+  - purpleF: {fileID: 2100000, guid: 22062089bdb2f4ced808a02766bf195e, type: 2}
+  - pinkF: {fileID: 2100000, guid: fc0398379b3074701b0e8f11c7b1371f, type: 2}
+  - whiteF: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
+  - brownF: {fileID: 2100000, guid: 1182e3dcb349a4f29b8b53b7da88fb86, type: 2}
+  - rainbowSprinklesT: {fileID: 2100000, guid: 02ae1fb9bdcf441e68ea8523b9aa450e, type: 2}
+  - chocolateSprinklesT: {instanceID: 0}
+  - cherriesT: {fileID: 2100000, guid: d3239a44ad22f47dab43667e694bd25b, type: 2}
+  - rasberryJamT: {instanceID: 0}
+  - chocolateSyrupT: {instanceID: 0}
+  - caramelT: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
+  - curtainsP: {instanceID: 0}
+  - swirlyStarsP: {instanceID: 0}
+  - curlyBorderP: {instanceID: 0}
+  - seaShellsP: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
