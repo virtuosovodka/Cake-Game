@@ -30,6 +30,11 @@ TagManager:
   - OrderTopping3
   - OrderSprinkles3
   - OrderLiquid3
+  - OrderSprinkles2
+  - OrderTopping2
+  - OrderLiquid2
+  - OrderBatter2
+  - Batter
   layers:
   - Default
   - TransparentFX
