@@ -12,7 +12,9 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject counter;
     bool moveNegX = true;
     Player player;
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,4 @@ public class ConveyorBelt : MonoBehaviour
 
     }
 
-   
-        
 }
