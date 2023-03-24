@@ -16,21 +16,10 @@ public class PlayerInVR : MonoBehaviour
     GameObject currentObject;
 
     public bool beltOn = false;
-    //public bool batterOn = false;
+    public bool batterOn = false;
     public bool ovenOn = false;
     public bool frostingOn = false;
 
-    //public float moveSpeed = 2;
-    //public bool moveX = true;
-    //bool moveZ = true;
-    //bool moveNegX = true;
-
-    //public float batterPerFrame;
-    //float batterAmount;
-
-    float cookTime;
-    public float cookTimePerOunce;
-    float timeInOven;
     public TextMeshProUGUI text;
 
     public Vector3 degreesToRotate; 
@@ -93,6 +82,12 @@ public class PlayerInVR : MonoBehaviour
             {
                 OvenOff();
             }
+        }
+
+        //Door Hinge: moving door with handle start here after spring break so that you can add the stupid parenting part 
+        if (other.gameObject.CompareTag("Door") && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger) || OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
+        {
+            text.text = "Door hit!";
         }
     }
 
