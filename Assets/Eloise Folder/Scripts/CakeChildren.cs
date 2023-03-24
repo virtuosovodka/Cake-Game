@@ -16,11 +16,11 @@ public class CakeChildren : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (cakePan.transform.rotation.x >= 170 & cakePan.transform.rotation.x <= 190 | cakePan.transform.rotation.z >=170 & cakePan.transform.rotation.x <= 190)
-        //{
-            //Transform childToRemove = cakePan.transform.Find("batter");
-            //childToRemove.parent = null;
-        //}
+        if (cakePan.transform.rotation.x >= 170 & cakePan.transform.rotation.x <= 190 | cakePan.transform.rotation.z >=170 & cakePan.transform.rotation.x <= 190)
+        {
+            Transform childToRemove = cakePan.transform.Find("batter");
+            childToRemove.parent = null;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,9 +29,8 @@ public class CakeChildren : MonoBehaviour
         {
             batter.transform.SetParent(parent);
             Debug.Log("connect");
-            //batter.transform.parent = cakePan.transform.parent;
-            //batter.transform.SetParent(cakePan.transform.parent);
         }
     }
+
 
 }

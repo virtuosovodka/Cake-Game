@@ -3,44 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - OvenOn
-  - StartBelt
-  - StopBelt
-  - OvenOff
-  - OvenDoor
-  - BatterButton
-  - FrostingButton
-  - Fire
-  - Counter
-  - OrderBatter
-  - OrderFrosting
-  - OrderTopping
-  - RoomLight
-  - SamplesInfoPanel
-  - OrderSprinkles
-  - OrderLiquid
-  - OredrBatter2
-  - OrderFrosting2
-  - OredrTopping2
-  - OredrSprinkles2
-  - OredrLiquid2
-  - OrderBatter3
-  - OrderFrosting3
-  - OrderTopping3
-  - OrderSprinkles3
-  - OrderLiquid3
-<<<<<<< Updated upstream
-  - OrderSprinkles2
-  - OrderTopping2
-  - OrderLiquid2
-  - OrderBatter2
-  - Batter
-=======
-  - OvenLight
-  - ToppingButton
-  - CakeBox
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
