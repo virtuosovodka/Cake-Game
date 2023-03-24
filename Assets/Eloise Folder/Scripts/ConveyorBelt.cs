@@ -13,6 +13,12 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegX = true;
     Player player;
 
+    public GameObject batterStation;
+    public GameObject ovenStation;
+    public GameObject frostingStation;
+    public GameObject toppingStation;
+
+    public int timesInBatterStation;
 
 
     // Start is called before the first frame update
@@ -24,6 +30,8 @@ public class ConveyorBelt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(timesInBatterStation);
+
         if (player.beltOn)
         {
             if (moveX == true)
@@ -47,8 +55,31 @@ public class ConveyorBelt : MonoBehaviour
                 moveNegX = false;
 
             }
-        }
 
+            // make two separate if statements for this bit on after the toher else if then else
+            if (gameObject.transform.position.x <= batterStation.transform.position.x + 1 | gameObject.transform.position.x == batterStation.transform.position.x - 1)
+            {
+                print("in batter station");
+                timesInBatterStation++;
+                //stop moving
+                // bool for first arrival when start pressed again can continue moving
+                // if its this position set int to 1 when pressed again ++
+                // if odd stop moving on arrival if even keep moving
+                //(variable%2)=0 is even else odd
+            }
+
+            if ((timesInBatterStation % 2 == 0))
+            {
+                //move
+            }
+            else
+            {
+                //stop moving
+            }
+
+        }
     }
 
+
+    
 }
