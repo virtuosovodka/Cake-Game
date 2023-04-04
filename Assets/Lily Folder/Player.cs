@@ -15,12 +15,12 @@ public class Player : MonoBehaviour
 
     //batter
     public float batterPerFrame;
-    float batterAmount;
+    public float batterAmount;
 
     //oven
-    float cookTime;
+    public float cookTime;
     public float cookTimePerOunce;
-    float timeInOven;
+    public float timeInOven;
 
     //light
     public GameObject Light;
@@ -76,6 +76,10 @@ public class Player : MonoBehaviour
        
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -157,6 +161,7 @@ public class Player : MonoBehaviour
         {
             Topping();
         }
+    
     }
 
     void Belt()

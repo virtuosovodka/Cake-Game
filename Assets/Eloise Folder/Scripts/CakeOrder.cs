@@ -19,16 +19,11 @@ public class CakeOrder : MonoBehaviour
     int lIndex;
     int tierIndex;
     //int pIndex;
-    Material bOrder;
-    Material fOrder;
-    Material tOrder;
-    Material sOrder;
-    Material lOrder;
-    Material playerBatter;
-    Material playerFrosting;
-    Material playerTopping;
-    Material playerSprinkles;
-    Material playerLiquid;
+    public Material bOrder;
+    public Material fOrder;
+    public Material tOrder;
+    public Material sOrder;
+    public Material lOrder;
     public Material confettiM;
     public Material chocolateM;
     public Material lemonM;
@@ -56,10 +51,7 @@ public class CakeOrder : MonoBehaviour
 
     public GameObject tier2;
 
-    int points = 0;
-    int totalPoints;
-    float timer = 0;
-    float timerEnd;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -114,46 +106,11 @@ public class CakeOrder : MonoBehaviour
             GameObject.FindGameObjectWithTag("OrderLiquid2").GetComponent<MeshRenderer>().material = lOrder;      
         }
 
-        timer += Time.deltaTime;
+        
 
         //GetComponent<MeshRenderer>().material = Material1
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Counter"))
-        {
-            timerEnd = timer;
-            //if (timerEnd >=)
-
-            if (playerBatter == bOrder)
-            {
-                points++;
-                // add cooked enough and amount of batter
-            }
-            if (playerFrosting == fOrder)
-            {
-                points++;
-                // smoothness and amount
-            }
-            if (playerTopping == tOrder)
-            {
-                points++;
-                // placement and amount
-            }
-            if (playerSprinkles == sOrder)
-            {
-                points++;
-                // placement and amount
-            }
-            if (playerLiquid == lOrder)
-            {
-                points++;
-                // placement and amount
-            }
-
-            totalPoints = (points / 5) * 100;
-        }
-    }
+   
 }
