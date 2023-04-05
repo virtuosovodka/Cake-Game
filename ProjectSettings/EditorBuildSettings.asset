@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Vedika's Folder/Vedika's Scene.unity
+  - enabled: 0
+    path: Assets/Vedika's Folder/Scenes/Grabbing Objects.unity
     guid: e103e9f7429e94315881c8fe0fccc281
+  - enabled: 0
+    path: Assets/Lily Folder/Lily Scene.unity
+    guid: abb832b59d6ba4d81ad699337f0c62af
+  - enabled: 1
+    path: Assets/Lily Folder/Small lad.unity
+    guid: d54ce051c45d340e39b2deca9b92a698
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

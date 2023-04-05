@@ -60,7 +60,7 @@ public class ConveyorBelt : MonoBehaviour
 
             }
 
-            // make two separate if statements for this bit on after the toher else if then else
+            // make two separate if statements for this bit on after the other else if then else
             if (gameObject.transform.position.x <= batterStation.transform.position.x + .001 && gameObject.transform.position.x >= batterStation.transform.position.x - .001) 
             {
                 print("in batter station");
@@ -95,12 +95,36 @@ public class ConveyorBelt : MonoBehaviour
 
             }
 
-            if (gameObject.transform.position.z <= ovenStation.transform.position.z + .001 && gameObject.transform.position.z >= ovenStation.transform.position.z - .001)
+            if (gameObject.transform.position.z <= flipStation.transform.position.z + .001 && gameObject.transform.position.z >= flipStation.transform.position.z - .001)
             {
-                print("in oven station");
-                timesInOvenStation++;
+                print("in flip station");
+                timesInFlipStation++;
 
-                if ((timesInOvenStation % 2 != 0))
+                if ((timesInFlipStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.z <= frostingStation.transform.position.z + .001 && gameObject.transform.position.z >= frostingStation.transform.position.z - .001)
+            {
+                print("in frosting station");
+                timesInFrostingStation++;
+
+                if ((timesInFrostingStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.z <= toppingStation.transform.position.z + .001 && gameObject.transform.position.z >= toppingStation.transform.position.z - .001)
+            {
+                print("in topping station");
+                timesInToppingStation++;
+
+                if ((timesInToppingStation % 2 != 0))
                 {
                     player.beltOn = false;
                 }
