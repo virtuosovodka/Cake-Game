@@ -5,24 +5,33 @@ using UnityEngine.Video;
 
 public class MaterialChanger : MonoBehaviour
 {
-    public Material newMaterial;
+    public Material blackMaterial;
+    public Material movieMaterial;
     public VideoPlayer videoPlayer;
     public Ipad ipad;
-    public bool changeMaterial = false;
+    public bool changeMaterial;
+
+    public Renderer r;
+    public Material[] mats;
+    MeshRenderer meshRenderer;
 
     private void Awake()
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        mats = GetComponent<Renderer>().materials;
+        Debug.Log(mats[0]);
+        //mats[0] = movieMaterial;
+       // mats[1] = blackMaterial;
+        //GetComponent<Renderer>().materials = mats;
+
+        meshRenderer = GetComponent<MeshRenderer>();
         videoPlayer = GetComponent<VideoPlayer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-
-        Material oldMaterial = meshRenderer.material;
-        Debug.Log("Applied Material: " + oldMaterial.name);
-        meshRenderer.material = oldMaterial;
+        meshRenderer.material = mats[0];
+        //Debug.Log("Applied Material: " + oldMaterial.name);
+        //meshRenderer.material = oldMaterial;
         
     }
 
@@ -31,9 +40,9 @@ public class MaterialChanger : MonoBehaviour
     {
         if (changeMaterial)
         {
-            MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
             
-            meshRenderer.material = newMaterial;
+            
+            meshRenderer.material = mats[1];
         }
     }
 }
