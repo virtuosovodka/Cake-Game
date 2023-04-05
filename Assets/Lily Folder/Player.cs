@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +26,21 @@ public class Player : MonoBehaviour
     //light
     public GameObject Light;
     bool lightOn;
+    //ipad
+    public Ipad ipad;
+    public GameObject playVideo1;
+    public GameObject playPause;
+    public VideoPlayer videoPlayer;
+    public VideoClip[] videoClips;
+    public MaterialChanger materialChanger;
+
+    private void Awake()
+    {
+        videoPlayer = GetComponent<VideoPlayer>();
+
+        //delete the material changer in the player inspector
+        materialChanger = GetComponent<MaterialChanger>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +50,8 @@ public class Player : MonoBehaviour
         currentObject = null;
 
         Light.SetActive(false);
+
+        materialChanger.changeMaterial = false;
     }
 
     // Update is called once per frame
@@ -161,7 +179,34 @@ public class Player : MonoBehaviour
         {
             Topping();
         }
-    
+
+        if (currentObject.CompareTag("PlayButton"))
+        {
+            //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
+            //or tag he player "player
+            //print("paused");
+            ipad.PlayPause(videoClips[0]);
+
+            //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
+            //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
+        }
+
+        if (currentObject.CompareTag("PlayButton2"))
+        {
+            //print("paused");
+            ipad.PlayPause(videoClips[1]);
+
+            //ipad.SwitchingClip();
+            //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
+            //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
+        }
+        if (currentObject.CompareTag("BackButton"))
+        {
+            print("back to home screen");
+            materialChanger.changeMaterial = true;
+
+        }
+
     }
 
     void Belt()
