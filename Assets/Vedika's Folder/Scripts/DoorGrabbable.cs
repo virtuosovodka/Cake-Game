@@ -1,28 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DoorGrabbable : OVRGrabbable
 {
-    /*
-    public Transform handler;
+    public GameObject controller;
+    public Transform parent;
+    public GameObject doorHinge;
+    public GameObject actualDoor;
+    public TextMeshProUGUI text;
 
-    public override void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
-    {
-        base.GrabEnd(Vector3.zero, Vector3.zero);
-
-        transform.position = handler.transform.position;
-        transform.rotation = handler.transform.rotation;
-    }
-    */
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        Transform childToRemove = controller.transform.Find("doorHinge");
+        childToRemove.parent = null;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("GameController"))
+        {
+            //parent cube to hand
+            doorHinge.transform.SetParent(parent);
+            text.text = "GameController detected in door button.";
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
     {
         
     }
