@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     //light
     public GameObject Light;
     bool lightOn;
+
     //ipad
     public Ipad ipad;
     public GameObject playVideo1;
