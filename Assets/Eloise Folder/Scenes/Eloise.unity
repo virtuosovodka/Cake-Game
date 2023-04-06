@@ -5241,6 +5241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915944159}
   - component: {fileID: 915944158}
+  - component: {fileID: 915944160}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5325,6 +5326,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &915944160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915944157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &938179039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6267,6 +6288,16 @@ MonoBehaviour:
   Belt2: {fileID: 1219455416}
   Belt3: {fileID: 1109665102}
   counter: {fileID: 1966356848}
+  batterStation: {fileID: 0}
+  ovenStation: {fileID: 0}
+  flipStation: {fileID: 0}
+  frostingStation: {fileID: 0}
+  toppingStation: {fileID: 0}
+  timesInBatterStation: 0
+  timesInOvenStation: 0
+  timesInFrostingStation: 0
+  timesInToppingStation: 0
+  timesInFlipStation: 0
 --- !u!23 &1747311064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6347,6 +6378,7 @@ MonoBehaviour:
   cakePan: {fileID: 1747311061}
   parent: {fileID: 1747311066}
   batter: {fileID: 1332173910}
+  cherries: {fileID: 0}
 --- !u!54 &1747311068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6806,6 +6838,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3a08050b7de894e99a93b3f68b4ea9c8, type: 2}
   - {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   - {fileID: 2100000, guid: 8df8ac816ea73486fac6dddb05a2915d, type: 2}
+  bOrder: {fileID: 0}
+  fOrder: {fileID: 0}
+  tOrder: {fileID: 0}
+  sOrder: {fileID: 0}
+  lOrder: {fileID: 0}
   confettiM: {fileID: 2100000, guid: 9b78754dc5d61468f88cdb1962bd7ff5, type: 2}
   chocolateM: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   lemonM: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
@@ -7019,7 +7056,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: befd82478edf14b7b88834eafc2df373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
