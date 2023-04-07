@@ -10,7 +10,7 @@ public class MaterialChanger : MonoBehaviour
     public VideoPlayer videoPlayer;
     public Ipad ipad;
     public bool changeMaterial;
-
+    public bool changeMaterialMovie;
     public Renderer r;
     public Material[] mats;
     MeshRenderer meshRenderer;
@@ -20,7 +20,7 @@ public class MaterialChanger : MonoBehaviour
         mats = GetComponent<Renderer>().materials;
         Debug.Log(mats[0]);
         //mats[0] = movieMaterial;
-       // mats[1] = blackMaterial;
+        // mats[1] = blackMaterial;
         //GetComponent<Renderer>().materials = mats;
 
         meshRenderer = GetComponent<MeshRenderer>();
@@ -29,10 +29,10 @@ public class MaterialChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer.material = mats[0];
+        meshRenderer.material = mats[1];
         //Debug.Log("Applied Material: " + oldMaterial.name);
         //meshRenderer.material = oldMaterial;
-        
+
     }
 
     // Update is called once per frame
@@ -40,9 +40,14 @@ public class MaterialChanger : MonoBehaviour
     {
         if (changeMaterial)
         {
-            
-            
+
+
             meshRenderer.material = mats[1];
         }
+        if (changeMaterialMovie)
+        {
+            meshRenderer.material = mats[0];
+        }
     }
+  
 }
