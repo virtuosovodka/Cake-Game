@@ -15,11 +15,15 @@ public class ConveyorBelt : MonoBehaviour
 
     public GameObject batterStation;
     public GameObject ovenStation;
+    public GameObject flipStation;
     public GameObject frostingStation;
     public GameObject toppingStation;
 
     public int timesInBatterStation;
-
+    public int timesInOvenStation;
+    public int timesInFrostingStation;
+    public int timesInToppingStation;
+    public int timesInFlipStation;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,7 @@ public class ConveyorBelt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(timesInBatterStation);
+        //print(timesInBatterStation);
 
         if (player.beltOn)
         {
@@ -56,8 +60,8 @@ public class ConveyorBelt : MonoBehaviour
 
             }
 
-            // make two separate if statements for this bit on after the toher else if then else
-            if (gameObject.transform.position.x <= batterStation.transform.position.x + 1 | gameObject.transform.position.x == batterStation.transform.position.x - 1)
+            // make two separate if statements for this bit on after the other else if then else
+            if (gameObject.transform.position.x <= batterStation.transform.position.x + .001 && gameObject.transform.position.x >= batterStation.transform.position.x - .001) 
             {
                 print("in batter station");
                 timesInBatterStation++;
@@ -66,17 +70,66 @@ public class ConveyorBelt : MonoBehaviour
                 // if its this position set int to 1 when pressed again ++
                 // if odd stop moving on arrival if even keep moving
                 //(variable%2)=0 is even else odd
+
+                //on first arrival =1 stop moving
+
+                if ((timesInBatterStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+                else
+                {
+                    //stop moving
+                }
             }
 
-            if ((timesInBatterStation % 2 == 0))
+            if (gameObject.transform.position.z <= ovenStation.transform.position.z + .001 && gameObject.transform.position.z >= ovenStation.transform.position.z - .001)
             {
-                //move
-            }
-            else
-            {
-                //stop moving
+                print("in oven station");
+                timesInOvenStation++;
+
+                if ((timesInOvenStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
             }
 
+            if (gameObject.transform.position.z <= flipStation.transform.position.z + .001 && gameObject.transform.position.z >= flipStation.transform.position.z - .001)
+            {
+                print("in flip station");
+                timesInFlipStation++;
+
+                if ((timesInFlipStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.z <= frostingStation.transform.position.z + .001 && gameObject.transform.position.z >= frostingStation.transform.position.z - .001)
+            {
+                print("in frosting station");
+                timesInFrostingStation++;
+
+                if ((timesInFrostingStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.z <= toppingStation.transform.position.z + .001 && gameObject.transform.position.z >= toppingStation.transform.position.z - .001)
+            {
+                print("in topping station");
+                timesInToppingStation++;
+
+                if ((timesInToppingStation % 2 != 0))
+                {
+                    player.beltOn = false;
+                }
+
+            }
         }
     }
 

@@ -26,27 +26,26 @@ public class CakeChildren : MonoBehaviour
     int counter;
     public GameObject cherries;
 
+    float detachTimer = 15;
     // Start is called before the first frame update
     void Start()
     {
         // referncing other scripts for variables connected toother objects
         cakeOrder = GameObject.FindObjectOfType<CakeOrder>();
         player = GameObject.FindObjectOfType<Player>();
+
+        detachTimer -= Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // removing cake from cake pan
-        if (cakePan.transform.rotation.x >= 170 & cakePan.transform.rotation.x <= 190 | cakePan.transform.rotation.z >=170 & cakePan.transform.rotation.x <= 190)
-        {
-            Transform childToRemove = cakePan.transform.Find("batter");
-            childToRemove.parent = null;
-        }
+        
 
         //timer for points
         timer += Time.deltaTime;
 
+        
         
     }
 
@@ -59,7 +58,15 @@ public class CakeChildren : MonoBehaviour
             Debug.Log("connect");
         }
 
-        
+
+        // removing cake from cake pan
+        if (collision.gameObject.CompareTag("CakeTin") && ((cakePan.transform.rotation.x >= 170 && cakePan.transform.rotation.x <= 190) || (cakePan.transform.rotation.z >= 170 && cakePan.transform.rotation.z <= 190)))
+        {
+            Transform childToRemove = cakePan.transform.Find("batter");
+            childToRemove.parent = null;
+        }
+
+
 
         //game ends when the cake reaches the counter
         if (collision.gameObject.CompareTag("Counter"))

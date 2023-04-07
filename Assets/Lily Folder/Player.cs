@@ -26,20 +26,23 @@ public class Player : MonoBehaviour
     //light
     public GameObject Light;
     bool lightOn;
+
     //ipad
     public Ipad ipad;
+    public GameObject backButton;
     public GameObject playVideo1;
     public GameObject playPause;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
+    MeshRenderer backButtonMesh;
 
     private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
 
         //delete the material changer in the player inspector
-        materialChanger = GetComponent<MaterialChanger>();
+        //materialChanger = GetComponent<MaterialChanger>();
     }
 
     // Start is called before the first frame update
@@ -52,6 +55,8 @@ public class Player : MonoBehaviour
         Light.SetActive(false);
 
         materialChanger.changeMaterial = false;
+        backButtonMesh = backButton.GetComponent<MeshRenderer>();
+        //backButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -186,7 +191,7 @@ public class Player : MonoBehaviour
             //or tag he player "player
             //print("paused");
             ipad.PlayPause(videoClips[0]);
-
+            materialChanger.changeMaterialMovie = true;
             //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
             //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
         }
@@ -195,6 +200,8 @@ public class Player : MonoBehaviour
         {
             //print("paused");
             ipad.PlayPause(videoClips[1]);
+            materialChanger.changeMaterialMovie = true;
+            //backButton.transform.position -= new Vector3(0, 0,.2f);
 
             //ipad.SwitchingClip();
             //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
@@ -203,6 +210,7 @@ public class Player : MonoBehaviour
         if (currentObject.CompareTag("BackButton"))
         {
             print("back to home screen");
+            materialChanger.changeMaterialMovie = false;
             materialChanger.changeMaterial = true;
 
         }
