@@ -30,7 +30,9 @@ public class Player : MonoBehaviour
     //ipad
     public Ipad ipad;
     public GameObject backButton;
+    public GameObject playVideo2;
     public GameObject playVideo1;
+
     public GameObject playPause;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
@@ -56,7 +58,9 @@ public class Player : MonoBehaviour
 
         materialChanger.changeMaterial = false;
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
-        //backButton.SetActive(false);
+
+        playPause.SetActive(false);
+        backButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -192,6 +196,12 @@ public class Player : MonoBehaviour
             //print("paused");
             ipad.PlayPause(videoClips[0]);
             materialChanger.changeMaterialMovie = true;
+            backButton.SetActive(true);
+            playPause.SetActive(true);
+            playVideo2.SetActive(false);
+            playVideo1.SetActive(false);
+
+
             //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
             //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
         }
@@ -201,7 +211,7 @@ public class Player : MonoBehaviour
             //print("paused");
             ipad.PlayPause(videoClips[1]);
             materialChanger.changeMaterialMovie = true;
-            //backButton.transform.position -= new Vector3(0, 0,.2f);
+            //backButton.transform.position -= new Vector3(0, 0,10);
 
             //ipad.SwitchingClip();
             //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
