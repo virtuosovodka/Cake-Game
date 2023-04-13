@@ -24,24 +24,21 @@ public class Batter : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        text.text = "Batter is on!";
-        ren.material.color = Color.red;
         if (other.gameObject.CompareTag("GameController"))
         {
-            
+            BatterOn();
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         BatterOff();
     }
 
     void BatterOn()
     {
-        ren.material.color = Color.white;
         text.text = "Batter is on!";
         batterOn = true;
         //transform batter downwards until it hits the counter
