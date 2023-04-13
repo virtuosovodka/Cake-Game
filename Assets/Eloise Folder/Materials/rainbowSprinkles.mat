@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: rainbowSprinkles
-  m_Shader: {fileID: -6465566751694194690, guid: 78c28c941b7944cfd8079962190ffdd2,
+  m_Shader: {fileID: -6465566751694194690, guid: df571417857844c189ad029b552b251a,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -75,7 +75,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Frequency: 1
+    - _Frequency: 20
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

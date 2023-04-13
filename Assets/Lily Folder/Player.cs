@@ -241,6 +241,7 @@ public class Player : MonoBehaviour
 
     void Batter()
     {
+        print("batter pouring");
         batterAmount += batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
@@ -253,12 +254,14 @@ public class Player : MonoBehaviour
 
     void OvenLight()
     {
+        print("oven light");
         Light.SetActive(true);
     }
 
     //make a light button for oven 
     void OvenOn()
     {
+        print("oven on");
         cookTime = cookTimePerOunce * batterAmount;
         print("your cook time is " + cookTime);
 
