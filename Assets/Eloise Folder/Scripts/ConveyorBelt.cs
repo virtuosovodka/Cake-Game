@@ -130,6 +130,8 @@ public class ConveyorBelt : MonoBehaviour
                 }
 
             }
+
+            //TODO: add stops at conveyor beelt needs to make an additional turn
         }
     }
 
