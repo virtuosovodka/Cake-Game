@@ -11,14 +11,14 @@ public class CakeOrder : MonoBehaviour
     public List<Material> toppingsList = new List<Material> { };
     public List<Material> sprinklesList = new List<Material> { };
     public List<Material> liquidList = new List<Material> { };
-    //public List<Material> patternList = new List<Material> { };
+    
     int bIndex;
     int fIndex;
     int tIndex;
     int sIndex;
     int lIndex;
     int tierIndex;
-    //int pIndex;
+    
     public Material bOrder;
     public Material fOrder;
     public Material tOrder;
@@ -32,7 +32,6 @@ public class CakeOrder : MonoBehaviour
     public Material yellowF;
     public Material greenF;
     public Material blueF;
-    public Material purpleF;
     public Material pinkF;
     public Material whiteF;
     public Material brownF;
@@ -43,11 +42,23 @@ public class CakeOrder : MonoBehaviour
     public Material chocolateSyrupL;
     public Material caramelL;
     public Material blank;
-    /*public Material curtainsP;
-    public Material swirlyStarsP;
-    public Material curlyBorderP;
-    public Material seaShellsP;
-    */
+
+
+    // for colorblind mode
+    public Material confettiMColorblind;
+    public Material chocolateMColorblind;
+    public Material redFColorblind;
+    public Material orangeFColorblind;
+    public Material greenFColorblind;
+    public Material pinkFColorblind;
+    public Material brownFColorblind;
+    public Material rainbowSprinklesSColorblind;
+    public Material chocolateSprinklesSColorblind;
+    public Material cherriesTColorblind;
+    public Material rasberryJamLColorblind;
+    public Material chocolateSyrupLColorblind;
+    public Material caramelLColorblind;
+    public bool colorblind;
 
     public GameObject tier2;
 
@@ -57,13 +68,14 @@ public class CakeOrder : MonoBehaviour
     void Start()
     {
         tier2.SetActive(false);
-    
-        batterList = new List<Material> {confettiM,chocolateM,lemonM};
-        frostingList = new List<Material> { redF, orangeF, yellowF,greenF,blueF,purpleF,pinkF,brownF,whiteF };
-        toppingsList = new List<Material> {cherriesT,blank};
-        sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS,blank };
-        liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL,blank };
 
+        // all possible materials
+        batterList = new List<Material> { confettiM, chocolateM, lemonM };
+        frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
+        toppingsList = new List<Material> { cherriesT, blank };
+        sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
+        liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL, blank };
+        
 
         bIndex = Random.Range(0, batterList.Count);
         fIndex = Random.Range(0, frostingList.Count);
@@ -71,7 +83,7 @@ public class CakeOrder : MonoBehaviour
         sIndex = Random.Range(0, sprinklesList.Count);
         lIndex = Random.Range(0, liquidList.Count);
         tierIndex = Random.Range(1,3);
-        //pIndex = Random.Range(0, patternList.Count);
+        
         bOrder = batterList[bIndex];
         fOrder = frostingList[fIndex];
         tOrder = toppingsList[tIndex];
@@ -86,10 +98,18 @@ public class CakeOrder : MonoBehaviour
      * teirs later - 1, 2, 3
      * frosting pattern?
      */
+
+    /*for next time
+     * can we change just the shader? 
+     *--texture?
+     * */
+    
+ 
+
     // Update is called once per frame
     void Update()
     {
-
+        // setting random material to the right thing
         GameObject.FindGameObjectWithTag("OrderBatter").GetComponent<MeshRenderer>().material = bOrder;
         GameObject.FindGameObjectWithTag("OrderFrosting").GetComponent<MeshRenderer>().material = fOrder;
         GameObject.FindGameObjectWithTag("OrderTopping").GetComponent<MeshRenderer>().material = tOrder;
@@ -106,11 +126,27 @@ public class CakeOrder : MonoBehaviour
             GameObject.FindGameObjectWithTag("OrderLiquid2").GetComponent<MeshRenderer>().material = lOrder;      
         }
 
-        
+        if (colorblind)
+        {
+            batterList = new List<Material> { confettiMColorblind, chocolateMColorblind, lemonM };
+            frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
+            toppingsList = new List<Material> { cherriesTColorblind, blank };
+            sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
+            liquidList = new List<Material> { rasberryJamLColorblind, chocolateSyrupLColorblind, caramelLColorblind, blank };
+
+            bOrder = batterList[bIndex];
+            fOrder = frostingList[fIndex];
+            tOrder = toppingsList[tIndex];
+            sOrder = sprinklesList[sIndex];
+            lOrder = liquidList[lIndex];
+
+        }
+
+
 
         //GetComponent<MeshRenderer>().material = Material1
 
     }
+    
 
-   
 }
