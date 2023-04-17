@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Lily Folder/Small lad.unity
     guid: d54ce051c45d340e39b2deca9b92a698
-  - enabled: 1
+  - enabled: 0
     path: Assets/Vedika's Folder/Scenes/Small lad vedika style.unity
     guid: 8f719f3e854ec439da0efa63a9a48798
+  - enabled: 0
+    path: Assets/Vedika's Folder/Scenes/Grabbing Objects.unity
+    guid: e103e9f7429e94315881c8fe0fccc281
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
