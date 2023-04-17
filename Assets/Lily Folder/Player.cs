@@ -94,10 +94,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        OVRInput.Update();
-
-
         //TODO: @Vedika, please remove this as well, this is temp for testing without vr
         //this ONLY WORKS with a z value of zero!!!!!!!
         rb.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -133,45 +129,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-        {
-            BatterPrompt.SetActive(true);
+        OVRInput.Update();
 
-            //batter button is on collision && while B or Y button is down
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
-        {
-            //on collision && grab (bottom button)
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
-        {
-            // on collision and B or Y
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
-        {
-            // on collision and B or Y
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
-        {
-            // on collision and B or Y
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
-        {
-            //on collision and front button to hold/ move both bottoms to get frosting out
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
-        {
-            // sauce on collision and front button to hold/ move both bottoms to get frosting out
-            // sprinklies
-            // cherries
-        }
-
+        //BUTTONS
         //press
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
         {
@@ -188,6 +148,8 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BatterButton"))
         {
             Batter();
+
+            //batter button is on collision && while B or Y button is down
         }
 
         //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
@@ -198,6 +160,8 @@ public class Player : MonoBehaviour
             debug.text = "oven door";
             //hold and drag to reset door position.can't go past certain coordinates
             //door must be closed to turn oven on oven must be off to open door
+
+            //on collision && grab (bottom button)
         }
 
         //press
@@ -205,6 +169,8 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn") && !ovenOn)
         {
             OvenOn();
+
+            // on collision and B or Y
         }
 
         //make oven light button
@@ -217,6 +183,8 @@ public class Player : MonoBehaviour
         {
             lightOn = false;
             Light.SetActive(false);
+
+            // on collision and B or Y
         }
 
         //press
@@ -224,19 +192,74 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
         {
             OvenOff();
+
+            // on collision and B or Y
         }
 
         //press hold and drag
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
         {
             Frosting();
+
+            //on collision and front button to hold/ move both bottoms to get frosting out
         }
 
         //press hold and drag
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
         {
             Topping();
+
+            // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+            // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
+            // cherries on collision front button && y/b to pick it up
         }
+
+
+        //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+        {
+            BatterPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+        {
+            OvenDoorPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+        {
+            OvenOnPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+        {
+            OvenLightPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+        {
+            OvenOffPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+        {
+            FrostingPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+        {
+            SaucePrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+        {
+            SprinklesPrompt.SetActive(true);
+        }
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+        {
+            CherriesPrompt.SetActive(true);
+        }
+
 
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton"))
         {
