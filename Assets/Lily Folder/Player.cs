@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
         playPause.SetActive(false);
         backButton.SetActive(false);
+        Ipad ipad = gameObject.GetComponent<Ipad>();
     }
 
     // Update is called once per frame
@@ -211,6 +212,10 @@ public class Player : MonoBehaviour
             //print("paused");
             ipad.PlayPause(videoClips[1]);
             materialChanger.changeMaterialMovie = true;
+            backButton.SetActive(true);
+            playPause.SetActive(true);
+            playVideo1.SetActive(false);
+            playVideo2.SetActive(false);
             //backButton.transform.position -= new Vector3(0, 0,10);
 
             //ipad.SwitchingClip();
@@ -222,9 +227,16 @@ public class Player : MonoBehaviour
             print("back to home screen");
             materialChanger.changeMaterialMovie = false;
             materialChanger.changeMaterial = true;
-
+            playPause.SetActive(false);
+            playVideo2.SetActive(true);
+            playVideo1.SetActive(true);
+            backButton.SetActive(false);
         }
-
+        if (currentObject.CompareTag("playPause"))
+        {
+            //ipad.PlayPause();
+            //work on fixing this next class
+        }
     }
 
     void Belt()
