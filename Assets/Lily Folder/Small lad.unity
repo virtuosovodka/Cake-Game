@@ -3085,6 +3085,15 @@ MonoBehaviour:
   videoPlayer: {fileID: 0}
   videoClips: []
   materialChanger: {fileID: 0}
+  BatterPrompt: {fileID: 0}
+  OvenDoorPrompt: {fileID: 0}
+  OvenOnPrompt: {fileID: 0}
+  OvenLightPrompt: {fileID: 0}
+  OvenOffPrompt: {fileID: 0}
+  FrostingPrompt: {fileID: 0}
+  SaucePrompt: {fileID: 0}
+  SprinklesPrompt: {fileID: 0}
+  CherriesPrompt: {fileID: 0}
 --- !u!1 &881794945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +4714,15 @@ MonoBehaviour:
   videoPlayer: {fileID: 0}
   videoClips: []
   materialChanger: {fileID: 0}
+  BatterPrompt: {fileID: 0}
+  OvenDoorPrompt: {fileID: 0}
+  OvenOnPrompt: {fileID: 0}
+  OvenLightPrompt: {fileID: 0}
+  OvenOffPrompt: {fileID: 0}
+  FrostingPrompt: {fileID: 0}
+  SaucePrompt: {fileID: 0}
+  SprinklesPrompt: {fileID: 0}
+  CherriesPrompt: {fileID: 0}
 --- !u!1 &1296859420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6454,7 +6472,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182306, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -6479,7 +6497,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9315362
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -6489,7 +6507,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.663093
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}

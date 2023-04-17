@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
 
         playPause.SetActive(false);
         backButton.SetActive(false);
+        Ipad ipad = gameObject.GetComponent<Ipad>();
 
         //button press prompts
         BatterPrompt.SetActive(false);
@@ -172,19 +173,19 @@ public class Player : MonoBehaviour
         }
 
         //press
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StartBelt"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
         {
             Belt();
         }
 
         //press
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StopBelt"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
         {
             BeltOff();
         }
 
         //press and hold
-        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("BatterButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BatterButton"))
         {
             Batter();
         }
@@ -201,18 +202,18 @@ public class Player : MonoBehaviour
 
         //press
         //start oven function
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("OvenOn") && !ovenOn)
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn") && !ovenOn)
         {
             OvenOn();
         }
 
         //make oven light button
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("OvenLight") && !lightOn)
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight") && !lightOn)
         {
             lightOn = true;
             OvenLight();
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("OvenLight") && lightOn)
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight") && lightOn)
         {
             lightOn = false;
             Light.SetActive(false);
@@ -220,28 +221,29 @@ public class Player : MonoBehaviour
 
         //press
         //stop oven function
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("OvenOff"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
         {
             OvenOff();
         }
 
         //press hold and drag
-        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
         {
             Frosting();
         }
 
         //press hold and drag
-        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
         {
             Topping();
         }
 
-        if (currentObject.CompareTag("PlayButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton"))
         {
             //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
             //or tag he player "player
-            //print("paused");
+            debug.text = "paused";
+            
             ipad.PlayPause(videoClips[0]);
             materialChanger.changeMaterialMovie = true;
             backButton.SetActive(true);
@@ -249,27 +251,38 @@ public class Player : MonoBehaviour
             playVideo2.SetActive(false);
             playVideo1.SetActive(false);
 
-
             //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
             //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
         }
 
-        if (currentObject.CompareTag("PlayButton2"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton2"))
         {
             debug.text = "paused";
             ipad.PlayPause(videoClips[1]);
             materialChanger.changeMaterialMovie = true;
+            backButton.SetActive(true);
+            playPause.SetActive(true);
+            playVideo1.SetActive(false);
+            playVideo2.SetActive(false);
             //backButton.transform.position -= new Vector3(0, 0,10);
-
-            //ipad.SwitchingClip();
-            //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
-            //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
         }
-        if (currentObject.CompareTag("BackButton"))
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BackButton"))
         {
             debug.text = "back to home screen";
+            
             materialChanger.changeMaterialMovie = false;
             materialChanger.changeMaterial = true;
+            playPause.SetActive(false);
+            playVideo2.SetActive(true);
+            playVideo1.SetActive(true);
+            backButton.SetActive(false);
+        }
+
+        if (currentObject.CompareTag("playPause"))
+        {
+            //ipad.PlayPause();
+            //work on fixing this next class
         }
     }
 
