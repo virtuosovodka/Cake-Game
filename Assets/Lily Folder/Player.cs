@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     GameObject currentObject;
     Rigidbody rb;
+
+    public TextMeshProUGUI debug;
 
     //stations
     public bool beltOn = false;
@@ -39,6 +42,18 @@ public class Player : MonoBehaviour
     public MaterialChanger materialChanger;
     MeshRenderer backButtonMesh;
 
+    //level 1 button prompts
+    public GameObject BatterPrompt;
+    public GameObject OvenDoorPrompt;
+    public GameObject OvenOnPrompt;
+    public GameObject OvenLightPrompt;
+    public GameObject OvenOffPrompt;
+    public GameObject FrostingPrompt;
+    //toppings
+    public GameObject SaucePrompt;
+    public GameObject SprinklesPrompt;
+    public GameObject CherriesPrompt;
+
     private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
@@ -61,12 +76,27 @@ public class Player : MonoBehaviour
 
         playPause.SetActive(false);
         backButton.SetActive(false);
-        Ipad ipad = gameObject.GetComponent<Ipad>();
+
+        //button press prompts
+        BatterPrompt.SetActive(false);
+        OvenDoorPrompt.SetActive(false);
+        OvenOnPrompt.SetActive(false);
+        OvenLightPrompt.SetActive(false);
+        OvenOffPrompt.SetActive(false);
+        FrostingPrompt.SetActive(false);
+        SaucePrompt.SetActive(false);
+        SprinklesPrompt.SetActive(false);
+        CherriesPrompt.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        OVRInput.Update();
+
+
         //TODO: @Vedika, please remove this as well, this is temp for testing without vr
         //this ONLY WORKS with a z value of zero!!!!!!!
         rb.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -75,69 +105,86 @@ public class Player : MonoBehaviour
         {
             timeInOven += Time.deltaTime;
 
-            print("time in oven is " + timeInOven);
+            debug.text = "time in oven is " + timeInOven;
 
             if (timeInOven <= cookTime - 1)
             {
-                print("raw");
+                debug.text = "raw";
                 //run not baked animation
             }
 
             if (timeInOven >= cookTime - 1 && timeInOven <= cookTime + 2)
             {
-                print("cooked");
+                debug.text = "cooked";
                 // run cooked animation
             }
 
             if (timeInOven >= cookTime + 2)
             {
-                print("overcooked");
+                debug.text = "overcooked";
                 // run overbaked animation
             }
 
             if (timeInOven >= cookTime + 4)
             {
-                print("on fire");
+                debug.text = "on fire";
                 // run fire animation
             }
-        }    
-       
-    }
+        }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
-    }
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+        {
+            BatterPrompt.SetActive(true);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        currentObject = other.gameObject;
-        print(currentObject.name);
-    }
+            //batter button is on collision && while B or Y button is down
+        }
 
-    private void OnTriggerExit(Collider other)
-    {
-        currentObject = null;
-        print(currentObject.name);
-    }
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
+        {
+            //on collision && grab (bottom button)
+        }
 
-    //TODO: @Vedika move this to a vr function, should not appear in final game.
-    void OnMouseOver()
-    {
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
+        {
+            // on collision and B or Y
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
+        {
+            // on collision and B or Y
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
+        {
+            // on collision and B or Y
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
+        {
+            //on collision and front button to hold/ move both bottoms to get frosting out
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
+        {
+            // sauce on collision and front button to hold/ move both bottoms to get frosting out
+            // sprinklies
+            // cherries
+        }
+
         //press
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StartBelt")) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StartBelt"))
         {
             Belt();
         }
 
         //press
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StopBelt")) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && currentObject.CompareTag("StopBelt"))
         {
             BeltOff();
         }
 
         //press and hold
-        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("BatterButton")) 
+        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("BatterButton"))
         {
             Batter();
         }
@@ -147,7 +194,7 @@ public class Player : MonoBehaviour
         //can open door only when oven is off
         if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
         {
-            print("oven door");
+            debug.text = "oven door";
             //hold and drag to reset door position.can't go past certain coordinates
             //door must be closed to turn oven on oven must be off to open door
         }
@@ -209,13 +256,9 @@ public class Player : MonoBehaviour
 
         if (currentObject.CompareTag("PlayButton2"))
         {
-            //print("paused");
+            debug.text = "paused";
             ipad.PlayPause(videoClips[1]);
             materialChanger.changeMaterialMovie = true;
-            backButton.SetActive(true);
-            playPause.SetActive(true);
-            playVideo1.SetActive(false);
-            playVideo2.SetActive(false);
             //backButton.transform.position -= new Vector3(0, 0,10);
 
             //ipad.SwitchingClip();
@@ -224,19 +267,27 @@ public class Player : MonoBehaviour
         }
         if (currentObject.CompareTag("BackButton"))
         {
-            print("back to home screen");
+            debug.text = "back to home screen";
             materialChanger.changeMaterialMovie = false;
             materialChanger.changeMaterial = true;
-            playPause.SetActive(false);
-            playVideo2.SetActive(true);
-            playVideo1.SetActive(true);
-            backButton.SetActive(false);
         }
-        if (currentObject.CompareTag("playPause"))
-        {
-            //ipad.PlayPause();
-            //work on fixing this next class
-        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        currentObject = other.gameObject;
+        debug.text = "on " + currentObject.name;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        currentObject = null;
+        debug.text = "off " + currentObject.name;
     }
 
     void Belt()
@@ -253,26 +304,29 @@ public class Player : MonoBehaviour
 
     void Batter()
     {
+        debug.text = "batter pouring";
         batterAmount += batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
         //set batter amount= amount per frame*time.delta time
         //saved value
-        
+
         batterOn = true;
-        print("you poured " + batterAmount);
+        debug.text = "you poured " + batterAmount;
     }
 
     void OvenLight()
     {
+        debug.text = "oven light";
         Light.SetActive(true);
     }
 
     //make a light button for oven 
     void OvenOn()
     {
+        debug.text = "oven on";
         cookTime = cookTimePerOunce * batterAmount;
-        print("your cook time is " + cookTime);
+        debug.text = "your cook time is " + cookTime;
 
         ovenOn = true;
 
@@ -282,19 +336,19 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
-        print("Oven off");
+        debug.text = "Oven off";
         ovenOn = false;
     }
 
     void Frosting()
     {
-        print("frosting");
+        debug.text = "frosting";
         frostingOn = true;
     }
 
     void Topping()
     {
-        if(currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
+        if (currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
         {
 
         }
