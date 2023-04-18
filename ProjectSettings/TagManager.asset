@@ -3,7 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RoomLight
+  - SamplesInfoPanel
+  - StartBelt
+  - CakeBox
+  - OvenDoor
+  - BatterButton
+  - OvenOff
+  - ToppingButton
+  - OvenLight
+  - FrostingButton
+  - OvenOn
+  - StopBelt
+  - BackButton
+  - PlayButton
+  - PlayButton2
+  - SauceButton
+  - SprinkleButton
+  - CherryButton
   layers:
   - Default
   - TransparentFX
