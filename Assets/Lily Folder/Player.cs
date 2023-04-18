@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
 
         OVRInput.Update();
 
-
+        debug.text = currentObject.name;
         //TODO: @Vedika, please remove this as well, this is temp for testing without vr
         //this ONLY WORKS with a z value of zero!!!!!!!
         rb.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
