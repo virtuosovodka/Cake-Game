@@ -11,6 +11,8 @@ public class ConveyorBelt : MonoBehaviour
     bool moveZ = true;
     public GameObject counter;
     bool moveNegX = true;
+    bool moveNegZ = true;
+    bool moveNegY = true;
     Player player;
 
     public GameObject batterStation;

@@ -139,33 +139,27 @@ public class Player : MonoBehaviour
 
             //batter button is on collision && while B or Y button is down
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
         {
             //on collision && grab (bottom button)
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
         {
             // on collision and B or Y
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
         {
             // on collision and B or Y
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
         {
             // on collision and B or Y
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
         {
             //on collision and front button to hold/ move both bottoms to get frosting out
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
+        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
         {
             // sauce on collision and front button to hold/ move both bottoms to get frosting out
             // sprinklies
@@ -305,7 +299,7 @@ public class Player : MonoBehaviour
 
     void Belt()
     {
-        print("Belt On");
+        debug.text = "Belt on";
         beltOn = true;
     }
 
