@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
         }
 
         //press
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
+        if (currentObject.CompareTag("StartBelt"))
         {
             Belt();
         }

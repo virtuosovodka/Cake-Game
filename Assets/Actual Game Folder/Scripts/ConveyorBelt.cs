@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ConveyorBelt : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegX = true;
     bool moveNegZ = true;
     bool moveNegY = true;
-    Player player;
+    public Player leftHand;
+    public Player rightHand;
+    public TextMeshProUGUI debug;
 
     public GameObject batterStation;
     public GameObject ovenStation;
@@ -30,15 +33,16 @@ public class ConveyorBelt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player>();
+        //leftHand = GameObject.FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //print(timesInBatterStation);
+        debug.text = "" + leftHand.beltOn;
 
-        if (player.beltOn)
+        if (leftHand.beltOn || rightHand.beltOn)
         {
             if (moveX == true)
             {
@@ -84,7 +88,8 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInBatterStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    leftHand.beltOn = false;
+                    rightHand.beltOn = false;
                 }
                 else
                 {
@@ -99,7 +104,8 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInOvenStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    leftHand.beltOn = false;
+                    rightHand.beltOn = false;
                 }
 
             }
@@ -111,7 +117,8 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInFlipStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    leftHand.beltOn = false;
+                    rightHand.beltOn = false;
                 }
 
             }
@@ -123,7 +130,8 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInFrostingStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    leftHand.beltOn = false;
+                    rightHand.beltOn = false;
                 }
 
             }
@@ -135,7 +143,8 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInToppingStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    leftHand.beltOn = false;
+                    rightHand.beltOn = false;
                 }
 
             }
