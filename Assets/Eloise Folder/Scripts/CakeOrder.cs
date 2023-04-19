@@ -62,19 +62,15 @@ public class CakeOrder : MonoBehaviour
 
     public GameObject tier2;
 
-    
+    // for randomly picking three frostings for the piping bags that appear
+    int rightFrosting;
 
     // Start is called before the first frame update
     void Start()
     {
         tier2.SetActive(false);
 
-        // all possible materials
-        batterList = new List<Material> { confettiM, chocolateM, lemonM };
-        frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
-        toppingsList = new List<Material> { cherriesT, blank };
-        sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
-        liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL, blank };
+        
         
 
         bIndex = Random.Range(0, batterList.Count);
@@ -83,12 +79,9 @@ public class CakeOrder : MonoBehaviour
         sIndex = Random.Range(0, sprinklesList.Count);
         lIndex = Random.Range(0, liquidList.Count);
         tierIndex = Random.Range(1,3);
-        
-        bOrder = batterList[bIndex];
-        fOrder = frostingList[fIndex];
-        tOrder = toppingsList[tIndex];
-        sOrder = sprinklesList[sIndex];
-        lOrder = liquidList[lIndex];
+
+        rightFrosting = Random.Range(1,4);
+
         //pOrder = patternList[pIndex];
     }
     /* batter - chcolate, lemon, confetti
@@ -109,29 +102,45 @@ public class CakeOrder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // setting random material to the right thing
-        GameObject.FindGameObjectWithTag("OrderBatter").GetComponent<MeshRenderer>().material = bOrder;
-        GameObject.FindGameObjectWithTag("OrderFrosting").GetComponent<MeshRenderer>().material = fOrder;
-        GameObject.FindGameObjectWithTag("OrderTopping").GetComponent<MeshRenderer>().material = tOrder;
-        GameObject.FindGameObjectWithTag("OrderSprinkles").GetComponent<MeshRenderer>().material = sOrder;
-        GameObject.FindGameObjectWithTag("OrderLiquid").GetComponent<MeshRenderer>().material = lOrder;
-        
+        if (colorblind == false)
+        {
+            // all possible materials
+            batterList = new List<Material> { confettiM, chocolateM, lemonM };
+            frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
+            toppingsList = new List<Material> { cherriesT, blank };
+            sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
+            liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL, blank };
+
+            bOrder = batterList[bIndex];
+            fOrder = frostingList[fIndex];
+            tOrder = toppingsList[tIndex];
+            sOrder = sprinklesList[sIndex];
+            lOrder = liquidList[lIndex];
+                                                      
+            // setting random material to the right thing
+            GameObject.FindGameObjectWithTag("OrderBatter").GetComponent<MeshRenderer>().material = bOrder;
+            GameObject.FindGameObjectWithTag("OrderFrosting").GetComponent<MeshRenderer>().material = fOrder;
+            GameObject.FindGameObjectWithTag("OrderTopping").GetComponent<MeshRenderer>().material = tOrder;
+            GameObject.FindGameObjectWithTag("OrderSprinkles").GetComponent<MeshRenderer>().material = sOrder;
+            GameObject.FindGameObjectWithTag("OrderLiquid").GetComponent<MeshRenderer>().material = lOrder;
+
+        }
         if (tierIndex == 2)
         {
-            tier2.SetActive(true); 
+            tier2.SetActive(true);
             GameObject.FindGameObjectWithTag("OrderBatter2").GetComponent<MeshRenderer>().material = bOrder;
             GameObject.FindGameObjectWithTag("OrderFrosting2").GetComponent<MeshRenderer>().material = fOrder;
             GameObject.FindGameObjectWithTag("OrderTopping2").GetComponent<MeshRenderer>().material = tOrder;
             GameObject.FindGameObjectWithTag("OrderSprinkles2").GetComponent<MeshRenderer>().material = sOrder;
-            GameObject.FindGameObjectWithTag("OrderLiquid2").GetComponent<MeshRenderer>().material = lOrder;      
+            GameObject.FindGameObjectWithTag("OrderLiquid2").GetComponent<MeshRenderer>().material = lOrder;
         }
-
-        if (colorblind)
+        
+        if (colorblind == true)
         {
             batterList = new List<Material> { confettiMColorblind, chocolateMColorblind, lemonM };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             toppingsList = new List<Material> { cherriesTColorblind, blank };
-            sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
+            sprinklesList = new List<Material> { rainbowSprinklesSColorblind, chocolateSprinklesSColorblind, blank };
             liquidList = new List<Material> { rasberryJamLColorblind, chocolateSyrupLColorblind, caramelLColorblind, blank };
 
             bOrder = batterList[bIndex];
@@ -139,6 +148,12 @@ public class CakeOrder : MonoBehaviour
             tOrder = toppingsList[tIndex];
             sOrder = sprinklesList[sIndex];
             lOrder = liquidList[lIndex];
+
+            GameObject.FindGameObjectWithTag("OrderBatter").GetComponent<MeshRenderer>().material = bOrder;
+            GameObject.FindGameObjectWithTag("OrderFrosting").GetComponent<MeshRenderer>().material = fOrder;
+            GameObject.FindGameObjectWithTag("OrderTopping").GetComponent<MeshRenderer>().material = tOrder;
+            GameObject.FindGameObjectWithTag("OrderSprinkles").GetComponent<MeshRenderer>().material = sOrder;
+            GameObject.FindGameObjectWithTag("OrderLiquid").GetComponent<MeshRenderer>().material = lOrder;
 
         }
 

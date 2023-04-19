@@ -1533,7 +1533,7 @@ GameObject:
   - component: {fileID: 456536420}
   - component: {fileID: 456536419}
   m_Layer: 0
-  m_Name: Frosting Button (1)
+  m_Name: FrostingButton1
   m_TagString: FrostingButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4898,7 +4898,7 @@ GameObject:
   - component: {fileID: 1164384317}
   - component: {fileID: 1164384316}
   m_Layer: 0
-  m_Name: Frosting Button (3)
+  m_Name: FrostingButton3
   m_TagString: FrostingButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5032,7 +5032,7 @@ GameObject:
   - component: {fileID: 1241733756}
   - component: {fileID: 1241733755}
   m_Layer: 0
-  m_Name: Frosting Button (2)
+  m_Name: FrostingButton2
   m_TagString: FrostingButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5300,7 +5300,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8df8ac816ea73486fac6dddb05a2915d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8643,7 +8643,7 @@ MonoBehaviour:
   tOrder: {fileID: 0}
   sOrder: {fileID: 0}
   lOrder: {fileID: 0}
-  confettiM: {fileID: 2100000, guid: 9b78754dc5d61468f88cdb1962bd7ff5, type: 2}
+  confettiM: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
   chocolateM: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   lemonM: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
   redF: {fileID: 2100000, guid: d3239a44ad22f47dab43667e694bd25b, type: 2}
@@ -8654,7 +8654,7 @@ MonoBehaviour:
   pinkF: {fileID: 2100000, guid: fc0398379b3074701b0e8f11c7b1371f, type: 2}
   whiteF: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
   brownF: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
-  rainbowSprinklesS: {fileID: 2100000, guid: 02ae1fb9bdcf441e68ea8523b9aa450e, type: 2}
+  rainbowSprinklesS: {fileID: 2100000, guid: 46d3e3deb5dfe489cb30d6917ebd7b11, type: 2}
   chocolateSprinklesS: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   cherriesT: {fileID: 2100000, guid: d3239a44ad22f47dab43667e694bd25b, type: 2}
   rasberryJamL: {fileID: 2100000, guid: a75cd7b28c09248ce82385807e19196c, type: 2}
@@ -8679,7 +8679,7 @@ MonoBehaviour:
   chocolateSyrupLColorblind: {fileID: 2100000, guid: d2175a6f6ad474808a8470211f6aeef6,
     type: 2}
   caramelLColorblind: {fileID: 2100000, guid: a3161ca6748894a23822b9fdaf604c80, type: 2}
-  colorblind: 1
+  colorblind: 0
   tier2: {fileID: 1032332883}
 --- !u!1 &8386090410670419613
 GameObject:
