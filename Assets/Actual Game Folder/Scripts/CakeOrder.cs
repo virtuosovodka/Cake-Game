@@ -11,7 +11,8 @@ public class CakeOrder : MonoBehaviour
     public List<Material> toppingsList = new List<Material> { };
     public List<Material> sprinklesList = new List<Material> { };
     public List<Material> liquidList = new List<Material> { };
-    
+    public List<GameObject> frostingButtons = new List<GameObject> { };
+
     int bIndex;
     int fIndex;
     int tIndex;
@@ -80,6 +81,7 @@ public class CakeOrder : MonoBehaviour
         lIndex = Random.Range(0, liquidList.Count);
         tierIndex = Random.Range(1,3);
 
+        fOrder = frostingList[fIndex];
         rightFrosting = Random.Range(1,4);
 
         //pOrder = patternList[pIndex];
@@ -102,6 +104,7 @@ public class CakeOrder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject.FindGameObjectWithTag("frostingButtons[rightFrosting]").GetComponent<MeshRenderer>().material = fOrder;
         if (colorblind == false)
         {
             // all possible materials
