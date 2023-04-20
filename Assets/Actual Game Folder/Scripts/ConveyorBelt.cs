@@ -16,7 +16,7 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegY = true;
     public Player leftHand;
     public Player rightHand;
-    public TextMeshProUGUI debug;
+    //public TextMeshProUGUI debug;
 
     public GameObject batterStation;
     public GameObject ovenStation;
@@ -40,7 +40,7 @@ public class ConveyorBelt : MonoBehaviour
     void Update()
     {
         //print(timesInBatterStation);
-        debug.text = "" + leftHand.beltOn;
+        //debug.text = "" + leftHand.beltOn;
 
         if (leftHand.beltOn || rightHand.beltOn)
         {

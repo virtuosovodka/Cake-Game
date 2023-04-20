@@ -49469,96 +49469,98 @@ struct CakeOrder_t41C00299AC5917120BCAA9056C28EA9A5A6367CD  : public MonoBehavio
 	List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* ___sprinklesList_7;
 	// System.Collections.Generic.List`1<UnityEngine.Material> CakeOrder::liquidList
 	List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* ___liquidList_8;
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> CakeOrder::frostingButtons
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___frostingButtons_9;
 	// System.Int32 CakeOrder::bIndex
-	int32_t ___bIndex_9;
+	int32_t ___bIndex_10;
 	// System.Int32 CakeOrder::fIndex
-	int32_t ___fIndex_10;
+	int32_t ___fIndex_11;
 	// System.Int32 CakeOrder::tIndex
-	int32_t ___tIndex_11;
+	int32_t ___tIndex_12;
 	// System.Int32 CakeOrder::sIndex
-	int32_t ___sIndex_12;
+	int32_t ___sIndex_13;
 	// System.Int32 CakeOrder::lIndex
-	int32_t ___lIndex_13;
+	int32_t ___lIndex_14;
 	// System.Int32 CakeOrder::tierIndex
-	int32_t ___tierIndex_14;
+	int32_t ___tierIndex_15;
 	// UnityEngine.Material CakeOrder::bOrder
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___bOrder_15;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___bOrder_16;
 	// UnityEngine.Material CakeOrder::fOrder
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___fOrder_16;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___fOrder_17;
 	// UnityEngine.Material CakeOrder::tOrder
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___tOrder_17;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___tOrder_18;
 	// UnityEngine.Material CakeOrder::sOrder
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___sOrder_18;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___sOrder_19;
 	// UnityEngine.Material CakeOrder::lOrder
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___lOrder_19;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___lOrder_20;
 	// UnityEngine.Material CakeOrder::confettiM
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___confettiM_20;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___confettiM_21;
 	// UnityEngine.Material CakeOrder::chocolateM
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateM_21;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateM_22;
 	// UnityEngine.Material CakeOrder::lemonM
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___lemonM_22;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___lemonM_23;
 	// UnityEngine.Material CakeOrder::redF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___redF_23;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___redF_24;
 	// UnityEngine.Material CakeOrder::orangeF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___orangeF_24;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___orangeF_25;
 	// UnityEngine.Material CakeOrder::yellowF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___yellowF_25;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___yellowF_26;
 	// UnityEngine.Material CakeOrder::greenF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenF_26;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenF_27;
 	// UnityEngine.Material CakeOrder::blueF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blueF_27;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blueF_28;
 	// UnityEngine.Material CakeOrder::pinkF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkF_28;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkF_29;
 	// UnityEngine.Material CakeOrder::whiteF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___whiteF_29;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___whiteF_30;
 	// UnityEngine.Material CakeOrder::brownF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownF_30;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownF_31;
 	// UnityEngine.Material CakeOrder::rainbowSprinklesS
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesS_31;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesS_32;
 	// UnityEngine.Material CakeOrder::chocolateSprinklesS
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesS_32;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesS_33;
 	// UnityEngine.Material CakeOrder::cherriesT
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesT_33;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesT_34;
 	// UnityEngine.Material CakeOrder::rasberryJamL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamL_34;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamL_35;
 	// UnityEngine.Material CakeOrder::chocolateSyrupL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupL_35;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupL_36;
 	// UnityEngine.Material CakeOrder::caramelL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelL_36;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelL_37;
 	// UnityEngine.Material CakeOrder::blank
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blank_37;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blank_38;
 	// UnityEngine.Material CakeOrder::confettiMColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___confettiMColorblind_38;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___confettiMColorblind_39;
 	// UnityEngine.Material CakeOrder::chocolateMColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateMColorblind_39;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateMColorblind_40;
 	// UnityEngine.Material CakeOrder::redFColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___redFColorblind_40;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___redFColorblind_41;
 	// UnityEngine.Material CakeOrder::orangeFColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___orangeFColorblind_41;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___orangeFColorblind_42;
 	// UnityEngine.Material CakeOrder::greenFColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenFColorblind_42;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenFColorblind_43;
 	// UnityEngine.Material CakeOrder::pinkFColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkFColorblind_43;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkFColorblind_44;
 	// UnityEngine.Material CakeOrder::brownFColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownFColorblind_44;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownFColorblind_45;
 	// UnityEngine.Material CakeOrder::rainbowSprinklesSColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesSColorblind_45;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesSColorblind_46;
 	// UnityEngine.Material CakeOrder::chocolateSprinklesSColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesSColorblind_46;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesSColorblind_47;
 	// UnityEngine.Material CakeOrder::cherriesTColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesTColorblind_47;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesTColorblind_48;
 	// UnityEngine.Material CakeOrder::rasberryJamLColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamLColorblind_48;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamLColorblind_49;
 	// UnityEngine.Material CakeOrder::chocolateSyrupLColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupLColorblind_49;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupLColorblind_50;
 	// UnityEngine.Material CakeOrder::caramelLColorblind
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelLColorblind_50;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelLColorblind_51;
 	// System.Boolean CakeOrder::colorblind
-	bool ___colorblind_51;
+	bool ___colorblind_52;
 	// UnityEngine.GameObject CakeOrder::tier2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tier2_52;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tier2_53;
 	// System.Int32 CakeOrder::rightFrosting
-	int32_t ___rightFrosting_53;
+	int32_t ___rightFrosting_54;
 };
 
 // Oculus.Platform.CallbackRunner
@@ -50053,28 +50055,26 @@ struct ConveyorBelt_tACC100561B71D6D34D2EF89C0EAEC3922A3535E5  : public MonoBeha
 	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___leftHand_13;
 	// Player ConveyorBelt::rightHand
 	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___rightHand_14;
-	// TMPro.TextMeshProUGUI ConveyorBelt::debug
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_15;
 	// UnityEngine.GameObject ConveyorBelt::batterStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_15;
 	// UnityEngine.GameObject ConveyorBelt::ovenStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_16;
 	// UnityEngine.GameObject ConveyorBelt::flipStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_17;
 	// UnityEngine.GameObject ConveyorBelt::frostingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_18;
 	// UnityEngine.GameObject ConveyorBelt::toppingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_19;
 	// System.Int32 ConveyorBelt::timesInBatterStation
-	int32_t ___timesInBatterStation_21;
+	int32_t ___timesInBatterStation_20;
 	// System.Int32 ConveyorBelt::timesInOvenStation
-	int32_t ___timesInOvenStation_22;
+	int32_t ___timesInOvenStation_21;
 	// System.Int32 ConveyorBelt::timesInFrostingStation
-	int32_t ___timesInFrostingStation_23;
+	int32_t ___timesInFrostingStation_22;
 	// System.Int32 ConveyorBelt::timesInToppingStation
-	int32_t ___timesInToppingStation_24;
+	int32_t ___timesInToppingStation_23;
 	// System.Int32 ConveyorBelt::timesInFlipStation
-	int32_t ___timesInFlipStation_25;
+	int32_t ___timesInFlipStation_24;
 };
 
 // Oculus.Interaction.Samples.CountdownTimer
@@ -53847,8 +53847,8 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 {
 	// UnityEngine.GameObject Player::currentObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentObject_4;
-	// TMPro.TextMeshPro Player::debug
-	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___debug_5;
+	// TMPro.TextMeshProUGUI Player::debug
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_5;
 	// System.Boolean Player::beltOn
 	bool ___beltOn_6;
 	// System.Boolean Player::batterOn

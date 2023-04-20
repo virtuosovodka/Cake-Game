@@ -1726,7 +1726,7 @@ Transform:
   m_GameObject: {fileID: 268510838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 984409349}
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 0}
+  debug: {fileID: 1568728547}
   beltOn: 0
   batterOn: 0
   ovenOn: 0
@@ -2156,9 +2156,9 @@ MonoBehaviour:
   cookTime: 0
   cookTimePerOunce: 0
   timeInOven: 0
-  Light: {fileID: 1218075663}
+  Light: {fileID: 0}
   ipad: {fileID: 0}
-  backButton: {fileID: 15244828}
+  backButton: {fileID: 0}
   playVideo2: {fileID: 0}
   playVideo1: {fileID: 0}
   playPause: {fileID: 0}
@@ -2721,6 +2721,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coveyerbelt
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 709ddab6b0e2b46a0855fa689ab4d361,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 709ddab6b0e2b46a0855fa689ab4d361, type: 3}
 --- !u!4 &348780429 stripped
@@ -2754,12 +2759,11 @@ MonoBehaviour:
   counter: {fileID: 0}
   leftHand: {fileID: 820255313}
   rightHand: {fileID: 268510847}
-  debug: {fileID: 0}
-  batterStation: {fileID: 0}
-  ovenStation: {fileID: 0}
-  flipStation: {fileID: 0}
-  frostingStation: {fileID: 0}
-  toppingStation: {fileID: 0}
+  batterStation: {fileID: 1454659052}
+  ovenStation: {fileID: 1526937106}
+  flipStation: {fileID: 87287993}
+  frostingStation: {fileID: 1321271825}
+  toppingStation: {fileID: 1465407389}
   timesInBatterStation: 0
   timesInOvenStation: 0
   timesInFrostingStation: 0
@@ -3062,7 +3066,6 @@ MonoBehaviour:
   counter: {fileID: 127681331}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
-  debug: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 0}
@@ -4600,7 +4603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &820255305
 Transform:
   m_ObjectHideFlags: 0
@@ -4610,7 +4613,7 @@ Transform:
   m_GameObject: {fileID: 820255304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 984409349}
@@ -5030,7 +5033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 0}
+  debug: {fileID: 1568728547}
   beltOn: 0
   batterOn: 0
   ovenOn: 0
@@ -5235,6 +5238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101610552862, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5181142101610552863, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -8151,6 +8159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coveyerbelt (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 709ddab6b0e2b46a0855fa689ab4d361,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 709ddab6b0e2b46a0855fa689ab4d361, type: 3}
 --- !u!1 &1944061908
@@ -8641,10 +8654,9 @@ MonoBehaviour:
   moveX: 1
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
-  counter: {fileID: 0}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
-  debug: {fileID: 0}
+  counter: {fileID: 127681331}
+  leftHand: {fileID: 820255313}
+  rightHand: {fileID: 268510847}
   batterStation: {fileID: 0}
   ovenStation: {fileID: 0}
   flipStation: {fileID: 0}

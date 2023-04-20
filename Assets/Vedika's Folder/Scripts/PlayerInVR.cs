@@ -214,6 +214,6 @@ public class PlayerInVR : MonoBehaviour
     {
         text.text = batterAmount.ToString();
     }
-*/
 
+    */
 }
