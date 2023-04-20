@@ -6,6 +6,7 @@ using UnityEngine.Video;
 
 public class PlayerInVR : MonoBehaviour
 {
+    /*
     //parent door hinge to controller and have it go with controller until it reaches 90 degrees rotation and stop it for rotating (use getrotation to work) 
 
     GameObject currentObject;
@@ -213,6 +214,6 @@ public class PlayerInVR : MonoBehaviour
     {
         text.text = batterAmount.ToString();
     }
-
+*/
 
 }

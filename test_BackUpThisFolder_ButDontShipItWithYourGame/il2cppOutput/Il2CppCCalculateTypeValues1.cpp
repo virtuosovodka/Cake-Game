@@ -49507,30 +49507,58 @@ struct CakeOrder_t41C00299AC5917120BCAA9056C28EA9A5A6367CD  : public MonoBehavio
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenF_26;
 	// UnityEngine.Material CakeOrder::blueF
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blueF_27;
-	// UnityEngine.Material CakeOrder::purpleF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___purpleF_28;
 	// UnityEngine.Material CakeOrder::pinkF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkF_29;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkF_28;
 	// UnityEngine.Material CakeOrder::whiteF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___whiteF_30;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___whiteF_29;
 	// UnityEngine.Material CakeOrder::brownF
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownF_31;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownF_30;
 	// UnityEngine.Material CakeOrder::rainbowSprinklesS
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesS_32;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesS_31;
 	// UnityEngine.Material CakeOrder::chocolateSprinklesS
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesS_33;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesS_32;
 	// UnityEngine.Material CakeOrder::cherriesT
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesT_34;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesT_33;
 	// UnityEngine.Material CakeOrder::rasberryJamL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamL_35;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamL_34;
 	// UnityEngine.Material CakeOrder::chocolateSyrupL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupL_36;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupL_35;
 	// UnityEngine.Material CakeOrder::caramelL
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelL_37;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelL_36;
 	// UnityEngine.Material CakeOrder::blank
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blank_38;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___blank_37;
+	// UnityEngine.Material CakeOrder::confettiMColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___confettiMColorblind_38;
+	// UnityEngine.Material CakeOrder::chocolateMColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateMColorblind_39;
+	// UnityEngine.Material CakeOrder::redFColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___redFColorblind_40;
+	// UnityEngine.Material CakeOrder::orangeFColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___orangeFColorblind_41;
+	// UnityEngine.Material CakeOrder::greenFColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___greenFColorblind_42;
+	// UnityEngine.Material CakeOrder::pinkFColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pinkFColorblind_43;
+	// UnityEngine.Material CakeOrder::brownFColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___brownFColorblind_44;
+	// UnityEngine.Material CakeOrder::rainbowSprinklesSColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rainbowSprinklesSColorblind_45;
+	// UnityEngine.Material CakeOrder::chocolateSprinklesSColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSprinklesSColorblind_46;
+	// UnityEngine.Material CakeOrder::cherriesTColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___cherriesTColorblind_47;
+	// UnityEngine.Material CakeOrder::rasberryJamLColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___rasberryJamLColorblind_48;
+	// UnityEngine.Material CakeOrder::chocolateSyrupLColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___chocolateSyrupLColorblind_49;
+	// UnityEngine.Material CakeOrder::caramelLColorblind
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___caramelLColorblind_50;
+	// System.Boolean CakeOrder::colorblind
+	bool ___colorblind_51;
 	// UnityEngine.GameObject CakeOrder::tier2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tier2_39;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tier2_52;
+	// System.Int32 CakeOrder::rightFrosting
+	int32_t ___rightFrosting_53;
 };
 
 // Oculus.Platform.CallbackRunner
@@ -50017,28 +50045,36 @@ struct ConveyorBelt_tACC100561B71D6D34D2EF89C0EAEC3922A3535E5  : public MonoBeha
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___counter_9;
 	// System.Boolean ConveyorBelt::moveNegX
 	bool ___moveNegX_10;
-	// Player ConveyorBelt::player
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___player_11;
+	// System.Boolean ConveyorBelt::moveNegZ
+	bool ___moveNegZ_11;
+	// System.Boolean ConveyorBelt::moveNegY
+	bool ___moveNegY_12;
+	// Player ConveyorBelt::leftHand
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___leftHand_13;
+	// Player ConveyorBelt::rightHand
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___rightHand_14;
+	// TMPro.TextMeshProUGUI ConveyorBelt::debug
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_15;
 	// UnityEngine.GameObject ConveyorBelt::batterStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_12;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_16;
 	// UnityEngine.GameObject ConveyorBelt::ovenStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_13;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_17;
 	// UnityEngine.GameObject ConveyorBelt::flipStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_14;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_18;
 	// UnityEngine.GameObject ConveyorBelt::frostingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_15;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_19;
 	// UnityEngine.GameObject ConveyorBelt::toppingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_20;
 	// System.Int32 ConveyorBelt::timesInBatterStation
-	int32_t ___timesInBatterStation_17;
+	int32_t ___timesInBatterStation_21;
 	// System.Int32 ConveyorBelt::timesInOvenStation
-	int32_t ___timesInOvenStation_18;
+	int32_t ___timesInOvenStation_22;
 	// System.Int32 ConveyorBelt::timesInFrostingStation
-	int32_t ___timesInFrostingStation_19;
+	int32_t ___timesInFrostingStation_23;
 	// System.Int32 ConveyorBelt::timesInToppingStation
-	int32_t ___timesInToppingStation_20;
+	int32_t ___timesInToppingStation_24;
 	// System.Int32 ConveyorBelt::timesInFlipStation
-	int32_t ___timesInFlipStation_21;
+	int32_t ___timesInFlipStation_25;
 };
 
 // Oculus.Interaction.Samples.CountdownTimer
@@ -53811,50 +53847,68 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 {
 	// UnityEngine.GameObject Player::currentObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentObject_4;
-	// UnityEngine.Rigidbody Player::rb
-	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___rb_5;
-	// TMPro.TextMeshProUGUI Player::debug
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_6;
+	// TMPro.TextMeshPro Player::debug
+	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___debug_5;
 	// System.Boolean Player::beltOn
-	bool ___beltOn_7;
+	bool ___beltOn_6;
 	// System.Boolean Player::batterOn
-	bool ___batterOn_8;
+	bool ___batterOn_7;
 	// System.Boolean Player::ovenOn
-	bool ___ovenOn_9;
+	bool ___ovenOn_8;
 	// System.Boolean Player::frostingOn
-	bool ___frostingOn_10;
+	bool ___frostingOn_9;
 	// System.Single Player::batterPerFrame
-	float ___batterPerFrame_11;
+	float ___batterPerFrame_10;
 	// System.Single Player::batterAmount
-	float ___batterAmount_12;
+	float ___batterAmount_11;
 	// System.Single Player::cookTime
-	float ___cookTime_13;
+	float ___cookTime_12;
 	// System.Single Player::cookTimePerOunce
-	float ___cookTimePerOunce_14;
+	float ___cookTimePerOunce_13;
 	// System.Single Player::timeInOven
-	float ___timeInOven_15;
+	float ___timeInOven_14;
 	// UnityEngine.GameObject Player::Light
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_15;
 	// System.Boolean Player::lightOn
-	bool ___lightOn_17;
+	bool ___lightOn_16;
 	// Ipad Player::ipad
-	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_18;
+	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_17;
 	// UnityEngine.GameObject Player::backButton
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_18;
 	// UnityEngine.GameObject Player::playVideo2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_19;
 	// UnityEngine.GameObject Player::playVideo1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_20;
 	// UnityEngine.GameObject Player::playPause
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_22;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_21;
 	// UnityEngine.Video.VideoPlayer Player::videoPlayer
-	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_23;
+	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_22;
 	// UnityEngine.Video.VideoClip[] Player::videoClips
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_24;
+	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_23;
 	// MaterialChanger Player::materialChanger
-	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_25;
+	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_24;
 	// UnityEngine.MeshRenderer Player::backButtonMesh
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_26;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_25;
+	// UnityEngine.GameObject Player::StartBeltPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___StartBeltPrompt_26;
+	// UnityEngine.GameObject Player::BatterPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BatterPrompt_27;
+	// UnityEngine.GameObject Player::OvenDoorPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenDoorPrompt_28;
+	// UnityEngine.GameObject Player::OvenOnPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOnPrompt_29;
+	// UnityEngine.GameObject Player::OvenLightPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenLightPrompt_30;
+	// UnityEngine.GameObject Player::OvenOffPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOffPrompt_31;
+	// UnityEngine.GameObject Player::FrostingPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrostingPrompt_32;
+	// UnityEngine.GameObject Player::SaucePrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SaucePrompt_33;
+	// UnityEngine.GameObject Player::SprinklesPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinklesPrompt_34;
+	// UnityEngine.GameObject Player::CherriesPrompt
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CherriesPrompt_35;
 };
 
 // Oculus.Platform.Samples.VrHoops.Player
@@ -53892,58 +53946,6 @@ struct PlayerArea_tC80BF9671AA8AD2D0E6C713538D80045DDABA6EE  : public MonoBehavi
 // PlayerInVR
 struct PlayerInVR_t31E541437D78D2AF5A10D92EACBF35B58ABF511D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// UnityEngine.GameObject PlayerInVR::currentObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___currentObject_4;
-	// UnityEngine.Rigidbody PlayerInVR::rb
-	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___rb_5;
-	// UnityEngine.GameObject PlayerInVR::belt2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___belt2_6;
-	// UnityEngine.GameObject PlayerInVR::beltbutton
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___beltbutton_7;
-	// System.Boolean PlayerInVR::beltOn
-	bool ___beltOn_8;
-	// System.Boolean PlayerInVR::batterOn
-	bool ___batterOn_9;
-	// System.Boolean PlayerInVR::ovenOn
-	bool ___ovenOn_10;
-	// System.Boolean PlayerInVR::frostingOn
-	bool ___frostingOn_11;
-	// System.Single PlayerInVR::cookTime
-	float ___cookTime_12;
-	// System.Single PlayerInVR::cookTimePerOunce
-	float ___cookTimePerOunce_13;
-	// System.Single PlayerInVR::timeInOven
-	float ___timeInOven_14;
-	// UnityEngine.Vector3 PlayerInVR::degreesToRotate
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___degreesToRotate_15;
-	// System.Single PlayerInVR::batterPerFrame
-	float ___batterPerFrame_16;
-	// System.Single PlayerInVR::batterAmount
-	float ___batterAmount_17;
-	// UnityEngine.GameObject PlayerInVR::Light
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_18;
-	// System.Boolean PlayerInVR::lightOn
-	bool ___lightOn_19;
-	// Ipad PlayerInVR::ipad
-	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_20;
-	// UnityEngine.GameObject PlayerInVR::backButton
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_21;
-	// UnityEngine.GameObject PlayerInVR::playVideo2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_22;
-	// UnityEngine.GameObject PlayerInVR::playVideo1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_23;
-	// UnityEngine.GameObject PlayerInVR::playPause
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_24;
-	// UnityEngine.Video.VideoPlayer PlayerInVR::videoPlayer
-	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_25;
-	// UnityEngine.Video.VideoClip[] PlayerInVR::videoClips
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_26;
-	// MaterialChanger PlayerInVR::materialChanger
-	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_27;
-	// UnityEngine.MeshRenderer PlayerInVR::backButtonMesh
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_28;
-	// TMPro.TextMeshProUGUI PlayerInVR::text
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___text_29;
 };
 
 // Oculus.Interaction.Locomotion.PlayerLocomotor
@@ -67136,13 +67138,13 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize7822 = { sizeof(U3CPrivateIm
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7823;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7823 = { sizeof(U3CModuleU3E_tBB65183F1134474D09FF49B95625D25472B9BA8B), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7824;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7824 = { sizeof(CakeChildren_tEA8AAD23D53F457254B438B4C55C98CAE8717733), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7824 = { sizeof(Cake_tCC6E0DFB8D763441F6749C69F11D717853955B4F), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7825;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7825 = { sizeof(CakeOrder_t41C00299AC5917120BCAA9056C28EA9A5A6367CD), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7825 = { sizeof(CakeChildren_tEA8AAD23D53F457254B438B4C55C98CAE8717733), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7826;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7826 = { sizeof(ConveyorBelt_tACC100561B71D6D34D2EF89C0EAEC3922A3535E5), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7826 = { sizeof(CakeOrder_t41C00299AC5917120BCAA9056C28EA9A5A6367CD), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7827;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7827 = { sizeof(Cake_tCC6E0DFB8D763441F6749C69F11D717853955B4F), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7827 = { sizeof(ConveyorBelt_tACC100561B71D6D34D2EF89C0EAEC3922A3535E5), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7828;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7828 = { sizeof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7829;

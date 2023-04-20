@@ -7,9 +7,9 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     GameObject currentObject;
-    Rigidbody rb;
+    //Rigidbody rb;
 
-    public TextMeshProUGUI debug;
+    public TextMeshPro debug;
 
     //stations
     public bool beltOn = false;
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     MeshRenderer backButtonMesh;
 
     //level 1 button prompts
+    public GameObject StartBeltPrompt;
     public GameObject BatterPrompt;
     public GameObject OvenDoorPrompt;
     public GameObject OvenOnPrompt;
@@ -53,6 +54,47 @@ public class Player : MonoBehaviour
     public GameObject SaucePrompt;
     public GameObject SprinklesPrompt;
     public GameObject CherriesPrompt;
+
+    //TODO: make separate scene for color blind mode
+    //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
+
+    /*        //if (other.gameObject.CompareTag("StartBelt"))
+        //{
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                text.text = "X pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.Y))
+            {
+                text.text = "Y pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.One))
+            {
+                text.text = "A pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                text.text = "B pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                text.text = "Left Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+            {
+                text.text = "Right Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //left hand trigger
+            {
+                text.text = "Left Hand Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //right hand trigger
+            {
+                text.text = "Right Hand Trigger Pressed!";
+            }
+        //}*/
+
+
 
     private void Awake()
     {
@@ -65,9 +107,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 
-        currentObject = null;
+        //currentObject = null;
 
         Light.SetActive(false);
 
@@ -79,6 +121,7 @@ public class Player : MonoBehaviour
         Ipad ipad = gameObject.GetComponent<Ipad>();
 
         //button press prompts
+        StartBeltPrompt.SetActive(false);
         BatterPrompt.SetActive(false);
         OvenDoorPrompt.SetActive(false);
         OvenOnPrompt.SetActive(false);
@@ -98,39 +141,47 @@ public class Player : MonoBehaviour
         OVRInput.Update();
 
         debug.text = currentObject.name;
+        print(currentObject.name);
         //TODO: @Vedika, please remove this as well, this is temp for testing without vr
         //this ONLY WORKS with a z value of zero!!!!!!!
-        rb.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+        //rb.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
 
         if (ovenOn)
         {
             timeInOven += Time.deltaTime;
 
-            debug.text = "time in oven is " + timeInOven;
+            //debug.text = "time in oven is " + timeInOven;
 
             if (timeInOven <= cookTime - 1)
             {
-                debug.text = "raw";
+                //debug.text = "raw";
                 //run not baked animation
             }
 
             if (timeInOven >= cookTime - 1 && timeInOven <= cookTime + 2)
             {
-                debug.text = "cooked";
+               // debug.text = "cooked";
                 // run cooked animation
             }
 
             if (timeInOven >= cookTime + 2)
             {
-                debug.text = "overcooked";
+               // debug.text = "overcooked";
                 // run overbaked animation
             }
 
             if (timeInOven >= cookTime + 4)
             {
-                debug.text = "on fire";
+               // debug.text = "on fire";
                 // run fire animation
             }
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
+        {
+            BatterPrompt.SetActive(true);
+
+            //batter button is on collision && while B or Y button is down
         }
 
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
@@ -139,27 +190,27 @@ public class Player : MonoBehaviour
 
             //batter button is on collision && while B or Y button is down
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
         {
-            //on collision && grab (bottom button)
+            //on collision && grab bottom and y/b and hand turned 90
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
-        {
-            // on collision and B or Y
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
         {
             // on collision and B or Y
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
         {
             // on collision and B or Y
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
+        {
+            // on collision and B or Y
+        }
+         if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
         {
             //on collision and front button to hold/ move both bottoms to get frosting out
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
         {
             // sauce on collision and front button to hold/ move both bottoms to get frosting out
             // sprinklies
@@ -189,7 +240,7 @@ public class Player : MonoBehaviour
         //can open door only when oven is off
         if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
         {
-            debug.text = "oven door";
+            //debug.text = "oven door";
             //hold and drag to reset door position.can't go past certain coordinates
             //door must be closed to turn oven on oven must be off to open door
         }
@@ -236,7 +287,7 @@ public class Player : MonoBehaviour
         {
             //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
             //or tag he player "player
-            debug.text = "paused";
+            //debug.text = "paused";
             
             ipad.PlayPause(videoClips[0]);
             materialChanger.changeMaterialMovie = true;
@@ -251,7 +302,7 @@ public class Player : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton2"))
         {
-            debug.text = "paused";
+            //debug.text = "paused";
             ipad.PlayPause(videoClips[1]);
             materialChanger.changeMaterialMovie = true;
             backButton.SetActive(true);
@@ -263,7 +314,7 @@ public class Player : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BackButton"))
         {
-            debug.text = "back to home screen";
+            //debug.text = "back to home screen";
             
             materialChanger.changeMaterialMovie = false;
             materialChanger.changeMaterial = true;
@@ -288,18 +339,18 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         currentObject = other.gameObject;
-        debug.text = "on " + currentObject.name;
+        ///debug.text = "on " + currentObject.name;
     }
 
     private void OnTriggerExit(Collider other)
     {
         currentObject = null;
-        debug.text = "off " + currentObject.name;
+        //debug.text = "off " + currentObject.name;
     }
 
     void Belt()
     {
-        debug.text = "Belt on";
+        //debug.text = "Belt on";
         beltOn = true;
     }
 
@@ -311,7 +362,7 @@ public class Player : MonoBehaviour
 
     void Batter()
     {
-        debug.text = "batter pouring";
+       // debug.text = "batter pouring";
         batterAmount += batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
@@ -319,21 +370,21 @@ public class Player : MonoBehaviour
         //saved value
 
         batterOn = true;
-        debug.text = "you poured " + batterAmount;
+        //debug.text = "you poured " + batterAmount;
     }
 
     void OvenLight()
     {
-        debug.text = "oven light";
+        //debug.text = "oven light";
         Light.SetActive(true);
     }
 
     //make a light button for oven 
     void OvenOn()
     {
-        debug.text = "oven on";
+        //debug.text = "oven on";
         cookTime = cookTimePerOunce * batterAmount;
-        debug.text = "your cook time is " + cookTime;
+        //debug.text = "your cook time is " + cookTime;
 
         ovenOn = true;
 
@@ -343,13 +394,13 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
-        debug.text = "Oven off";
+        //debug.text = "Oven off";
         ovenOn = false;
     }
 
     void Frosting()
     {
-        debug.text = "frosting";
+        //debug.text = "frosting";
         frostingOn = true;
     }
 
