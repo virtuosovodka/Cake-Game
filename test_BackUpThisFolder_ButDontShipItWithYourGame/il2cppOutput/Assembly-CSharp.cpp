@@ -10197,6 +10197,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Start_mC31CF4F40DDEA35C5E39E8C43E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// currentObject = null;
+		__this->___currentObject_4 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___currentObject_4), (void*)(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL);
 		// Light.SetActive(false);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___Light_15;
 		NullCheck(L_0);
