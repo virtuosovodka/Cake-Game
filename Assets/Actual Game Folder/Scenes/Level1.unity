@@ -3388,7 +3388,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506036146}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5624,6 +5624,7 @@ MonoBehaviour:
   cookTimePerOunce: 0
   timeInOven: 0
   Light: {fileID: 0}
+  ovenDoorHit: 0
   ipad: {fileID: 0}
   backButton: {fileID: 0}
   playVideo2: {fileID: 0}
