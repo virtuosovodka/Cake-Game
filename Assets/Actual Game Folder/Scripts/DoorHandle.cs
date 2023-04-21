@@ -23,8 +23,8 @@ public class DoorHandle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       // if (leftHand.ovenDoorHit.getName().CompareTag("OvenDoorHandle"))
-       // {
+        //if (leftHand.ovenDoorHit || rightHand.ovenDoorHit)
+        //{
             if (OVRInput.Get(OVRInput.RawButton.LHandTrigger)){
 
             }
