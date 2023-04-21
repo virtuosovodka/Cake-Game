@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
         }
 
         //press
-        if (currentObject.CompareTag("StartBelt"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
         {
             Belt();
 
@@ -189,7 +189,7 @@ public class Player : MonoBehaviour
 
         //TODO: delete?
         //press
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
         {
             BeltOff();
         }
@@ -216,7 +216,7 @@ public class Player : MonoBehaviour
 
         //press
         //start oven function
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
         {
             OvenOn();
             // on collision and B or Y
@@ -224,7 +224,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
         {
             OvenLight();
             // on collision and B or Y
@@ -232,7 +232,7 @@ public class Player : MonoBehaviour
 
         //press
         //stop oven function
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
         {
             OvenOff();
             // on collision and B or Y
@@ -249,50 +249,54 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
         {
             Topping();
-            // sauce on collision and front button to hold/ move both bottoms to get frosting out
-            // sprinklies
-            // cherries
+            // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+            // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
+            // cherries on collision front button && y/b to pick it up
         }
 
         //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
         {
             BatterPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
         {
-            BatterPrompt.SetActive(true);        
+            OvenDoorPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && currentObject.gameObject.CompareTag("OvenDoorHandle")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
         {
-            ovenDoorHit = true;
+            OvenOnPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
         {
-          
+            OvenLightPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
         {
-            
+            OvenOffPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
         {
-       
+            FrostingPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
         {
-           
+            SaucePrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
         {
-         
+            SprinklesPrompt.SetActive(true);
+        }
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+        {
+            CherriesPrompt.SetActive(true);
         }
 
         //IPAD MAGIC
