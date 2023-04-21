@@ -25,11 +25,11 @@ public class Player : MonoBehaviour
     public float cookTime;
     public float cookTimePerOunce;
     public float timeInOven;
+    public bool ovenDoorHit;
 
     //light
     public GameObject Light;
     bool lightOn;
-    public bool ovenDoorHit;
 
     //ipad
     public Ipad ipad;
@@ -265,7 +265,7 @@ public class Player : MonoBehaviour
             BatterPrompt.SetActive(true);        
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger) && currentObject.gameObject.CompareTag("OvenDoorHandle")) //&& in level 1
         {
             ovenDoorHit = true;
         }
