@@ -432,6 +432,8 @@ struct Delegate_t;
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 // DetectingCollisions
 struct DetectingCollisions_t01F3FB507295C31162E8519540C392E279F2E92F;
+// DoorHandle
+struct DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7;
 // UnityEngine.Event
 struct Event_tEBC6F24B56CE22B9C9AD1AC6C24A6B83BC3860CB;
 // UnityEngine.EventSystems.EventSystem
@@ -4617,6 +4619,17 @@ struct DetectingCollisions_t01F3FB507295C31162E8519540C392E279F2E92F  : public M
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___obj_5;
 };
 
+// DoorHandle
+struct DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// TMPro.TextMeshProUGUI DoorHandle::debug
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_4;
+	// Player DoorHandle::leftHand
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___leftHand_5;
+	// Player DoorHandle::rightHand
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___rightHand_6;
+};
+
 // HandedInputSelector
 struct HandedInputSelector_t03E81F27E4BABDA2242FEDC37F67FEACF7DD2E75  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -7481,6 +7494,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OVRInput_GetDown_mEF663E99B6E5FABB41B86716C6D04C788C979139 (int32_t ___rawMask0, int32_t ___controllerMask1, const RuntimeMethod* method) ;
 // System.Boolean OVRInput::GetDown(OVRInput/Button,OVRInput/Controller)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OVRInput_GetDown_mEC4F71AEC93D3AF1A041934CA4C61680C6DB9AC7 (int32_t ___virtualMask0, int32_t ___controllerMask1, const RuntimeMethod* method) ;
+// System.Boolean OVRInput::Get(OVRInput/RawButton,OVRInput/Controller)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OVRInput_Get_m537C5F53DCBD027936460E4183648F5EEBA6A654 (int32_t ___rawMask0, int32_t ___controllerMask1, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<UnityEngine.Video.VideoPlayer>()
 inline VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* Component_GetComponent_TisVideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3_m19D8A3EC4A0BF3BDAFCF718B25FC119EFE6F6BBA (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
@@ -8190,8 +8205,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* TeleportInputHandler_TeleportA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Behaviour_get_isActiveAndEnabled_mEB4ECCE9761A7016BC619557CEFEA1A30D3BF28A (Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA* __this, const RuntimeMethod* method) ;
 // System.Boolean OVRInput::GetUp(OVRInput/RawButton,OVRInput/Controller)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OVRInput_GetUp_mFBB66C8829A20CBA56AB5A01B27B9B656AB8E385 (int32_t ___rawMask0, int32_t ___controllerMask1, const RuntimeMethod* method) ;
-// System.Boolean OVRInput::Get(OVRInput/RawButton,OVRInput/Controller)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OVRInput_Get_m537C5F53DCBD027936460E4183648F5EEBA6A654 (int32_t ___rawMask0, int32_t ___controllerMask1, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Ray::.ctor(UnityEngine.Vector3,UnityEngine.Vector3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ray__ctor_mE298992FD10A3894C38373198385F345C58BD64C (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___origin0, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___direction1, const RuntimeMethod* method) ;
 // System.Void TeleportInputHandler::.ctor()
@@ -10628,6 +10641,65 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DetectingCollisions_OnTriggerExit_m1E30A
 }
 // System.Void DetectingCollisions::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DetectingCollisions__ctor_m8B3F8BCBE144059FB0587F9E4DA82342C8BCADD0 (DetectingCollisions_t01F3FB507295C31162E8519540C392E279F2E92F* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void DoorHandle::Start()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DoorHandle_Start_m2FE0D2F20988E08D869DA07B09B86B6A8AD3707F (DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7* __this, const RuntimeMethod* method) 
+{
+	{
+		// }
+		return;
+	}
+}
+// System.Void DoorHandle::Update()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DoorHandle_Update_m15700022D6C0E75753438D9304C35F5113671E79 (DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// OVRInput.Update();
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		OVRInput_Update_m46BEA0A1B8C6592A25FBA12F61D471770EC72076(NULL);
+		// }
+		return;
+	}
+}
+// System.Void DoorHandle::OnCollisionEnter(UnityEngine.Collision)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DoorHandle_OnCollisionEnter_m62250A672C98F6A091ECF641E901D81300E64E57 (DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7* __this, Collision_tBCC6AEBD9A63E6DA2E50660DAC03CDCB1FF7A9B0* ___collision0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (OVRInput.Get(OVRInput.RawButton.LHandTrigger)){
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		bool L_0;
+		L_0 = OVRInput_Get_m537C5F53DCBD027936460E4183648F5EEBA6A654(((int32_t)536870912), ((int32_t)-2147483648LL), NULL);
+		// }
+		return;
+	}
+}
+// System.Void DoorHandle::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DoorHandle__ctor_m44B23AA47B757820B0B4F5D90FFF03FD084F7DAA (DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7* __this, const RuntimeMethod* method) 
 {
 	{
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
