@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     //light
     public GameObject Light;
     bool lightOn;
-    bool ovenDoorHit;
+    public bool ovenDoorHit;
 
     //ipad
     public Ipad ipad;
@@ -254,7 +254,7 @@ public class Player : MonoBehaviour
             // cherries
         }
 
-        //LEVEL ONE BUTTON PROMPTS 
+        //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
         {
             BatterPrompt.SetActive(true);
