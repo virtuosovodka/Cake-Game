@@ -14,8 +14,7 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegX = true;
     bool moveNegZ = true;
     bool moveNegY = true;
-    public Player leftHand;
-    public Player rightHand;
+    public Player player;
     //public TextMeshProUGUI debug;
 
     public GameObject batterStation;
@@ -29,6 +28,7 @@ public class ConveyorBelt : MonoBehaviour
     public int timesInFrostingStation;
     public int timesInToppingStation;
     public int timesInFlipStation;
+    public float tolerance;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +37,12 @@ public class ConveyorBelt : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //print(timesInBatterStation);
         //debug.text = "" + leftHand.beltOn;
 
-        if (leftHand.beltOn || rightHand.beltOn)
+        if (player.beltOn)
         {
             if (moveX == true)
             {
@@ -50,31 +50,31 @@ public class ConveyorBelt : MonoBehaviour
             }
             if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
             {
-
                 moveX = false;
                 transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
             }
             if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
             {
-
                 moveZ = false;
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
             }
 
-            if (gameObject.transform.position.x <= counter.transform.position.x & moveNegZ == true)
+            /*if (gameObject.transform.position.x <= counter.transform.position.x & moveNegZ == true)
             {
-                moveNegZ = false;
-                transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
-            }
+                moveNegX = false;
+                //moveNegZ = false;
+                //transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
+            }*/
 
             if (gameObject.transform.position.z <= counter.transform.position.z)
             {
-                moveNegX = false;
+                moveNegZ = false;
 
             }
 
+            /*
             // make two separate if statements for this bit on after the other else if then else
-            if (gameObject.transform.position.x <= batterStation.transform.position.x + .001 && gameObject.transform.position.x >= batterStation.transform.position.x - .001) 
+            if (gameObject.transform.position.x <= batterStation.transform.position.x + tolerance && gameObject.transform.position.x >= batterStation.transform.position.x - tolerance) 
             {
                 print("in batter station");
                 timesInBatterStation++;
@@ -88,71 +88,63 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInBatterStation % 2 != 0))
                 {
-                    leftHand.beltOn = false;
-                    rightHand.beltOn = false;
+                    player.beltOn = false;
                 }
-                else
-                {
-                    //stop moving
-                }
+               
             }
 
-            if (gameObject.transform.position.z <= ovenStation.transform.position.z + .001 && gameObject.transform.position.z >= ovenStation.transform.position.z - .001)
+            if (gameObject.transform.position.z <= ovenStation.transform.position.z + tolerance && gameObject.transform.position.z >= ovenStation.transform.position.z - tolerance)
             {
                 print("in oven station");
                 timesInOvenStation++;
 
                 if ((timesInOvenStation % 2 != 0))
                 {
-                    leftHand.beltOn = false;
-                    rightHand.beltOn = false;
+                   player.beltOn = false;
                 }
 
             }
 
-            if (gameObject.transform.position.z <= flipStation.transform.position.z + .001 && gameObject.transform.position.z >= flipStation.transform.position.z - .001)
+            if (gameObject.transform.position.z <= flipStation.transform.position.z + tolerance && gameObject.transform.position.z >= flipStation.transform.position.z - tolerance)
             {
                 print("in flip station");
                 timesInFlipStation++;
 
                 if ((timesInFlipStation % 2 != 0))
                 {
-                    leftHand.beltOn = false;
-                    rightHand.beltOn = false;
+                    player.beltOn = false;
                 }
 
             }
 
-            if (gameObject.transform.position.z <= frostingStation.transform.position.z + .001 && gameObject.transform.position.z >= frostingStation.transform.position.z - .001)
+            if (gameObject.transform.position.z <= frostingStation.transform.position.z + tolerance && gameObject.transform.position.z >= frostingStation.transform.position.z - tolerance)
             {
                 print("in frosting station");
                 timesInFrostingStation++;
 
                 if ((timesInFrostingStation % 2 != 0))
                 {
-                    leftHand.beltOn = false;
-                    rightHand.beltOn = false;
+                    player.beltOn = false;
                 }
 
             }
 
-            if (gameObject.transform.position.z <= toppingStation.transform.position.z + .001 && gameObject.transform.position.z >= toppingStation.transform.position.z - .001)
+            if (gameObject.transform.position.z <= toppingStation.transform.position.z + tolerance && gameObject.transform.position.z >= toppingStation.transform.position.z - tolerance)
             {
                 print("in topping station");
                 timesInToppingStation++;
 
                 if ((timesInToppingStation % 2 != 0))
                 {
-                    leftHand.beltOn = false;
-                    rightHand.beltOn = false;
+                    player.beltOn = false;
                 }
 
-            }
+            }*/
 
             //TODO: add stops at conveyor beelt needs to make an additional turn
-        }
+        } 
     }
 
 
-    
-}
+
+   }

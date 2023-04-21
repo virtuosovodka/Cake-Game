@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        //press
+
         if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
         {
             Belt();
@@ -188,13 +188,11 @@ public class Player : MonoBehaviour
         }
 
         //TODO: delete?
-        //press
         if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
         {
             BeltOff();
         }
 
-        //press and hold
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
         {
             VanillaBatter();
@@ -214,7 +212,6 @@ public class Player : MonoBehaviour
             //on collision && grab bottom and y/b and hand turned 90
         }
 
-        //press
         //start oven function
         if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
         {
@@ -230,7 +227,6 @@ public class Player : MonoBehaviour
             // on collision and B or Y
         }
 
-        //press
         //stop oven function
         if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
         {

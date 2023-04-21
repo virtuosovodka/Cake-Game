@@ -50036,30 +50036,28 @@ struct ConveyorBelt_tACC100561B71D6D34D2EF89C0EAEC3922A3535E5  : public MonoBeha
 	bool ___moveNegZ_11;
 	// System.Boolean ConveyorBelt::moveNegY
 	bool ___moveNegY_12;
-	// Player ConveyorBelt::leftHand
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___leftHand_13;
-	// Player ConveyorBelt::rightHand
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___rightHand_14;
+	// Player ConveyorBelt::player
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___player_13;
 	// UnityEngine.GameObject ConveyorBelt::batterStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_15;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___batterStation_14;
 	// UnityEngine.GameObject ConveyorBelt::ovenStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ovenStation_15;
 	// UnityEngine.GameObject ConveyorBelt::flipStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flipStation_16;
 	// UnityEngine.GameObject ConveyorBelt::frostingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___frostingStation_17;
 	// UnityEngine.GameObject ConveyorBelt::toppingStation
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___toppingStation_18;
 	// System.Int32 ConveyorBelt::timesInBatterStation
-	int32_t ___timesInBatterStation_20;
+	int32_t ___timesInBatterStation_19;
 	// System.Int32 ConveyorBelt::timesInOvenStation
-	int32_t ___timesInOvenStation_21;
+	int32_t ___timesInOvenStation_20;
 	// System.Int32 ConveyorBelt::timesInFrostingStation
-	int32_t ___timesInFrostingStation_22;
+	int32_t ___timesInFrostingStation_21;
 	// System.Int32 ConveyorBelt::timesInToppingStation
-	int32_t ___timesInToppingStation_23;
+	int32_t ___timesInToppingStation_22;
 	// System.Int32 ConveyorBelt::timesInFlipStation
-	int32_t ___timesInFlipStation_24;
+	int32_t ___timesInFlipStation_23;
 };
 
 // Oculus.Interaction.Samples.CountdownTimer
@@ -50453,10 +50451,8 @@ struct DoorHandle_t8E57738BC14024246B242B0EF4D0BFCFD3B93BF7  : public MonoBehavi
 {
 	// TMPro.TextMeshProUGUI DoorHandle::debug
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___debug_4;
-	// Player DoorHandle::leftHand
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___leftHand_5;
-	// Player DoorHandle::rightHand
-	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___rightHand_6;
+	// Player DoorHandle::cameraOffset
+	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___cameraOffset_5;
 };
 
 // Oculus.Interaction.DotGridProperties
@@ -53848,12 +53844,12 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 	float ___cookTimePerOunce_13;
 	// System.Single Player::timeInOven
 	float ___timeInOven_14;
-	// UnityEngine.GameObject Player::Light
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_15;
-	// System.Boolean Player::lightOn
-	bool ___lightOn_16;
 	// System.Boolean Player::ovenDoorHit
-	bool ___ovenDoorHit_17;
+	bool ___ovenDoorHit_15;
+	// UnityEngine.GameObject Player::Light
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_16;
+	// System.Boolean Player::lightOn
+	bool ___lightOn_17;
 	// Ipad Player::ipad
 	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_18;
 	// UnityEngine.GameObject Player::backButton
