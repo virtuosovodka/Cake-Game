@@ -18,9 +18,10 @@ public class DoorHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debug.text = " " + leftHand.ovenDoorHit;
         if (leftHand.ovenDoorHit || rightHand.ovenDoorHit)
         {
-
+            
         }
     }
 }
