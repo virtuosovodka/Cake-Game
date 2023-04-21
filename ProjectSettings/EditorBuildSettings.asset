@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Vedika's Folder/Scenes/Grabbing Objects.unity
     guid: e103e9f7429e94315881c8fe0fccc281
   - enabled: 1
-    path: Assets/Actual Game Folder/Level1.unity
+    path: Assets/Actual Game Folder/Scenes/Level1.unity
     guid: e38bba40d9af2433da5ba466cb4f5b26
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
