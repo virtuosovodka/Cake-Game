@@ -33763,48 +33763,50 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_15;
 	// System.Boolean Player::lightOn
 	bool ___lightOn_16;
+	// System.Boolean Player::ovenDoorHit
+	bool ___ovenDoorHit_17;
 	// Ipad Player::ipad
-	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_17;
+	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_18;
 	// UnityEngine.GameObject Player::backButton
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_19;
 	// UnityEngine.GameObject Player::playVideo2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_20;
 	// UnityEngine.GameObject Player::playVideo1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_21;
 	// UnityEngine.GameObject Player::playPause
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_22;
 	// UnityEngine.Video.VideoPlayer Player::videoPlayer
-	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_22;
+	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_23;
 	// UnityEngine.Video.VideoClip[] Player::videoClips
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_23;
+	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_24;
 	// MaterialChanger Player::materialChanger
-	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_24;
+	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_25;
 	// UnityEngine.MeshRenderer Player::backButtonMesh
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_25;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_26;
 	// UnityEngine.GameObject Player::StartBeltPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___StartBeltPrompt_26;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___StartBeltPrompt_27;
 	// UnityEngine.GameObject Player::BatterPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BatterPrompt_27;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BatterPrompt_28;
 	// UnityEngine.GameObject Player::OvenDoorPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenDoorPrompt_28;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenDoorPrompt_29;
 	// UnityEngine.GameObject Player::OvenOnPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOnPrompt_29;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOnPrompt_30;
 	// UnityEngine.GameObject Player::OvenLightPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenLightPrompt_30;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenLightPrompt_31;
 	// UnityEngine.GameObject Player::OvenOffPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOffPrompt_31;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOffPrompt_32;
 	// UnityEngine.GameObject Player::FrostingPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrostingPrompt_32;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrostingPrompt_33;
 	// UnityEngine.GameObject Player::SaucePrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SaucePrompt_33;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SaucePrompt_34;
 	// UnityEngine.GameObject Player::SprinklesPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinklesPrompt_34;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinklesPrompt_35;
 	// UnityEngine.GameObject Player::CherriesPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CherriesPrompt_35;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CherriesPrompt_36;
 	// UnityEngine.GameObject Player::vanillaBatter
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vanillaBatter_36;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vanillaBatter_37;
 	// UnityEngine.GameObject Player::cakeTin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cakeTin_37;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cakeTin_38;
 };
 
 // Oculus.Platform.Samples.VrHoops.Player
@@ -43468,9 +43470,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7831[11] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7832[9] = 
 {
 	static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___blackMaterial_4)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___movieMaterial_5)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___videoPlayer_6)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___ipad_7)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___changeMaterial_8)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___changeMaterialMovie_9)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___r_10)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___mats_11)),static_cast<int32_t>(offsetof(MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D, ___meshRenderer_12)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7834[34] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7834[35] = 
 {
-	static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___currentObject_4)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___debug_5)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___beltOn_6)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterOn_7)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___ovenOn_8)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___frostingOn_9)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterPerFrame_10)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterAmount_11)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cookTime_12)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cookTimePerOunce_13)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___timeInOven_14)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___Light_15)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___lightOn_16)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___ipad_17)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___backButton_18)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playVideo2_19)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playVideo1_20)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playPause_21)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___videoPlayer_22)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___videoClips_23)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___materialChanger_24)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___backButtonMesh_25)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___StartBeltPrompt_26)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___BatterPrompt_27)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenDoorPrompt_28)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenOnPrompt_29)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenLightPrompt_30)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenOffPrompt_31)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___FrostingPrompt_32)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___SaucePrompt_33)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___SprinklesPrompt_34)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___CherriesPrompt_35)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___vanillaBatter_36)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cakeTin_37)),};
+	static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___currentObject_4)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___debug_5)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___beltOn_6)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterOn_7)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___ovenOn_8)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___frostingOn_9)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterPerFrame_10)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___batterAmount_11)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cookTime_12)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cookTimePerOunce_13)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___timeInOven_14)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___Light_15)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___lightOn_16)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___ovenDoorHit_17)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___ipad_18)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___backButton_19)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playVideo2_20)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playVideo1_21)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___playPause_22)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___videoPlayer_23)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___videoClips_24)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___materialChanger_25)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___backButtonMesh_26)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___StartBeltPrompt_27)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___BatterPrompt_28)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenDoorPrompt_29)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenOnPrompt_30)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenLightPrompt_31)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___OvenOffPrompt_32)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___FrostingPrompt_33)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___SaucePrompt_34)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___SprinklesPrompt_35)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___CherriesPrompt_36)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___vanillaBatter_37)),static_cast<int32_t>(offsetof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74, ___cakeTin_38)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7840[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass41_0_tD03998B72130E379210125F837D005B365C1708B, ___handler_0)),};

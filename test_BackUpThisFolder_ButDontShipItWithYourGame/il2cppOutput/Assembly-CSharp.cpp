@@ -5306,48 +5306,50 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Light_15;
 	// System.Boolean Player::lightOn
 	bool ___lightOn_16;
+	// System.Boolean Player::ovenDoorHit
+	bool ___ovenDoorHit_17;
 	// Ipad Player::ipad
-	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_17;
+	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_18;
 	// UnityEngine.GameObject Player::backButton
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___backButton_19;
 	// UnityEngine.GameObject Player::playVideo2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_20;
 	// UnityEngine.GameObject Player::playVideo1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_21;
 	// UnityEngine.GameObject Player::playPause
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_22;
 	// UnityEngine.Video.VideoPlayer Player::videoPlayer
-	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_22;
+	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_23;
 	// UnityEngine.Video.VideoClip[] Player::videoClips
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_23;
+	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_24;
 	// MaterialChanger Player::materialChanger
-	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_24;
+	MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* ___materialChanger_25;
 	// UnityEngine.MeshRenderer Player::backButtonMesh
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_25;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___backButtonMesh_26;
 	// UnityEngine.GameObject Player::StartBeltPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___StartBeltPrompt_26;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___StartBeltPrompt_27;
 	// UnityEngine.GameObject Player::BatterPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BatterPrompt_27;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BatterPrompt_28;
 	// UnityEngine.GameObject Player::OvenDoorPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenDoorPrompt_28;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenDoorPrompt_29;
 	// UnityEngine.GameObject Player::OvenOnPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOnPrompt_29;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOnPrompt_30;
 	// UnityEngine.GameObject Player::OvenLightPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenLightPrompt_30;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenLightPrompt_31;
 	// UnityEngine.GameObject Player::OvenOffPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOffPrompt_31;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___OvenOffPrompt_32;
 	// UnityEngine.GameObject Player::FrostingPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrostingPrompt_32;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FrostingPrompt_33;
 	// UnityEngine.GameObject Player::SaucePrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SaucePrompt_33;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SaucePrompt_34;
 	// UnityEngine.GameObject Player::SprinklesPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinklesPrompt_34;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___SprinklesPrompt_35;
 	// UnityEngine.GameObject Player::CherriesPrompt
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CherriesPrompt_35;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___CherriesPrompt_36;
 	// UnityEngine.GameObject Player::vanillaBatter
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vanillaBatter_36;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___vanillaBatter_37;
 	// UnityEngine.GameObject Player::cakeTin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cakeTin_37;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cakeTin_38;
 };
 
 // SimpleCapsuleWithStickMovement
@@ -7513,8 +7515,6 @@ inline Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* GameObject_GetComponent_T
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___x0, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___y1, const RuntimeMethod* method) ;
 // System.String UnityEngine.Object::get_name()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
-// UnityEngine.GameObject UnityEngine.GameObject::get_gameObject()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
 // System.Void Player::Belt()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Belt_m5558CC9CBD83A1E7A738DFCF9124E696EEC48936 (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) ;
 // System.Void Player::BeltOff()
@@ -7533,6 +7533,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_OvenOff_m7724F17458222EEA61D952E0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Frosting_m58B628CCA467467FCBA3FCF83446E615FA723CF6 (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) ;
 // System.Void Player::Topping()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Topping_m91C70CCC977F630171F5466B99BDD57E65C76E14 (Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* __this, const RuntimeMethod* method) ;
+// UnityEngine.GameObject UnityEngine.GameObject::get_gameObject()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
 // System.Void Ipad::PlayPause(UnityEngine.Video.VideoClip)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Ipad_PlayPause_mAB8E7CE359CA9DED1AB63DED48C7BE5084C7AB02 (Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* __this, VideoClip_t603AD809C228739D932819710E70326FE7A9ADDE* ____clip0, const RuntimeMethod* method) ;
 // T UnityEngine.Object::Instantiate<UnityEngine.GameObject>(T,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -10957,8 +10959,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Awake_m512A28E1559EB8AEEB2E1DB873
 		// videoPlayer = GetComponent<VideoPlayer>();
 		VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* L_0;
 		L_0 = Component_GetComponent_TisVideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3_m19D8A3EC4A0BF3BDAFCF718B25FC119EFE6F6BBA(__this, Component_GetComponent_TisVideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3_m19D8A3EC4A0BF3BDAFCF718B25FC119EFE6F6BBA_RuntimeMethod_var);
-		__this->___videoPlayer_22 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___videoPlayer_22), (void*)L_0);
+		__this->___videoPlayer_23 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___videoPlayer_23), (void*)L_0);
 		// }
 		return;
 	}
@@ -10982,22 +10984,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Start_mC31CF4F40DDEA35C5E39E8C43E
 		NullCheck(L_0);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)0, NULL);
 		// materialChanger.changeMaterial = false;
-		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_1 = __this->___materialChanger_24;
+		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_1 = __this->___materialChanger_25;
 		NullCheck(L_1);
 		L_1->___changeMaterial_8 = (bool)0;
 		// backButtonMesh = backButton.GetComponent<MeshRenderer>();
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___backButton_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___backButton_19;
 		NullCheck(L_2);
 		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_3;
 		L_3 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_2, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
-		__this->___backButtonMesh_25 = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___backButtonMesh_25), (void*)L_3);
+		__this->___backButtonMesh_26 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___backButtonMesh_26), (void*)L_3);
 		// playPause.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___playPause_21;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___playPause_22;
 		NullCheck(L_4);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_4, (bool)0, NULL);
 		// backButton.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___backButton_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___backButton_19;
 		NullCheck(L_5);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_5, (bool)0, NULL);
 		// Ipad ipad = gameObject.GetComponent<Ipad>();
@@ -11007,43 +11009,43 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_Start_mC31CF4F40DDEA35C5E39E8C43E
 		Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* L_7;
 		L_7 = GameObject_GetComponent_TisIpad_t0495FC4CE6326AC38884B249B59E31851C0643E6_mF5F41AB340EA30047C14B7755F5CE214B251FFC8(L_6, GameObject_GetComponent_TisIpad_t0495FC4CE6326AC38884B249B59E31851C0643E6_mF5F41AB340EA30047C14B7755F5CE214B251FFC8_RuntimeMethod_var);
 		// StartBeltPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___StartBeltPrompt_26;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___StartBeltPrompt_27;
 		NullCheck(L_8);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)0, NULL);
 		// BatterPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___BatterPrompt_27;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___BatterPrompt_28;
 		NullCheck(L_9);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_9, (bool)0, NULL);
 		// OvenDoorPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___OvenDoorPrompt_28;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___OvenDoorPrompt_29;
 		NullCheck(L_10);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_10, (bool)0, NULL);
 		// OvenOnPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___OvenOnPrompt_29;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___OvenOnPrompt_30;
 		NullCheck(L_11);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)0, NULL);
 		// OvenLightPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___OvenLightPrompt_30;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___OvenLightPrompt_31;
 		NullCheck(L_12);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_12, (bool)0, NULL);
 		// OvenOffPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->___OvenOffPrompt_31;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->___OvenOffPrompt_32;
 		NullCheck(L_13);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_13, (bool)0, NULL);
 		// FrostingPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___FrostingPrompt_32;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___FrostingPrompt_33;
 		NullCheck(L_14);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_14, (bool)0, NULL);
 		// SaucePrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = __this->___SaucePrompt_33;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = __this->___SaucePrompt_34;
 		NullCheck(L_15);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_15, (bool)0, NULL);
 		// SprinklesPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___SprinklesPrompt_34;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = __this->___SprinklesPrompt_35;
 		NullCheck(L_16);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_16, (bool)0, NULL);
 		// CherriesPrompt.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___CherriesPrompt_35;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___CherriesPrompt_36;
 		NullCheck(L_17);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_17, (bool)0, NULL);
 		// }
@@ -11149,159 +11151,229 @@ IL_008f:
 
 IL_00b7:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
-		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_20;
-		L_20 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_20)
+		// if (currentObject.CompareTag("StartBelt"))
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->___currentObject_4;
+		NullCheck(L_20);
+		bool L_21;
+		L_21 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_20, _stringLiteral35B398EDF29D7F93BF98D43A1FE4341988F1066E, NULL);
+		if (!L_21)
 		{
-			goto IL_00e7;
+			goto IL_00cf;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = __this->___currentObject_4;
-		NullCheck(L_21);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22;
-		L_22 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_21, NULL);
-		NullCheck(L_22);
-		bool L_23;
-		L_23 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_22, _stringLiteral62EC32DB0165ABAB454A1C8263AA078C3F4A968D, NULL);
-		if (!L_23)
-		{
-			goto IL_00e7;
-		}
-	}
-	{
-		// BatterPrompt.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = __this->___BatterPrompt_27;
-		NullCheck(L_24);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_24, (bool)1, NULL);
+		// Belt();
+		Player_Belt_m5558CC9CBD83A1E7A738DFCF9124E696EEC48936(__this, NULL);
 	}
 
-IL_00e7:
+IL_00cf:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		bool L_22;
+		L_22 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_22)
+		{
+			goto IL_00f4;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = __this->___currentObject_4;
+		NullCheck(L_23);
+		bool L_24;
+		L_24 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_23, _stringLiteralF70C8C79D03E124934B0F995A50062D37FBEDCD6, NULL);
+		if (!L_24)
+		{
+			goto IL_00f4;
+		}
+	}
+	{
+		// BeltOff();
+		Player_BeltOff_m10BA82885C0C4AA30135E5DF7C0B60567C4E9A03(__this, NULL);
+	}
+
+IL_00f4:
+	{
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_25;
 		L_25 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_25)
 		{
-			goto IL_0117;
+			goto IL_0119;
 		}
 	}
 	{
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26 = __this->___currentObject_4;
 		NullCheck(L_26);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_27;
-		L_27 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_26, NULL);
-		NullCheck(L_27);
+		bool L_27;
+		L_27 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_26, _stringLiteralBDEDD4260B0ACA03FA38DB65DC9E209AFFEF88CB, NULL);
+		if (!L_27)
+		{
+			goto IL_0119;
+		}
+	}
+	{
+		// VanillaBatter();
+		Player_VanillaBatter_mDB3B12CFB0C42363809C7E99B41AAA65F37A63F3(__this, NULL);
+	}
+
+IL_0119:
+	{
+		// if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
 		bool L_28;
-		L_28 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_27, _stringLiteral7317B5ED48F159265098443C43300D215DE19963, NULL);
+		L_28 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)323), NULL);
 		if (!L_28)
 		{
-			goto IL_0117;
+			goto IL_0136;
 		}
 	}
 	{
-		// BatterPrompt.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29 = __this->___BatterPrompt_27;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_29 = __this->___currentObject_4;
 		NullCheck(L_29);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_29, (bool)1, NULL);
+		bool L_30;
+		L_30 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_29, _stringLiteral5EDD373E989CE68EE8094336C8DD658E1E26C1A2, NULL);
 	}
 
-IL_0117:
+IL_0136:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_30;
-		L_30 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_30)
+		bool L_31;
+		L_31 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_31)
 		{
-			goto IL_013a;
+			goto IL_015b;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31 = __this->___currentObject_4;
-		NullCheck(L_31);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32;
-		L_32 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_31, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = __this->___currentObject_4;
 		NullCheck(L_32);
 		bool L_33;
-		L_33 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_32, _stringLiteral5EDD373E989CE68EE8094336C8DD658E1E26C1A2, NULL);
+		L_33 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_32, _stringLiteral9E372409F0E2D6D3CBB247BB67C7680CAC8FCBCE, NULL);
+		if (!L_33)
+		{
+			goto IL_015b;
+		}
+	}
+	{
+		// OvenOn();
+		Player_OvenOn_m01E817EE9EB8697BF36EC342E2EEB0456C40638E(__this, NULL);
 	}
 
-IL_013a:
+IL_015b:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_34;
 		L_34 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_34)
 		{
-			goto IL_015d;
+			goto IL_0180;
 		}
 	}
 	{
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_35 = __this->___currentObject_4;
 		NullCheck(L_35);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36;
-		L_36 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_35, NULL);
-		NullCheck(L_36);
-		bool L_37;
-		L_37 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_36, _stringLiteral9E372409F0E2D6D3CBB247BB67C7680CAC8FCBCE, NULL);
-	}
-
-IL_015d:
-	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
-		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_38;
-		L_38 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_38)
+		bool L_36;
+		L_36 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_35, _stringLiteral7E49E73A03AABF5CCB8295A47C7E44BE32213410, NULL);
+		if (!L_36)
 		{
 			goto IL_0180;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = __this->___currentObject_4;
-		NullCheck(L_39);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_40;
-		L_40 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_39, NULL);
-		NullCheck(L_40);
-		bool L_41;
-		L_41 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_40, _stringLiteral7E49E73A03AABF5CCB8295A47C7E44BE32213410, NULL);
+		// OvenLight();
+		Player_OvenLight_m430D55D96A92F1FFD5AF711600872BF49C80F986(__this, NULL);
 	}
 
 IL_0180:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_42;
-		L_42 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_42)
+		bool L_37;
+		L_37 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_37)
 		{
-			goto IL_01a3;
+			goto IL_01a5;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = __this->___currentObject_4;
-		NullCheck(L_43);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44;
-		L_44 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_43, NULL);
-		NullCheck(L_44);
-		bool L_45;
-		L_45 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_44, _stringLiteralF09EE5B81C6188813A636ACB255E18B56CF43320, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = __this->___currentObject_4;
+		NullCheck(L_38);
+		bool L_39;
+		L_39 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_38, _stringLiteralF09EE5B81C6188813A636ACB255E18B56CF43320, NULL);
+		if (!L_39)
+		{
+			goto IL_01a5;
+		}
+	}
+	{
+		// OvenOff();
+		Player_OvenOff_m7724F17458222EEA61D952E02C2E316273BCF8BF(__this, NULL);
 	}
 
-IL_01a3:
+IL_01a5:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		bool L_40;
+		L_40 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_40)
+		{
+			goto IL_01ca;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_41 = __this->___currentObject_4;
+		NullCheck(L_41);
+		bool L_42;
+		L_42 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_41, _stringLiteral70A5481E5DD8D51B048F04B2FC195474D4F01CFA, NULL);
+		if (!L_42)
+		{
+			goto IL_01ca;
+		}
+	}
+	{
+		// Frosting();
+		Player_Frosting_m58B628CCA467467FCBA3FCF83446E615FA723CF6(__this, NULL);
+	}
+
+IL_01ca:
+	{
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		bool L_43;
+		L_43 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_43)
+		{
+			goto IL_01ef;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_44 = __this->___currentObject_4;
+		NullCheck(L_44);
+		bool L_45;
+		L_45 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_44, _stringLiteral24A698142C08B54AB83372D06E23A4B4E09987B0, NULL);
+		if (!L_45)
+		{
+			goto IL_01ef;
+		}
+	}
+	{
+		// Topping();
+		Player_Topping_m91C70CCC977F630171F5466B99BDD57E65C76E14(__this, NULL);
+	}
+
+IL_01ef:
+	{
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_46;
 		L_46 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_46)
 		{
-			goto IL_01c6;
+			goto IL_021f;
 		}
 	}
 	{
@@ -11311,247 +11383,185 @@ IL_01a3:
 		L_48 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_47, NULL);
 		NullCheck(L_48);
 		bool L_49;
-		L_49 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_48, _stringLiteral70A5481E5DD8D51B048F04B2FC195474D4F01CFA, NULL);
+		L_49 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_48, _stringLiteral62EC32DB0165ABAB454A1C8263AA078C3F4A968D, NULL);
+		if (!L_49)
+		{
+			goto IL_021f;
+		}
+	}
+	{
+		// BatterPrompt.SetActive(true);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_50 = __this->___BatterPrompt_28;
+		NullCheck(L_50);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_50, (bool)1, NULL);
 	}
 
-IL_01c6:
+IL_021f:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_50;
-		L_50 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_50)
+		bool L_51;
+		L_51 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_51)
 		{
-			goto IL_01e9;
+			goto IL_024f;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_51 = __this->___currentObject_4;
-		NullCheck(L_51);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_52;
-		L_52 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_51, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_52 = __this->___currentObject_4;
 		NullCheck(L_52);
-		bool L_53;
-		L_53 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_52, _stringLiteral24A698142C08B54AB83372D06E23A4B4E09987B0, NULL);
-	}
-
-IL_01e9:
-	{
-		// if (currentObject.CompareTag("StartBelt"))
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_54 = __this->___currentObject_4;
-		NullCheck(L_54);
-		bool L_55;
-		L_55 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_54, _stringLiteral35B398EDF29D7F93BF98D43A1FE4341988F1066E, NULL);
-		if (!L_55)
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_53;
+		L_53 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_52, NULL);
+		NullCheck(L_53);
+		bool L_54;
+		L_54 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_53, _stringLiteral7317B5ED48F159265098443C43300D215DE19963, NULL);
+		if (!L_54)
 		{
-			goto IL_0201;
+			goto IL_024f;
 		}
 	}
 	{
-		// Belt();
-		Player_Belt_m5558CC9CBD83A1E7A738DFCF9124E696EEC48936(__this, NULL);
+		// BatterPrompt.SetActive(true);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_55 = __this->___BatterPrompt_28;
+		NullCheck(L_55);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_55, (bool)1, NULL);
 	}
 
-IL_0201:
+IL_024f:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_56;
 		L_56 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_56)
 		{
-			goto IL_0226;
+			goto IL_027a;
 		}
 	}
 	{
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_57 = __this->___currentObject_4;
 		NullCheck(L_57);
-		bool L_58;
-		L_58 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_57, _stringLiteralF70C8C79D03E124934B0F995A50062D37FBEDCD6, NULL);
-		if (!L_58)
-		{
-			goto IL_0226;
-		}
-	}
-	{
-		// BeltOff();
-		Player_BeltOff_m10BA82885C0C4AA30135E5DF7C0B60567C4E9A03(__this, NULL);
-	}
-
-IL_0226:
-	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
-		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_58;
+		L_58 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_57, NULL);
+		NullCheck(L_58);
 		bool L_59;
-		L_59 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		L_59 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_58, _stringLiteral5EDD373E989CE68EE8094336C8DD658E1E26C1A2, NULL);
 		if (!L_59)
 		{
-			goto IL_024b;
+			goto IL_027a;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_60 = __this->___currentObject_4;
-		NullCheck(L_60);
-		bool L_61;
-		L_61 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_60, _stringLiteralBDEDD4260B0ACA03FA38DB65DC9E209AFFEF88CB, NULL);
-		if (!L_61)
-		{
-			goto IL_024b;
-		}
-	}
-	{
-		// VanillaBatter();
-		Player_VanillaBatter_mDB3B12CFB0C42363809C7E99B41AAA65F37A63F3(__this, NULL);
+		// ovenDoorHit = true;
+		__this->___ovenDoorHit_17 = (bool)1;
 	}
 
-IL_024b:
+IL_027a:
 	{
-		// if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
-		bool L_62;
-		L_62 = Input_GetKey_mE5681EF775F3CEBA7EAD7C63984F7B34C8E8D434(((int32_t)323), NULL);
-		if (!L_62)
-		{
-			goto IL_0268;
-		}
-	}
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_63 = __this->___currentObject_4;
-		NullCheck(L_63);
-		bool L_64;
-		L_64 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_63, _stringLiteral5EDD373E989CE68EE8094336C8DD658E1E26C1A2, NULL);
-	}
-
-IL_0268:
-	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_65;
-		L_65 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_65)
+		bool L_60;
+		L_60 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_60)
 		{
-			goto IL_028d;
+			goto IL_029d;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_66 = __this->___currentObject_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_61 = __this->___currentObject_4;
+		NullCheck(L_61);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_62;
+		L_62 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_61, NULL);
+		NullCheck(L_62);
+		bool L_63;
+		L_63 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_62, _stringLiteral9E372409F0E2D6D3CBB247BB67C7680CAC8FCBCE, NULL);
+	}
+
+IL_029d:
+	{
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight")) //&& in level 1
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		bool L_64;
+		L_64 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_64)
+		{
+			goto IL_02c0;
+		}
+	}
+	{
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_65 = __this->___currentObject_4;
+		NullCheck(L_65);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_66;
+		L_66 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_65, NULL);
 		NullCheck(L_66);
 		bool L_67;
-		L_67 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_66, _stringLiteral9E372409F0E2D6D3CBB247BB67C7680CAC8FCBCE, NULL);
-		if (!L_67)
-		{
-			goto IL_028d;
-		}
-	}
-	{
-		// OvenOn();
-		Player_OvenOn_m01E817EE9EB8697BF36EC342E2EEB0456C40638E(__this, NULL);
+		L_67 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_66, _stringLiteral7E49E73A03AABF5CCB8295A47C7E44BE32213410, NULL);
 	}
 
-IL_028d:
+IL_02c0:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_68;
 		L_68 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_68)
 		{
-			goto IL_02b2;
+			goto IL_02e3;
 		}
 	}
 	{
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_69 = __this->___currentObject_4;
 		NullCheck(L_69);
-		bool L_70;
-		L_70 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_69, _stringLiteral7E49E73A03AABF5CCB8295A47C7E44BE32213410, NULL);
-		if (!L_70)
-		{
-			goto IL_02b2;
-		}
-	}
-	{
-		// OvenLight();
-		Player_OvenLight_m430D55D96A92F1FFD5AF711600872BF49C80F986(__this, NULL);
-	}
-
-IL_02b2:
-	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
-		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_70;
+		L_70 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_69, NULL);
+		NullCheck(L_70);
 		bool L_71;
-		L_71 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_71)
-		{
-			goto IL_02d7;
-		}
-	}
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_72 = __this->___currentObject_4;
-		NullCheck(L_72);
-		bool L_73;
-		L_73 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_72, _stringLiteralF09EE5B81C6188813A636ACB255E18B56CF43320, NULL);
-		if (!L_73)
-		{
-			goto IL_02d7;
-		}
-	}
-	{
-		// OvenOff();
-		Player_OvenOff_m7724F17458222EEA61D952E02C2E316273BCF8BF(__this, NULL);
+		L_71 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_70, _stringLiteralF09EE5B81C6188813A636ACB255E18B56CF43320, NULL);
 	}
 
-IL_02d7:
+IL_02e3:
 	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton")) //&& in level 1
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_74;
-		L_74 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_74)
+		bool L_72;
+		L_72 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
+		if (!L_72)
 		{
-			goto IL_02fc;
+			goto IL_0306;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_75 = __this->___currentObject_4;
-		NullCheck(L_75);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_73 = __this->___currentObject_4;
+		NullCheck(L_73);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_74;
+		L_74 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_73, NULL);
+		NullCheck(L_74);
+		bool L_75;
+		L_75 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_74, _stringLiteral70A5481E5DD8D51B048F04B2FC195474D4F01CFA, NULL);
+	}
+
+IL_0306:
+	{
+		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))//&& in level 1
+		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_76;
-		L_76 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_75, _stringLiteral70A5481E5DD8D51B048F04B2FC195474D4F01CFA, NULL);
+		L_76 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_76)
 		{
-			goto IL_02fc;
+			goto IL_0329;
 		}
 	}
 	{
-		// Frosting();
-		Player_Frosting_m58B628CCA467467FCBA3FCF83446E615FA723CF6(__this, NULL);
-	}
-
-IL_02fc:
-	{
-		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
-		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
-		bool L_77;
-		L_77 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
-		if (!L_77)
-		{
-			goto IL_0321;
-		}
-	}
-	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_78 = __this->___currentObject_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_77 = __this->___currentObject_4;
+		NullCheck(L_77);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_78;
+		L_78 = GameObject_get_gameObject_m0878015B8CF7F5D432B583C187725810D27B57DC(L_77, NULL);
 		NullCheck(L_78);
 		bool L_79;
 		L_79 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_78, _stringLiteral24A698142C08B54AB83372D06E23A4B4E09987B0, NULL);
-		if (!L_79)
-		{
-			goto IL_0321;
-		}
-	}
-	{
-		// Topping();
-		Player_Topping_m91C70CCC977F630171F5466B99BDD57E65C76E14(__this, NULL);
 	}
 
-IL_0321:
+IL_0329:
 	{
 		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
@@ -11559,7 +11569,7 @@ IL_0321:
 		L_80 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_80)
 		{
-			goto IL_038f;
+			goto IL_0397;
 		}
 	}
 	{
@@ -11569,41 +11579,41 @@ IL_0321:
 		L_82 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_81, _stringLiteralD4731FBA5A694879F52496E0B9324A442B59A233, NULL);
 		if (!L_82)
 		{
-			goto IL_038f;
+			goto IL_0397;
 		}
 	}
 	{
 		// ipad.PlayPause(videoClips[0]);
-		Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* L_83 = __this->___ipad_17;
-		VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* L_84 = __this->___videoClips_23;
+		Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* L_83 = __this->___ipad_18;
+		VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* L_84 = __this->___videoClips_24;
 		NullCheck(L_84);
 		int32_t L_85 = 0;
 		VideoClip_t603AD809C228739D932819710E70326FE7A9ADDE* L_86 = (L_84)->GetAt(static_cast<il2cpp_array_size_t>(L_85));
 		NullCheck(L_83);
 		Ipad_PlayPause_mAB8E7CE359CA9DED1AB63DED48C7BE5084C7AB02(L_83, L_86, NULL);
 		// materialChanger.changeMaterialMovie = true;
-		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_87 = __this->___materialChanger_24;
+		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_87 = __this->___materialChanger_25;
 		NullCheck(L_87);
 		L_87->___changeMaterialMovie_9 = (bool)1;
 		// backButton.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_88 = __this->___backButton_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_88 = __this->___backButton_19;
 		NullCheck(L_88);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_88, (bool)1, NULL);
 		// playPause.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_89 = __this->___playPause_21;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_89 = __this->___playPause_22;
 		NullCheck(L_89);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_89, (bool)1, NULL);
 		// playVideo2.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_90 = __this->___playVideo2_19;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_90 = __this->___playVideo2_20;
 		NullCheck(L_90);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_90, (bool)0, NULL);
 		// playVideo1.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_91 = __this->___playVideo1_20;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_91 = __this->___playVideo1_21;
 		NullCheck(L_91);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_91, (bool)0, NULL);
 	}
 
-IL_038f:
+IL_0397:
 	{
 		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton2"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
@@ -11611,7 +11621,7 @@ IL_038f:
 		L_92 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_92)
 		{
-			goto IL_03fd;
+			goto IL_0405;
 		}
 	}
 	{
@@ -11621,41 +11631,41 @@ IL_038f:
 		L_94 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_93, _stringLiteral71BD4FDEDB4E0344B68B7EF35115F278ADDC382F, NULL);
 		if (!L_94)
 		{
-			goto IL_03fd;
+			goto IL_0405;
 		}
 	}
 	{
 		// ipad.PlayPause(videoClips[1]);
-		Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* L_95 = __this->___ipad_17;
-		VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* L_96 = __this->___videoClips_23;
+		Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* L_95 = __this->___ipad_18;
+		VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* L_96 = __this->___videoClips_24;
 		NullCheck(L_96);
 		int32_t L_97 = 1;
 		VideoClip_t603AD809C228739D932819710E70326FE7A9ADDE* L_98 = (L_96)->GetAt(static_cast<il2cpp_array_size_t>(L_97));
 		NullCheck(L_95);
 		Ipad_PlayPause_mAB8E7CE359CA9DED1AB63DED48C7BE5084C7AB02(L_95, L_98, NULL);
 		// materialChanger.changeMaterialMovie = true;
-		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_99 = __this->___materialChanger_24;
+		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_99 = __this->___materialChanger_25;
 		NullCheck(L_99);
 		L_99->___changeMaterialMovie_9 = (bool)1;
 		// backButton.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_100 = __this->___backButton_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_100 = __this->___backButton_19;
 		NullCheck(L_100);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_100, (bool)1, NULL);
 		// playPause.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_101 = __this->___playPause_21;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_101 = __this->___playPause_22;
 		NullCheck(L_101);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_101, (bool)1, NULL);
 		// playVideo1.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_102 = __this->___playVideo1_20;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_102 = __this->___playVideo1_21;
 		NullCheck(L_102);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_102, (bool)0, NULL);
 		// playVideo2.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_103 = __this->___playVideo2_19;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_103 = __this->___playVideo2_20;
 		NullCheck(L_103);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_103, (bool)0, NULL);
 	}
 
-IL_03fd:
+IL_0405:
 	{
 		// if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BackButton"))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
@@ -11663,7 +11673,7 @@ IL_03fd:
 		L_104 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (!L_104)
 		{
-			goto IL_0464;
+			goto IL_046c;
 		}
 	}
 	{
@@ -11673,37 +11683,37 @@ IL_03fd:
 		L_106 = GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5(L_105, _stringLiteral802AEE81FF9CCB1C81247F67BF44890C461781BE, NULL);
 		if (!L_106)
 		{
-			goto IL_0464;
+			goto IL_046c;
 		}
 	}
 	{
 		// materialChanger.changeMaterialMovie = false;
-		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_107 = __this->___materialChanger_24;
+		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_107 = __this->___materialChanger_25;
 		NullCheck(L_107);
 		L_107->___changeMaterialMovie_9 = (bool)0;
 		// materialChanger.changeMaterial = true;
-		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_108 = __this->___materialChanger_24;
+		MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D* L_108 = __this->___materialChanger_25;
 		NullCheck(L_108);
 		L_108->___changeMaterial_8 = (bool)1;
 		// playPause.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_109 = __this->___playPause_21;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_109 = __this->___playPause_22;
 		NullCheck(L_109);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_109, (bool)0, NULL);
 		// playVideo2.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_110 = __this->___playVideo2_19;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_110 = __this->___playVideo2_20;
 		NullCheck(L_110);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_110, (bool)1, NULL);
 		// playVideo1.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_111 = __this->___playVideo1_20;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_111 = __this->___playVideo1_21;
 		NullCheck(L_111);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_111, (bool)1, NULL);
 		// backButton.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_112 = __this->___backButton_18;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_112 = __this->___backButton_19;
 		NullCheck(L_112);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_112, (bool)0, NULL);
 	}
 
-IL_0464:
+IL_046c:
 	{
 		// if (currentObject.CompareTag("playPause"))
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_113 = __this->___currentObject_4;
@@ -11793,15 +11803,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Player_VanillaBatter_mDB3B12CFB0C4236380
 		NullCheck(L_0);
 		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_0, _stringLiteralAF03B71C18203842513D0DDE4B642770090065BD);
 		// Instantiate(vanillaBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___vanillaBatter_36;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___cakeTin_37;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___vanillaBatter_37;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___cakeTin_38;
 		NullCheck(L_2);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_2, NULL);
 		NullCheck(L_3);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		L_4 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_3, NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___cakeTin_37;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___cakeTin_38;
 		NullCheck(L_5);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6;
 		L_6 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_5, NULL);
