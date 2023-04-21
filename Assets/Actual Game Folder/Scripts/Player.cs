@@ -55,6 +55,9 @@ public class Player : MonoBehaviour
     public GameObject SprinklesPrompt;
     public GameObject CherriesPrompt;
 
+    public GameObject vanillaBatter;
+    public GameObject cakeTin;
+
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
 
@@ -228,9 +231,9 @@ public class Player : MonoBehaviour
         }
 
         //press and hold
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BatterButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
         {
-            Batter();
+            VanillaBatter();
         }
 
         //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
@@ -245,21 +248,16 @@ public class Player : MonoBehaviour
 
         //press
         //start oven function
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn") && !ovenOn)
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
         {
             OvenOn();
+            
         }
 
-        //make oven light button
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight") && !lightOn)
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
         {
-            lightOn = true;
             OvenLight();
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight") && lightOn)
-        {
-            lightOn = false;
-            Light.SetActive(false);
         }
 
         //press
@@ -358,9 +356,10 @@ public class Player : MonoBehaviour
         beltOn = false;
     }
 
-    void Batter()
+    void VanillaBatter()
     {
-       // debug.text = "batter pouring";
+        debug.text = "batter pouring";
+        Instantiate(vanillaBatter, cakeTin.transform.position, cakeTin.transform.rotation);
         batterAmount += batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
@@ -373,14 +372,14 @@ public class Player : MonoBehaviour
 
     void OvenLight()
     {
-        //debug.text = "oven light";
-        Light.SetActive(true);
+        lightOn = !lightOn;
+        Light.SetActive(lightOn);
     }
 
     //make a light button for oven 
     void OvenOn()
     {
-        //debug.text = "oven on";
+        debug.text = "oven on";
         cookTime = cookTimePerOunce * batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
@@ -392,7 +391,7 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
-        //debug.text = "Oven off";
+        debug.text = "Oven off";
         ovenOn = false;
     }
 
