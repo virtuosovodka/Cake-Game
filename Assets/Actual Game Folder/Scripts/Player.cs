@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     //light
     public GameObject Light;
     bool lightOn;
+    bool ovenDoorHit;
 
     //ipad
     public Ipad ipad;
@@ -178,52 +179,15 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
-        {
-            BatterPrompt.SetActive(true);
-
-            //batter button is on collision && while B or Y button is down
-        }
-
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-        {
-            BatterPrompt.SetActive(true);
-
-            //batter button is on collision && while B or Y button is down
-        }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))
-        {
-            //on collision && grab bottom and y/b and hand turned 90
-        }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))
-        {
-            // on collision and B or Y
-        }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))
-        {
-            // on collision and B or Y
-        }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))
-        {
-            // on collision and B or Y
-        }
-         if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))
-        {
-            //on collision and front button to hold/ move both bottoms to get frosting out
-        }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))
-        {
-            // sauce on collision and front button to hold/ move both bottoms to get frosting out
-            // sprinklies
-            // cherries
-        }
-
         //press
         if (currentObject.CompareTag("StartBelt"))
         {
             Belt();
+
+            //batter button is on collision && while B or Y button is down
         }
 
+        //TODO: delete?
         //press
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
         {
@@ -234,6 +198,8 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
         {
             VanillaBatter();
+
+            //batter button is on collision && while B or Y button is down
         }
 
         //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
@@ -244,6 +210,8 @@ public class Player : MonoBehaviour
             //debug.text = "oven door";
             //hold and drag to reset door position.can't go past certain coordinates
             //door must be closed to turn oven on oven must be off to open door
+
+            //on collision && grab bottom and y/b and hand turned 90
         }
 
         //press
@@ -251,13 +219,15 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
         {
             OvenOn();
-            
+            // on collision and B or Y
+
         }
 
 
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
         {
             OvenLight();
+            // on collision and B or Y
         }
 
         //press
@@ -265,20 +235,67 @@ public class Player : MonoBehaviour
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
         {
             OvenOff();
+            // on collision and B or Y
         }
 
         //press hold and drag
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
         {
             Frosting();
+            //on collision and front button to hold/ move both bottoms to get frosting out
         }
 
         //press hold and drag
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
         {
             Topping();
+            // sauce on collision and front button to hold/ move both bottoms to get frosting out
+            // sprinklies
+            // cherries
         }
 
+        //LEVEL ONE BUTTON PROMPTS 
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("StartButton")) //&& in level 1
+        {
+            BatterPrompt.SetActive(true);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+        {
+            BatterPrompt.SetActive(true);        
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor")) //&& in level 1
+        {
+            ovenDoorHit = true;
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn")) //&& in level 1
+        {
+          
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight")) //&& in level 1
+        {
+            
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff")) //&& in level 1
+        {
+       
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton")) //&& in level 1
+        {
+           
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("ToppingButton"))//&& in level 1
+        {
+         
+        }
+
+        //IPAD MAGIC
         if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton"))
         {
             //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
