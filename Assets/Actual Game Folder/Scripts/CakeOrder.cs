@@ -11,7 +11,14 @@ public class CakeOrder : MonoBehaviour
     public List<Material> toppingsList = new List<Material> { };
     public List<Material> sprinklesList = new List<Material> { };
     public List<Material> liquidList = new List<Material> { };
+
     public List<GameObject> frostingButtons = new List<GameObject> { };
+    public GameObject frostingButton1;
+    public GameObject frostingButton2;
+    public GameObject frostingButton3;
+    int FIndex;
+    public Material wrongFrosting;
+    public List<Material> frostingList2 = new List<Material> { };
 
     int bIndex;
     int fIndex;
@@ -69,9 +76,11 @@ public class CakeOrder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        frostingList2 = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
+
         tier2.SetActive(false);
 
-        
+        frostingButtons = new List<GameObject> {frostingButton1,frostingButton2,frostingButton3};
         
 
         bIndex = Random.Range(0, batterList.Count);
@@ -104,7 +113,18 @@ public class CakeOrder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject.FindGameObjectWithTag("frostingButtons[rightFrosting]").GetComponent<MeshRenderer>().material = fOrder;
+        // randommly generating three frosting colors for the three different piping bags
+        frostingButtons[rightFrosting].GetComponent<MeshRenderer>().material = fOrder;
+        frostingButtons.RemoveAt(rightFrosting);
+        frostingList2.RemoveAt(rightFrosting);
+        FIndex = Random.Range(0, frostingList2.Count);
+        wrongFrosting = frostingList2[FIndex];
+        frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
+        frostingList2.RemoveAt(FIndex);
+        FIndex = Random.Range(0, frostingList2.Count);
+        wrongFrosting = frostingList2[FIndex];
+        frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
+
         if (colorblind == false)
         {
             // all possible materials

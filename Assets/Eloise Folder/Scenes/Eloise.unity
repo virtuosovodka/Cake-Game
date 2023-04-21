@@ -2556,7 +2556,6 @@ MonoBehaviour:
   counter: {fileID: 1995706417}
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
-  debug: {fileID: 0}
   batterStation: {fileID: 1178806986}
   ovenStation: {fileID: 1713952059}
   flipStation: {fileID: 0}
@@ -5446,7 +5445,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1365779120
 GameObject:
@@ -5685,7 +5684,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1442919878
 GameObject:
@@ -6333,7 +6332,7 @@ Transform:
   m_Children:
   - {fileID: 551798600}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611789950
 GameObject:
@@ -7074,7 +7073,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -8641,6 +8640,15 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   - {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   - {fileID: 2100000, guid: 8df8ac816ea73486fac6dddb05a2915d, type: 2}
+  frostingButtons:
+  - {fileID: 456536417}
+  - {fileID: 1241733753}
+  - {fileID: 1164384314}
+  frostingButton1: {fileID: 456536417}
+  frostingButton2: {fileID: 1241733753}
+  frostingButton3: {fileID: 1164384314}
+  wrongFrosting: {fileID: 0}
+  frostingList2: []
   bOrder: {fileID: 0}
   fOrder: {fileID: 0}
   tOrder: {fileID: 0}
@@ -8720,7 +8728,7 @@ Transform:
   - {fileID: 2033707353}
   - {fileID: 1032332884}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8386090410864553968
 CapsuleCollider:
