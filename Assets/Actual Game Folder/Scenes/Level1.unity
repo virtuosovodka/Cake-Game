@@ -1697,7 +1697,6 @@ GameObject:
   - component: {fileID: 268510840}
   - component: {fileID: 268510848}
   - component: {fileID: 268510847}
-  - component: {fileID: 268510849}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: GameController
@@ -2159,50 +2158,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &268510849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268510838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: {fileID: 1568728547}
-  beltOn: 0
-  batterOn: 0
-  ovenOn: 0
-  frostingOn: 0
-  batterPerFrame: 0
-  batterAmount: 0
-  cookTime: 0
-  cookTimePerOunce: 0
-  timeInOven: 0
-  ovenDoorHit: 0
-  Light: {fileID: 0}
-  ipad: {fileID: 0}
-  backButton: {fileID: 0}
-  playVideo2: {fileID: 0}
-  playVideo1: {fileID: 0}
-  playPause: {fileID: 0}
-  videoPlayer: {fileID: 0}
-  videoClips: []
-  materialChanger: {fileID: 0}
-  StartBeltPrompt: {fileID: 0}
-  BatterPrompt: {fileID: 0}
-  OvenDoorPrompt: {fileID: 0}
-  OvenOnPrompt: {fileID: 0}
-  OvenLightPrompt: {fileID: 0}
-  OvenOffPrompt: {fileID: 0}
-  FrostingPrompt: {fileID: 0}
-  SaucePrompt: {fileID: 0}
-  SprinklesPrompt: {fileID: 0}
-  CherriesPrompt: {fileID: 0}
-  vanillaBatter: {fileID: 0}
-  cakeTin: {fileID: 0}
 --- !u!1 &273238274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3835,7 +3790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615082611}
   - component: {fileID: 615082612}
-  - component: {fileID: 615082613}
+  - component: {fileID: 615082617}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -3871,7 +3826,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615082610}
   m_CullTransparentMesh: 1
---- !u!114 &615082613
+--- !u!114 &615082617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4892,9 +4847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd025d1b42f7453f93b653e38ef6f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 615082613}
-  leftHand: {fileID: 820255315}
-  rightHand: {fileID: 268510849}
+  debug: {fileID: 615082617}
+  cameraOffset: {fileID: 984409350}
 --- !u!1 &820255304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4913,7 +4867,6 @@ GameObject:
   - component: {fileID: 820255306}
   - component: {fileID: 820255314}
   - component: {fileID: 820255313}
-  - component: {fileID: 820255315}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: GameController
@@ -5375,50 +5328,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &820255315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820255304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: {fileID: 1568728547}
-  beltOn: 0
-  batterOn: 0
-  ovenOn: 0
-  frostingOn: 0
-  batterPerFrame: 0
-  batterAmount: 0
-  cookTime: 0
-  cookTimePerOunce: 0
-  timeInOven: 0
-  ovenDoorHit: 0
-  Light: {fileID: 0}
-  ipad: {fileID: 0}
-  backButton: {fileID: 0}
-  playVideo2: {fileID: 0}
-  playVideo1: {fileID: 0}
-  playPause: {fileID: 0}
-  videoPlayer: {fileID: 0}
-  videoClips: []
-  materialChanger: {fileID: 0}
-  StartBeltPrompt: {fileID: 0}
-  BatterPrompt: {fileID: 0}
-  OvenDoorPrompt: {fileID: 0}
-  OvenOnPrompt: {fileID: 0}
-  OvenLightPrompt: {fileID: 0}
-  OvenOffPrompt: {fileID: 0}
-  FrostingPrompt: {fileID: 0}
-  SaucePrompt: {fileID: 0}
-  SprinklesPrompt: {fileID: 0}
-  CherriesPrompt: {fileID: 0}
-  vanillaBatter: {fileID: 0}
-  cakeTin: {fileID: 0}
 --- !u!1 &826052065
 GameObject:
   m_ObjectHideFlags: 0
