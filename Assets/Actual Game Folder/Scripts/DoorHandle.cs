@@ -8,7 +8,7 @@ public class DoorHandle : MonoBehaviour
     public TextMeshProUGUI debug;
     public Player leftHand;
     public Player rightHand;
-
+    //change player scrit to use righthandtrigger rather than button A
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +18,9 @@ public class DoorHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OVRInput.Update();
-    }
+        if (leftHand.ovenDoorHit || rightHand.ovenDoorHit)
+        {
 
-    private void OnCollisionEnter(Collision collision)
-    {
-       // if (leftHand.ovenDoorHit.getName().CompareTag("OvenDoorHandle"))
-       // {
-            if (OVRInput.Get(OVRInput.RawButton.LHandTrigger)){
-
-            }
-        //}
+        }
     }
 }
