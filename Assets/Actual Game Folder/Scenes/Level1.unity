@@ -648,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74422535}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.6249156, y: 1.171, z: 0.5829}
+  m_LocalPosition: {x: 0.6249156, y: 1.54, z: 0.5829}
   m_LocalScale: {x: 0.023167506, y: 0.049598258, z: 0.0208692}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1671,7 +1671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240947275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.44, y: 0.741, z: -5.9}
+  m_LocalPosition: {x: -14.38, y: 0.741, z: -5.9}
   m_LocalScale: {x: 2, y: 0.10000001, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3027,10 +3027,10 @@ MonoBehaviour:
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  player: {fileID: 0}
+  player: {fileID: 984409350}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
-  flipStation: {fileID: 0}
+  flipStation: {fileID: 87287993}
   frostingStation: {fileID: 1321271825}
   toppingStation: {fileID: 1465407389}
   timesInBatterStation: 0
@@ -4813,7 +4813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814619645}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.6249156, y: 1.171, z: -0.05539712}
+  m_LocalPosition: {x: 0.6249156, y: 1.555, z: -0.05539712}
   m_LocalScale: {x: 0.023167506, y: 0.049598258, z: 0.0208692}
   m_ConstrainProportionsScale: 0
   m_Children:
