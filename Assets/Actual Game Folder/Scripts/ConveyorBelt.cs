@@ -59,6 +59,12 @@ public class ConveyorBelt : MonoBehaviour
                 moveZ = false;
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
             }
+            if (gameObject.transform.position.x >= counter.transform.position.x & moveNegZ == true & moveX !=true & moveZ !=true & moveNegX !=true)
+            {
+                moveNegX = false;
+                transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+            }
+
 
             /*if (gameObject.transform.position.x <= counter.transform.position.x & moveNegZ == true)
             {
