@@ -15,6 +15,7 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegZ = true;
     bool moveNegY = true;
     public Player player;
+    public GameManager gm;
     //public TextMeshProUGUI debug;
 
     public GameObject batterStation;
@@ -42,7 +43,7 @@ public class ConveyorBelt : MonoBehaviour
         //print(timesInBatterStation);
         //debug.text = "" + leftHand.beltOn;
 
-        if (player.beltOn)
+        if (gm.beltOn)
         {
             if (moveX == true)
             {

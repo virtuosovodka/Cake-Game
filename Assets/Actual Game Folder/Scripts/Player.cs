@@ -6,27 +6,8 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    GameObject currentObject;
-    //Rigidbody rb;
 
-    public TextMeshProUGUI debug;
-
-    //stations
-    public bool beltOn = false;
-    public bool batterOn = false;
-    public bool ovenOn = false;
-    public bool frostingOn = false;
-
-    //batter
-    public float batterPerFrame;
-    public float batterAmount;
-
-    //oven
-    public float cookTime;
-    public float cookTimePerOunce;
-    public float timeInOven;
-    public bool ovenDoorHit;
-
+    public GameManager gm;
     //light
     public GameObject Light;
     bool lightOn;
@@ -113,7 +94,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentObject = null;
+        gm.currentObject = null;
 
         Light.SetActive(false);
 
@@ -146,38 +127,38 @@ public class Player : MonoBehaviour
     {
 
         OVRInput.Update();
-        if (currentObject != null)
+        if (gm.currentObject != null)
         {
-            debug.text = currentObject.name;
-            print(currentObject.name);
+            gm.debug.text = gm.currentObject.name;
+            print(gm.currentObject.name);
         }
         
         
-        if (ovenOn)
+        if (gm.ovenOn)
         {
-            timeInOven += Time.deltaTime;
+            gm.timeInOven += Time.deltaTime;
 
             //debug.text = "time in oven is " + timeInOven;
 
-            if (timeInOven <= cookTime - 1)
+            if (gm.timeInOven <= gm.cookTime - 1)
             {
                 //debug.text = "raw";
                 //run not baked animation
             }
 
-            if (timeInOven >= cookTime - 1 && timeInOven <= cookTime + 2)
+            if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
                // debug.text = "cooked";
                 // run cooked animation
             }
 
-            if (timeInOven >= cookTime + 2)
+            if (gm.timeInOven >= gm.cookTime + 2)
             {
                // debug.text = "overcooked";
                 // run overbaked animation
             }
 
-            if (timeInOven >= cookTime + 4)
+            if (gm.timeInOven >= gm.cookTime + 4)
             {
                // debug.text = "on fire";
                 // run fire animation
@@ -185,7 +166,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StartBelt"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StartBelt"))
         {
             Belt();
 
@@ -193,12 +174,12 @@ public class Player : MonoBehaviour
         }
 
         //TODO: delete?
-        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("StopBelt"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StopBelt"))
         {
             BeltOff();
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("VanillaBatterButton"))
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
         {
             VanillaBatter();
 
@@ -208,7 +189,7 @@ public class Player : MonoBehaviour
         //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
         //press hold and drag- only in certain dimensions, add in and/or for door in/ door out
         //can open door only when oven is off
-        if (Input.GetKey(KeyCode.Mouse0) && currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
+        if (Input.GetKey(KeyCode.Mouse0) && gm.currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
         {
             //debug.text = "oven door";
             //hold and drag to reset door position.can't go past certain coordinates
@@ -218,7 +199,7 @@ public class Player : MonoBehaviour
         }
 
         //start oven function
-        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOn"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOn"))
         {
             OvenOn();
             // on collision and B or Y
@@ -226,28 +207,28 @@ public class Player : MonoBehaviour
         }
 
 
-        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenLight"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
         {
             OvenLight();
             // on collision and B or Y
         }
 
         //stop oven function
-        if (OVRInput.GetDown(OVRInput.Button.One) && currentObject.CompareTag("OvenOff"))
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOff"))
         {
             OvenOff();
             // on collision and B or Y
         }
 
         //press hold and drag
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
         {
             Frosting();
             //on collision and front button to hold/ move both bottoms to get frosting out
         }
 
         //press hold and drag
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
         {
             Topping();
             // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
@@ -256,52 +237,52 @@ public class Player : MonoBehaviour
         }
 
         //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
         {
             BatterPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
         {
             OvenDoorPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
         {
             OvenOnPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
         {
             OvenLightPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
         {
             OvenOffPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
         {
             FrostingPrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
         {
             SaucePrompt.SetActive(true);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
         {
             SprinklesPrompt.SetActive(true);
         }
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
         {
             CherriesPrompt.SetActive(true);
         }
 
         //IPAD MAGIC
-        if (currentObject.CompareTag("PlayVideo0")) //&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("PlayVideo0")) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "play video zero";
             ipad.PlayPause(videoClips[0]);
@@ -312,7 +293,7 @@ public class Player : MonoBehaviour
             playVideo1.SetActive(false);
         }
 
-        if (currentObject.CompareTag("PlayVideo1")) //&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("PlayVideo1")) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "play video one";
             ipad.PlayPause(videoClips[1]);
@@ -323,7 +304,7 @@ public class Player : MonoBehaviour
             playVideo0.SetActive(false);
         }
 
-        if (currentObject.CompareTag("BackButton"))//&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("BackButton"))//&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "back to home screen";
             materialChanger.meshRenderer.material = materialChanger.mats[1];
@@ -333,7 +314,7 @@ public class Player : MonoBehaviour
             backButton.SetActive(false);
         }
 
-        if (currentObject.CompareTag("PlayButton"))
+        if (gm.currentObject.CompareTag("PlayButton"))
         {
             //debug.text = "paused";
             ipad.PlayPause(ipad.CurrentClip());
@@ -347,39 +328,39 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        currentObject = other.gameObject;
+        gm.currentObject = other.gameObject;
         ///debug.text = "on " + currentObject.name;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        currentObject = null;
+        gm.currentObject = null;
         //debug.text = "off " + currentObject.name;
     }
 
     void Belt()
     {
         //debug.text = "Belt on";
-        beltOn = true;
+        gm.beltOn = true;
     }
 
     void BeltOff()
     {
         print("Belt Off");
-        beltOn = false;
+        gm.beltOn = false;
     }
 
     void VanillaBatter()
     {
-        debug.text = "batter pouring";
+        gm.debug.text = "batter pouring";
         Instantiate(vanillaBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-        batterAmount += batterPerFrame * Time.deltaTime;
+        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
         //set batter amount= amount per frame*time.delta time
         //saved value
 
-        batterOn = true;
+        gm.batterOn = true;
         //debug.text = "you poured " + batterAmount;
     }
 
@@ -392,11 +373,11 @@ public class Player : MonoBehaviour
     //make a light button for oven 
     void OvenOn()
     {
-        debug.text = "oven on";
-        cookTime = cookTimePerOunce * batterAmount;
+        gm.debug.text = "oven on";
+        gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
-        ovenOn = true;
+        gm.ovenOn = true;
 
         //set cook time based on batter amount
         //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
@@ -404,29 +385,29 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
-        debug.text = "Oven off";
-        ovenOn = false;
+        gm.debug.text = "Oven off";
+        gm.ovenOn = false;
     }
 
     void Frosting()
     {
         //debug.text = "frosting";
-        frostingOn = true;
+        gm.frostingOn = true;
     }
 
     void Topping()
     {
-        if (currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
+        if (gm.currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
         {
 
         }
 
-        if (currentObject.CompareTag("Sprinkles")) //&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
+        if (gm.currentObject.CompareTag("Sprinkles")) //&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
         {
             //sprinkles come out only when its being shaken
         }
 
-        if (currentObject.CompareTag("Cherries")) //&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
+        if (gm.currentObject.CompareTag("Cherries")) //&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
         {
 
         }

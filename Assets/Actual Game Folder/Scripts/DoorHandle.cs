@@ -17,10 +17,11 @@ public class DoorHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debug.text = " " + cameraOffset.ovenDoorHit;
+        /*debug.text = " " + cameraOffset.ovenDoorHit;
         if (cameraOffset.ovenDoorHit)
         {
             
         }
+        */
     }
 }

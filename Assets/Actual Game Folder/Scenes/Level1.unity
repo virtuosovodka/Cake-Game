@@ -500,6 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65829482}
   - component: {fileID: 65829481}
+  - component: {fileID: 65829483}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -540,6 +541,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65829483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65829480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0566874afc73471fa922754562009fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentObject: {fileID: 0}
+  debug: {fileID: 615082611}
+  beltOn: 0
+  batterOn: 0
+  ovenOn: 0
+  frostingOn: 0
+  batterPerFrame: 0
+  batterAmount: 0
+  cookTime: 0
+  cookTimePerOunce: 0
+  timeInOven: 0
+  ovenDoorHit: 0
 --- !u!1 &74422535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1753,9 @@ GameObject:
   - component: {fileID: 268510842}
   - component: {fileID: 268510841}
   - component: {fileID: 268510840}
+  - component: {fileID: 268510847}
+  - component: {fileID: 268510849}
+  - component: {fileID: 268510848}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: GameController
@@ -2152,6 +2180,78 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &268510847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268510838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 65829483}
+  Light: {fileID: 0}
+  ipad: {fileID: 681196454}
+  backButton: {fileID: 15244828}
+  playVideo0: {fileID: 1976026853}
+  playVideo1: {fileID: 867809352}
+  playButton: {fileID: 0}
+  videoPlayer: {fileID: 0}
+  videoClips: []
+  materialChanger: {fileID: 0}
+  StartBeltPrompt: {fileID: 0}
+  BatterPrompt: {fileID: 0}
+  OvenDoorPrompt: {fileID: 0}
+  OvenOnPrompt: {fileID: 0}
+  OvenLightPrompt: {fileID: 0}
+  OvenOffPrompt: {fileID: 0}
+  FrostingPrompt: {fileID: 0}
+  SaucePrompt: {fileID: 0}
+  SprinklesPrompt: {fileID: 0}
+  CherriesPrompt: {fileID: 0}
+  vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+    type: 3}
+  cakeTin: {fileID: 506036146}
+--- !u!114 &268510848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268510838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabBegin: 0.55
+  grabEnd: 0.35
+  m_parentHeldObject: 0
+  m_moveHandPosition: 0
+  m_gripTransform: {fileID: 268510839}
+  m_grabVolumes: []
+  m_controller: 64
+  m_parentTransform: {fileID: 0}
+  m_player: {fileID: 0}
+--- !u!54 &268510849
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268510838}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &273238274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,6 +2821,7 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 0}
   player: {fileID: 0}
+  gm: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 87287993}
@@ -3028,6 +3129,7 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   player: {fileID: 0}
+  gm: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 0}
@@ -3389,6 +3491,7 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   player: {fileID: 0}
+  gm: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 0}
@@ -3785,7 +3888,7 @@ GameObject:
   - component: {fileID: 615082612}
   - component: {fileID: 615082611}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4870,6 +4973,9 @@ GameObject:
   - component: {fileID: 820255308}
   - component: {fileID: 820255307}
   - component: {fileID: 820255306}
+  - component: {fileID: 820255314}
+  - component: {fileID: 820255313}
+  - component: {fileID: 820255315}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: GameController
@@ -5294,6 +5400,78 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &820255313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820255304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabBegin: 0.55
+  grabEnd: 0.35
+  m_parentHeldObject: 0
+  m_moveHandPosition: 0
+  m_gripTransform: {fileID: 820255305}
+  m_grabVolumes: []
+  m_controller: 32
+  m_parentTransform: {fileID: 0}
+  m_player: {fileID: 0}
+--- !u!54 &820255314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820255304}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &820255315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820255304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 65829483}
+  Light: {fileID: 0}
+  ipad: {fileID: 681196454}
+  backButton: {fileID: 15244828}
+  playVideo0: {fileID: 1976026853}
+  playVideo1: {fileID: 867809352}
+  playButton: {fileID: 0}
+  videoPlayer: {fileID: 0}
+  videoClips: []
+  materialChanger: {fileID: 0}
+  StartBeltPrompt: {fileID: 0}
+  BatterPrompt: {fileID: 0}
+  OvenDoorPrompt: {fileID: 0}
+  OvenOnPrompt: {fileID: 0}
+  OvenLightPrompt: {fileID: 0}
+  OvenOffPrompt: {fileID: 0}
+  FrostingPrompt: {fileID: 0}
+  SaucePrompt: {fileID: 0}
+  SprinklesPrompt: {fileID: 0}
+  CherriesPrompt: {fileID: 0}
+  vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+    type: 3}
+  cakeTin: {fileID: 506036146}
 --- !u!1 &826052065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5869,8 +6047,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984409349}
-  - component: {fileID: 984409350}
-  - component: {fileID: 984409351}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -5896,69 +6072,6 @@ Transform:
   m_Father: {fileID: 65829482}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &984409350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984409348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: {fileID: 615082611}
-  beltOn: 0
-  batterOn: 0
-  ovenOn: 0
-  frostingOn: 0
-  batterPerFrame: 0
-  batterAmount: 0
-  cookTime: 0
-  cookTimePerOunce: 0
-  timeInOven: 0
-  ovenDoorHit: 0
-  Light: {fileID: 0}
-  ipad: {fileID: 681196454}
-  backButton: {fileID: 15244828}
-  playVideo0: {fileID: 1976026853}
-  playVideo1: {fileID: 867809352}
-  playButton: {fileID: 2035783322}
-  videoPlayer: {fileID: 0}
-  videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
-  - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
-  materialChanger: {fileID: 1832686560}
-  StartBeltPrompt: {fileID: 0}
-  BatterPrompt: {fileID: 0}
-  OvenDoorPrompt: {fileID: 0}
-  OvenOnPrompt: {fileID: 0}
-  OvenLightPrompt: {fileID: 0}
-  OvenOffPrompt: {fileID: 0}
-  FrostingPrompt: {fileID: 0}
-  SaucePrompt: {fileID: 0}
-  SprinklesPrompt: {fileID: 0}
-  CherriesPrompt: {fileID: 0}
-  vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
-    type: 3}
-  cakeTin: {fileID: 506036146}
---- !u!54 &984409351
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984409348}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1 &1043957752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7948,18 +8061,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768198961}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1832686560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5181142101636387239, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
-    type: 3}
-  m_PrefabInstance: {fileID: 828437426}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab3496fc122df443fbdb1b5cc36c0ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1836080885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8874,6 +8975,7 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   player: {fileID: 0}
+  gm: {fileID: 0}
   batterStation: {fileID: 0}
   ovenStation: {fileID: 0}
   flipStation: {fileID: 0}

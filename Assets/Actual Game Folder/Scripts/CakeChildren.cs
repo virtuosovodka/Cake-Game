@@ -8,6 +8,7 @@ public class CakeChildren : MonoBehaviour
     public GameObject cakePan;
     public Transform parent;
     public GameObject batter;
+    public GameManager gm;
 
     // for points
     CakeOrder cakeOrder;
@@ -90,7 +91,7 @@ public class CakeChildren : MonoBehaviour
                     points++;
                     // add cooked enough and amount of batter
                 }
-                if (player.timeInOven >= player.cookTime - 1 && player.timeInOven <= player.cookTime + 2)
+                if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
                 {
                     points++;
                 }
