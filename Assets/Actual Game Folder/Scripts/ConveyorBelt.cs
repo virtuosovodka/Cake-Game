@@ -14,7 +14,8 @@ public class ConveyorBelt : MonoBehaviour
     bool moveNegX = true;
     bool moveNegZ = true;
     bool moveNegY = true;
-    public Player player;
+    public Player playerLeft;
+    public Player playerRight;
     public GameManager gm;
     //public TextMeshProUGUI debug;
 
@@ -30,6 +31,8 @@ public class ConveyorBelt : MonoBehaviour
     public int timesInToppingStation;
     public int timesInFlipStation;
     public float tolerance;
+
+    public bool blah = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,31 +50,31 @@ public class ConveyorBelt : MonoBehaviour
         {
             if (moveX == true)
             {
+                print("start to belt 2");
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             }
             if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
             {
+                print("Belt2 2 to belt3");
                 moveX = false;
                 transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
             }
+            
             if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
             {
+                print("Belt3 to counter");
                 moveZ = false;
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+                //blah = true;
             }
-            if (gameObject.transform.position.x >= counter.transform.position.x & moveNegZ == true & moveX !=true & moveZ !=true & moveNegX !=true)
+            if ( gameObject.transform.position.x >= counter.transform.position.x && moveNegZ == true && moveX !=true && moveZ !=true)//& moveNegX !=true)
             {
+                Time.timeScale = 0;
+                print("counter to box");
                 moveNegX = false;
-                transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+                transform.Translate (0,0, moveSpeed * Time.deltaTime);
             }
-
-
-            /*if (gameObject.transform.position.x <= counter.transform.position.x & moveNegZ == true)
-            {
-                moveNegX = false;
-                //moveNegZ = false;
-                //transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
-            }*/
+            
 
             if (gameObject.transform.position.z <= counter.transform.position.z)
             {

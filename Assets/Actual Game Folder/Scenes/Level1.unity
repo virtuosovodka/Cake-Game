@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65829480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.055, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject: {fileID: 0}
   debug: {fileID: 615082611}
-  beltOn: 0
+  beltOn: 1
   batterOn: 0
   ovenOn: 0
   frostingOn: 0
@@ -672,16 +672,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74422535}
-  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.6249156, y: 1.171, z: 0.5829}
-  m_LocalScale: {x: 0.023167506, y: 0.049598258, z: 0.0208692}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: -0.101, y: 7.5, z: 0.65180004}
+  m_LocalScale: {x: 0.9267001, y: 0.116701774, z: 0.041738402}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1221657666}
   - {fileID: 335541286}
   - {fileID: 211043254}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1526937107}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!1 &87287993
 GameObject:
@@ -1097,8 +1097,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127681331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.92, y: 0, z: -3.47}
-  m_LocalScale: {x: 4, y: 1, z: 10}
+  m_LocalPosition: {x: -8.9155, y: 0, z: -3.3997}
+  m_LocalScale: {x: 4, y: 1, z: 9.855557}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826052066}
@@ -1548,7 +1548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &227657836
 BoxCollider:
@@ -1695,8 +1695,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240947275}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.44, y: 0.741, z: -5.9}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -9.29, y: 0.62, z: -0.58}
   m_LocalScale: {x: 2, y: 0.10000001, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1707,7 +1707,7 @@ Transform:
   - {fileID: 787578268}
   m_Father: {fileID: 826052066}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &240947277
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1722,7 +1722,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &240947278
 BoxCollider:
@@ -2820,7 +2820,8 @@ MonoBehaviour:
   Belt2: {fileID: 2027696630}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 0}
-  player: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   gm: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
@@ -2833,6 +2834,7 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
+  blah: 0
 --- !u!1 &365508751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2868,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!136 &365508753
 CapsuleCollider:
@@ -3128,11 +3130,12 @@ MonoBehaviour:
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  player: {fileID: 0}
-  gm: {fileID: 0}
+  playerLeft: {fileID: 820255315}
+  playerRight: {fileID: 268510847}
+  gm: {fileID: 65829483}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
-  flipStation: {fileID: 0}
+  flipStation: {fileID: 87287993}
   frostingStation: {fileID: 1321271825}
   toppingStation: {fileID: 1465407389}
   timesInBatterStation: 0
@@ -3141,6 +3144,7 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
+  blah: 0
 --- !u!136 &473099754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3490,7 +3494,8 @@ MonoBehaviour:
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  player: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   gm: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
@@ -3503,6 +3508,7 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
+  blah: 0
 --- !u!136 &506036150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4255,7 +4261,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &663957860
 BoxCollider:
@@ -4353,7 +4359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!136 &666201769
 CapsuleCollider:
@@ -4644,7 +4650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &727688035
 BoxCollider:
@@ -4916,15 +4922,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814619645}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.6249156, y: 1.171, z: -0.05539712}
-  m_LocalScale: {x: 0.023167506, y: 0.049598258, z: 0.0208692}
+  m_LocalPosition: {x: -0.101, y: 4, z: -0.62479424}
+  m_LocalScale: {x: 0.9267002, y: 0.11670182, z: 0.0417384}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 849874817}
   - {fileID: 1914437263}
   - {fileID: 688556512}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1526937107}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &814619652
 MonoBehaviour:
@@ -5915,7 +5921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &859305809
 BoxCollider:
@@ -6262,7 +6268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1218075665
 MonoBehaviour:
@@ -7236,6 +7242,8 @@ Transform:
   m_LocalScale: {x: 4.25, y: 0.25, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 74422541}
+  - {fileID: 814619651}
   - {fileID: 227657835}
   - {fileID: 859305808}
   - {fileID: 1535376306}
@@ -7281,7 +7289,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &1535376307
 BoxCollider:
@@ -7476,7 +7484,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!136 &1629626828
 CapsuleCollider:
@@ -8672,8 +8680,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945337113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.864, y: 0, z: -6.28}
-  m_LocalScale: {x: 18.073505, y: 1, z: 4}
+  m_LocalPosition: {x: 0.1223, y: 0, z: -6.3312}
+  m_LocalScale: {x: 14.095132, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826052066}
@@ -8974,7 +8982,8 @@ MonoBehaviour:
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  player: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   gm: {fileID: 0}
   batterStation: {fileID: 0}
   ovenStation: {fileID: 0}
@@ -8987,6 +8996,7 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
+  blah: 0
 --- !u!1 &2035783322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5181142101140568680, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
@@ -9353,7 +9363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &2067948487
 BoxCollider:

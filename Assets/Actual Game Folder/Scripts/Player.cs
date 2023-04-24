@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
 
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
+    //TODO: show up to work one day and someone threw a cake at your face limited vision
+    //TODO: tell sydney to make clear film on top of cake box so you can view cake
 
     /*        //if (other.gameObject.CompareTag("StartBelt"))
         //{
