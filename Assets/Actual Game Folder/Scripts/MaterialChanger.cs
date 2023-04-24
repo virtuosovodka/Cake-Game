@@ -19,7 +19,7 @@ public class MaterialChanger : MonoBehaviour
     private void Awake()
     {
         mats = GetComponent<Renderer>().materials;
-        Debug.Log(mats[1]);
+        
         changeMaterialCoolDownTimer = changeMaterialCoolDown;
 
         meshRenderer = GetComponent<MeshRenderer>();
@@ -50,6 +50,7 @@ public class MaterialChanger : MonoBehaviour
 
                 meshRenderer.material = mats[0];
                 changeMaterial = false;
+                changeMaterialCoolDownTimer = changeMaterialCoolDown;
             }
         }
     }

@@ -52645,14 +52645,16 @@ struct MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D  : public MonoB
 	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_5;
 	// System.Boolean MaterialChanger::changeMaterial
 	bool ___changeMaterial_6;
-	// System.Boolean MaterialChanger::changeMaterialMovie
-	bool ___changeMaterialMovie_7;
 	// UnityEngine.Renderer MaterialChanger::r
-	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___r_8;
+	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___r_7;
 	// UnityEngine.Material[] MaterialChanger::mats
-	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___mats_9;
+	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___mats_8;
 	// UnityEngine.MeshRenderer MaterialChanger::meshRenderer
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___meshRenderer_10;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___meshRenderer_9;
+	// System.Single MaterialChanger::changeMaterialCoolDown
+	float ___changeMaterialCoolDown_10;
+	// System.Single MaterialChanger::changeMaterialCoolDownTimer
+	float ___changeMaterialCoolDownTimer_11;
 };
 
 // Oculus.Interaction.MaterialPropertyBlockEditor

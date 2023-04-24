@@ -117,9 +117,9 @@ public class Player : MonoBehaviour
 
         Light.SetActive(false);
 
+        //ipad setup
         materialChanger.changeMaterial = false;
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
-
         playButton.SetActive(false);
         backButton.SetActive(false);
         Ipad ipad = gameObject.GetComponent<Ipad>();
