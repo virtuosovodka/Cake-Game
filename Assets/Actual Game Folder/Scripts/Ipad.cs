@@ -4,16 +4,10 @@ using UnityEngine;
 using UnityEngine.Video;
 public class Ipad : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
-    public Material playButtonMaterial;
-    public Material pauseButtonMaterial;
-    public Renderer screenRenderer;
+    VideoPlayer videoPlayer;
+    
     public VideoClip[] videoClips;
-    public GameObject playVideo1;
-    public GameObject playPause;
-    public GameObject playVideo2;
     public VideoClip[] materials;
-
     private int materialIndex;
     private int videoClipIndex;
     private void Awake()
@@ -24,16 +18,9 @@ public class Ipad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //start with black screen
         videoPlayer.clip = videoClips[0];
-        //Screen.material = materials[1]
-        //make an list the same as the video clip code, on trigger enter with any trigger to switch back to material 0 from the black sreen, on trigger compare with the back button and switch to material 1
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
-
     }
 
     public void SwitchingMaterial()
@@ -63,12 +50,12 @@ public class Ipad : MonoBehaviour
         if (videoPlayer.isPlaying)
         {
             videoPlayer.Pause();
-            //screenRenderer.material = playButtonMaterial;
+            
         }
         else
         {
             videoPlayer.Play();
-            //screenRenderer.material = pauseButtonMaterial;
+            
         }
 
     }

@@ -725,14 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3496fc122df443fbdb1b5cc36c0ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackMaterial: {fileID: 0}
-  movieMaterial: {fileID: 0}
-  videoPlayer: {fileID: 0}
   ipad: {fileID: 5181142101610552857}
   changeMaterial: 0
-  changeMaterialMovie: 0
-  r: {fileID: 0}
-  mats: []
 --- !u!1 &5181142101649288398
 GameObject:
   m_ObjectHideFlags: 0

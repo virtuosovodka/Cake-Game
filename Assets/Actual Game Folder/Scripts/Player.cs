@@ -118,11 +118,14 @@ public class Player : MonoBehaviour
         Light.SetActive(false);
 
         //ipad setup
-        materialChanger.changeMaterial = false;
+        ipad = gameObject.GetComponent<Ipad>();
+        materialChanger.meshRenderer.material = materialChanger.mats[1];
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
         playButton.SetActive(false);
         backButton.SetActive(false);
-        Ipad ipad = gameObject.GetComponent<Ipad>();
+        playVideo0.SetActive(true);
+        playVideo1.SetActive(true);
+        
 
         //button press prompts
         StartBeltPrompt.SetActive(false);
@@ -300,38 +303,30 @@ public class Player : MonoBehaviour
         //IPAD MAGIC
         if (currentObject.CompareTag("PlayVideo0")) //&& OVRInput.Get(OVRInput.Button.One))
         {
-            //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
-            //or tag he player "player
-            //debug.text = "paused";
-            
+            //debug.text = "play video zero";
             ipad.PlayPause(videoClips[0]);
-            materialChanger.changeMaterial = true;
+            materialChanger.meshRenderer.material = materialChanger.mats[0];
             backButton.SetActive(true);
             playButton.SetActive(true);
             playVideo0.SetActive(false);
             playVideo1.SetActive(false);
-
-            
         }
 
         if (currentObject.CompareTag("PlayVideo1")) //&& OVRInput.Get(OVRInput.Button.One))
         {
-            //debug.text = "paused";
+            //debug.text = "play video one";
             ipad.PlayPause(videoClips[1]);
-            materialChanger.changeMaterial = true;
+            materialChanger.meshRenderer.material = materialChanger.mats[0];
             backButton.SetActive(true);
             playButton.SetActive(true);
             playVideo1.SetActive(false);
             playVideo0.SetActive(false);
-            
         }
 
         if (currentObject.CompareTag("BackButton"))//&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "back to home screen";
-            
-            
-            materialChanger.changeMaterial = true;
+            materialChanger.meshRenderer.material = materialChanger.mats[1];
             playButton.SetActive(false);
             playVideo0.SetActive(true);
             playVideo1.SetActive(true);
@@ -340,9 +335,8 @@ public class Player : MonoBehaviour
 
         if (currentObject.CompareTag("PlayButton"))
         {
-            
+            //debug.text = "paused";
             ipad.PlayPause(ipad.CurrentClip());
-            //work on fixing this next class
         }
     }
 

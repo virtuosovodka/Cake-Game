@@ -52003,26 +52003,14 @@ struct Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6  : public MonoBehaviour_t5
 {
 	// UnityEngine.Video.VideoPlayer Ipad::videoPlayer
 	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___videoPlayer_4;
-	// UnityEngine.Material Ipad::playButtonMaterial
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___playButtonMaterial_5;
-	// UnityEngine.Material Ipad::pauseButtonMaterial
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___pauseButtonMaterial_6;
-	// UnityEngine.Renderer Ipad::screenRenderer
-	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___screenRenderer_7;
 	// UnityEngine.Video.VideoClip[] Ipad::videoClips
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_8;
-	// UnityEngine.GameObject Ipad::playVideo1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo1_9;
-	// UnityEngine.GameObject Ipad::playPause
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playPause_10;
-	// UnityEngine.GameObject Ipad::playVideo2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playVideo2_11;
+	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___videoClips_5;
 	// UnityEngine.Video.VideoClip[] Ipad::materials
-	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___materials_12;
+	VideoClipU5BU5D_t280906F030F50822EA9106636084805768BACC32* ___materials_6;
 	// System.Int32 Ipad::materialIndex
-	int32_t ___materialIndex_13;
+	int32_t ___materialIndex_7;
 	// System.Int32 Ipad::videoClipIndex
-	int32_t ___videoClipIndex_14;
+	int32_t ___videoClipIndex_8;
 };
 
 // Oculus.Interaction.PoseDetection.JointDeltaProvider
@@ -52645,16 +52633,14 @@ struct MaterialChanger_tBC18C42D24E09AE82A3811B491D852592520507D  : public MonoB
 	Ipad_t0495FC4CE6326AC38884B249B59E31851C0643E6* ___ipad_5;
 	// System.Boolean MaterialChanger::changeMaterial
 	bool ___changeMaterial_6;
-	// UnityEngine.Renderer MaterialChanger::r
-	Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___r_7;
 	// UnityEngine.Material[] MaterialChanger::mats
-	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___mats_8;
+	MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___mats_7;
 	// UnityEngine.MeshRenderer MaterialChanger::meshRenderer
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___meshRenderer_9;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___meshRenderer_8;
 	// System.Single MaterialChanger::changeMaterialCoolDown
-	float ___changeMaterialCoolDown_10;
+	float ___changeMaterialCoolDown_9;
 	// System.Single MaterialChanger::changeMaterialCoolDownTimer
-	float ___changeMaterialCoolDownTimer_11;
+	float ___changeMaterialCoolDownTimer_10;
 };
 
 // Oculus.Interaction.MaterialPropertyBlockEditor
