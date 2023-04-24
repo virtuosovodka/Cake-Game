@@ -5,23 +5,22 @@ using UnityEngine.Video;
 
 public class MaterialChanger : MonoBehaviour
 {
-    public Material blackMaterial;
-    public Material movieMaterial;
+    
     public VideoPlayer videoPlayer;
     public Ipad ipad;
     public bool changeMaterial;
-    public bool changeMaterialMovie;
+    
     public Renderer r;
     public Material[] mats;
     MeshRenderer meshRenderer;
+    float changeMaterialCoolDown = 1.5f;
+    float changeMaterialCoolDownTimer;
 
     private void Awake()
     {
         mats = GetComponent<Renderer>().materials;
-        Debug.Log(mats[0]);
-        //mats[0] = movieMaterial;
-        // mats[1] = blackMaterial;
-        //GetComponent<Renderer>().materials = mats;
+        Debug.Log(mats[1]);
+        changeMaterialCoolDownTimer = changeMaterialCoolDown;
 
         meshRenderer = GetComponent<MeshRenderer>();
         videoPlayer = GetComponent<VideoPlayer>();
@@ -29,24 +28,29 @@ public class MaterialChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer.material = mats[1];
-        //Debug.Log("Applied Material: " + oldMaterial.name);
-        //meshRenderer.material = oldMaterial;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (changeMaterial)
+        changeMaterialCoolDownTimer -= Time.deltaTime;
+        if (changeMaterial && changeMaterialCoolDownTimer<0)
         {
 
+            if (meshRenderer.material == mats[0])
+            {
 
-            meshRenderer.material = mats[1];
-        }
-        if (changeMaterialMovie)
-        {
-            meshRenderer.material = mats[0];
+                meshRenderer.material = mats[1];
+                changeMaterial = false;
+                changeMaterialCoolDownTimer = changeMaterialCoolDown;
+            }
+            else
+            {
+
+                meshRenderer.material = mats[0];
+                changeMaterial = false;
+            }
         }
     }
   

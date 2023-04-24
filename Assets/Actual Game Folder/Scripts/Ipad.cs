@@ -72,4 +72,9 @@ public class Ipad : MonoBehaviour
         }
 
     }
+    public VideoClip CurrentClip()
+    {
+
+        return videoPlayer.clip;
+    }
 }

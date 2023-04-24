@@ -34,14 +34,15 @@ public class Player : MonoBehaviour
     //ipad
     public Ipad ipad;
     public GameObject backButton;
-    public GameObject playVideo2;
+    public GameObject playVideo0;
     public GameObject playVideo1;
 
-    public GameObject playPause;
+    public GameObject playButton;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
     MeshRenderer backButtonMesh;
+  
 
     //level 1 button prompts
     public GameObject StartBeltPrompt;
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
 
     public GameObject vanillaBatter;
     public GameObject cakeTin;
+
 
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
@@ -118,7 +120,7 @@ public class Player : MonoBehaviour
         materialChanger.changeMaterial = false;
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
 
-        playPause.SetActive(false);
+        playButton.SetActive(false);
         backButton.SetActive(false);
         Ipad ipad = gameObject.GetComponent<Ipad>();
 
@@ -296,50 +298,50 @@ public class Player : MonoBehaviour
         }
 
         //IPAD MAGIC
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton"))
+        if (currentObject.CompareTag("PlayVideo0")) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //write a public function and reference it in the ipad script, use this to say videoPlayer.clip = videoClips[0]; etc.
             //or tag he player "player
             //debug.text = "paused";
             
             ipad.PlayPause(videoClips[0]);
-            materialChanger.changeMaterialMovie = true;
+            materialChanger.changeMaterial = true;
             backButton.SetActive(true);
-            playPause.SetActive(true);
-            playVideo2.SetActive(false);
+            playButton.SetActive(true);
+            playVideo0.SetActive(false);
             playVideo1.SetActive(false);
 
-            //playVideo1.transform.position += new Vector3(0, 0, 2)*Time.deltaTime;
-            //playPause.transform.position += new Vector3(0, 0, -2)*Time.deltaTime;
+            
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("PlayButton2"))
+        if (currentObject.CompareTag("PlayVideo1")) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "paused";
             ipad.PlayPause(videoClips[1]);
-            materialChanger.changeMaterialMovie = true;
+            materialChanger.changeMaterial = true;
             backButton.SetActive(true);
-            playPause.SetActive(true);
+            playButton.SetActive(true);
             playVideo1.SetActive(false);
-            playVideo2.SetActive(false);
-            //backButton.transform.position -= new Vector3(0, 0,10);
+            playVideo0.SetActive(false);
+            
         }
 
-        if (OVRInput.Get(OVRInput.Button.One) && currentObject.CompareTag("BackButton"))
+        if (currentObject.CompareTag("BackButton"))//&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "back to home screen";
             
-            materialChanger.changeMaterialMovie = false;
+            
             materialChanger.changeMaterial = true;
-            playPause.SetActive(false);
-            playVideo2.SetActive(true);
+            playButton.SetActive(false);
+            playVideo0.SetActive(true);
             playVideo1.SetActive(true);
             backButton.SetActive(false);
         }
 
-        if (currentObject.CompareTag("playPause"))
+        if (currentObject.CompareTag("PlayButton"))
         {
-            //ipad.PlayPause();
+            
+            ipad.PlayPause(ipad.CurrentClip());
             //work on fixing this next class
         }
     }

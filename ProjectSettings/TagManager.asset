@@ -25,6 +25,9 @@ TagManager:
   - YellowTopping
   - PinkTopping
   - OvenDoorHandle
+  - PlayVideo1
+  - PlayVideo2
+  - PlayVideo0
   layers:
   - Default
   - TransparentFX
