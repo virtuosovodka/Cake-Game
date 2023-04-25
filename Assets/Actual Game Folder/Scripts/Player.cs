@@ -168,7 +168,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StartBelt"))
+        if (gm.currentObject.CompareTag("StartBelt"))//&& OVRInput.GetDown(OVRInput.Button.One) )
         {
             Belt();
 

@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject: {fileID: 0}
   debug: {fileID: 615082611}
-  beltOn: 1
+  beltOn: 0
   batterOn: 0
   ovenOn: 0
   frostingOn: 0
@@ -1696,7 +1696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240947275}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.29, y: 0.62, z: -0.58}
+  m_LocalPosition: {x: -8.85, y: 0.62, z: -0.66}
   m_LocalScale: {x: 2, y: 0.10000001, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2200,8 +2200,10 @@ MonoBehaviour:
   playVideo1: {fileID: 867809352}
   playButton: {fileID: 0}
   videoPlayer: {fileID: 0}
-  videoClips: []
-  materialChanger: {fileID: 0}
+  videoClips:
+  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
+  materialChanger: {fileID: 1165624884}
   StartBeltPrompt: {fileID: 0}
   BatterPrompt: {fileID: 0}
   OvenDoorPrompt: {fileID: 0}
@@ -2823,6 +2825,7 @@ MonoBehaviour:
   playerLeft: {fileID: 0}
   playerRight: {fileID: 0}
   gm: {fileID: 0}
+  cakeBox: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 87287993}
@@ -2834,7 +2837,6 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
-  blah: 0
 --- !u!1 &365508751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,7 +3079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473099749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.39, y: 1.18, z: 7.67}
+  m_LocalPosition: {x: -8.66, y: 1.18, z: 7.37}
   m_LocalScale: {x: 1.5, y: 0.25, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3133,6 +3135,7 @@ MonoBehaviour:
   playerLeft: {fileID: 820255315}
   playerRight: {fileID: 268510847}
   gm: {fileID: 65829483}
+  cakeBox: {fileID: 240947275}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 87287993}
@@ -3143,8 +3146,7 @@ MonoBehaviour:
   timesInFrostingStation: 0
   timesInToppingStation: 0
   timesInFlipStation: 0
-  tolerance: 0
-  blah: 0
+  tolerance: 0.01
 --- !u!136 &473099754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3459,7 +3461,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826052066}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &506036148
 Rigidbody:
@@ -3497,6 +3499,7 @@ MonoBehaviour:
   playerLeft: {fileID: 0}
   playerRight: {fileID: 0}
   gm: {fileID: 0}
+  cakeBox: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 0}
@@ -3508,7 +3511,6 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
-  blah: 0
 --- !u!136 &506036150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5463,8 +5465,10 @@ MonoBehaviour:
   playVideo1: {fileID: 867809352}
   playButton: {fileID: 0}
   videoPlayer: {fileID: 0}
-  videoClips: []
-  materialChanger: {fileID: 0}
+  videoClips:
+  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
+  materialChanger: {fileID: 1165624884}
   StartBeltPrompt: {fileID: 0}
   BatterPrompt: {fileID: 0}
   OvenDoorPrompt: {fileID: 0}
@@ -5521,8 +5525,8 @@ Transform:
   - {fileID: 240947276}
   - {fileID: 87287994}
   - {fileID: 2055879801}
-  - {fileID: 151323068}
   - {fileID: 506036147}
+  - {fileID: 151323068}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5576,7 +5580,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -6122,6 +6126,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1165624884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5181142101636387239, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 828437426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab3496fc122df443fbdb1b5cc36c0ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1199880773
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,8 +6519,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326454522}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1.74, y: -0.17399979, z: -2.2199993}
-  m_LocalScale: {x: 0.2671, y: 0.8937, z: 1}
+  m_LocalPosition: {x: -1.7399995, y: -0.17399967, z: -2.2199996}
+  m_LocalScale: {x: 0.2671, y: 0.89370006, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 87287994}
@@ -6697,8 +6713,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354048715}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1.74, y: -0.17399979, z: 1.7300005}
-  m_LocalScale: {x: 0.2671, y: 0.8937, z: 1}
+  m_LocalPosition: {x: -1.7399995, y: -0.17399967, z: 1.7300005}
+  m_LocalScale: {x: 0.2671, y: 0.89370006, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 87287994}
@@ -8985,6 +9001,7 @@ MonoBehaviour:
   playerLeft: {fileID: 0}
   playerRight: {fileID: 0}
   gm: {fileID: 0}
+  cakeBox: {fileID: 0}
   batterStation: {fileID: 0}
   ovenStation: {fileID: 0}
   flipStation: {fileID: 0}
@@ -8996,7 +9013,6 @@ MonoBehaviour:
   timesInToppingStation: 0
   timesInFlipStation: 0
   tolerance: 0
-  blah: 0
 --- !u!1 &2035783322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5181142101140568680, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,

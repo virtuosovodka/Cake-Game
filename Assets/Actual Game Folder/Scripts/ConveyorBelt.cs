@@ -17,6 +17,7 @@ public class ConveyorBelt : MonoBehaviour
     public Player playerLeft;
     public Player playerRight;
     public GameManager gm;
+    public GameObject cakeBox;
     //public TextMeshProUGUI debug;
 
     public GameObject batterStation;
@@ -32,7 +33,6 @@ public class ConveyorBelt : MonoBehaviour
     public int timesInFlipStation;
     public float tolerance;
 
-    public bool blah = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class ConveyorBelt : MonoBehaviour
     void FixedUpdate()
     {
         //print(timesInBatterStation);
-        //debug.text = "" + leftHand.beltOn;
+        //debug.text = "" + leftHand.beltOn; 
 
         if (gm.beltOn)
         {
@@ -67,22 +67,21 @@ public class ConveyorBelt : MonoBehaviour
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
                 //blah = true;
             }
-            if ( gameObject.transform.position.x >= counter.transform.position.x && moveNegZ == true && moveX !=true && moveZ !=true)//& moveNegX !=true)
+            if ( gameObject.transform.position.x <= counter.transform.position.x && moveNegZ == true && moveX !=true && moveZ !=true)
             {
-                Time.timeScale = 0;
+                
                 print("counter to box");
                 moveNegX = false;
                 transform.Translate (0,0, moveSpeed * Time.deltaTime);
             }
-            
-
-            if (gameObject.transform.position.z <= counter.transform.position.z)
+            if (gameObject.transform.position.z>= cakeBox.transform.position.z && moveX != true && moveZ != true)
             {
                 moveNegZ = false;
-
+                
             }
+        
 
-            /*
+            
             // make two separate if statements for this bit on after the other else if then else
             if (gameObject.transform.position.x <= batterStation.transform.position.x + tolerance && gameObject.transform.position.x >= batterStation.transform.position.x - tolerance) 
             {
@@ -98,7 +97,7 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInBatterStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    gm.beltOn = false;
                 }
                
             }
@@ -110,7 +109,7 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInOvenStation % 2 != 0))
                 {
-                   player.beltOn = false;
+                   gm.beltOn = false;
                 }
 
             }
@@ -122,36 +121,35 @@ public class ConveyorBelt : MonoBehaviour
 
                 if ((timesInFlipStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    gm.beltOn = false;
                 }
 
             }
 
-            if (gameObject.transform.position.z <= frostingStation.transform.position.z + tolerance && gameObject.transform.position.z >= frostingStation.transform.position.z - tolerance)
+            if (gameObject.transform.position.x <= frostingStation.transform.position.x + tolerance && gameObject.transform.position.x >= frostingStation.transform.position.x - tolerance)
             {
                 print("in frosting station");
                 timesInFrostingStation++;
 
                 if ((timesInFrostingStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    gm.beltOn = false;
                 }
 
             }
 
-            if (gameObject.transform.position.z <= toppingStation.transform.position.z + tolerance && gameObject.transform.position.z >= toppingStation.transform.position.z - tolerance)
+            if (gameObject.transform.position.x <= toppingStation.transform.position.x + tolerance && gameObject.transform.position.x >= toppingStation.transform.position.x - tolerance)
             {
                 print("in topping station");
                 timesInToppingStation++;
 
                 if ((timesInToppingStation % 2 != 0))
                 {
-                    player.beltOn = false;
+                    gm.beltOn = false;
                 }
 
-            }*/
+            }
 
-            //TODO: add stops at conveyor beelt needs to make an additional turn
         } 
     }
 
