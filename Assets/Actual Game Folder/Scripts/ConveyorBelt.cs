@@ -22,12 +22,6 @@ public class ConveyorBelt : MonoBehaviour
 
     //public TextMeshProUGUI debug;
 
-    public GameObject batterStation;
-    public GameObject ovenStation;
-    public GameObject flipStation;
-    public GameObject frostingStation;
-    public GameObject toppingStation;
-
 
     // Start is called before the first frame update
     void Start()

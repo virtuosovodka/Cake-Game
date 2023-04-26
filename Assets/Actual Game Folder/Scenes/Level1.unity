@@ -227,9 +227,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 3.2723873
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.00000006208813, y: 0.43619487, z: -0.00000009313223}
 --- !u!23 &18238510
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2869,11 +2869,6 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 0}
   cakeBox: {fileID: 0}
-  batterStation: {fileID: 1454659052}
-  ovenStation: {fileID: 1526937106}
-  flipStation: {fileID: 87287993}
-  frostingStation: {fileID: 1321271825}
-  toppingStation: {fileID: 1465407389}
 --- !u!1 &365508751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,11 +3167,6 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 240947275}
-  batterStation: {fileID: 1454659052}
-  ovenStation: {fileID: 1526937106}
-  flipStation: {fileID: 87287993}
-  frostingStation: {fileID: 1321271825}
-  toppingStation: {fileID: 1465407389}
 --- !u!136 &473099754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3529,11 +3519,6 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 0}
-  batterStation: {fileID: 1454659052}
-  ovenStation: {fileID: 1526937106}
-  flipStation: {fileID: 0}
-  frostingStation: {fileID: 1321271825}
-  toppingStation: {fileID: 1465407389}
 --- !u!136 &506036150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9207,11 +9192,6 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 0}
-  batterStation: {fileID: 0}
-  ovenStation: {fileID: 0}
-  flipStation: {fileID: 0}
-  frostingStation: {fileID: 0}
-  toppingStation: {fileID: 0}
 --- !u!1 &2039474764
 GameObject:
   m_ObjectHideFlags: 0

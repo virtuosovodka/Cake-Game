@@ -163,11 +163,11 @@ public class Player : MonoBehaviour
             if (gm.timeInOven >= gm.cookTime + 4)
             {
                 // debug.text = "on fire";
-                // run fire animation
+                // run fire animationk
             }
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StartBelt"))
+        if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
         {
             Belt();
 
