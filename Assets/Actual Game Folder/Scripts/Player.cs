@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
     MeshRenderer backButtonMesh;
-  
+
 
     //level 1 button prompts
     public GameObject StartBeltPrompt;
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         backButton.SetActive(false);
         playVideo0.SetActive(true);
         playVideo1.SetActive(true);
-        
+
 
         //button press prompts
         StartBeltPrompt.SetActive(false);
@@ -129,13 +129,13 @@ public class Player : MonoBehaviour
     {
 
         OVRInput.Update();
+
         if (gm.currentObject != null)
         {
             gm.debug.text = gm.currentObject.name;
             print(gm.currentObject.name);
         }
-        
-        
+
         if (gm.ovenOn)
         {
             gm.timeInOven += Time.deltaTime;
@@ -150,25 +150,24 @@ public class Player : MonoBehaviour
 
             if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
-               // debug.text = "cooked";
+                // debug.text = "cooked";
                 // run cooked animation
             }
 
             if (gm.timeInOven >= gm.cookTime + 2)
             {
-               // debug.text = "overcooked";
+                // debug.text = "overcooked";
                 // run overbaked animation
             }
 
             if (gm.timeInOven >= gm.cookTime + 4)
             {
-               // debug.text = "on fire";
+                // debug.text = "on fire";
                 // run fire animation
             }
         }
 
-
-        if (gm.currentObject.CompareTag("StartBelt"))//&& OVRInput.GetDown(OVRInput.Button.One) )
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StartBelt"))
         {
             Belt();
 
@@ -180,8 +179,7 @@ public class Player : MonoBehaviour
         {
             BeltOff();
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
         {
             VanillaBatter();
 
@@ -191,14 +189,6 @@ public class Player : MonoBehaviour
         //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
         //press hold and drag- only in certain dimensions, add in and/or for door in/ door out
         //can open door only when oven is off
-        if (Input.GetKey(KeyCode.Mouse0) && gm.currentObject.CompareTag("OvenDoor")) //&& !ovenOn)
-        {
-            //debug.text = "oven door";
-            //hold and drag to reset door position.can't go past certain coordinates
-            //door must be closed to turn oven on oven must be off to open door
-
-            //on collision && grab bottom and y/b and hand turned 90
-        }
 
         //start oven function
         if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOn"))
@@ -207,12 +197,15 @@ public class Player : MonoBehaviour
             // on collision and B or Y
 
         }
-
-
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
+        else if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
         {
             OvenLight();
             // on collision and B or Y
+        }
+
+        if (gm.currentObject.CompareTag("OvenDoorHandle"))
+        {
+            gm.ovenDoorHit = true;
         }
 
         //stop oven function
@@ -243,42 +236,35 @@ public class Player : MonoBehaviour
         {
             BatterPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
         {
             OvenDoorPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
         {
             OvenOnPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
         {
             OvenLightPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
         {
             OvenOffPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
         {
             FrostingPrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
         {
             SaucePrompt.SetActive(true);
         }
-
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
         {
             SprinklesPrompt.SetActive(true);
         }
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
         {
             CherriesPrompt.SetActive(true);
         }
