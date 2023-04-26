@@ -5,21 +5,19 @@ using TMPro;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    public GameManager gm;
-    public Player playerLeft;
-    public Player playerRight;
-
-    public float moveSpeed;
-    bool moveX = true;
-    bool moveZ = true;
-    bool moveNegX = true;
-    bool moveNegZ = true;
-
+    public float moveSpeed = 2;
+    public bool moveX = true;
     public GameObject Belt2;
     public GameObject Belt3;
+    bool moveZ = true;
     public GameObject counter;
+    bool moveNegX = true;
+    bool moveNegZ = true;
+    bool moveNegY = true;
+    public Player playerLeft;
+    public Player playerRight;
+    public GameManager gm;
     public GameObject cakeBox;
-
     //public TextMeshProUGUI debug;
 
     public GameObject batterStation;
@@ -27,6 +25,13 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject flipStation;
     public GameObject frostingStation;
     public GameObject toppingStation;
+
+    public int timesInBatterStation;
+    public int timesInOvenStation;
+    public int timesInFrostingStation;
+    public int timesInToppingStation;
+    public int timesInFlipStation;
+    public float tolerance;
 
 
     // Start is called before the first frame update
@@ -74,41 +79,80 @@ public class ConveyorBelt : MonoBehaviour
                 moveNegZ = false;
                 
             }
+        
 
-        }
+            
+            // make two separate if statements for this bit on after the other else if then else
+            if (gameObject.transform.position.x <= batterStation.transform.position.x + tolerance && gameObject.transform.position.x >= batterStation.transform.position.x - tolerance) 
+            {
+                print("in batter station");
+                timesInBatterStation++;
+                //stop moving
+                // bool for first arrival when start pressed again can continue moving
+                // if its this position set int to 1 when pressed again ++
+                // if odd stop moving on arrival if even keep moving
+                //(variable%2)=0 is even else odd
 
+                //on first arrival =1 stop moving
 
+                if ((timesInBatterStation % 2 != 0))
+                {
+                    gm.beltOn = false;
+                }
+               
+            }
+
+            if (gameObject.transform.position.z <= ovenStation.transform.position.z + tolerance && gameObject.transform.position.z >= ovenStation.transform.position.z - tolerance)
+            {
+                print("in oven station");
+                timesInOvenStation++;
+
+                if ((timesInOvenStation % 2 != 0))
+                {
+                   gm.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.z <= flipStation.transform.position.z + tolerance && gameObject.transform.position.z >= flipStation.transform.position.z - tolerance)
+            {
+                print("in flip station");
+                timesInFlipStation++;
+
+                if ((timesInFlipStation % 2 != 0))
+                {
+                    gm.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.x <= frostingStation.transform.position.x + tolerance && gameObject.transform.position.x >= frostingStation.transform.position.x - tolerance)
+            {
+                print("in frosting station");
+                timesInFrostingStation++;
+
+                if ((timesInFrostingStation % 2 != 0))
+                {
+                    gm.beltOn = false;
+                }
+
+            }
+
+            if (gameObject.transform.position.x <= toppingStation.transform.position.x + tolerance && gameObject.transform.position.x >= toppingStation.transform.position.x - tolerance)
+            {
+                print("in topping station");
+                timesInToppingStation++;
+
+                if ((timesInToppingStation % 2 != 0))
+                {
+                    gm.beltOn = false;
+                }
+
+            }
+
+        } 
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("BatterStop"))
-        {
-            gm.beltOn = false;
-        }
-
-        if (other.gameObject.CompareTag("OvenStop"))
-        {
-            gm.beltOn = false;
-        }
-
-        if (other.gameObject.CompareTag("FlipStop"))
-        {
-            gm.beltOn = false;
-        }
-
-        if (other.gameObject.CompareTag("FrostingStop"))
-        {
-            gm.beltOn = false;
-        }
-
-        if (other.gameObject.CompareTag("ToppingStop"))
-        {
-            gm.beltOn = false;
-        }
-
-    }
 
 
-
-}
+   }
