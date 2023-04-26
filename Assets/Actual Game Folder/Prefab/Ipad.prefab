@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181142100529492871
 MeshFilter:
@@ -162,7 +162,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181142100772109432
 MeshFilter:
@@ -259,7 +259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181142101140568683
 MeshFilter:
@@ -356,7 +356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181142101451109626
 MeshFilter:
@@ -432,7 +432,6 @@ GameObject:
   - component: {fileID: 5181142101610552856}
   - component: {fileID: 5181142101610552863}
   - component: {fileID: 5181142101610552862}
-  - component: {fileID: 5181142101610552857}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -585,29 +584,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5181142101610552857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181142101610552861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fab084da8a1f8477faab24c6a6f4a812, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
-  playButtonMaterial: {fileID: 2100000, guid: 467059752df1a4f409b733e1c3774762, type: 2}
-  pauseButtonMaterial: {fileID: 2100000, guid: 467059752df1a4f409b733e1c3774762, type: 2}
-  screenRenderer: {fileID: 5181142100772109439}
-  videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
-  - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
-  playVideo1: {fileID: 5181142100772109437}
-  playPause: {fileID: 5181142101140568680}
-  playVideo2: {fileID: 5181142101451109631}
-  materials: []
 --- !u!1 &5181142101636387242
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,12 +616,12 @@ Transform:
   m_LocalScale: {x: 150, y: 100, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5181142100529492864}
   - {fileID: 5181142101840994926}
   - {fileID: 5181142101649288394}
   - {fileID: 5181142100772109433}
   - {fileID: 5181142101140568676}
   - {fileID: 5181142101451109627}
-  - {fileID: 5181142100529492864}
   m_Father: {fileID: 5181142100702182307}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -725,8 +701,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3496fc122df443fbdb1b5cc36c0ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipad: {fileID: 5181142101610552857}
-  changeMaterial: 0
+  ipad: {fileID: 0}
+  mats: []
+  meshRenderer: {fileID: 0}
 --- !u!1 &5181142101649288398
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &5181142101649288393
 MeshFilter:
@@ -941,7 +918,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5181142101636387238}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5181142101840994921
 MeshFilter:

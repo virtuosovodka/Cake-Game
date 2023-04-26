@@ -7,7 +7,7 @@ public class Ipad : MonoBehaviour
     VideoPlayer videoPlayer;
     
     public VideoClip[] videoClips;
-    public VideoClip[] materials;
+    //public VideoClip[] materials;
     private int materialIndex;
     private int videoClipIndex;
     private void Awake()
@@ -19,7 +19,7 @@ public class Ipad : MonoBehaviour
     void Start()
     {
         //start with black screen
-        videoPlayer.clip = videoClips[0];
+        videoPlayer.clip = videoClips[1];
         
     }
 
@@ -45,8 +45,10 @@ public class Ipad : MonoBehaviour
 
     public void PlayPause(VideoClip _clip)
     {
+        
         videoPlayer.clip = _clip;
-
+        videoPlayer.Play();
+        /*
         if (videoPlayer.isPlaying)
         {
             videoPlayer.Pause();
@@ -57,6 +59,9 @@ public class Ipad : MonoBehaviour
             videoPlayer.Play();
             
         }
+
+        */
+
 
     }
     public VideoClip CurrentClip()

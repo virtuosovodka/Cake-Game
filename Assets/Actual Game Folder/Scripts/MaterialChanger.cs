@@ -6,9 +6,9 @@ using UnityEngine.Video;
 public class MaterialChanger : MonoBehaviour
 {
     
-    VideoPlayer videoPlayer;
+    //VideoPlayer videoPlayer;
     public Ipad ipad;
-    public bool changeMaterial;
+    //public bool changeMaterial;
     public Material[] mats;
     public MeshRenderer meshRenderer;
     float changeMaterialCoolDown = 1.5f;
@@ -21,7 +21,7 @@ public class MaterialChanger : MonoBehaviour
         changeMaterialCoolDownTimer = changeMaterialCoolDown;
 
         meshRenderer = GetComponent<MeshRenderer>();
-        videoPlayer = GetComponent<VideoPlayer>();
+        //videoPlayer = GetComponent<VideoPlayer>();
     }
     
   

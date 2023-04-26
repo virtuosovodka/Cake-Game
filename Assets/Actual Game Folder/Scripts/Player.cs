@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     bool lightOn;
 
     //ipad
-    public Ipad ipad;
+    //public Ipad ipad;
     public GameObject backButton;
     public GameObject playVideo0;
     public GameObject playVideo1;
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        videoPlayer = GetComponent<VideoPlayer>();
+        //videoPlayer = GetComponent<VideoPlayer>();
 
         //delete the material changer in the player inspector
         //materialChanger = GetComponent<MaterialChanger>();
@@ -101,8 +101,8 @@ public class Player : MonoBehaviour
         Light.SetActive(false);
 
         //ipad setup
-        ipad = gameObject.GetComponent<Ipad>();
-        materialChanger.meshRenderer.material = materialChanger.mats[1];
+        //ipad = gameObject.GetComponent<Ipad>();
+        materialChanger.meshRenderer.material = materialChanger.mats[0];
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
         playButton.SetActive(false);
         backButton.SetActive(false);
@@ -270,33 +270,38 @@ public class Player : MonoBehaviour
         }
 
         //IPAD MAGIC
-        if (gm.currentObject.CompareTag("PlayVideo0")) //&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "play video zero";
-            ipad.PlayPause(videoClips[0]);
+            //ipad.PlayPause(videoClips[0]);
             materialChanger.meshRenderer.material = materialChanger.mats[0];
             backButton.SetActive(true);
-            playButton.SetActive(true);
+            //playButton.SetActive(true);
             playVideo0.SetActive(false);
             playVideo1.SetActive(false);
+            videoPlayer.clip = videoClips[0];
+            videoPlayer.Play();
+            
         }
 
-        if (gm.currentObject.CompareTag("PlayVideo1")) //&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "play video one";
-            ipad.PlayPause(videoClips[1]);
+            //ipad.PlayPause(videoClips[1]);
             materialChanger.meshRenderer.material = materialChanger.mats[0];
             backButton.SetActive(true);
-            playButton.SetActive(true);
+            //playButton.SetActive(true);
             playVideo1.SetActive(false);
             playVideo0.SetActive(false);
+            videoPlayer.clip = videoClips[1];
+            videoPlayer.Play();
         }
 
-        if (gm.currentObject.CompareTag("BackButton"))//&& OVRInput.Get(OVRInput.Button.One))
+        if (gm.currentObject.CompareTag("BackButton")|| Input.GetKeyDown(KeyCode.D))//&& OVRInput.Get(OVRInput.Button.One))
         {
             //debug.text = "back to home screen";
             materialChanger.meshRenderer.material = materialChanger.mats[1];
-            playButton.SetActive(false);
+            //playButton.SetActive(false);
             playVideo0.SetActive(true);
             playVideo1.SetActive(true);
             backButton.SetActive(false);
@@ -305,7 +310,7 @@ public class Player : MonoBehaviour
         if (gm.currentObject.CompareTag("PlayButton"))
         {
             //debug.text = "paused";
-            ipad.PlayPause(ipad.CurrentClip());
+            //ipad.PlayPause(ipad.CurrentClip());
         }
     }
 

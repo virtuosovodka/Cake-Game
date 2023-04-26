@@ -1741,7 +1741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240947275}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.85, y: 0.62, z: -4.56}
+  m_LocalPosition: {x: -8.85, y: 0.62, z: 0.441}
   m_LocalScale: {x: 2, y: 0.10000001, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2239,12 +2239,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
-  ipad: {fileID: 681196454}
   backButton: {fileID: 15244828}
   playVideo0: {fileID: 1976026853}
   playVideo1: {fileID: 867809352}
   playButton: {fileID: 0}
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 681196457}
   videoClips:
   - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
@@ -2862,26 +2861,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   moveSpeed: 2
-  moveX: 1
   Belt2: {fileID: 2027696630}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 0}
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  gm: {fileID: 0}
   cakeBox: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 87287993}
   frostingStation: {fileID: 1321271825}
   toppingStation: {fileID: 1465407389}
-  timesInBatterStation: 0
-  timesInOvenStation: 0
-  timesInFrostingStation: 0
-  timesInToppingStation: 0
-  timesInFlipStation: 0
-  tolerance: 0
 --- !u!1 &365508751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,26 +3164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 65829483}
+  playerLeft: {fileID: 820255315}
+  playerRight: {fileID: 268510847}
   moveSpeed: 1.5
-  moveX: 1
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  playerLeft: {fileID: 820255315}
-  playerRight: {fileID: 268510847}
-  gm: {fileID: 65829483}
   cakeBox: {fileID: 240947275}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 87287993}
   frostingStation: {fileID: 1321271825}
   toppingStation: {fileID: 1465407389}
-  timesInBatterStation: 0
-  timesInOvenStation: 0
-  timesInFrostingStation: 0
-  timesInToppingStation: 0
-  timesInFlipStation: 0
-  tolerance: 0.01
 --- !u!136 &473099754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3536,26 +3521,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   moveSpeed: 1.5
-  moveX: 1
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  gm: {fileID: 0}
   cakeBox: {fileID: 0}
   batterStation: {fileID: 1454659052}
   ovenStation: {fileID: 1526937106}
   flipStation: {fileID: 0}
   frostingStation: {fileID: 1321271825}
   toppingStation: {fileID: 1465407389}
-  timesInBatterStation: 0
-  timesInOvenStation: 0
-  timesInFrostingStation: 0
-  timesInToppingStation: 0
-  timesInFlipStation: 0
-  tolerance: 0
 --- !u!136 &506036150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4556,18 +4534,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &681196454 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5181142101610552857, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+--- !u!328 &681196457 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 5181142101610552863, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
     type: 3}
   m_PrefabInstance: {fileID: 828437426}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fab084da8a1f8477faab24c6a6f4a812, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &688556511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,8 +4980,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd025d1b42f7453f93b653e38ef6f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  parent: {fileID: 0}
+  gm: {fileID: 0}
+  handle: {fileID: 0}
   debug: {fileID: 0}
-  cameraOffset: {fileID: 0}
+  yTransform: 0
 --- !u!1 &820255304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,12 +5481,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
-  ipad: {fileID: 681196454}
   backButton: {fileID: 15244828}
   playVideo0: {fileID: 1976026853}
   playVideo1: {fileID: 867809352}
   playButton: {fileID: 0}
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 681196457}
   videoClips:
   - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
@@ -5591,7 +5567,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ipad
       value: 
-      objectReference: {fileID: 681196454}
+      objectReference: {fileID: 0}
     - target: {fileID: 3809907298350007257, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_Enabled
@@ -5610,7 +5586,7 @@ PrefabInstance:
     - target: {fileID: 5181142100529492864, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100529492868, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -5650,37 +5626,37 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.025
+      value: -8.65
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.967
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.563
+      value: 0.527
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.28388378
+      value: 0.15017775
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1175885
+      value: 0.06220565
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8791834
+      value: -0.91159207
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.3641697
+      value: 0.3775938
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -5690,7 +5666,7 @@ PrefabInstance:
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -144.21
+      value: -161.29
       objectReference: {fileID: 0}
     - target: {fileID: 5181142100702182307, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -5752,21 +5728,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlayVideo1
       objectReference: {fileID: 0}
-    - target: {fileID: 5181142101610552857, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
-        type: 3}
-      propertyPath: playButton
-      value: 
-      objectReference: {fileID: 2035783322}
-    - target: {fileID: 5181142101610552857, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
-        type: 3}
-      propertyPath: playVideo0
-      value: 
-      objectReference: {fileID: 1976026853}
-    - target: {fileID: 5181142101610552857, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
-        type: 3}
-      propertyPath: playVideo1
-      value: 
-      objectReference: {fileID: 867809352}
     - target: {fileID: 5181142101610552862, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_Enabled
@@ -5774,8 +5735,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5181142101610552863, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
+      propertyPath: m_Looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101610552863, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101610552863, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5181142101636387236, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -5791,6 +5762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101636387239, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: changeMaterial
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5181142101636387239, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
@@ -9223,32 +9199,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  playerLeft: {fileID: 0}
+  playerRight: {fileID: 0}
   moveSpeed: 2
-  moveX: 1
   Belt2: {fileID: 122890265}
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  gm: {fileID: 0}
   cakeBox: {fileID: 0}
   batterStation: {fileID: 0}
   ovenStation: {fileID: 0}
   flipStation: {fileID: 0}
   frostingStation: {fileID: 0}
   toppingStation: {fileID: 0}
-  timesInBatterStation: 0
-  timesInOvenStation: 0
-  timesInFrostingStation: 0
-  timesInToppingStation: 0
-  timesInFlipStation: 0
-  tolerance: 0
---- !u!1 &2035783322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5181142101140568680, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
-    type: 3}
-  m_PrefabInstance: {fileID: 828437426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039474764
 GameObject:
   m_ObjectHideFlags: 0
