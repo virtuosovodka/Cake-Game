@@ -209,7 +209,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
+        if (gm.currentObject.CompareTag("OvenLight")) //OVRInput.GetDown(OVRInput.Button.One) && 
         {
             OvenLight();
             // on collision and B or Y

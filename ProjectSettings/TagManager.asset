@@ -28,6 +28,11 @@ TagManager:
   - PlayVideo1
   - PlayVideo2
   - PlayVideo0
+  - BatterStop
+  - OvenStop
+  - FlipStop
+  - FrostingStop
+  - ToppingStop
   layers:
   - Default
   - TransparentFX
