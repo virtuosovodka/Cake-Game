@@ -5870,6 +5870,90 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1001 &1141245556
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.968
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.147
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.766
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 403899631585449571, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067670044491615449, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: m_Name
+      value: TriangleHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534647996995441485, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: frostingButton1
+      value: 
+      objectReference: {fileID: 1452372960}
+    - target: {fileID: 8534647996995441485, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: frostingButton2
+      value: 
+      objectReference: {fileID: 2039474764}
+    - target: {fileID: 8534647996995441485, guid: cb70bf37b984c4565b267069803fb11f,
+        type: 3}
+      propertyPath: frostingButton3
+      value: 
+      objectReference: {fileID: 2052726124}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb70bf37b984c4565b267069803fb11f, type: 3}
 --- !u!114 &1165624884 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5181142101636387239, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
@@ -6883,7 +6967,7 @@ GameObject:
   - component: {fileID: 1452372962}
   - component: {fileID: 1452372965}
   m_Layer: 0
-  m_Name: Frosting Button (1)
+  m_Name: FrostingButton1
   m_TagString: FrostingButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
