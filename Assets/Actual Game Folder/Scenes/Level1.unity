@@ -2594,32 +2594,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 348780428}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &348780430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 709ddab6b0e2b46a0855fa689ab4d361,
-    type: 3}
-  m_PrefabInstance: {fileID: 348780428}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &348780431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348780430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  moveSpeed: 2
-  Belt2: {fileID: 2027696630}
-  Belt3: {fileID: 1945337113}
-  counter: {fileID: 0}
-  cakeBox: {fileID: 0}
 --- !u!1 &365508751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,6 +5177,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: home Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5181142101815486993, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_Name
+      value: 'ipad Camera '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101815486993, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101815486994, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5181142101815486995, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
       propertyPath: m_Enabled
@@ -6960,6 +6949,25 @@ Transform:
   m_Father: {fileID: 826052066}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1524216367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5181142101610552861, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 828437426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524216370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524216367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab084da8a1f8477faab24c6a6f4a812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoClips: []
 --- !u!1 &1526937106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8711,26 +8719,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &2027696633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027696630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  playerLeft: {fileID: 0}
-  playerRight: {fileID: 0}
-  moveSpeed: 2
-  Belt2: {fileID: 122890265}
-  Belt3: {fileID: 1945337113}
-  counter: {fileID: 127681331}
-  cakeBox: {fileID: 0}
 --- !u!1 &2035783322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1067670044491615449, guid: cb70bf37b984c4565b267069803fb11f,

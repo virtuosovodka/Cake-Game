@@ -132,12 +132,6 @@ public class Player : MonoBehaviour
 
         OVRInput.Update();
 
-        if (gm.currentObject != null)
-        {
-            gm.debug.text = gm.currentObject.name;
-            print(gm.currentObject.name);
-        }
-
         if (gm.ovenOn)
         {
             gm.timeInOven += Time.deltaTime;
@@ -169,165 +163,172 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+        if (gm.currentObject != null)
         {
-            Belt();
+            gm.debug.text = gm.currentObject.name;
+            print(gm.currentObject.name);
 
-            //batter button is on collision && while B or Y button is down
-        }
 
-        //TODO: delete?
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StopBelt"))
-        {
-            BeltOff();
-        }
+            if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            {
+                Belt();
 
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
-        {
-            VanillaBatter();
+                //batter button is on collision && while B or Y button is down
+            }
 
-            //batter button is on collision && while B or Y button is down
-        }
+            //TODO: delete?
+            if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StopBelt"))
+            {
+                BeltOff();
+            }
 
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ChocolateBatterButton"))
-        {
-            ChocolateBatter();
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
+            {
+                VanillaBatter();
 
-            //batter button is on collision && while B or Y button is down
-        }
+                //batter button is on collision && while B or Y button is down
+            }
 
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("LemonBatterButton"))
-        {
-            LemonBatter();
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ChocolateBatterButton"))
+            {
+                ChocolateBatter();
 
-            //batter button is on collision && while B or Y button is down
-        }
+                //batter button is on collision && while B or Y button is down
+            }
 
-        //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
-        //press hold and drag- only in certain dimensions, add in and/or for door in/ door out
-        //can open door only when oven is off
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("LemonBatterButton"))
+            {
+                LemonBatter();
 
-        //start oven function
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOn"))
-        {
-            OvenOn();
-            // on collision and B or Y
+                //batter button is on collision && while B or Y button is down
+            }
 
-        }
-        else if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
-        {
-            OvenLight();
-            // on collision and B or Y
-        }
+            //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
+            //press hold and drag- only in certain dimensions, add in and/or for door in/ door out
+            //can open door only when oven is off
 
-        if (gm.currentObject.CompareTag("OvenDoorHandle"))
-        {
-            gm.ovenDoorHit = true;
-        }
+            //start oven function
+            if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOn"))
+            {
+                OvenOn();
+                // on collision and B or Y
 
-        //stop oven function
-        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOff"))
-        {
-            OvenOff();
-            // on collision and B or Y
-        }
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
+            {
+                OvenLight();
+                // on collision and B or Y
+            }
 
-        //press hold and drag
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
-        {
-            Frosting();
-            //on collision and front button to hold/ move both bottoms to get frosting out
-        }
+            if (gm.currentObject.CompareTag("OvenDoorHandle"))
+            {
+                gm.ovenDoorHit = true;
+            }
 
-        //press hold and drag
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
-        {
-            Topping();
-            // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
-            // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
-            // cherries on collision front button && y/b to pick it up
-        }
+            //stop oven function
+            if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOff"))
+            {
+                OvenOff();
+                // on collision and B or Y
+            }
 
-        //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-        {
-            BatterPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
-        {
-            OvenDoorPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
-        {
-            OvenOnPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
-        {
-            OvenLightPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
-        {
-            OvenOffPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
-        {
-            FrostingPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
-        {
-            SaucePrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
-        {
-            SprinklesPrompt.SetActive(true);
-        }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
-        {
-            CherriesPrompt.SetActive(true);
-        }
+            //press hold and drag
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+            {
+                Frosting();
+                //on collision and front button to hold/ move both bottoms to get frosting out
+            }
 
-        //IPAD MAGIC
-        if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
-        {
-            //debug.text = "play video zero";
-            //ipad.PlayPause(videoClips[0]);
-            materialChanger.meshRenderer.material = materialChanger.mats[0];
-            backButton.SetActive(true);
-            //playButton.SetActive(true);
-            playVideo0.SetActive(false);
-            playVideo1.SetActive(false);
-            videoPlayer.clip = videoClips[0];
-            videoPlayer.Play();
-            
-        }
+            //press hold and drag
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
+            {
+                Topping();
+                // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+                // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
+                // cherries on collision front button && y/b to pick it up
+            }
 
-        if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
-        {
-            //debug.text = "play video one";
-            //ipad.PlayPause(videoClips[1]);
-            materialChanger.meshRenderer.material = materialChanger.mats[0];
-            backButton.SetActive(true);
-            //playButton.SetActive(true);
-            playVideo1.SetActive(false);
-            playVideo0.SetActive(false);
-            videoPlayer.clip = videoClips[1];
-            videoPlayer.Play();
-        }
+            //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+            {
+                BatterPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+            {
+                OvenDoorPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+            {
+                OvenOnPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+            {
+                OvenLightPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+            {
+                OvenOffPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+            {
+                FrostingPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+            {
+                SaucePrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+            {
+                SprinklesPrompt.SetActive(true);
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+            {
+                CherriesPrompt.SetActive(true);
+            }
 
-        if (gm.currentObject.CompareTag("BackButton")|| Input.GetKeyDown(KeyCode.D))//&& OVRInput.Get(OVRInput.Button.One))
-        {
-            //debug.text = "back to home screen";
-            materialChanger.meshRenderer.material = materialChanger.mats[1];
-            //playButton.SetActive(false);
-            playVideo0.SetActive(true);
-            playVideo1.SetActive(true);
-            backButton.SetActive(false);
-        }
+            //IPAD MAGIC
+            if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
+            {
+                //debug.text = "play video zero";
+                //ipad.PlayPause(videoClips[0]);
+                materialChanger.meshRenderer.material = materialChanger.mats[0];
+                backButton.SetActive(true);
+                //playButton.SetActive(true);
+                playVideo0.SetActive(false);
+                playVideo1.SetActive(false);
+                videoPlayer.clip = videoClips[0];
+                videoPlayer.Play();
 
-        if (gm.currentObject.CompareTag("PlayButton"))
-        {
-            //debug.text = "paused";
-            //ipad.PlayPause(ipad.CurrentClip());
+            }
+
+            if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
+            {
+                //debug.text = "play video one";
+                //ipad.PlayPause(videoClips[1]);
+                materialChanger.meshRenderer.material = materialChanger.mats[0];
+                backButton.SetActive(true);
+                //playButton.SetActive(true);
+                playVideo1.SetActive(false);
+                playVideo0.SetActive(false);
+                videoPlayer.clip = videoClips[1];
+                videoPlayer.Play();
+            }
+
+            if (gm.currentObject.CompareTag("BackButton") || Input.GetKeyDown(KeyCode.D))//&& OVRInput.Get(OVRInput.Button.One))
+            {
+                //debug.text = "back to home screen";
+                materialChanger.meshRenderer.material = materialChanger.mats[1];
+                //playButton.SetActive(false);
+                playVideo0.SetActive(true);
+                playVideo1.SetActive(true);
+                backButton.SetActive(false);
+            }
+
+            if (gm.currentObject.CompareTag("PlayButton"))
+            {
+                //debug.text = "paused";
+                //ipad.PlayPause(ipad.CurrentClip());
+            }
         }
     }
 

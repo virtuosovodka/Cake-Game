@@ -34,39 +34,42 @@ public class ConveyorBelt : MonoBehaviour
     {
         //print(timesInBatterStation);
         //debug.text = "" + leftHand.beltOn; 
-
-        if (gm.beltOn)
+        if (gm != null)
         {
-            if (moveX == true)
+            if (gm.beltOn)
             {
-                print("start to belt 2");
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-            }
-            if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
-            {
-                print("Belt2 2 to belt3");
-                moveX = false;
-                transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
-            }
-            
-            if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
-            {
-                print("Belt3 to counter");
-                moveZ = false;
-                transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
-                //blah = true;
-            }
-            if ( gameObject.transform.position.x <= counter.transform.position.x && moveNegZ == true && moveX !=true && moveZ !=true)
-            {
-                
-                print("counter to box");
-                moveNegX = false;
-                transform.Translate (0,0, moveSpeed * Time.deltaTime);
-            }
-            if (gameObject.transform.position.z>= cakeBox.transform.position.z && moveX != true && moveZ != true)
-            {
-                moveNegZ = false;
-                
+                if (moveX == true)
+                {
+                    print("start to belt 2");
+                    transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                }
+                if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
+                {
+                    print("Belt2 2 to belt3");
+                    moveX = false;
+                    transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
+                }
+
+                if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
+                {
+                    print("Belt3 to counter");
+                    moveZ = false;
+                    transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+                    //blah = true;
+                }
+                if (gameObject.transform.position.x <= counter.transform.position.x && moveNegZ == true && moveX != true && moveZ != true)
+                {
+
+                    print("counter to box");
+                    moveNegX = false;
+                    transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+                }
+                if (gameObject.transform.position.z >= cakeBox.transform.position.z && moveX != true && moveZ != true)
+                {
+                    moveNegZ = false;
+
+                }
+
             }
 
         }

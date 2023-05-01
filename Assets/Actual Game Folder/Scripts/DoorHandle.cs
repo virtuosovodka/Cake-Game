@@ -22,15 +22,20 @@ public class DoorHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debug.text = "" + leftHand.gm.ovenDoorHit;
-        
-        if (gm.ovenDoorHit)
+        if (debug != null)
         {
-            parent = leftHand.transform;
-            handle.transform.SetParent(parent);
-
+            debug.text = "" + leftHand.gm.ovenDoorHit;
         }
+        
+        if (gm != null)
+        {
+            if (gm.ovenDoorHit)
+            {
+                parent = leftHand.transform;
+                handle.transform.SetParent(parent);
 
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
