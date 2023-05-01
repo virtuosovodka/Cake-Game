@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     public GameObject CherriesPrompt;
 
     public GameObject vanillaBatter;
+    public GameObject chocolateBatter;
+    public GameObject lemonBatter;
     public GameObject cakeTin;
 
 
@@ -179,9 +181,24 @@ public class Player : MonoBehaviour
         {
             BeltOff();
         }
-        else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
+
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
         {
             VanillaBatter();
+
+            //batter button is on collision && while B or Y button is down
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ChocolateBatterButton"))
+        {
+            ChocolateBatter();
+
+            //batter button is on collision && while B or Y button is down
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("LemonBatterButton"))
+        {
+            LemonBatter();
 
             //batter button is on collision && while B or Y button is down
         }
@@ -355,6 +372,22 @@ public class Player : MonoBehaviour
 
         gm.batterOn = true;
         //debug.text = "you poured " + batterAmount;
+    }
+
+    void ChocolateBatter()
+    {
+        gm.debug.text = "batter pouring";
+        Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        gm.batterOn = true;
+    }
+
+    void LemonBatter()
+    {
+        gm.debug.text = "batter pouring";
+        Instantiate(lemonBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        gm.batterOn = true;
     }
 
     void OvenLight()

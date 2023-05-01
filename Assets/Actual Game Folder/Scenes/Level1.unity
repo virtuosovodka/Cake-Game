@@ -1948,6 +1948,8 @@ MonoBehaviour:
   CherriesPrompt: {fileID: 0}
   vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
     type: 3}
+  chocolateBatter: {fileID: 0}
+  lemonBatter: {fileID: 0}
   cakeTin: {fileID: 506036146}
 --- !u!114 &268510850
 MonoBehaviour:
@@ -4867,6 +4869,8 @@ MonoBehaviour:
   CherriesPrompt: {fileID: 0}
   vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
     type: 3}
+  chocolateBatter: {fileID: 0}
+  lemonBatter: {fileID: 0}
   cakeTin: {fileID: 506036146}
 --- !u!114 &820255316
 MonoBehaviour:
@@ -5230,6 +5234,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: home Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101815486995, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181142101815486995, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
+        type: 3}
+      propertyPath: field of view
+      value: 73.6
       objectReference: {fileID: 0}
     - target: {fileID: 5181142101815486995, guid: f9dba30d35bf1439ca7c67cd6b3ea05e,
         type: 3}
