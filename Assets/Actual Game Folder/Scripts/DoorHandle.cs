@@ -13,7 +13,6 @@ public class DoorHandle : MonoBehaviour
     public TextMeshProUGUI debug;
     public double yTransform;
 
-    //change player scrit to use righthandtrigger rather than button A
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +23,21 @@ public class DoorHandle : MonoBehaviour
     void Update()
     {
         debug.text = "" + leftHand.gm.ovenDoorHit;
-        if (leftHand.gm.ovenDoorHit)
+        
+        if (gm.ovenDoorHit)
         {
-
             parent = leftHand.transform;
             handle.transform.SetParent(parent);
 
         }
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gm.currentObject.CompareTag("OvenDoorHandle"))// || OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        {
+            gm.ovenDoorHit = true;
+        }
     }
 }
