@@ -700,9 +700,8 @@ MonoBehaviour:
   rightHand: {fileID: 268510847}
   parent: {fileID: 0}
   gm: {fileID: 65829483}
-  handle: {fileID: 814619645}
+  handle: {fileID: 74422535}
   debug: {fileID: 0}
-  yTransform: 0
 --- !u!1 &87287993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4646,7 +4645,6 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   handle: {fileID: 814619645}
   debug: {fileID: 0}
-  yTransform: 0
 --- !u!1 &820255304
 GameObject:
   m_ObjectHideFlags: 0
