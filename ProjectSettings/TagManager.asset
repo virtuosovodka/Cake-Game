@@ -33,6 +33,17 @@ TagManager:
   - FlipStop
   - FrostingStop
   - ToppingStop
+  - OrderBatter2
+  - OrderLiquid
+  - OrderTopping
+  - OrderFrosting2
+  - OrderSprinkles
+  - OrderLiquid2
+  - OrderBatter
+  - OrderSprinkles2
+  - OrderTopping2
+  - OrderFrosting
+  - CakePlate
   layers:
   - Default
   - TransparentFX

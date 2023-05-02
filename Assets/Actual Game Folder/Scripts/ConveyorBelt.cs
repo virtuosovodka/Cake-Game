@@ -26,7 +26,7 @@ public class ConveyorBelt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //leftHand = GameObject.FindObjectOfType<Player>();
+
     }
 
     // Update is called once per frame
@@ -45,11 +45,10 @@ public class ConveyorBelt : MonoBehaviour
                 }
                 if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
                 {
-                    print("Belt2 2 to belt3");
+                    print("Belt2 to belt3");
                     moveX = false;
                     transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
                 }
-
                 if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
                 {
                     print("Belt3 to counter");
@@ -59,7 +58,6 @@ public class ConveyorBelt : MonoBehaviour
                 }
                 if (gameObject.transform.position.x <= counter.transform.position.x && moveNegZ == true && moveX != true && moveZ != true)
                 {
-
                     print("counter to box");
                     moveNegX = false;
                     transform.Translate(0, 0, moveSpeed * Time.deltaTime);
@@ -73,6 +71,9 @@ public class ConveyorBelt : MonoBehaviour
             }
 
         }
+
+        // if (cake has been flipped) child plate
+        // notihing tells you to use plate can be found in training videos -> will make conveyor belt smoother
 
 
     }
@@ -104,8 +105,49 @@ public class ConveyorBelt : MonoBehaviour
             gm.beltOn = false;
         }
 
+
+        if (other.gameObject.CompareTag("CakeLeavesPlate"))
+        {
+            //unchild cakeplate cake continues moving on its own to box
+        }
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("CakeTin"))
+        {
+            //collision.transform.SetParent(Parent);
+        }
+        else if (collision.gameObject.CompareTag("CakePlate"))
+        {
+            //collision.transform.SetParent(Parent);
+        }
+        
     }
 
 
-
 }
+
+/*
+ * 
+ * childs object to player (player becomes parent)
+   bool IsDragging = false;
+   public Transform Parent;
+   public GameObject Block;
+   public GameObject parentObject;
+
+ if (Input.GetKeyDown(KeyCode.O))
+        {
+            Block.transform.Translate(.1f, 0, 0);
+
+            Transform childToRemove = parentObject.transform.Find("Push Block");
+            childToRemove.parent = null;
+
+  if (collision.gameObject.CompareTag("Push Block"))
+        {
+            if (IsDragging == false)
+            {
+                collision.transform.SetParent(Parent);
+                IsDragging = true;
+*/

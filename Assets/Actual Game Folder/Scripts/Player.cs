@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
     //TODO: show up to work one day and someone threw a cake at your face limited vision
     //TODO: tell sydney to make clear film on top of cake box so you can view cake
 
+    //TODO: stack of plates under flip station -> have to grab plate and put on belt to flip cake
+    //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
+
     /*        //if (other.gameObject.CompareTag("StartBelt"))
         //{
             if (OVRInput.GetDown(OVRInput.RawButton.X))
