@@ -1966,10 +1966,12 @@ MonoBehaviour:
   SaucePrompt: {fileID: 0}
   SprinklesPrompt: {fileID: 0}
   CherriesPrompt: {fileID: 0}
-  vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+  vanillaBatter: {fileID: 2298124379172084867, guid: bedecaf91574349b79728ee8eb6f71c4,
     type: 3}
-  chocolateBatter: {fileID: 0}
-  lemonBatter: {fileID: 0}
+  chocolateBatter: {fileID: 2298124379172084867, guid: 22f3b8cb5e4e64183971c32a210b3a50,
+    type: 3}
+  lemonBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+    type: 3}
   cakeTin: {fileID: 506036146}
 --- !u!114 &268510850
 MonoBehaviour:
@@ -4809,10 +4811,12 @@ MonoBehaviour:
   SaucePrompt: {fileID: 0}
   SprinklesPrompt: {fileID: 0}
   CherriesPrompt: {fileID: 0}
-  vanillaBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+  vanillaBatter: {fileID: 2298124379172084867, guid: bedecaf91574349b79728ee8eb6f71c4,
     type: 3}
-  chocolateBatter: {fileID: 0}
-  lemonBatter: {fileID: 0}
+  chocolateBatter: {fileID: 2298124379172084867, guid: 22f3b8cb5e4e64183971c32a210b3a50,
+    type: 3}
+  lemonBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
+    type: 3}
   cakeTin: {fileID: 506036146}
 --- !u!114 &820255316
 MonoBehaviour:

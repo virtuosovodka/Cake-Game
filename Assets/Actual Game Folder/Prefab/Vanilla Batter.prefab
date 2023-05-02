@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4864885057784221812}
   - component: {fileID: 446382577961777010}
   m_Layer: 0
-  m_Name: Vanilla Batter 1
-  m_TagString: BatterButton
+  m_Name: Vanilla Batter
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
