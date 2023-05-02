@@ -127,9 +127,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
 
-        OVRInput.Update();
-
+        //OVRInput.Update();
+        
         if (gm.ovenOn)
         {
             gm.timeInOven += Time.deltaTime;
@@ -159,6 +160,12 @@ public class Player : MonoBehaviour
                 // debug.text = "on fire";
                 // run fire animationk
             }
+        }
+        
+
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            gm.debug.text = "button two was pressed";
         }
 
         if (gm.currentObject != null)
@@ -220,24 +227,20 @@ public class Player : MonoBehaviour
             //press hold and drag
              if (gm.currentObject.CompareTag("Liquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
              {
-                Topping();
                 Liquid();
                 // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
              }
 
             if (gm.currentObject.CompareTag("Sprinkles") && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
             {
-                Topping();
                 Sprinkles();
                 // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
             }
 
             if (gm.currentObject.CompareTag("Cherries") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.GetDown(OVRInput.RawButton.Y) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.GetDown(OVRInput.Button.Two)) //&& !toppingOn)
             {
-                Topping();
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
-
             }
 
             //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
@@ -431,14 +434,15 @@ public class Player : MonoBehaviour
 
     }
 
-
     void Sprinkles()
     {
-
+        // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
+        // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
+        // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
     }
 
     void Cherries()
     {
-
+        //grabbable 
     }
 }
