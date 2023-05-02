@@ -6,7 +6,6 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-
     public GameManager gm;
     //light
     public GameObject Light;
@@ -23,7 +22,6 @@ public class Player : MonoBehaviour
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
     MeshRenderer backButtonMesh;
-
 
     //level 1 button prompts
     public GameObject StartBeltPrompt;
@@ -440,3 +438,239 @@ public class Player : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+  /*
+    // Update is called once per frame
+    void Update()
+    {
+
+        OVRInput.Update();
+
+        if (gm.currentObject != null)
+        {
+            gm.debug.text = gm.currentObject.name;
+            print(gm.currentObject.name);
+        }
+
+        if (gm.ovenOn)
+        {
+            gm.timeInOven += Time.deltaTime;
+
+            //debug.text = "time in oven is " + timeInOven;
+
+            if (gm.timeInOven <= gm.cookTime - 1)
+            {
+                //debug.text = "raw";
+                //run not baked animation
+            }
+
+            if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+            {
+                // debug.text = "cooked";
+                // run cooked animation
+            }
+
+            if (gm.timeInOven >= gm.cookTime + 2)
+            {
+                // debug.text = "overcooked";
+                // run overbaked animation
+            }
+
+            if (gm.timeInOven >= gm.cookTime + 4)
+            {
+                // debug.text = "on fire";
+                // run fire animationk
+            }
+        }
+
+        if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            if (gm.currentObject.CompareTag("StartBelt") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))// || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            {
+                Belt();
+
+                //batter button is on collision && while B or Y button is down
+            }
+
+        //TODO: delete?
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("StopBelt"))
+            if (gm.currentObject.CompareTag("VanillaBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y)) //OVRInput.Get(OVRInput.Button.One) && 
+            {
+                BeltOff();
+                VanillaBatter();
+            }
+            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("VanillaBatterButton"))
+
+                if (gm.currentObject.CompareTag("ChocolateBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y)) //OVRInput.Get(OVRInput.Button.One) && 
+                {
+                    VanillaBatter();
+                    ChocolateBatter();
+                }
+
+        //batter button is on collision && while B or Y button is down
+        if (gm.currentObject.CompareTag("LemonBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y)) //OVRInput.Get(OVRInput.Button.One) && 
+        {
+            LemonBatter();
+        }
+
+        //TODO @Vedika, you will need to fully implement this, it will not be implemented outside VR.
+        //press hold and drag- only in certain dimensions, add in and/or for door in/ door out
+        //can open door only when oven is off
+        if (gm.currentObject.CompareTag("OvenDoorHandle"))
+        {
+            gm.ovenDoorHit = true;
+        }
+
+        //start oven function
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOn"))
+            if (gm.currentObject.CompareTag("OvenOn") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            {
+                OvenOn();
+                // on collision and B or Y
+
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenLight"))
+            {
+                OvenLight();
+                // on collision and B or Y
+            }
+
+        if (gm.currentObject.CompareTag("OvenDoorHandle"))
+            //should the light only turn on when oven is on?
+            if (gm.currentObject.CompareTag("OvenLight") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y)) //&& OvenOn
+            {
+                gm.ovenDoorHit = true;
+                OvenLight();
+            }
+
+        //stop oven function
+        if (OVRInput.GetDown(OVRInput.Button.One) && gm.currentObject.CompareTag("OvenOff"))
+            if (gm.currentObject.CompareTag("OvenOff") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            {
+                OvenOff();
+                // on collision and B or Y
+            }
+
+        //press hold and drag
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("FrostingButton")) //&& !frostingOn)
+            if (gm.currentObject.CompareTag("FrostingButton") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !frostingOn)
+            {
+                Frosting();
+                gm.debug.text = "frosting is ocming out";
+                //on collision and front button to hold/ move both bottoms to get frosting out
+            }
+
+        //press hold and drag
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("ToppingButton")) //&& !toppingOn)
+            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("Liquid")) //&& !toppingOn)
+            {
+                Topping();
+                // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+                // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
+                // cherries on collision front button && y/b to pick it up
+            }
+
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("Sprinkles")) //&& !toppingOn)
+        {
+            Topping();
+            // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+            // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
+            // cherries on collision front button && y/b to pick it up
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.CompareTag("Cherries")) //&& !toppingOn)
+        {
+            Topping();
+            // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+@ -337,73 + 354,83 @@
+        gm.beltOn = true;
+        }
+
+        void BeltOff()
+        {
+            print("Belt Off");
+            gm.beltOn = false;
+        }
+
+        void VanillaBatter()
+        {
+            gm.debug.text = "batter pouring";
+            Instantiate(vanillaBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+            //batter amount = amount per frame* time that button down
+            //save batter amount even after function is stopped being called
+            //set batter amount= amount per frame*time.delta time
+            //saved value
+
+            gm.batterOn = true;
+            //debug.text = "you poured " + batterAmount;
+        }
+
+        void ChocolateBatter()
+        {
+            gm.debug.text = "batter pouring";
+            Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.batterOn = true;
+        }
+
+        void LemonBatter()
+        {
+            gm.debug.text = "batter pouring";
+            Instantiate(lemonBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.batterOn = true;
+        }
+
+        void OvenLight()
+        {
+            lightOn = !lightOn;
+            Light.SetActive(lightOn);
+        }
+
+        //make a light button for oven 
+        void OvenOn()
+        {
+            gm.debug.text = "oven on";
+            gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
+            //debug.text = "your cook time is " + cookTime;
+
+            gm.ovenOn = true;
+
+            //set cook time based on batter amount
+            //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
+        }
+
+        void OvenOff()
+        {
+            gm.debug.text = "Oven off";
+            gm.ovenOn = false;
+        }
+
+        void Frosting()
+        {
+            //debug.text = "frosting";
+            gm.frostingOn = true;
+        }
+
+        void Topping()
+        {
+            if (gm.currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
+            {
+
+            }
+
+            if (gm.currentObject.CompareTag("Sprinkles")) //&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
+            {
+                //sprinkles come out only when its being shaken
+            }
+
+            if (gm.currentObject.CompareTag("Cherries")) //&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
+            {
+
+            }
+        }
+    }*/
