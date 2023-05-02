@@ -73,6 +73,20 @@ public class CakeOrder : MonoBehaviour
 
     // for randomly picking three frostings for the piping bags that appear
     int rightButton;
+
+    //point counting variables
+    int points;
+    int totalPoints;
+    float timer = 0;
+    float timerEnd;
+    public GameManager gm;
+    Material playerBatter;
+    Material playerFrosting;
+    Material playerTopping;
+    Material playerSprinkles;
+    Material playerLiquid;
+    public GameObject cherry;
+    public GameObject playerCherry;
     // Start is called before the first frame update
     void Start()
     {
@@ -316,6 +330,66 @@ public class CakeOrder : MonoBehaviour
         //GetComponent<MeshRenderer>().material = Material1
 
     }
+    /*
+    void ClockOut()
+    {
+        //all of the things that influence points
+        timerEnd = timer;
+        if (timerEnd >= 10)
+        {
+            points++;
+        }
 
+        if (playerBatter == bOrder)
+        {
+            points++;
+            // add cooked enough and amount of batter
+        }
+        if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+        {
+            points++;
+        }
+        if (gm.cookTime >= && gm.cookTime <= )
+        {
+            points++;
+        }
+        if (playerFrosting == fOrder)
+        {
+            points++;
+            // amount so do the same calculation for batter but for frosting
+        }
+        if (playerTopping == tOrder)
+        {
+            points++;
+            // placement and amount
+        }
+        if (cherryAmount == )
+        {
+            points++;
+        }
+        if (cherry.transform.position.x >= ((playerCake.transform.position.x/2) - (playerCherry.transform.position.x/2)) -.1 && cherry.transform.position.x <= ((playerCake.transform.position.x / 2) + (cherry.transform.position.x/2)) + .1)
+        {
+            points++;
+        }
+        if (cherry.transform.position.z >= ((playerCake.transform.position.z / 2) - (playerCherry.transform.position.z / 2)) - .1 && cherry.transform.position.z <= ((playerCake.transform.position.z / 2) + (cherry.transform.position.z / 2)) + .1)
+        {
+            points++;
+        }
+        if (playerSprinkles == sOrder)
+        {
+            points++;
+            // placement and amount
+        }
+        if (sprinkleShakes == )
+        {
+            points++;
+        }
+        if (playerLiquid == lOrder)
+        {
+            points++;
+            // placement and amount
+        }
 
+        totalPoints = (points/15) * 100;
+    }*/
 }
