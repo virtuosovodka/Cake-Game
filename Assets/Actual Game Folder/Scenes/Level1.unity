@@ -2999,7 +2999,7 @@ GameObject:
   - component: {fileID: 506036153}
   m_Layer: 0
   m_Name: Cake Tin
-  m_TagString: Untagged
+  m_TagString: Cake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3012,7 +3012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506036146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.06, y: 1.13, z: -1.58}
+  m_LocalPosition: {x: -8.6, y: 1.13, z: 7.48}
   m_LocalScale: {x: 1.5, y: 0.25, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7665,6 +7665,8 @@ GameObject:
   - component: {fileID: 1885506831}
   - component: {fileID: 1885506830}
   - component: {fileID: 1885506829}
+  - component: {fileID: 1885506833}
+  - component: {fileID: 1885506834}
   m_Layer: 0
   m_Name: Cake Plate
   m_TagString: CakePlate
@@ -7750,6 +7752,39 @@ Transform:
   m_Father: {fileID: 826052066}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1885506833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885506828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a59ffd3812704e18b77d2530882b0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cake: {fileID: 0}
+--- !u!114 &1885506834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885506828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 65829483}
+  playerLeft: {fileID: 820255315}
+  playerRight: {fileID: 268510847}
+  moveSpeed: 1
+  Belt2: {fileID: 122890265}
+  Belt3: {fileID: 1945337113}
+  counter: {fileID: 127681331}
+  cakeBox: {fileID: 240947275}
 --- !u!1 &1914437262
 GameObject:
   m_ObjectHideFlags: 0
@@ -8395,7 +8430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035783322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 

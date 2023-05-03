@@ -47,6 +47,7 @@ TagManager:
   - Cherries
   - Liquid
   - Sprinkles
+  - Cake
   layers:
   - Default
   - TransparentFX
