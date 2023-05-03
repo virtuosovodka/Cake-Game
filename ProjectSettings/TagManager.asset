@@ -44,6 +44,9 @@ TagManager:
   - OrderTopping2
   - OrderFrosting
   - CakePlate
+  - Cherries
+  - Liquid
+  - Sprinkles
   layers:
   - Default
   - TransparentFX

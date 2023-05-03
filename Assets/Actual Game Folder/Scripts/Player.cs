@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm.currentObject = null;
+        gm.currentObject = gameObject;
 
         Light.SetActive(false);
 
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
         if (gm.currentObject != null)
         {
             gm.debug.text = gm.currentObject.name;
-            print(gm.currentObject.name);
+            //print(gm.currentObject.name);
 
             if (gm.currentObject.CompareTag("StartBelt") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))// || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
             {
@@ -228,11 +228,11 @@ public class Player : MonoBehaviour
             }
 
             //press hold and drag
-             if (gm.currentObject.CompareTag("Liquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
-             {
+            if (gm.currentObject.CompareTag("Liquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            {
                 Liquid();
                 // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
-             }
+            }
 
             if (gm.currentObject.CompareTag("Sprinkles") && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
             {
@@ -287,6 +287,7 @@ public class Player : MonoBehaviour
             //IPAD MAGIC
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
+                print("ipad play 0");
                 //debug.text = "play video zero";
                 //ipad.PlayPause(videoClips[0]);
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
@@ -301,6 +302,7 @@ public class Player : MonoBehaviour
 
             if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
             {
+                print("ipad play 1");
                 //debug.text = "play video one";
                 //ipad.PlayPause(videoClips[1]);
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
@@ -314,6 +316,7 @@ public class Player : MonoBehaviour
 
             if (gm.currentObject.CompareTag("BackButton") || Input.GetKeyDown(KeyCode.D))//&& OVRInput.Get(OVRInput.Button.One))
             {
+                print("ipad back");
                 //debug.text = "back to home screen";
                 materialChanger.meshRenderer.material = materialChanger.mats[1];
                 //playButton.SetActive(false);
