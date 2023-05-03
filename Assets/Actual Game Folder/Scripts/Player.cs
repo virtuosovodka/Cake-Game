@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
 
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
-        materialChanger.meshRenderer.material = materialChanger.mats[0];
+        materialChanger.meshRenderer.material = materialChanger.mats[1];
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
         playButton.SetActive(false);
         backButton.SetActive(false);
