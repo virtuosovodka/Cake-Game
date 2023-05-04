@@ -173,10 +173,10 @@ public class Player : MonoBehaviour
 
         if (gm.currentObject != null)
         {
-            gm.debug.text = gm.currentObject.name;
+            //gm.debug.text = gm.currentObject.name;
             //print(gm.currentObject.name);
 
-            if (gm.currentObject.CompareTag("StartBelt") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))// || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            if (gm.currentObject.CompareTag("StartBelt") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.D)) // || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
             {
                 Belt();
                 //start button is on collision &&  B or Y button 

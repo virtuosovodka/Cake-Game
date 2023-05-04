@@ -2135,9 +2135,9 @@ GameObject:
   - component: {fileID: 301699463}
   - component: {fileID: 301699468}
   - component: {fileID: 301699467}
-  - component: {fileID: 301699466}
   - component: {fileID: 301699465}
   - component: {fileID: 301699464}
+  - component: {fileID: 301699469}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Cake
@@ -2154,7 +2154,7 @@ Transform:
   m_GameObject: {fileID: 301699462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.17, y: 1.89, z: 7.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826052066}
@@ -2291,20 +2291,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &301699466
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301699462}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &301699467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2355,6 +2341,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301699462}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &301699469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301699462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &311545781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,7 +4810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814619645}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.101, y: -3.33, z: -0.615}
+  m_LocalPosition: {x: -0.101, y: 12, z: -0.615}
   m_LocalScale: {x: 0.9267002, y: 0.11670182, z: 0.0417384}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7871,6 +7870,7 @@ GameObject:
   - component: {fileID: 1885506829}
   - component: {fileID: 1885506833}
   - component: {fileID: 1885506834}
+  - component: {fileID: 1885506835}
   m_Layer: 0
   m_Name: Cake Plate
   m_TagString: CakePlate
@@ -7968,7 +7968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a59ffd3812704e18b77d2530882b0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cake: {fileID: 0}
+  gm: {fileID: 65829483}
+  cakeTin: {fileID: 506036149}
 --- !u!114 &1885506834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7993,6 +7994,22 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 240947275}
+--- !u!54 &1885506835
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885506828}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1914437262
 GameObject:
   m_ObjectHideFlags: 0
