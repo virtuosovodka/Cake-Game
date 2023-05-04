@@ -87,6 +87,10 @@ public class CakeOrder : MonoBehaviour
     Material playerLiquid;
     public GameObject cherry;
     public GameObject playerCherry;
+    int sprinkleShakes;
+    GameObject playerCake;
+    int cherryAmount;
+    bool hasCherries;
     // Start is called before the first frame update
     void Start()
     {
@@ -330,7 +334,7 @@ public class CakeOrder : MonoBehaviour
         //GetComponent<MeshRenderer>().material = Material1
 
     }
-    /*
+    
     void ClockOut()
     {
         //all of the things that influence points
@@ -349,10 +353,11 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        if (gm.cookTime >= && gm.cookTime <= )
+        /*
+        if (gm.cookTime >= ?? && gm.cookTime <= ??)
         {
             points++;
-        }
+        }*/
         if (playerFrosting == fOrder)
         {
             points++;
@@ -363,7 +368,7 @@ public class CakeOrder : MonoBehaviour
             points++;
             // placement and amount
         }
-        if (cherryAmount == )
+        if (cherryAmount == 5 and hasCherries == true)
         {
             points++;
         }
@@ -380,7 +385,7 @@ public class CakeOrder : MonoBehaviour
             points++;
             // placement and amount
         }
-        if (sprinkleShakes == )
+        if (sprinkleShakes <= 3 && sprinkleShakes >= 5)
         {
             points++;
         }
@@ -391,5 +396,5 @@ public class CakeOrder : MonoBehaviour
         }
 
         totalPoints = (points/15) * 100;
-    }*/
+    }
 }
