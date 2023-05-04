@@ -10,10 +10,10 @@ public class ConveyorBelt : MonoBehaviour
     public Player playerRight;
 
     public float moveSpeed;
-    bool moveX = true;
-    bool moveZ = true;
-    bool moveNegX = true;
-    bool moveNegZ = true;
+    public bool moveX = true;
+    public bool moveZ = true;
+    public bool moveNegX = true;
+    public bool moveNegZ = true;
 
     public GameObject Belt2;
     public GameObject Belt3;
@@ -115,6 +115,11 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        
+
+
+
+
         if (collision.gameObject.CompareTag("CakeTin"))
         {
             //collision.transform.SetParent(Parent);
