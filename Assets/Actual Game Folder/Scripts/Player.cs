@@ -247,39 +247,56 @@ public class Player : MonoBehaviour
             }
 
             //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-            if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+            if (gm.currentObject.gameObject.CompareTag("StartBeltButton")) //&& in level 1
+            {
+                StartBeltPrompt.SetActive(true);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
             {
                 BatterPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+            else if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+            {
+
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
             {
                 OvenDoorPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
             {
                 OvenOnPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
             {
                 OvenLightPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
             {
                 OvenOffPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
             {
                 FrostingPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
             {
                 SaucePrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
             {
                 SprinklesPrompt.SetActive(true);
             }
-            else if (OVRInput.Get(OVRInput.Button.One) && gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+
+            if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
             {
                 CherriesPrompt.SetActive(true);
             }
