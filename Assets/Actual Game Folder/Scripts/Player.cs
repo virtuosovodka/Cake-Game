@@ -468,4 +468,36 @@ public class Player : MonoBehaviour
     {
         //grabbable 
     }
+
+    /* void Frosting()
+    {
+        //debug.text = "frosting";
+        gm.frostingOn = true;
+        //instantiate/ run frosting coming out animation
+        // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
+    }
+
+    void Liquid()//&& press and hold (just like frosting just more liquidy))
+    {
+        //if circular motion and held for 3 sec and flipped upside down
+    }
+
+    void Sprinkles()//&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
+    {
+        if (sprinkles.transform.rotation.eulerAngles.y >= 120 && sprinkles.transform.rotation.eulerAngles.y <= 240)
+        {
+            gm.debug.text = "sprinkling";
+        }
+        // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
+        // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
+        // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
+
+        // public int # of sprinkles++
+    }
+
+    void Cherries()//&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
+    {
+        //grabbable 
+    }
+}*/
 }

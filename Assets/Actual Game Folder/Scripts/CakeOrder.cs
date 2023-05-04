@@ -368,7 +368,7 @@ public class CakeOrder : MonoBehaviour
             points++;
             // placement and amount
         }
-        if (cherryAmount == 5 and hasCherries == true)
+        if (cherryAmount == 5 & hasCherries == true)
         {
             points++;
         }
