@@ -24,8 +24,8 @@ public class DetectCake : MonoBehaviour
       if (collision.gameObject.CompareTag("Cake"))
         {
             ConveyorBelt cb = GetComponent<ConveyorBelt>();
-            //cb.
-            //cb.enabled = true;
+            cb.moveX = false;
+            cb.enabled = true;
         }
     }
 
