@@ -7,11 +7,12 @@ public class DoorHandle : MonoBehaviour
 {
     public Player leftHand;
     public Player rightHand;
-    public Transform parent;
     public GameManager gm;
-    public GameObject handle;
+    public GameObject frontHandle;
+    public GameObject backHandle;
     public TextMeshProUGUI debug;
     public int speed;
+    bool up = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,29 +25,19 @@ public class DoorHandle : MonoBehaviour
     {
         OVRInput.Update();
 
-        if (debug != null)
-        {
-            //debug.text = "" + leftHand.gm.ovenDoorHit;
-        }
-        
         if (gm != null)
         {
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))//gm.ovenDoorHit && 
+            if (up == false && gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) 
             {
-                //parent = leftHand.transform;
-                debug.text = "yay";
-                //handle.transform.Translate(0, 0, Time.deltaTime * speed);
+                frontHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
+                backHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
+                up = true;
             }
-
-            if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
+            else if (up == true && gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
             {
-                /*
-                gm.ovenDoorHit = false;
-                Transform childToRemove = leftHand.transform.Find("OvenDoorHandle");
-                childToRemove.parent = null;
-                */
-                debug.text = "boo";
-                handle.transform.Translate(0, 0, 0);
+                frontHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
+                backHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
+                up = false;
             }
         }
     }

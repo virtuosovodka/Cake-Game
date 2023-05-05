@@ -713,7 +713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74422535}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
-  m_LocalPosition: {x: -0.1, y: -1.96, z: 0.642}
+  m_LocalPosition: {x: -0.1, y: -1.83, z: 0.638}
   m_LocalScale: {x: 0.9267001, y: 0.116701774, z: 0.041738402}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -737,9 +737,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 820255315}
   rightHand: {fileID: 268510847}
-  parent: {fileID: 0}
   gm: {fileID: 65829483}
-  handle: {fileID: 74422535}
+  frontHandle: {fileID: 74422535}
+  backHandle: {fileID: 814619645}
   debug: {fileID: 0}
   speed: 10
 --- !u!1 &87287993
@@ -5000,6 +5000,7 @@ GameObject:
   - component: {fileID: 814619649}
   - component: {fileID: 814619648}
   - component: {fileID: 814619646}
+  - component: {fileID: 814619652}
   m_Layer: 0
   m_Name: BackOvenDoorHandle
   m_TagString: OvenDoorHandle
@@ -5095,7 +5096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814619645}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.101, y: -1.93, z: -0.615}
+  m_LocalPosition: {x: -0.101, y: -1.94, z: -0.611}
   m_LocalScale: {x: 0.9267002, y: 0.11670182, z: 0.0417384}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5105,6 +5106,25 @@ Transform:
   m_Father: {fileID: 1526937107}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &814619652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814619645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd025d1b42f7453f93b653e38ef6f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 820255315}
+  rightHand: {fileID: 268510847}
+  gm: {fileID: 65829483}
+  frontHandle: {fileID: 74422535}
+  backHandle: {fileID: 814619645}
+  debug: {fileID: 0}
+  speed: 10
 --- !u!1 &820255304
 GameObject:
   m_ObjectHideFlags: 0
