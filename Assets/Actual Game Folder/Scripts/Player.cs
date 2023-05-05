@@ -50,12 +50,6 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
 
-    bool vanillaBatterInstantiated = false;
-    bool chocolateBatterInstantiated = false;
-    bool lemonBatterInstantiated = false;
-
-    bool holdingLiquid = false;
-    public float timeSqueezingLiquid;
 
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
@@ -153,7 +147,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            gm.debug.text = "button b";
+        }
 
         //OVRInput.Update();
         
@@ -438,20 +435,20 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (chocolateBatterInstantiated == true)
+        if (gm.chocolateBatterInstantiated == true)
         {
-            chocolateBatterInstantiated = false;
+            gm.chocolateBatterInstantiated = false;
             //instantiate batter
             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
         }
 
-        if (holdingLiquid == true)
+        if (gm.holdingLiquid == true)
         {
-            timeSqueezingLiquid = Time.deltaTime;
+            gm.timeSqueezingLiquid = Time.deltaTime;
         }
         else
         {
-            timeSqueezingLiquid = 0;
+            gm.timeSqueezingLiquid = 0;
         }
         
     }
@@ -497,9 +494,10 @@ public class Player : MonoBehaviour
     {
         gm.debug.text = "chocolate batter pouring";
         gm.batterOn = true;
+        gm.batter = "chocolateBatter";
 
-        chocolateBatterInstantiated = true;
-        if (chocolateBatterInstantiated == true)
+        gm.chocolateBatterInstantiated = true;
+        if (gm.chocolateBatterInstantiated == true)
         {
             gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
             chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
@@ -553,10 +551,10 @@ public class Player : MonoBehaviour
         if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
         {
             gm.debug.text = "pouring liquid";
-            holdingLiquid = true;
+            gm.holdingLiquid = true;
             // liquid particle machine
 
-            if (timeSqueezingLiquid >= 3)
+            if (gm.timeSqueezingLiquid >= 3)
             {
                 //instantiate liquid prefab
             }

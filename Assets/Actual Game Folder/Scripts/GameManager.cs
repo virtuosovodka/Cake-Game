@@ -21,12 +21,21 @@ public class GameManager : MonoBehaviour
     //batter
     public float batterPerFrame;
     public float batterAmount;
+    public bool vanillaBatterInstantiated = false;
+    public bool chocolateBatterInstantiated = false;
+    public bool lemonBatterInstantiated = false;
+    public string batter;
 
     //oven
     public float cookTime;
     public float cookTimePerOunce;
     public float timeInOven;
     public bool ovenDoorHit;
+
+    //toppings
+    public bool holdingLiquid = false;
+    public float timeSqueezingLiquid;
+    
 
     //ipad
     public bool ipadHit;
