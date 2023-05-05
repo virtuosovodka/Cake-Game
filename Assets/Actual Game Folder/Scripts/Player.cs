@@ -50,6 +50,12 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
 
+    bool vanillaBatterInstantiated = false;
+    bool chocolateBatterInstantiated = false;
+    bool lemonBatterInstantiated = false;
+
+    bool holdingLiquid = false;
+    public float timeSqueezingLiquid;
 
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
@@ -183,11 +189,6 @@ public class Player : MonoBehaviour
         }
         
 
-        if (OVRInput.GetDown(OVRInput.Button.Two))
-        {
-            gm.debug.text = "button two was pressed";
-        }
-
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
@@ -268,6 +269,10 @@ public class Player : MonoBehaviour
             {
                 StartBeltPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("StartBeltButton")) //&& in level 1
+            {
+                StartBeltPrompt.SetActive(false);
+            }
 
             if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
             {
@@ -275,48 +280,81 @@ public class Player : MonoBehaviour
             }
             else if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
             {
-
+                BatterPrompt.SetActive(false);
             }
 
             if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
             {
                 OvenDoorPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("OvenDoor")) //&& in level 1
+            {
+                OvenDoorPrompt.SetActive(false);
+            }
 
             if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
             {
                 OvenOnPrompt.SetActive(true);
+            }
+            else if (gm.currentObject.gameObject.CompareTag("OvenOn")) //&& in level 1
+            {
+                OvenOnPrompt.SetActive(false);
             }
 
             if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
             {
                 OvenLightPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("OvenLight")) //&& in level 1
+            {
+                OvenLightPrompt.SetActive(false);
+            }
 
             if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
             {
                 OvenOffPrompt.SetActive(true);
+            }
+            else if (gm.currentObject.gameObject.CompareTag("OvenOff")) //&& in level 1
+            {
+                OvenOffPrompt.SetActive(false);
             }
 
             if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
             {
                 FrostingPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("FrostingButton")) //&& in level 1
+            {
+                FrostingPrompt.SetActive(false);
+            }
 
             if (gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
             {
                 LiquidPrompt.SetActive(true);
+            }
+            else if (gm.currentObject.gameObject.CompareTag("Sauce")) //&& in level 1
+            {
+                LiquidPrompt.SetActive(false);
             }
 
             if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
             {
                 SprinklesPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("Sprinkles")) //&& in level 1
+            {
+                SprinklesPrompt.SetActive(false);
+            }
 
             if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
             {
                 CherriesPrompt.SetActive(true);
             }
+            else if (gm.currentObject.gameObject.CompareTag("Cherries")) //&& in level 1
+            {
+                CherriesPrompt.SetActive(false);
+            }
+
 
             //IPAD MAGIC
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
@@ -393,13 +431,29 @@ public class Player : MonoBehaviour
                 LevelSelect.SetActive(true);
             }
 
-
             if (gm.currentObject.CompareTag("PlayButton"))
             {
                 //debug.text = "paused";
                 //ipad.PlayPause(ipad.CurrentClip());
             }
         }
+
+        if (chocolateBatterInstantiated == true)
+        {
+            chocolateBatterInstantiated = false;
+            //instantiate batter
+            Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+        }
+
+        if (holdingLiquid == true)
+        {
+            timeSqueezingLiquid = Time.deltaTime;
+        }
+        else
+        {
+            timeSqueezingLiquid = 0;
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -441,10 +495,15 @@ public class Player : MonoBehaviour
 
     void ChocolateBatter()
     {
-        gm.debug.text = "batter pouring";
-        Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        gm.debug.text = "chocolate batter pouring";
         gm.batterOn = true;
+
+        chocolateBatterInstantiated = true;
+        if (chocolateBatterInstantiated == true)
+        {
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+            chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
+        }
     }
 
     void LemonBatter()
@@ -490,6 +549,19 @@ public class Player : MonoBehaviour
 
     void Liquid()//&& press and hold (just like frosting just more liquidy))
     {
+
+        if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
+        {
+            gm.debug.text = "pouring liquid";
+            holdingLiquid = true;
+            // liquid particle machine
+
+            if (timeSqueezingLiquid >= 3)
+            {
+                //instantiate liquid prefab
+            }
+           
+        }
         //if circular motion and held for 3 sec and flipped upside down
     }
 
