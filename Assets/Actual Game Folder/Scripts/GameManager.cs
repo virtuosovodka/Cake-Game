@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     public float timeInOven;
     public bool ovenDoorHit;
 
+    //ipad
+    public bool ipadHit;
+
     
     // Start is called before the first frame update
     private void Awake()

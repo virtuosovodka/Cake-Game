@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentObject: {fileID: 0}
-  debug: {fileID: 615082611}
+  debug: {fileID: 0}
   beltOn: 0
   batterOn: 0
   ovenOn: 0
@@ -507,6 +507,7 @@ MonoBehaviour:
   cookTimePerOunce: 0
   timeInOven: 0
   ovenDoorHit: 0
+  ipadHit: 0
 --- !u!1 &74422535
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +645,6 @@ MonoBehaviour:
   frontHandle: {fileID: 74422535}
   backHandle: {fileID: 814619645}
   debug: {fileID: 0}
-  speed: 10
 --- !u!1 &87287993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ipad
       objectReference: {fileID: 0}
+    - target: {fileID: 3245501627491193106, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: iPad
+      objectReference: {fileID: 0}
     - target: {fileID: 3245501627491193107, guid: d2526772bf8ec427ab829bdb40e1d1ed,
         type: 3}
       propertyPath: m_RootOrder
@@ -1719,6 +1724,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 232936144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &232936146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3245501627491193106, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 232936144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &232936148
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232936146}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &232936149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232936146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc55b66f2bf94cf0a932ca13fca2c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 820255315}
+  rightHand: {fileID: 268510847}
+  gm: {fileID: 65829483}
+  ipad: {fileID: 232936146}
+  debug: {fileID: 615082611}
+  leftHandChild: {fileID: 2078407414}
+--- !u!65 &232936150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232936146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &240947275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +2010,7 @@ MonoBehaviour:
   OvenLightPrompt: {fileID: 0}
   OvenOffPrompt: {fileID: 0}
   FrostingPrompt: {fileID: 0}
-  SaucePrompt: {fileID: 0}
+  LiquidPrompt: {fileID: 0}
   SprinklesPrompt: {fileID: 0}
   CherriesPrompt: {fileID: 0}
   vanillaBatter: {fileID: 2298124379172084867, guid: bedecaf91574349b79728ee8eb6f71c4,
@@ -1962,6 +2020,8 @@ MonoBehaviour:
   lemonBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
     type: 3}
   cakeTin: {fileID: 506036147}
+  sprinkles: {fileID: 0}
+  liquid: {fileID: 0}
 --- !u!114 &268510850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4889,7 +4949,6 @@ MonoBehaviour:
   frontHandle: {fileID: 74422535}
   backHandle: {fileID: 814619645}
   debug: {fileID: 0}
-  speed: 10
 --- !u!1 &820255304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4982,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 2078407415}
   m_Father: {fileID: 984409349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5056,7 +5116,7 @@ MonoBehaviour:
   OvenLightPrompt: {fileID: 0}
   OvenOffPrompt: {fileID: 0}
   FrostingPrompt: {fileID: 0}
-  SaucePrompt: {fileID: 0}
+  LiquidPrompt: {fileID: 0}
   SprinklesPrompt: {fileID: 0}
   CherriesPrompt: {fileID: 0}
   vanillaBatter: {fileID: 2298124379172084867, guid: bedecaf91574349b79728ee8eb6f71c4,
@@ -5066,6 +5126,8 @@ MonoBehaviour:
   lemonBatter: {fileID: 2298124379172084867, guid: 0374fc5377c4e47b09aaa4159f809cf7,
     type: 3}
   cakeTin: {fileID: 506036147}
+  sprinkles: {fileID: 0}
+  liquid: {fileID: 0}
 --- !u!114 &820255316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9178,6 +9240,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067948485}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2078407414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2078407415}
+  m_Layer: 0
+  m_Name: iPad Attachment Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2078407415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078407414}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820255305}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &2085515286 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3245501626297334551, guid: d2526772bf8ec427ab829bdb40e1d1ed,

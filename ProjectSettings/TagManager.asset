@@ -56,6 +56,7 @@ TagManager:
   - Mute
   - Credits
   - LevelSelect
+  - iPad
   layers:
   - Default
   - TransparentFX
