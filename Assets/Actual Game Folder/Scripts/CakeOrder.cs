@@ -70,6 +70,7 @@ public class CakeOrder : MonoBehaviour
     public bool colorblind;
 
     public GameObject tier2;
+    public GameObject tier2nd;
 
     // for randomly picking three frostings for the piping bags that appear
     int rightButton;
@@ -99,6 +100,7 @@ public class CakeOrder : MonoBehaviour
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             frostingList2 = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             tier2.SetActive(false);
+            tier2nd.SetActive(false);
 
             frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
 
@@ -130,6 +132,7 @@ public class CakeOrder : MonoBehaviour
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             frostingList2 = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             tier2.SetActive(false);
+            tier2nd.SetActive(false);
 
             frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
 
@@ -227,6 +230,7 @@ public class CakeOrder : MonoBehaviour
             if (tierIndex == 2)
             {
                 tier2.SetActive(true);
+                tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
                 foreach (GameObject batter in Batters2)
                 {
@@ -299,6 +303,7 @@ public class CakeOrder : MonoBehaviour
             if (tierIndex == 2)
             {
                 tier2.SetActive(true);
+                tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
                 foreach (GameObject batter in Batters2)
                 {
