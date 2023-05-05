@@ -11,6 +11,7 @@ public class DoorHandle : MonoBehaviour
     public GameManager gm;
     public GameObject handle;
     public TextMeshProUGUI debug;
+    public int speed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +26,27 @@ public class DoorHandle : MonoBehaviour
 
         if (debug != null)
         {
-            debug.text = "" + leftHand.gm.ovenDoorHit;
+            //debug.text = "" + leftHand.gm.ovenDoorHit;
         }
         
         if (gm != null)
         {
-            if (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))//gm.ovenDoorHit && 
             {
-                parent = leftHand.transform;
-                handle.transform.SetParent(parent);
+                //parent = leftHand.transform;
+                debug.text = "yay";
+                //handle.transform.Translate(0, 0, Time.deltaTime * speed);
+            }
+
+            if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
+            {
+                /*
+                gm.ovenDoorHit = false;
+                Transform childToRemove = leftHand.transform.Find("OvenDoorHandle");
+                childToRemove.parent = null;
+                */
+                debug.text = "boo";
+                handle.transform.Translate(0, 0, 0);
             }
         }
     }
@@ -43,7 +56,7 @@ public class DoorHandle : MonoBehaviour
         if (gm.currentObject.CompareTag("OvenDoorHandle"))
         {
             gm.ovenDoorHit = true;
-        }
+        } 
     }
 
     private void OnTriggerExit(Collider other)
