@@ -48,6 +48,14 @@ TagManager:
   - Liquid
   - Sprinkles
   - Cake
+  - RoomLight
+  - SamplesInfoPanel
+  - Settings
+  - TimeCard
+  - ColorBlind
+  - Mute
+  - Credits
+  - LevelSelect
   layers:
   - Default
   - TransparentFX
