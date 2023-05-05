@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public GameObject OvenOffPrompt;
     public GameObject FrostingPrompt;
     //toppings
-    public GameObject SaucePrompt;
+    public GameObject LiquidPrompt;
     public GameObject SprinklesPrompt;
     public GameObject CherriesPrompt;
 
@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     public GameObject chocolateBatter;
     public GameObject lemonBatter;
     public GameObject cakeTin;
+
+    public GameObject sprinkles;
+    public GameObject liquid;
 
 
     //TODO: make separate scene for color blind mode
@@ -108,6 +111,7 @@ public class Player : MonoBehaviour
         gm.currentObject = gameObject;
 
         Light.SetActive(false);
+        lightOn = false;
 
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
@@ -134,7 +138,7 @@ public class Player : MonoBehaviour
         OvenLightPrompt.SetActive(false);
         OvenOffPrompt.SetActive(false);
         FrostingPrompt.SetActive(false);
-        SaucePrompt.SetActive(false);
+        LiquidPrompt.SetActive(false);
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
 
@@ -301,7 +305,7 @@ public class Player : MonoBehaviour
 
             if (gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
             {
-                SaucePrompt.SetActive(true);
+                LiquidPrompt.SetActive(true);
             }
 
             if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
@@ -333,7 +337,6 @@ public class Player : MonoBehaviour
                 LevelSelect.SetActive(false);
                 videoPlayer.clip = videoClips[0];
                 videoPlayer.Play();
-
             }
 
             if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
@@ -481,47 +484,6 @@ public class Player : MonoBehaviour
     {
         //debug.text = "frosting";
         gm.frostingOn = true;
-    }
-
-    void Topping()
-    {
-        if (gm.currentObject.CompareTag("Liquid")) //&& press and hold (just like frosting just more liquidy))
-        {
-
-        }
-
-        if (gm.currentObject.CompareTag("Sprinkles")) //&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
-        {
-            //sprinkles come out only when its being shaken
-        }
-
-        if (gm.currentObject.CompareTag("Cherries")) //&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
-        {
-
-        }
-    }
-
-    void Liquid()
-    {
-
-    }
-
-    void Sprinkles()
-    {
-        // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
-        // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
-        // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
-    }
-
-    void Cherries()
-    {
-        //grabbable 
-    }
-
-    /* void Frosting()
-    {
-        //debug.text = "frosting";
-        gm.frostingOn = true;
         //instantiate/ run frosting coming out animation
         // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
     }
@@ -548,5 +510,4 @@ public class Player : MonoBehaviour
     {
         //grabbable 
     }
-}*/
 }
