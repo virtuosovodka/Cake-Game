@@ -16,8 +16,14 @@ public class Player : MonoBehaviour
     public GameObject backButton;
     public GameObject playVideo0;
     public GameObject playVideo1;
+    public GameObject TimeCard;
+    public GameObject Settings;
+    public GameObject ColorBlind;
+    public GameObject Mute;
+    public GameObject Credits;
+    public GameObject LevelSelect;
 
-    public GameObject playButton;
+    //public GameObject playButton;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
@@ -107,10 +113,17 @@ public class Player : MonoBehaviour
         //ipad = gameObject.GetComponent<Ipad>();
         materialChanger.meshRenderer.material = materialChanger.mats[1];
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
-        playButton.SetActive(false);
+        //playButton.SetActive(false);
         backButton.SetActive(false);
         playVideo0.SetActive(true);
         playVideo1.SetActive(true);
+        TimeCard.SetActive(true);
+        Settings.SetActive(true);
+        ColorBlind.SetActive(false);
+        Mute.SetActive(false);
+        Credits.SetActive(false);
+        LevelSelect.SetActive(false);
+
 
 
         //button press prompts
@@ -312,6 +325,12 @@ public class Player : MonoBehaviour
                 //playButton.SetActive(true);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
+                TimeCard.SetActive(false);
+                Settings.SetActive(false);
+                ColorBlind.SetActive(false);
+                Mute.SetActive(false);
+                Credits.SetActive(false);
+                LevelSelect.SetActive(false);
                 videoPlayer.clip = videoClips[0];
                 videoPlayer.Play();
 
@@ -327,6 +346,12 @@ public class Player : MonoBehaviour
                 //playButton.SetActive(true);
                 playVideo1.SetActive(false);
                 playVideo0.SetActive(false);
+                TimeCard.SetActive(false);
+                Settings.SetActive(false);
+                ColorBlind.SetActive(false);
+                Mute.SetActive(false);
+                Credits.SetActive(false);
+                LevelSelect.SetActive(false);
                 videoPlayer.clip = videoClips[1];
                 videoPlayer.Play();
             }
@@ -340,7 +365,31 @@ public class Player : MonoBehaviour
                 playVideo0.SetActive(true);
                 playVideo1.SetActive(true);
                 backButton.SetActive(false);
+                TimeCard.SetActive(true);
+                Settings.SetActive(true);
+                ColorBlind.SetActive(false);
+                Mute.SetActive(false);
+                Credits.SetActive(false);
+                LevelSelect.SetActive(false);
             }
+
+            if (gm.currentObject.CompareTag("Settings") || Input.GetKeyDown(KeyCode.W))//&& OVRInput.Get(OVRInput.Button.One))
+            {
+                print("settings");
+                //debug.text = "back to home screen";
+                materialChanger.meshRenderer.material = materialChanger.mats[1];
+                //playButton.SetActive(false);
+                playVideo0.SetActive(false);
+                playVideo1.SetActive(false);
+                backButton.SetActive(true);
+                TimeCard.SetActive(false);
+                Settings.SetActive(false);
+                ColorBlind.SetActive(true);
+                Mute.SetActive(true);
+                Credits.SetActive(true);
+                LevelSelect.SetActive(true);
+            }
+
 
             if (gm.currentObject.CompareTag("PlayButton"))
             {
