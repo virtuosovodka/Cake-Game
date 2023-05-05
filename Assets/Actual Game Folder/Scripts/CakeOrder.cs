@@ -6,6 +6,7 @@ using UnityEditor;
 
 public class CakeOrder : MonoBehaviour
 {
+    
     public List<Material> batterList = new List<Material> { };
     public List<Material> frostingList = new List<Material> { };
     public List<Material> toppingsList = new List<Material> { };
@@ -33,9 +34,9 @@ public class CakeOrder : MonoBehaviour
     public Material tOrder;
     public Material sOrder;
     public Material lOrder;
-    public Material confettiM;
-    public Material chocolateM;
-    public Material lemonM;
+    public Material vanillaBatter;
+    public Material chocolateBatter;
+    public Material lemonBatter;
     public Material redF;
     public Material orangeF;
     public Material yellowF;
@@ -54,7 +55,7 @@ public class CakeOrder : MonoBehaviour
 
 
     // for colorblind mode
-    public Material confettiMColorblind;
+    public Material vanillaMColorblind;
     public Material chocolateMColorblind;
     public Material redFColorblind;
     public Material orangeFColorblind;
@@ -186,7 +187,7 @@ public class CakeOrder : MonoBehaviour
         if (colorblind == false)
         {
             // all possible materials
-            batterList = new List<Material> { confettiM, chocolateM, lemonM };
+            batterList = new List<Material> { vanillaBatter, chocolateBatter, lemonBatter };
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             toppingsList = new List<Material> { cherriesT, blank };
             sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
@@ -261,7 +262,7 @@ public class CakeOrder : MonoBehaviour
         }
         if (colorblind == true)
         {
-            batterList = new List<Material> { confettiMColorblind, chocolateMColorblind, lemonM };
+            batterList = new List<Material> { vanillaMColorblind, chocolateMColorblind, lemonBatter };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             toppingsList = new List<Material> { cherriesTColorblind, blank };
             sprinklesList = new List<Material> { rainbowSprinklesSColorblind, chocolateSprinklesSColorblind, blank };
@@ -339,17 +340,12 @@ public class CakeOrder : MonoBehaviour
         //GetComponent<MeshRenderer>().material = Material1
 
     }
-    
+    /*
     void ClockOut()
     {
+        colorblind = false;
         //all of the things that influence points
-        timerEnd = timer;
-        if (timerEnd >= 10)
-        {
-            points++;
-        }
-
-        if (playerBatter == bOrder)
+        if (gm.batter == bOrder.name)
         {
             points++;
             // add cooked enough and amount of batter
@@ -358,22 +354,23 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        /*
+        
         if (gm.cookTime >= ?? && gm.cookTime <= ??)
         {
             points++;
-        }*/
-        if (playerFrosting == fOrder)
+        }
+        if (gm.frosting == fOrder.name)
         {
             points++;
             // amount so do the same calculation for batter but for frosting
         }
-        if (playerTopping == tOrder)
+        
+        if (tOrder == cherriesT && gm.cherries || tOrder == blank && !gm.cherries)
         {
             points++;
             // placement and amount
         }
-        if (cherryAmount == 5 & hasCherries == true)
+        if (gm.cherryAmount == 5 && gm.cherries == true)
         {
             points++;
         }
@@ -385,7 +382,7 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        if (playerSprinkles == sOrder)
+        if (gm.sprinkles == sOrder.name)
         {
             points++;
             // placement and amount
@@ -394,12 +391,12 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        if (playerLiquid == lOrder)
+        if ((lOrder == caramelL && gm.carmelSauce) || (tOrder == blank && (!gm.chocolateSauce && !gm.carmelSauce && !gm.raspberryJam)) || (lOrder == rasberryJamL && gm.raspberryJam) || (lOrder == chocolateSyrupL && gm.chocolateSauce))
         {
             points++;
             // placement and amount
         }
 
         totalPoints = (points/15) * 100;
-    }
+    }*/
 }
