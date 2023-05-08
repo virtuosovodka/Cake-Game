@@ -42,6 +42,10 @@ public class Player : MonoBehaviour
     public GameObject SprinklesPrompt;
     public GameObject CherriesPrompt;
 
+    //parent batter to cake tin and plate
+    public Transform Parent;
+    public GameObject parentObject;
+    //batter
     public GameObject vanillaBatter;
     public GameObject chocolateBatter;
     public GameObject lemonBatter;
@@ -95,6 +99,31 @@ public class Player : MonoBehaviour
             }
         //}*/
 
+    /*bool IsDragging = false;
+public Transform Parent;
+public GameObject Block;
+public GameObject parentObject;
+if (Input.GetKeyDown(KeyCode.O))
+    {
+        Block.transform.Translate(.1f, 0, 0);
+
+        Transform childToRemove = parentObject.transform.Find("Push Block");
+        childToRemove.parent = null;
+
+        //transform.DetachChildren();
+        //how to detahc specific child not include camera
+    }
+
+
+    if (collision.gameObject.CompareTag("Push Block"))
+    {
+        if (IsDragging == false)
+        {
+            collision.transform.SetParent(Parent);
+            IsDragging = true;
+
+
+        */
 
 
     private void Awake()
@@ -128,8 +157,6 @@ public class Player : MonoBehaviour
         Credits.SetActive(false);
         LevelSelect.SetActive(false);
 
-
-
         //button press prompts
         StartBeltPrompt.SetActive(false);
         BatterPrompt.SetActive(false);
@@ -142,17 +169,23 @@ public class Player : MonoBehaviour
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
 
+        //batter
+        vanillaBatter.SetActive(false);
+        chocolateBatter.SetActive(false);
+        lemonBatter.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (OVRInput.GetDown(OVRInput.Button.Two))
+        //OVRInput.Update();
+
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             gm.debug.text = "button b";
         }
 
-        //OVRInput.Update();
+        
         
         if (gm.ovenOn)
         {
@@ -188,47 +221,51 @@ public class Player : MonoBehaviour
 
         if (gm.currentObject != null)
         {
-            //gm.debug.text = gm.currentObject.name;
+            gm.debug.text = gm.currentObject.name;
             //print(gm.currentObject.name);
 
-            if (gm.currentObject.CompareTag("StartBelt") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.D)) // || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            if (gm.currentObject.CompareTag("StartBelt"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.D)) // || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
             {
                 Belt();
                 //start button is on collision &&  B or Y button 
             }
 
-            if (gm.currentObject.CompareTag("VanillaBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("VanillaBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
                 VanillaBatter();
                 //batter button is on collision && while B or Y button is down
             }
 
-            if (gm.currentObject.CompareTag("ChocolateBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("ChocolateBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
                 ChocolateBatter();
             }
+            else
+            {
+                gm.chocolateBatterInstantiated = false;
+            }
 
-            if (gm.currentObject.CompareTag("LemonBatterButton") && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
                 LemonBatter();
             }
 
             //start oven function
-            if (gm.currentObject.CompareTag("OvenOn") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("OvenOn"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
                 OvenOn();
                 // on collision and B or Y
 
             }
 
-            if (gm.currentObject.CompareTag("OvenLight") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("OvenLight"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
                 OvenLight();
                 // on collision and B or Y
             }
 
             //stop oven function
-            if (gm.currentObject.CompareTag("OvenOff") && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("OvenOff"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
                 OvenOff();
                 // on collision and B or Y
@@ -262,11 +299,11 @@ public class Player : MonoBehaviour
             }
 
             //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-            if (gm.currentObject.gameObject.CompareTag("StartBeltButton")) //&& in level 1
+            if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
             {
                 StartBeltPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("StartBeltButton")) //&& in level 1
+            else
             {
                 StartBeltPrompt.SetActive(false);
             }
@@ -275,7 +312,7 @@ public class Player : MonoBehaviour
             {
                 BatterPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+            else
             {
                 BatterPrompt.SetActive(false);
             }
@@ -284,7 +321,7 @@ public class Player : MonoBehaviour
             {
                 OvenDoorPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("OvenDoor")) //&& in level 1
+            else 
             {
                 OvenDoorPrompt.SetActive(false);
             }
@@ -293,7 +330,7 @@ public class Player : MonoBehaviour
             {
                 OvenOnPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("OvenOn")) //&& in level 1
+            else 
             {
                 OvenOnPrompt.SetActive(false);
             }
@@ -302,7 +339,7 @@ public class Player : MonoBehaviour
             {
                 OvenLightPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("OvenLight")) //&& in level 1
+            else 
             {
                 OvenLightPrompt.SetActive(false);
             }
@@ -311,7 +348,7 @@ public class Player : MonoBehaviour
             {
                 OvenOffPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("OvenOff")) //&& in level 1
+            else 
             {
                 OvenOffPrompt.SetActive(false);
             }
@@ -320,16 +357,16 @@ public class Player : MonoBehaviour
             {
                 FrostingPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("FrostingButton")) //&& in level 1
+            else
             {
                 FrostingPrompt.SetActive(false);
             }
 
-            if (gm.currentObject.gameObject.CompareTag("Sauce"))//&& in level 1
+            if (gm.currentObject.gameObject.CompareTag("Liquid"))//&& in level 1
             {
                 LiquidPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("Sauce")) //&& in level 1
+            else 
             {
                 LiquidPrompt.SetActive(false);
             }
@@ -338,7 +375,7 @@ public class Player : MonoBehaviour
             {
                 SprinklesPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("Sprinkles")) //&& in level 1
+            else
             {
                 SprinklesPrompt.SetActive(false);
             }
@@ -347,7 +384,7 @@ public class Player : MonoBehaviour
             {
                 CherriesPrompt.SetActive(true);
             }
-            else if (gm.currentObject.gameObject.CompareTag("Cherries")) //&& in level 1
+            else 
             {
                 CherriesPrompt.SetActive(false);
             }
@@ -435,12 +472,19 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (gm.chocolateBatterInstantiated == true)
+       /* if (gm.chocolateBatterInstantiated == true)
         {
-            gm.chocolateBatterInstantiated = false;
+          
             //instantiate batter
             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-        }
+            chocolateBatter.transform.SetParent(Parent);
+            chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
+        
+            gm.debug.text = " batter instantiated";
+            gm.chocolateBatterInstantiated = false;
+
+            
+        }*/
 
         if (gm.holdingLiquid == true)
         {
@@ -492,16 +536,20 @@ public class Player : MonoBehaviour
 
     void ChocolateBatter()
     {
-        gm.debug.text = "chocolate batter pouring";
         gm.batterOn = true;
         gm.batter = "chocolateBatter";
 
-        gm.chocolateBatterInstantiated = true;
-        if (gm.chocolateBatterInstantiated == true)
-        {
-            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
-            chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
-        }
+        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+
+        chocolateBatter.SetActive(true);
+        chocolateBatter.transform.position += new Vector3 (0, gm.batterAmount, 0);
+
+        /*gm.debug.text = "chocolate batter pouring";
+        gm.batterOn = true;
+        gm.batter = "chocolateBatter";
+
+        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        gm.chocolateBatterInstantiated = true;*/
     }
 
     void LemonBatter()

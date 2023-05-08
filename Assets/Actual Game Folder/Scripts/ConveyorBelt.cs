@@ -83,6 +83,9 @@ public class ConveyorBelt : MonoBehaviour
         if (other.gameObject.CompareTag("BatterStop"))
         {
             gm.beltOn = false;
+            print("batter stop");
+            gm.debug.text = "batter stop";
+            gm.beltOn = false;
         }
 
         if (other.gameObject.CompareTag("OvenStop"))
@@ -105,54 +108,11 @@ public class ConveyorBelt : MonoBehaviour
             gm.beltOn = false;
         }
 
-
-        if (other.gameObject.CompareTag("CakeLeavesPlate"))
+        if (other.gameObject.CompareTag("CakeBox"))
         {
-            //unchild cakeplate cake continues moving on its own to box
+            gm.beltOn = false;
         }
-
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        
-
-
-
-
-        if (collision.gameObject.CompareTag("CakeTin"))
-        {
-            //collision.transform.SetParent(Parent);
-        }
-        else if (collision.gameObject.CompareTag("CakePlate"))
-        {
-            //collision.transform.SetParent(Parent);
-        }
-        
     }
 
 
 }
-
-/*
- * 
- * childs object to player (player becomes parent)
-   bool IsDragging = false;
-   public Transform Parent;
-   public GameObject Block;
-   public GameObject parentObject;
-
- if (Input.GetKeyDown(KeyCode.O))
-        {
-            Block.transform.Translate(.1f, 0, 0);
-
-            Transform childToRemove = parentObject.transform.Find("Push Block");
-            childToRemove.parent = null;
-
-  if (collision.gameObject.CompareTag("Push Block"))
-        {
-            if (IsDragging == false)
-            {
-                collision.transform.SetParent(Parent);
-                IsDragging = true;
-*/
