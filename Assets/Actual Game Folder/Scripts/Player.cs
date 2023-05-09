@@ -46,14 +46,14 @@ public class Player : MonoBehaviour
     public Transform Parent;
     public GameObject parentObject;
     //batter
-    public GameObject vanillaBatter;
-    public GameObject chocolateBatter;
-    public GameObject lemonBatter;
+    
     public GameObject cakeTin;
 
     public GameObject sprinkles;
     public GameObject liquid;
+    float lightTimer = 0;
 
+    
 
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
@@ -169,10 +169,8 @@ if (Input.GetKeyDown(KeyCode.O))
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
 
-        //batter
-        vanillaBatter.SetActive(false);
-        chocolateBatter.SetActive(false);
-        lemonBatter.SetActive(false);
+       
+        
     }
 
     // Update is called once per frame
@@ -185,7 +183,7 @@ if (Input.GetKeyDown(KeyCode.O))
             gm.debug.text = "button b";
         }
 
-        
+        gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
         
         if (gm.ovenOn)
         {
@@ -221,7 +219,7 @@ if (Input.GetKeyDown(KeyCode.O))
 
         if (gm.currentObject != null)
         {
-            gm.debug.text = gm.currentObject.name;
+            //gm.debug.text = gm.currentObject.name;
             //print(gm.currentObject.name);
 
             if (gm.currentObject.CompareTag("StartBelt"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.D)) // || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
@@ -242,7 +240,7 @@ if (Input.GetKeyDown(KeyCode.O))
             }
             else
             {
-                gm.chocolateBatterInstantiated = false;
+                gm.createdChocolateBatter = false;
             }
 
             if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
@@ -258,11 +256,15 @@ if (Input.GetKeyDown(KeyCode.O))
 
             }
 
-            if (gm.currentObject.CompareTag("OvenLight"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            lightTimer += Time.deltaTime;
+            if (gm.currentObject.CompareTag("OvenLight") && lightTimer >.5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
+
+                lightTimer = 0;
                 OvenLight();
                 // on collision and B or Y
             }
+            
 
             //stop oven function
             if (gm.currentObject.CompareTag("OvenOff"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
@@ -523,8 +525,8 @@ if (Input.GetKeyDown(KeyCode.O))
     void VanillaBatter()
     {
         gm.debug.text = "batter pouring";
-        Instantiate(vanillaBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        gm.vanillaBatter.gameObject.SetActive(true);
+        gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
         //batter amount = amount per frame* time that button down
         //save batter amount even after function is stopped being called
         //set batter amount= amount per frame*time.delta time
@@ -536,32 +538,26 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void ChocolateBatter()
     {
-        gm.batterOn = true;
-        gm.batter = "chocolateBatter";
-
-        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
-
-        chocolateBatter.SetActive(true);
-        chocolateBatter.transform.position += new Vector3 (0, gm.batterAmount, 0);
-
-        /*gm.debug.text = "chocolate batter pouring";
-        gm.batterOn = true;
-        gm.batter = "chocolateBatter";
-
-        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
-        gm.chocolateBatterInstantiated = true;*/
+        gm.chocolateBatter.SetActive(true);
+        if (gm.chocolateBatterAmount < gm.tooMuchBatter)
+        { 
+            gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
+        }
+        
     }
 
     void LemonBatter()
     {
         gm.debug.text = "batter pouring";
-        Instantiate(lemonBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-        gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
+        
+        gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
         gm.batterOn = true;
     }
 
     void OvenLight()
     {
+        
         lightOn = !lightOn;
         Light.SetActive(lightOn);
     }
@@ -569,8 +565,9 @@ if (Input.GetKeyDown(KeyCode.O))
     //make a light button for oven 
     void OvenOn()
     {
+        
         gm.debug.text = "oven on";
-        gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
+        gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
         //debug.text = "your cook time is " + cookTime;
 
         gm.ovenOn = true;

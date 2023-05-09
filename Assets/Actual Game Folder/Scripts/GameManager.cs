@@ -20,11 +20,15 @@ public class GameManager : MonoBehaviour
 
     //batter
     public float batterPerFrame;
-    public float batterAmount;
-    public bool vanillaBatterInstantiated = false;
-    public bool chocolateBatterInstantiated = false;
-    public bool lemonBatterInstantiated = false;
+    public float chocolateBatterAmount;
+    public float vanillaBatterAmount;
+    public float lemonBatterAmount;
     public string batter;
+    public float tooMuchBatter;
+    public bool createdChocolateBatter = false;
+    public GameObject vanillaBatter;
+    public GameObject chocolateBatter;
+    public GameObject lemonBatter;
 
     //oven
     public float cookTime;
@@ -55,9 +59,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instance);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        vanillaBatter.SetActive(false);
+        chocolateBatter.SetActive(false);
+        lemonBatter.SetActive(false);
     }
 }

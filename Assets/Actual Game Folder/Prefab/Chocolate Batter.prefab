@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7727491238958275130}
   - component: {fileID: 4284661674960757428}
   - component: {fileID: 8184693753217140879}
-  - component: {fileID: 6542874893256626857}
-  - component: {fileID: 869883363891954981}
   m_Layer: 0
   m_Name: Chocolate Batter
   m_TagString: Untagged
@@ -85,32 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6542874893256626857
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569292449408315092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7778251, y: 0, z: 0.61052924}
-  m_Center: {x: -0.0065010786, y: 0.0004998873, z: -0.0052645057}
---- !u!54 &869883363891954981
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569292449408315092}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 2
