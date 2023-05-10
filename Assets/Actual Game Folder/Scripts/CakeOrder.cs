@@ -397,6 +397,9 @@ public class CakeOrder : MonoBehaviour
             // placement and amount
         }
 
-        totalPoints = (points/15) * 100;
+        if (points<= 2 )
+        {
+            fired();
+        }
     }*/
 }
