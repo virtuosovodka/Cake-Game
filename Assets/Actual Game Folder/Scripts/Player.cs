@@ -16,12 +16,17 @@ public class Player : MonoBehaviour
     public GameObject backButton;
     public GameObject playVideo0;
     public GameObject playVideo1;
-    public GameObject TimeCard;
+    public GameObject clockIn;
+    public GameObject clockOut;
     public GameObject Settings;
     public GameObject ColorBlind;
     public GameObject Mute;
     public GameObject Credits;
     public GameObject LevelSelect;
+    public GameObject TextCredits;
+    public GameObject closeCredits;
+    public GameObject soundOn;
+    public GameObject colorOn;
 
     //public GameObject playButton;
     public VideoPlayer videoPlayer;
@@ -51,7 +56,7 @@ public class Player : MonoBehaviour
 
     public GameObject sprinkles;
     public GameObject liquid;
-    float lightTimer = 0;
+    float buttonCooldownTimer = 0;
 
     
 
@@ -150,12 +155,17 @@ if (Input.GetKeyDown(KeyCode.O))
         backButton.SetActive(false);
         playVideo0.SetActive(true);
         playVideo1.SetActive(true);
-        TimeCard.SetActive(true);
+        clockIn.SetActive(false);
+        clockOut.SetActive(true);
         Settings.SetActive(true);
         ColorBlind.SetActive(false);
         Mute.SetActive(false);
         Credits.SetActive(false);
         LevelSelect.SetActive(false);
+        TextCredits.SetActive(false);
+        closeCredits.SetActive(false);
+        colorOn.SetActive(false);
+        soundOn.SetActive(false);
 
         //button press prompts
         StartBeltPrompt.SetActive(false);
@@ -176,7 +186,8 @@ if (Input.GetKeyDown(KeyCode.O))
     // Update is called once per frame
     void Update()
     {
-        //OVRInput.Update();
+        OVRInput.Update();
+        buttonCooldownTimer += Time.deltaTime;
 
         if (OVRInput.GetDown(OVRInput.Button.Two))
         {
@@ -238,10 +249,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 ChocolateBatter();
             }
-            else
-            {
-                gm.createdChocolateBatter = false;
-            }
+            
 
             if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
@@ -256,11 +264,11 @@ if (Input.GetKeyDown(KeyCode.O))
 
             }
 
-            lightTimer += Time.deltaTime;
-            if (gm.currentObject.CompareTag("OvenLight") && lightTimer >.5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            
+            if (gm.currentObject.CompareTag("OvenLight") && buttonCooldownTimer > .5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
 
-                lightTimer = 0;
+                buttonCooldownTimer = 0;
                 OvenLight();
                 // on collision and B or Y
             }
@@ -403,7 +411,8 @@ if (Input.GetKeyDown(KeyCode.O))
                 //playButton.SetActive(true);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
-                TimeCard.SetActive(false);
+                clockOut.SetActive(false);
+                clockIn.SetActive(false);
                 Settings.SetActive(false);
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
@@ -423,7 +432,8 @@ if (Input.GetKeyDown(KeyCode.O))
                 //playButton.SetActive(true);
                 playVideo1.SetActive(false);
                 playVideo0.SetActive(false);
-                TimeCard.SetActive(false);
+                clockOut.SetActive(false);
+                clockIn.SetActive(false);
                 Settings.SetActive(false);
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
@@ -442,7 +452,8 @@ if (Input.GetKeyDown(KeyCode.O))
                 playVideo0.SetActive(true);
                 playVideo1.SetActive(true);
                 backButton.SetActive(false);
-                TimeCard.SetActive(true);
+                clockOut.SetActive(true);
+                clockIn.SetActive(false);
                 Settings.SetActive(true);
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
@@ -459,7 +470,8 @@ if (Input.GetKeyDown(KeyCode.O))
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
                 backButton.SetActive(true);
-                TimeCard.SetActive(false);
+                clockOut.SetActive(false);
+                clockIn.SetActive(false);
                 Settings.SetActive(false);
                 ColorBlind.SetActive(true);
                 Mute.SetActive(true);
@@ -467,10 +479,85 @@ if (Input.GetKeyDown(KeyCode.O))
                 LevelSelect.SetActive(true);
             }
 
+           
+
+            if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.G))
+            {
+                clockOut.SetActive(false);
+                clockIn.SetActive(true);
+                buttonCooldownTimer = 0;
+            }
+
+            if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.G))
+            {
+                clockOut.SetActive(true);
+                clockIn.SetActive(false);
+                buttonCooldownTimer = 0;
+            }
+
             if (gm.currentObject.CompareTag("PlayButton"))
             {
                 //debug.text = "paused";
                 //ipad.PlayPause(ipad.CurrentClip());
+            }
+
+            if (gm.currentObject.CompareTag("Credits") || Input.GetKeyDown(KeyCode.P))
+            {
+                TextCredits.gameObject.SetActive(true);
+                closeCredits.gameObject.SetActive(true);
+                
+            }
+
+            if (gm.currentObject.CompareTag("closeCredits") || Input.GetKeyDown(KeyCode.J))
+            {
+                TextCredits.gameObject.SetActive(false);
+                closeCredits.gameObject.SetActive(false);
+            }
+
+
+            if (gm.currentObject.CompareTag("Mute") || Input.GetKeyDown(KeyCode.K))
+            {
+                //turn off the sound on the game
+                soundOn.SetActive(true);
+                Mute.SetActive(false);
+            }
+             if (gm.currentObject.CompareTag("soundOn") || Input.GetKeyDown(KeyCode.H))
+                {
+                    //turn on the sound on the game
+                    soundOn.SetActive(false);
+                    Mute.SetActive(true);
+                }
+            
+            if (gm.currentObject.CompareTag("ColorBlind") || Input.GetKeyDown(KeyCode.L))
+            {
+                //ColorBlindMode.SetActive
+                colorOn.SetActive(true);
+                ColorBlind.SetActive(false);
+            }
+
+            if (gm.currentObject.CompareTag("colorOn") || Input.GetKeyDown(KeyCode.G))
+            {
+                //ColorBlindMode turn off, color is back on
+                colorOn.SetActive(false);
+                ColorBlind.SetActive(true);
+            }
+
+            if (gm.currentObject.CompareTag("Level1") || Input.GetKeyDown(KeyCode.G))
+            {
+                //Level One Set Active
+                //Anmation highlight the level selected maybe
+            }
+
+            if (gm.currentObject.CompareTag("Level2") || Input.GetKeyDown(KeyCode.F))
+            {
+                //Level Two Set Active
+                //Anmation highlight the level selected maybe
+            }
+
+            if (gm.currentObject.CompareTag("Level3") || Input.GetKeyDown(KeyCode.G))
+            {
+                //Level Three Set Active
+                //Anmation highlight the level selected maybe
             }
         }
 

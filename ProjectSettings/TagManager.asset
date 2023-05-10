@@ -57,6 +57,10 @@ TagManager:
   - Credits
   - LevelSelect
   - iPad
+  - soundOn
+  - colorOn
+  - ClockOut
+  - ClockIn
   layers:
   - Default
   - TransparentFX
