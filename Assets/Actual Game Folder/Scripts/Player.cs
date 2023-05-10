@@ -308,6 +308,7 @@ if (Input.GetKeyDown(KeyCode.O))
                 // cherries on collision front button && y/b to pick it up
             }
 
+            /*
             //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
             if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
             {
@@ -397,7 +398,7 @@ if (Input.GetKeyDown(KeyCode.O))
             else 
             {
                 CherriesPrompt.SetActive(false);
-            }
+            }*/
 
 
             //IPAD MAGIC

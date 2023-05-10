@@ -61,6 +61,7 @@ TagManager:
   - colorOn
   - ClockOut
   - ClockIn
+  - review
   layers:
   - Default
   - TransparentFX
