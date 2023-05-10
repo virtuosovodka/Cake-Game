@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public GameObject OvenLightPrompt;
     public GameObject OvenOffPrompt;
     public GameObject FrostingPrompt;
+
     //toppings
     public GameObject LiquidPrompt;
     public GameObject SprinklesPrompt;
@@ -52,6 +53,12 @@ public class Player : MonoBehaviour
     //parent batter to cake tin and plate
     public Transform Parent;
     public GameObject parentObject;
+
+    //oven
+    public GameObject underFilled;
+    public GameObject overFilled;
+    public GameObject rightSized;
+
     //batter
     
     public GameObject cakeTin;
@@ -182,6 +189,11 @@ if (Input.GetKeyDown(KeyCode.O))
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
 
+        // oven set false
+        underFilled.SetActive(false);
+        overFilled.SetActive(false);
+        rightSized.SetActive(false);
+
        
         
     }
@@ -209,21 +221,27 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 //debug.text = "raw";
                 //run not baked animation
+                overFilled.SetActive(false);
+                rightSized.SetActive(false);
+                underFilled.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
                 // debug.text = "cooked";
                 // run cooked animation
+                overFilled.SetActive(false);
+                underFilled.SetActive(false);
+                rightSized.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime + 2)
+            else if (gm.timeInOven >= gm.cookTime + 2)
             {
                 // debug.text = "overcooked";
                 // run overbaked animation
+                underFilled.SetActive(false);
+                rightSized.SetActive(false);
+                overFilled.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime + 4)
+            else if (gm.timeInOven >= gm.cookTime + 4)
             {
                 // debug.text = "on fire";
                 // run fire animationk
@@ -641,16 +659,12 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void VanillaBatter()
     {
-        gm.debug.text = "batter pouring";
-        gm.vanillaBatter.gameObject.SetActive(true);
-        gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
-        //batter amount = amount per frame* time that button down
-        //save batter amount even after function is stopped being called
-        //set batter amount= amount per frame*time.delta time
-        //saved value
-
-        gm.batterOn = true;
-        //debug.text = "you poured " + batterAmount;
+        gm.vanillaBatter.SetActive(true);
+        if (gm.vanillaBatterAmount < gm.tooMuchBatter)
+        {
+            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
+        }
     }
 
     void ChocolateBatter()
@@ -666,10 +680,12 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void LemonBatter()
     {
-        gm.debug.text = "batter pouring";
-        
-        gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
-        gm.batterOn = true;
+        gm.lemonBatter.SetActive(true);
+        if (gm.lemonBatterAmount < gm.tooMuchBatter)
+        {
+            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
+        }
     }
 
     void OvenLight()
