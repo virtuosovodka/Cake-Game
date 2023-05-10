@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public GameObject closeCredits;
     public GameObject soundOn;
     public GameObject colorOn;
+    public GameObject fired;
+
 
     //public GameObject playButton;
     public VideoPlayer videoPlayer;
@@ -166,6 +168,7 @@ if (Input.GetKeyDown(KeyCode.O))
         closeCredits.SetActive(false);
         colorOn.SetActive(false);
         soundOn.SetActive(false);
+        fired.SetActive(false);
 
         //button press prompts
         StartBeltPrompt.SetActive(false);
@@ -226,7 +229,7 @@ if (Input.GetKeyDown(KeyCode.O))
                 // run fire animationk
             }
         }
-        
+
 
         if (gm.currentObject != null)
         {
@@ -249,7 +252,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 ChocolateBatter();
             }
-            
+
 
             if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
@@ -264,7 +267,7 @@ if (Input.GetKeyDown(KeyCode.O))
 
             }
 
-            
+
             if (gm.currentObject.CompareTag("OvenLight") && buttonCooldownTimer > .5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
 
@@ -272,7 +275,7 @@ if (Input.GetKeyDown(KeyCode.O))
                 OvenLight();
                 // on collision and B or Y
             }
-            
+
 
             //stop oven function
             if (gm.currentObject.CompareTag("OvenOff"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
@@ -480,7 +483,7 @@ if (Input.GetKeyDown(KeyCode.O))
                 LevelSelect.SetActive(true);
             }
 
-           
+
 
             if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.G))
             {
@@ -506,7 +509,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 TextCredits.gameObject.SetActive(true);
                 closeCredits.gameObject.SetActive(true);
-                
+
             }
 
             if (gm.currentObject.CompareTag("closeCredits") || Input.GetKeyDown(KeyCode.J))
@@ -522,13 +525,13 @@ if (Input.GetKeyDown(KeyCode.O))
                 soundOn.SetActive(true);
                 Mute.SetActive(false);
             }
-             if (gm.currentObject.CompareTag("soundOn") || Input.GetKeyDown(KeyCode.H))
-                {
-                    //turn on the sound on the game
-                    soundOn.SetActive(false);
-                    Mute.SetActive(true);
-                }
-            
+            if (gm.currentObject.CompareTag("soundOn") || Input.GetKeyDown(KeyCode.H))
+            {
+                //turn on the sound on the game
+                soundOn.SetActive(false);
+                Mute.SetActive(true);
+            }
+
             if (gm.currentObject.CompareTag("ColorBlind") || Input.GetKeyDown(KeyCode.L))
             {
                 //ColorBlindMode.SetActive
@@ -560,21 +563,47 @@ if (Input.GetKeyDown(KeyCode.O))
                 //Level Three Set Active
                 //Anmation highlight the level selected maybe
             }
+
+            if (gm.currentObject.CompareTag("review") || Input.GetKeyDown(KeyCode.Y))
+            {
+                //stars appear on page
+
+            }
+
+            //if (Input.GetKeyDown(KeyCode.Y (if fired is true) 
+            // {
+            //    fired.SetActive(true);
+            //    backButton.SetActive(true);
+            //    playVideo0.SetActive(false);
+            //    playVideo1.SetActive(false);
+            //    clockIn.SetActive(false);
+            //    clockOut.SetActive(false);
+            //    Settings.SetActive(false);
+            //    ColorBlind.SetActive(false);
+            //    Mute.SetActive(false);
+            //    Credits.SetActive(false);
+            //    LevelSelect.SetActive(false);
+            //    TextCredits.SetActive(false);
+            //    closeCredits.SetActive(false);
+            //    colorOn.SetActive(false);
+            //    soundOn.SetActive(false);
+
+            //}
         }
 
-       /* if (gm.chocolateBatterInstantiated == true)
-        {
-          
-            //instantiate batter
-            Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-            chocolateBatter.transform.SetParent(Parent);
-            chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
-        
-            gm.debug.text = " batter instantiated";
-            gm.chocolateBatterInstantiated = false;
+        /* if (gm.chocolateBatterInstantiated == true)
+         {
 
-            
-        }*/
+             //instantiate batter
+             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+             chocolateBatter.transform.SetParent(Parent);
+             chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
+
+             gm.debug.text = " batter instantiated";
+             gm.chocolateBatterInstantiated = false;
+
+
+         }*/
 
         if (gm.holdingLiquid == true)
         {
