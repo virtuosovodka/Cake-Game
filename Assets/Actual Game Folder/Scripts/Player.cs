@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public GameObject OvenLightPrompt;
     public GameObject OvenOffPrompt;
     public GameObject FrostingPrompt;
+
     //toppings
     public GameObject LiquidPrompt;
     public GameObject SprinklesPrompt;
@@ -50,6 +51,12 @@ public class Player : MonoBehaviour
     //parent batter to cake tin and plate
     public Transform Parent;
     public GameObject parentObject;
+
+    //oven
+    public GameObject underFilled;
+    public GameObject overFilled;
+    public GameObject rightSized;
+
     //batter
     
     public GameObject cakeTin;
@@ -179,6 +186,11 @@ if (Input.GetKeyDown(KeyCode.O))
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
 
+        // oven set false
+        underFilled.SetActive(false);
+        overFilled.SetActive(false);
+        rightSized.SetActive(false);
+
        
         
     }
@@ -206,21 +218,27 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 //debug.text = "raw";
                 //run not baked animation
+                overFilled.SetActive(false);
+                rightSized.SetActive(false);
+                underFilled.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
                 // debug.text = "cooked";
                 // run cooked animation
+                overFilled.SetActive(false);
+                underFilled.SetActive(false);
+                rightSized.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime + 2)
+            else if (gm.timeInOven >= gm.cookTime + 2)
             {
                 // debug.text = "overcooked";
                 // run overbaked animation
+                underFilled.SetActive(false);
+                rightSized.SetActive(false);
+                overFilled.SetActive(true);
             }
-
-            if (gm.timeInOven >= gm.cookTime + 4)
+            else if (gm.timeInOven >= gm.cookTime + 4)
             {
                 // debug.text = "on fire";
                 // run fire animationk
