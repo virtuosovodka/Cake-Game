@@ -612,16 +612,12 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void VanillaBatter()
     {
-        gm.debug.text = "batter pouring";
-        gm.vanillaBatter.gameObject.SetActive(true);
-        gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
-        //batter amount = amount per frame* time that button down
-        //save batter amount even after function is stopped being called
-        //set batter amount= amount per frame*time.delta time
-        //saved value
-
-        gm.batterOn = true;
-        //debug.text = "you poured " + batterAmount;
+        gm.vanillaBatter.SetActive(true);
+        if (gm.vanillaBatterAmount < gm.tooMuchBatter)
+        {
+            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
+        }
     }
 
     void ChocolateBatter()
@@ -637,10 +633,12 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void LemonBatter()
     {
-        gm.debug.text = "batter pouring";
-        
-        gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
-        gm.batterOn = true;
+        gm.lemonBatter.SetActive(true);
+        if (gm.lemonBatterAmount < gm.tooMuchBatter)
+        {
+            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
+        }
     }
 
     void OvenLight()
