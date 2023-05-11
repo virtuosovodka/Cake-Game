@@ -12,6 +12,8 @@ public class DoorHandle : MonoBehaviour
     public GameManager gm;
     public GameObject frontHandle;
     public GameObject backHandle;
+    public GameObject frontDoorStop;
+    public GameObject backDoorStop;
     public TextMeshProUGUI debug;
     bool up = false;
 
