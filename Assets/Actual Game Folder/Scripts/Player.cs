@@ -54,13 +54,8 @@ public class Player : MonoBehaviour
     public Transform Parent;
     public GameObject parentObject;
 
-    //oven
-    public GameObject underFilled;
-    public GameObject overFilled;
-    public GameObject rightSized;
-
     //batter
-    
+    public Material charred;
     public GameObject cakeTin;
 
     public GameObject sprinkles;
@@ -176,24 +171,6 @@ if (Input.GetKeyDown(KeyCode.O))
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
-
-        //button press prompts
-        StartBeltPrompt.SetActive(false);
-        BatterPrompt.SetActive(false);
-        OvenDoorPrompt.SetActive(false);
-        OvenOnPrompt.SetActive(false);
-        OvenLightPrompt.SetActive(false);
-        OvenOffPrompt.SetActive(false);
-        FrostingPrompt.SetActive(false);
-        LiquidPrompt.SetActive(false);
-        SprinklesPrompt.SetActive(false);
-        CherriesPrompt.SetActive(false);
-
-        // oven set false
-        underFilled.SetActive(false);
-        overFilled.SetActive(false);
-        rightSized.SetActive(false);
-        gm.cookTimePerOunce = 1;
     }
 
     // Update is called once per frame
@@ -209,38 +186,38 @@ if (Input.GetKeyDown(KeyCode.O))
 
         //gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
         
-        if (gm.ovenOn)
+        if (gm.ovenOn && gm.batterAmount != 0)
         {
-            //gm.timeInOven += Time.deltaTime;
+            gm.vanillaBatter.SetActive(false);
+            gm.chocolateBatter.SetActive(false);
+            gm.lemonBatter.SetActive(false);
+            gm.uncookedBatter.SetActive(true);
+            if (gm.BatterType() == "Chocolate")
+            {
+                gm.uncookedBatter.GetComponent<MeshRenderer>().material = gm.cakeOrder.batterList[1];
+            }
 
-            //debug.text = "time in oven is " + timeInOven;
+            else if (gm.BatterType() == "Vanilla")
+            {
+                gm.uncookedBatter.GetComponent<MeshRenderer>().material = gm.cakeOrder.batterList[0];
+            }
+            else 
+            {
+                gm.uncookedBatter.GetComponent<MeshRenderer>().material = gm.cakeOrder.batterList[2];
+            }
 
             if (gm.timeInOven <= gm.cookTime - 1)
             {
                 //debug.text = "raw";
                 //run not baked animation
                 gm.debug.text = "raw";
-                overFilled.SetActive(false);
-                rightSized.SetActive(false);
-                underFilled.SetActive(true);
             }
-            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven < gm.cookTime + 4)
             {
                 // debug.text = "cooked";
                 // run cooked animation
                 gm.debug.text = "right";
-                overFilled.SetActive(false);
-                underFilled.SetActive(false);
-                rightSized.SetActive(true);
-            }
-            else if (gm.timeInOven >= gm.cookTime + 2)
-            {
-                // debug.text = "overcooked";
-                // run overbaked animation
-                gm.debug.text = "overcooked";
-                underFilled.SetActive(false);
-                rightSized.SetActive(false);
-                overFilled.SetActive(true);
+                gm.uncookedBatter.GetComponent<MeshRenderer>().material.Lerp(gm.uncookedBatter.GetComponent<MeshRenderer>().material, charred, Time.deltaTime);
             }
             else if (gm.timeInOven >= gm.cookTime + 4)
             {
@@ -329,98 +306,6 @@ if (Input.GetKeyDown(KeyCode.O))
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
             }
-
-            /*
-            //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-            if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
-            {
-                StartBeltPrompt.SetActive(true);
-            }
-            else
-            {
-                StartBeltPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-            {
-                BatterPrompt.SetActive(true);
-            }
-            else
-            {
-                BatterPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
-            {
-                OvenDoorPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenDoorPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
-            {
-                OvenOnPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOnPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
-            {
-                OvenLightPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenLightPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
-            {
-                OvenOffPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOffPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
-            {
-                FrostingPrompt.SetActive(true);
-            }
-            else
-            {
-                FrostingPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Liquid"))//&& in level 1
-            {
-                LiquidPrompt.SetActive(true);
-            }
-            else 
-            {
-                LiquidPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
-            {
-                SprinklesPrompt.SetActive(true);
-            }
-            else
-            {
-                SprinklesPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
-            {
-                CherriesPrompt.SetActive(true);
-            }
-            else 
-            {
-                CherriesPrompt.SetActive(false);
-            }*/
 
 
             //IPAD MAGIC
@@ -663,6 +548,7 @@ if (Input.GetKeyDown(KeyCode.O))
         gm.vanillaBatter.SetActive(true);
         if (gm.vanillaBatterAmount < gm.tooMuchBatter)
         {
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
         }
@@ -672,7 +558,8 @@ if (Input.GetKeyDown(KeyCode.O))
     {
         gm.chocolateBatter.SetActive(true);
         if (gm.chocolateBatterAmount < gm.tooMuchBatter)
-        { 
+        {
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
         }
@@ -684,6 +571,7 @@ if (Input.GetKeyDown(KeyCode.O))
         gm.lemonBatter.SetActive(true);
         if (gm.lemonBatterAmount < gm.tooMuchBatter)
         {
+            gm.batterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
         }
@@ -699,8 +587,8 @@ if (Input.GetKeyDown(KeyCode.O))
     //make a light button for oven 
     void OvenOn()
     {
-        
-        gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
+        gm.BatterType();
+        gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
         gm.ovenOn = true;
