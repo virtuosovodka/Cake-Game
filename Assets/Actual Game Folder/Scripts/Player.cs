@@ -221,6 +221,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 //debug.text = "raw";
                 //run not baked animation
+                gm.debug.text = "raw";
                 overFilled.SetActive(false);
                 rightSized.SetActive(false);
                 underFilled.SetActive(true);
@@ -229,6 +230,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 // debug.text = "cooked";
                 // run cooked animation
+                gm.debug.text = "right";
                 overFilled.SetActive(false);
                 underFilled.SetActive(false);
                 rightSized.SetActive(true);
@@ -237,6 +239,7 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 // debug.text = "overcooked";
                 // run overbaked animation
+                gm.debug.text = "overcooked";
                 underFilled.SetActive(false);
                 rightSized.SetActive(false);
                 overFilled.SetActive(true);
