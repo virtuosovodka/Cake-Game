@@ -194,9 +194,6 @@ if (Input.GetKeyDown(KeyCode.O))
         overFilled.SetActive(false);
         rightSized.SetActive(false);
         gm.cookTimePerOunce = 1;
-
-       
-        
     }
 
     // Update is called once per frame
