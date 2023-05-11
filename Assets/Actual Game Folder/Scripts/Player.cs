@@ -79,14 +79,6 @@ public class Player : MonoBehaviour
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
 
 
-    private void Awake()
-    {
-        //videoPlayer = GetComponent<VideoPlayer>();
-
-        //delete the material changer in the player inspector
-        //materialChanger = GetComponent<MaterialChanger>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +88,7 @@ public class Player : MonoBehaviour
         Light.SetActive(false);
         lightOn = false;
 
+        #region "ipad setup"
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
         materialChanger.meshRenderer.material = materialChanger.mats[1];
@@ -116,7 +109,9 @@ public class Player : MonoBehaviour
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
+        #endregion
 
+        #region "prompt setup"
         //button press prompts
         StartBeltPrompt.SetActive(false);
         BatterPrompt.SetActive(false);
@@ -128,6 +123,7 @@ public class Player : MonoBehaviour
         LiquidPrompt.SetActive(false);
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
+        #endregion
 
         // oven set false
         underFilled.SetActive(false);
@@ -141,7 +137,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gm.debug.text = " " +cake.atBatterStation;
+        #region "update setup"
+        gm.debug.text = gm.currentObject.name;
 
         OVRInput.Update();
         buttonCooldownTimer += Time.deltaTime;
@@ -150,9 +147,9 @@ public class Player : MonoBehaviour
         {
             gm.debug.text = "button b";
         }
+        #endregion
 
-        //gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
-        
+        #region "ovenOn"
         if (gm.ovenOn)
         {
             gm.timeInOven += Time.deltaTime;
@@ -192,8 +189,9 @@ public class Player : MonoBehaviour
                 // run fire animationk
             }
         }
+        #endregion
 
-
+        #region "buttons"
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
@@ -273,8 +271,9 @@ public class Player : MonoBehaviour
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
             }
+            #endregion
 
-
+            #region "ipad"
             //IPAD MAGIC
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
@@ -460,21 +459,10 @@ public class Player : MonoBehaviour
             //    soundOn.SetActive(false);
 
             //}
+            #endregion
         }
 
-        /* if (gm.chocolateBatterInstantiated == true)
-         {
-
-             //instantiate batter
-             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-             chocolateBatter.transform.SetParent(Parent);
-             chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
-
-             gm.debug.text = " batter instantiated";
-             gm.chocolateBatterInstantiated = false;
-
-
-         }*/
+        
 
         if (gm.holdingLiquid == true)
         {
@@ -487,6 +475,7 @@ public class Player : MonoBehaviour
         
     }
 
+    #region "collisions and triggers"
     private void OnCollisionEnter(Collision collision)
     {
         // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
@@ -495,7 +484,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         gm.currentObject = other.gameObject;
-        ///debug.text = "on " + currentObject.name;
+        //debug.text = "on " + currentObject.name;
     }
 
     private void OnTriggerExit(Collider other)
@@ -503,7 +492,9 @@ public class Player : MonoBehaviour
         gm.currentObject = null;
         //debug.text = "off " + currentObject.name;
     }
+    #endregion
 
+    #region "functions"
     void Belt()
     {
         //debug.text = "Belt on";
@@ -643,4 +634,5 @@ public class Player : MonoBehaviour
         }
 
     }
+    #endregion
 }

@@ -1848,6 +1848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
+  cake: {fileID: 0}
   Light: {fileID: 1218075663}
   backButton: {fileID: 577600276}
   playVideo0: {fileID: 945651071}
@@ -3405,6 +3406,11 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 240947275}
+  atBatterStation: 0
+  atOven: 0
+  atFlip: 0
+  atFrosting: 0
+  atTopping: 0
 --- !u!114 &506036150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5006,6 +5012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
+  cake: {fileID: 0}
   Light: {fileID: 1218075663}
   backButton: {fileID: 577600276}
   playVideo0: {fileID: 945651071}
@@ -7858,6 +7865,11 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 240947275}
+  atBatterStation: 0
+  atOven: 0
+  atFlip: 0
+  atFrosting: 0
+  atTopping: 0
 --- !u!54 &1885506835
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8439,6 +8451,11 @@ MonoBehaviour:
   Belt3: {fileID: 1945337113}
   counter: {fileID: 127681331}
   cakeBox: {fileID: 240947275}
+  atBatterStation: 0
+  atOven: 0
+  atFlip: 0
+  atFrosting: 0
+  atTopping: 0
 --- !u!1 &2039474764
 GameObject:
   m_ObjectHideFlags: 0
