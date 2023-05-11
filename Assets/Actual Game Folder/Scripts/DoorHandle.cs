@@ -11,7 +11,7 @@ public class DoorHandle : MonoBehaviour
     public GameObject frontHandle;
     public GameObject backHandle;
     public TextMeshProUGUI debug;
-    bool up = false;
+    bool up = true;
 
     // Start is called before the first frame update
     void Start()
