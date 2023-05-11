@@ -98,7 +98,7 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false;          
         }
 
-        if (other.gameObject.CompareTag("OvenDoorHandle"))
+        if (other.gameObject.CompareTag("OvenDoorStop"))
         {
             gm.beltOn = false;
         }

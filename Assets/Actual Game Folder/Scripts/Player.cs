@@ -7,8 +7,6 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public GameManager gm;
-    public ConveyorBelt cake;
-
     //light
     public GameObject Light;
     bool lightOn;
@@ -68,6 +66,7 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
     float buttonCooldownTimer = 0;
+
     
 
     //TODO: make separate scene for color blind mode
@@ -78,17 +77,85 @@ public class Player : MonoBehaviour
     //TODO: stack of plates under flip station -> have to grab plate and put on belt to flip cake
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
 
+    /*        //if (other.gameObject.CompareTag("StartBelt"))
+        //{
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                text.text = "X pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.Y))
+            {
+                text.text = "Y pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.One))
+            {
+                text.text = "A pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                text.text = "B pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                text.text = "Left Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+            {
+                text.text = "Right Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //left hand trigger
+            {
+                text.text = "Left Hand Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //right hand trigger
+            {
+                text.text = "Right Hand Trigger Pressed!";
+            }
+        //}*/
+
+    /*bool IsDragging = false;
+public Transform Parent;
+public GameObject Block;
+public GameObject parentObject;
+if (Input.GetKeyDown(KeyCode.O))
+    {
+        Block.transform.Translate(.1f, 0, 0);
+
+        Transform childToRemove = parentObject.transform.Find("Push Block");
+        childToRemove.parent = null;
+
+        //transform.DetachChildren();
+        //how to detahc specific child not include camera
+    }
+
+
+    if (collision.gameObject.CompareTag("Push Block"))
+    {
+        if (IsDragging == false)
+        {
+            collision.transform.SetParent(Parent);
+            IsDragging = true;
+
+
+        */
+
+
+    private void Awake()
+    {
+        //videoPlayer = GetComponent<VideoPlayer>();
+
+        //delete the material changer in the player inspector
+        //materialChanger = GetComponent<MaterialChanger>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
         gm.currentObject = gameObject;
 
         Light.SetActive(false);
         lightOn = false;
 
-        #region "ipad setup"
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
         materialChanger.meshRenderer.material = materialChanger.mats[1];
@@ -109,9 +176,7 @@ public class Player : MonoBehaviour
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
-        #endregion
 
-        #region "prompt setup"
         //button press prompts
         StartBeltPrompt.SetActive(false);
         BatterPrompt.SetActive(false);
@@ -123,23 +188,17 @@ public class Player : MonoBehaviour
         LiquidPrompt.SetActive(false);
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
-        #endregion
 
         // oven set false
         underFilled.SetActive(false);
         overFilled.SetActive(false);
         rightSized.SetActive(false);
-
-       
-        
+        gm.cookTimePerOunce = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        #region "update setup"
-        gm.debug.text = gm.currentObject.name;
-
         OVRInput.Update();
         buttonCooldownTimer += Time.deltaTime;
 
@@ -147,12 +206,12 @@ public class Player : MonoBehaviour
         {
             gm.debug.text = "button b";
         }
-        #endregion
 
-        #region "ovenOn"
+        //gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
+        
         if (gm.ovenOn)
         {
-            gm.timeInOven += Time.deltaTime;
+            //gm.timeInOven += Time.deltaTime;
 
             //debug.text = "time in oven is " + timeInOven;
 
@@ -189,9 +248,8 @@ public class Player : MonoBehaviour
                 // run fire animationk
             }
         }
-        #endregion
 
-        #region "buttons"
+
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
@@ -271,9 +329,100 @@ public class Player : MonoBehaviour
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
             }
-            #endregion
 
-            #region "ipad"
+            /*
+            //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
+            if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
+            {
+                StartBeltPrompt.SetActive(true);
+            }
+            else
+            {
+                StartBeltPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
+            {
+                BatterPrompt.SetActive(true);
+            }
+            else
+            {
+                BatterPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
+            {
+                OvenDoorPrompt.SetActive(true);
+            }
+            else 
+            {
+                OvenDoorPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
+            {
+                OvenOnPrompt.SetActive(true);
+            }
+            else 
+            {
+                OvenOnPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
+            {
+                OvenLightPrompt.SetActive(true);
+            }
+            else 
+            {
+                OvenLightPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
+            {
+                OvenOffPrompt.SetActive(true);
+            }
+            else 
+            {
+                OvenOffPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
+            {
+                FrostingPrompt.SetActive(true);
+            }
+            else
+            {
+                FrostingPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("Liquid"))//&& in level 1
+            {
+                LiquidPrompt.SetActive(true);
+            }
+            else 
+            {
+                LiquidPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
+            {
+                SprinklesPrompt.SetActive(true);
+            }
+            else
+            {
+                SprinklesPrompt.SetActive(false);
+            }
+
+            if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
+            {
+                CherriesPrompt.SetActive(true);
+            }
+            else 
+            {
+                CherriesPrompt.SetActive(false);
+            }*/
+
+
             //IPAD MAGIC
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
@@ -459,10 +608,21 @@ public class Player : MonoBehaviour
             //    soundOn.SetActive(false);
 
             //}
-            #endregion
         }
 
-        
+        /* if (gm.chocolateBatterInstantiated == true)
+         {
+
+             //instantiate batter
+             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
+             chocolateBatter.transform.SetParent(Parent);
+             chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
+
+             gm.debug.text = " batter instantiated";
+             gm.chocolateBatterInstantiated = false;
+
+
+         }*/
 
         if (gm.holdingLiquid == true)
         {
@@ -475,7 +635,6 @@ public class Player : MonoBehaviour
         
     }
 
-    #region "collisions and triggers"
     private void OnCollisionEnter(Collision collision)
     {
         // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
@@ -484,7 +643,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         gm.currentObject = other.gameObject;
-        //debug.text = "on " + currentObject.name;
+        ///debug.text = "on " + currentObject.name;
     }
 
     private void OnTriggerExit(Collider other)
@@ -492,9 +651,7 @@ public class Player : MonoBehaviour
         gm.currentObject = null;
         //debug.text = "off " + currentObject.name;
     }
-    #endregion
 
-    #region "functions"
     void Belt()
     {
         //debug.text = "Belt on";
@@ -503,136 +660,102 @@ public class Player : MonoBehaviour
 
     void VanillaBatter()
     {
-        if (cake.atBatterStation == true)
+        gm.vanillaBatter.SetActive(true);
+        if (gm.vanillaBatterAmount < gm.tooMuchBatter)
         {
-            gm.vanillaBatter.SetActive(true);
-            if (gm.vanillaBatterAmount < gm.tooMuchBatter)
-            {
-                gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
-                gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
-            }
+            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
         }
     }
 
     void ChocolateBatter()
     {
-        if (cake.atBatterStation == true)
-        {
-            gm.chocolateBatter.SetActive(true);
-            if (gm.chocolateBatterAmount < gm.tooMuchBatter)
-            {
-                gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
-                gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount * .001f, 0);
-            }
+        gm.chocolateBatter.SetActive(true);
+        if (gm.chocolateBatterAmount < gm.tooMuchBatter)
+        { 
+            gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
         }
+        
     }
 
     void LemonBatter()
     {
-        if (cake.atBatterStation == true)
+        gm.lemonBatter.SetActive(true);
+        if (gm.lemonBatterAmount < gm.tooMuchBatter)
         {
-            gm.lemonBatter.SetActive(true);
-            if (gm.lemonBatterAmount < gm.tooMuchBatter)
-            {
-                gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
-                gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
-            }
+            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
+            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
         }
-
     }
 
     void OvenLight()
     {
-        if (cake.atOven)
-        {
-            lightOn = !lightOn;
-            Light.SetActive(lightOn);
-        }
-
+        
+        lightOn = !lightOn;
+        Light.SetActive(lightOn);
     }
 
     //make a light button for oven 
     void OvenOn()
     {
-        if (cake.atOven)
-        {
-            gm.debug.text = "oven on";
-            gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
-            //debug.text = "your cook time is " + cookTime;
+        
+        gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
+        //debug.text = "your cook time is " + cookTime;
 
-            gm.ovenOn = true;
+        gm.ovenOn = true;
 
-            //set cook time based on batter amount
-            //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
-        }
+        //set cook time based on batter amount
+        //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
     }
 
     void OvenOff()
     {
-        if (cake.atOven)
-        {
-            gm.debug.text = "Oven off";
-            gm.ovenOn = false;
-        }
-
+        gm.debug.text = "Oven off";
+        gm.ovenOn = false;
     }
 
     void Frosting()
     {
-        if (cake.atFrosting)
-        {
-            //debug.text = "frosting";
-            gm.frostingOn = true;
-            //instantiate/ run frosting coming out animation
-            // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one) }
-        }
+        //debug.text = "frosting";
+        gm.frostingOn = true;
+        //instantiate/ run frosting coming out animation
+        // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
     }
 
     void Liquid()//&& press and hold (just like frosting just more liquidy))
     {
-        if (cake.atTopping)
+
+        if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
         {
-            if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
+            gm.debug.text = "pouring liquid";
+            gm.holdingLiquid = true;
+            // liquid particle machine
+
+            if (gm.timeSqueezingLiquid >= 3)
             {
-                gm.debug.text = "pouring liquid";
-                gm.holdingLiquid = true;
-                // liquid particle machine
-
-                if (gm.timeSqueezingLiquid >= 3)
-                {
-                    //instantiate liquid prefab
-                }
-
+                //instantiate liquid prefab
             }
-            //if circular motion and held for 3 sec and flipped upside down
+           
         }
-
+        //if circular motion and held for 3 sec and flipped upside down
     }
 
     void Sprinkles()//&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
     {
-        if (cake.atTopping)
+        if (sprinkles.transform.rotation.eulerAngles.y >= 120 && sprinkles.transform.rotation.eulerAngles.y <= 240)
         {
-            if (sprinkles.transform.rotation.eulerAngles.y >= 120 && sprinkles.transform.rotation.eulerAngles.y <= 240)
-            {
-                gm.debug.text = "sprinkling";
-            }
-            // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
-            // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
-            // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
-
-            // public int # of sprinkles++
+            gm.debug.text = "sprinkling";
         }
+        // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
+        // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
+        // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
 
+        // public int # of sprinkles++
     }
 
     void Cherries()//&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
     {
-        if (cake.atTopping)
-        {
-            //grabbable 
-        }
-
+        //grabbable 
     }
-    #endregion
 }

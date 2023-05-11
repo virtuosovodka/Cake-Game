@@ -63,6 +63,7 @@ TagManager:
   - ClockIn
   - review
   - CakeBoxStop
+  - OvenDoorStop
   layers:
   - Default
   - TransparentFX
