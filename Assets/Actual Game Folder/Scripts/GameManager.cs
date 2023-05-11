@@ -23,16 +23,12 @@ public class GameManager : MonoBehaviour
     public float chocolateBatterAmount;
     public float vanillaBatterAmount;
     public float lemonBatterAmount;
-    
+    public string batter;
     public float tooMuchBatter;
     public bool createdChocolateBatter = false;
-    public bool createdVanillaBatter = false;
-    public bool createdLemonBatter = false;
     public GameObject vanillaBatter;
     public GameObject chocolateBatter;
     public GameObject lemonBatter;
-    public float batterAmount;
-    public GameObject uncookedBatter;
 
     //oven
     public float cookTime;
@@ -48,7 +44,6 @@ public class GameManager : MonoBehaviour
     //ipad
     public bool ipadHit;
 
-    public CakeOrder cakeOrder;
     
     // Start is called before the first frame update
     private void Awake()
@@ -69,28 +64,5 @@ public class GameManager : MonoBehaviour
         vanillaBatter.SetActive(false);
         chocolateBatter.SetActive(false);
         lemonBatter.SetActive(false);
-        uncookedBatter.SetActive(false);
     }
-
-    public string BatterType()
-    {
-        string _batterType;
-        if (chocolateBatterAmount > vanillaBatterAmount && chocolateBatterAmount > lemonBatterAmount)
-        {
-            batterAmount = chocolateBatterAmount;
-            _batterType = "Chocolate";
-        }
-        else if (lemonBatterAmount > vanillaBatterAmount && lemonBatterAmount > chocolateBatterAmount)
-        {
-            batterAmount = lemonBatterAmount;
-            _batterType = "Lemon";
-        }
-        else
-        {
-            batterAmount = vanillaBatterAmount;
-            _batterType = "Vanilla";
-        }
-        return _batterType;
-    }
-
 }
