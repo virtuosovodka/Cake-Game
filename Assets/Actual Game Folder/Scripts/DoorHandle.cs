@@ -11,12 +11,12 @@ public class DoorHandle : MonoBehaviour
     public GameObject frontHandle;
     public GameObject backHandle;
     public TextMeshProUGUI debug;
-    bool up = true;
+    bool up = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        up = false;
     }
 
     // Update is called once per frame
@@ -26,17 +26,22 @@ public class DoorHandle : MonoBehaviour
 
         if (gm != null)
         {
-            if (up == false && gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) 
+            if (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
             {
-                frontHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
-                backHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
-                up = true;
-            }
-            else if (up == true && gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
-            {
-                frontHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
-                backHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
-                up = false;
+                gm.debug.text = "doorhandle hit";
+                if (up)
+                {
+                    frontHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
+                    backHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
+                    up = false;
+                }
+
+                if (!up)
+                {
+                    frontHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
+                    backHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
+                    up = true;
+                }
             }
         }
     }

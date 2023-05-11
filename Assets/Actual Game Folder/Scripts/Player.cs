@@ -193,6 +193,7 @@ if (Input.GetKeyDown(KeyCode.O))
         underFilled.SetActive(false);
         overFilled.SetActive(false);
         rightSized.SetActive(false);
+        gm.cookTimePerOunce = 1;
 
        
         
@@ -213,7 +214,7 @@ if (Input.GetKeyDown(KeyCode.O))
         
         if (gm.ovenOn)
         {
-            gm.timeInOven += Time.deltaTime;
+            //gm.timeInOven += Time.deltaTime;
 
             //debug.text = "time in oven is " + timeInOven;
 
@@ -702,7 +703,6 @@ if (Input.GetKeyDown(KeyCode.O))
     void OvenOn()
     {
         
-        gm.debug.text = "oven on";
         gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
         //debug.text = "your cook time is " + cookTime;
 
