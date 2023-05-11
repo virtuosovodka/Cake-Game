@@ -209,7 +209,7 @@ if (Input.GetKeyDown(KeyCode.O))
             gm.debug.text = "button b";
         }
 
-        gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
+        //gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
         
         if (gm.ovenOn)
         {
