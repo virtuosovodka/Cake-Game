@@ -2685,6 +2685,11 @@ MonoBehaviour:
   Belt3: {fileID: 302274499}
   counter: {fileID: 1995706417}
   cakeBox: {fileID: 0}
+  atBatterStation: 0
+  atOven: 0
+  atFlip: 0
+  atFrosting: 0
+  atTopping: 0
 --- !u!136 &700349115
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8035,6 +8040,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4187632952114551246, guid: c67a24796678340f78caad38ead0ad7c,
+        type: 3}
+      propertyPath: colorblind
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4187632952114551246, guid: c67a24796678340f78caad38ead0ad7c,
         type: 3}
       propertyPath: frostingButton1

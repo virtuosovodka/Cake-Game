@@ -19,8 +19,14 @@ public class CakeOrder : MonoBehaviour
     public GameObject frostingButton2;
     public GameObject frostingButton3;
     int FIndex;
-    public Material wrongFrosting;
+    public Material wrongFrosting1;
+    public Material wrongFrosting2;
     public List<Material> frostingList2 = new List<Material> { };
+    public List<Material> rightColors = new List<Material> { };
+    public List<Material> colorblindFrosting = new List<Material> { };
+    Material chosenMaterial;
+    Material chosenMaterial1;
+    Material chosenMaterial2;
 
     int bIndex;
     int fIndex;
@@ -74,7 +80,7 @@ public class CakeOrder : MonoBehaviour
     public GameObject tier2nd;
 
     // for randomly picking three frostings for the piping bags that appear
-    int rightButton;
+    int correctButton;
 
     //point counting variables
     int points;
@@ -100,6 +106,8 @@ public class CakeOrder : MonoBehaviour
         {
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             frostingList2 = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
+            colorblindFrosting = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
+            
             tier2.SetActive(false);
             tier2nd.SetActive(false);
 
@@ -113,21 +121,26 @@ public class CakeOrder : MonoBehaviour
             lIndex = Random.Range(0, liquidList.Count);
             tierIndex = Random.Range(1, 3);
 
-            rightButton = Random.Range(0, 3);
+            correctButton = Random.Range(0, 3);
             fOrder = frostingList[fIndex];
 
             // randommly generating three frosting colors for the three different piping bags
-            frostingButtons[rightButton].GetComponent<MeshRenderer>().material = fOrder;
-            frostingButtons.RemoveAt(rightButton);
+            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
+            chosenMaterial = fOrder;
+            frostingButtons.RemoveAt(correctButton);
             frostingList2.RemoveAt(fIndex);
+
             FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
+            wrongFrosting1 = frostingList2[FIndex];
+            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting1;
+            chosenMaterial1 = wrongFrosting1;
             frostingList2.RemoveAt(FIndex);
-            FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
-        }
+
+            FIndex = Random.Range(0, frostingList2.Count);           
+            wrongFrosting2 = frostingList2[FIndex];
+            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting2;
+            chosenMaterial2 = wrongFrosting2;
+        }/*
         if (colorblind == true)
         {
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
@@ -159,7 +172,7 @@ public class CakeOrder : MonoBehaviour
             FIndex = Random.Range(0, frostingList2.Count);
             wrongFrosting = frostingList2[FIndex];
             frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
-        }
+        }*/
 
 
         //pOrder = patternList[pIndex];
@@ -402,4 +415,43 @@ public class CakeOrder : MonoBehaviour
             fired();
         }
     }*/
+
+    void ColorBlind()
+    {
+        if (colorblind == true)
+        {
+            colorblind = false;
+        }
+        if (colorblind == false)
+        {
+            colorblind = true;
+        }
+        vanillaBatter = vanillaMColorblind;
+        chocolateBatter = chocolateMColorblind;
+        redF = redFColorblind;
+        orangeF = orangeFColorblind;
+        greenF = greenFColorblind;
+        pinkF = pinkFColorblind;
+        brownF = brownFColorblind;
+        rainbowSprinklesS = rainbowSprinklesSColorblind;
+        chocolateSprinklesS = chocolateSprinklesSColorblind;
+        cherriesT = cherriesTColorblind;
+        rasberryJamL = rasberryJamLColorblind;
+        chocolateSyrupL = chocolateSyrupLColorblind;
+        caramelL = caramelLColorblind;
+
+        vanillaMColorblind = vanillaBatter;
+        chocolateMColorblind = chocolateBatter;
+        redFColorblind = redF;
+        orangeFColorblind = orangeF;
+        greenFColorblind = greenF;
+        pinkFColorblind = pinkF;
+        brownFColorblind = brownF;
+        rainbowSprinklesSColorblind = rainbowSprinklesS;
+        chocolateSprinklesSColorblind = chocolateSprinklesS;
+        cherriesTColorblind = cherriesT;
+        rasberryJamLColorblind = rasberryJamL;
+        chocolateSyrupLColorblind = chocolateSyrupL;
+        caramelLColorblind = caramelL;
+    }
 }
