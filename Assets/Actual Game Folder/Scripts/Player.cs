@@ -7,6 +7,8 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public GameManager gm;
+    public ConveyorBelt cake;
+
     //light
     public GameObject Light;
     bool lightOn;
@@ -66,7 +68,6 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
     float buttonCooldownTimer = 0;
-
     
 
     //TODO: make separate scene for color blind mode
@@ -76,68 +77,6 @@ public class Player : MonoBehaviour
 
     //TODO: stack of plates under flip station -> have to grab plate and put on belt to flip cake
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
-
-    /*        //if (other.gameObject.CompareTag("StartBelt"))
-        //{
-            if (OVRInput.GetDown(OVRInput.RawButton.X))
-            {
-                text.text = "X pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.Y))
-            {
-                text.text = "Y pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.One))
-            {
-                text.text = "A pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.Two))
-            {
-                text.text = "B pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-            {
-                text.text = "Left Index Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-            {
-                text.text = "Right Index Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //left hand trigger
-            {
-                text.text = "Left Hand Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //right hand trigger
-            {
-                text.text = "Right Hand Trigger Pressed!";
-            }
-        //}*/
-
-    /*bool IsDragging = false;
-public Transform Parent;
-public GameObject Block;
-public GameObject parentObject;
-if (Input.GetKeyDown(KeyCode.O))
-    {
-        Block.transform.Translate(.1f, 0, 0);
-
-        Transform childToRemove = parentObject.transform.Find("Push Block");
-        childToRemove.parent = null;
-
-        //transform.DetachChildren();
-        //how to detahc specific child not include camera
-    }
-
-
-    if (collision.gameObject.CompareTag("Push Block"))
-    {
-        if (IsDragging == false)
-        {
-            collision.transform.SetParent(Parent);
-            IsDragging = true;
-
-
-        */
 
 
     private void Awake()
@@ -151,6 +90,7 @@ if (Input.GetKeyDown(KeyCode.O))
     // Start is called before the first frame update
     void Start()
     {
+        
         gm.currentObject = gameObject;
 
         Light.SetActive(false);
@@ -201,6 +141,8 @@ if (Input.GetKeyDown(KeyCode.O))
     // Update is called once per frame
     void Update()
     {
+        gm.debug.text = " " +cake.atBatterStation;
+
         OVRInput.Update();
         buttonCooldownTimer += Time.deltaTime;
 
@@ -331,98 +273,6 @@ if (Input.GetKeyDown(KeyCode.O))
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
             }
-
-            /*
-            //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-            if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
-            {
-                StartBeltPrompt.SetActive(true);
-            }
-            else
-            {
-                StartBeltPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-            {
-                BatterPrompt.SetActive(true);
-            }
-            else
-            {
-                BatterPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
-            {
-                OvenDoorPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenDoorPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
-            {
-                OvenOnPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOnPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
-            {
-                OvenLightPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenLightPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
-            {
-                OvenOffPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOffPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
-            {
-                FrostingPrompt.SetActive(true);
-            }
-            else
-            {
-                FrostingPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Liquid"))//&& in level 1
-            {
-                LiquidPrompt.SetActive(true);
-            }
-            else 
-            {
-                LiquidPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
-            {
-                SprinklesPrompt.SetActive(true);
-            }
-            else
-            {
-                SprinklesPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
-            {
-                CherriesPrompt.SetActive(true);
-            }
-            else 
-            {
-                CherriesPrompt.SetActive(false);
-            }*/
 
 
             //IPAD MAGIC
@@ -662,103 +512,135 @@ if (Input.GetKeyDown(KeyCode.O))
 
     void VanillaBatter()
     {
-        gm.vanillaBatter.SetActive(true);
-        if (gm.vanillaBatterAmount < gm.tooMuchBatter)
+        if (cake.atBatterStation == true)
         {
-            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
+            gm.vanillaBatter.SetActive(true);
+            if (gm.vanillaBatterAmount < gm.tooMuchBatter)
+            {
+                gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
+                gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
+            }
         }
     }
 
     void ChocolateBatter()
     {
-        gm.chocolateBatter.SetActive(true);
-        if (gm.chocolateBatterAmount < gm.tooMuchBatter)
-        { 
-            gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
+        if (cake.atBatterStation == true)
+        {
+            gm.chocolateBatter.SetActive(true);
+            if (gm.chocolateBatterAmount < gm.tooMuchBatter)
+            {
+                gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
+                gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount * .001f, 0);
+            }
         }
-        
     }
 
     void LemonBatter()
     {
-        gm.lemonBatter.SetActive(true);
-        if (gm.lemonBatterAmount < gm.tooMuchBatter)
+        if (cake.atBatterStation == true)
         {
-            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
+            gm.lemonBatter.SetActive(true);
+            if (gm.lemonBatterAmount < gm.tooMuchBatter)
+            {
+                gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
+                gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
+            }
         }
+
     }
 
     void OvenLight()
     {
-        
-        lightOn = !lightOn;
-        Light.SetActive(lightOn);
+        if (cake.atOven)
+        {
+            lightOn = !lightOn;
+            Light.SetActive(lightOn);
+        }
+
     }
 
     //make a light button for oven 
     void OvenOn()
     {
-        
-        gm.debug.text = "oven on";
-        gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
-        //debug.text = "your cook time is " + cookTime;
+        if (cake.atOven)
+        {
+            gm.debug.text = "oven on";
+            gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
+            //debug.text = "your cook time is " + cookTime;
 
-        gm.ovenOn = true;
+            gm.ovenOn = true;
 
-        //set cook time based on batter amount
-        //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
+            //set cook time based on batter amount
+            //on start of function begin baking animation (timer) based on cook time 3 sec before raw, 3 sec after overcooked, 5 sec after on fire
+        }
     }
 
     void OvenOff()
     {
-        gm.debug.text = "Oven off";
-        gm.ovenOn = false;
+        if (cake.atOven)
+        {
+            gm.debug.text = "Oven off";
+            gm.ovenOn = false;
+        }
+
     }
 
     void Frosting()
     {
-        //debug.text = "frosting";
-        gm.frostingOn = true;
-        //instantiate/ run frosting coming out animation
-        // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
+        if (cake.atFrosting)
+        {
+            //debug.text = "frosting";
+            gm.frostingOn = true;
+            //instantiate/ run frosting coming out animation
+            // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one) }
+        }
     }
 
     void Liquid()//&& press and hold (just like frosting just more liquidy))
     {
-
-        if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
+        if (cake.atTopping)
         {
-            gm.debug.text = "pouring liquid";
-            gm.holdingLiquid = true;
-            // liquid particle machine
-
-            if (gm.timeSqueezingLiquid >= 3)
+            if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
             {
-                //instantiate liquid prefab
+                gm.debug.text = "pouring liquid";
+                gm.holdingLiquid = true;
+                // liquid particle machine
+
+                if (gm.timeSqueezingLiquid >= 3)
+                {
+                    //instantiate liquid prefab
+                }
+
             }
-           
+            //if circular motion and held for 3 sec and flipped upside down
         }
-        //if circular motion and held for 3 sec and flipped upside down
+
     }
 
     void Sprinkles()//&& flipped 180 (so open bit is pointed downwards) && shaken up and down)
     {
-        if (sprinkles.transform.rotation.eulerAngles.y >= 120 && sprinkles.transform.rotation.eulerAngles.y <= 240)
+        if (cake.atTopping)
         {
-            gm.debug.text = "sprinkling";
-        }
-        // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
-        // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
-        // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
+            if (sprinkles.transform.rotation.eulerAngles.y >= 120 && sprinkles.transform.rotation.eulerAngles.y <= 240)
+            {
+                gm.debug.text = "sprinkling";
+            }
+            // when flipped 180, will make a range~ 120-240? x amount of sprinkles come out once
+            // shaken- Y value changes by certain amount or more x amount of sprinkles* # of times shaken = amount that comes out?
+            // flip x amount out, shake ++ x amount, for n number of shakes n number of sprinkles come out
 
-        // public int # of sprinkles++
+            // public int # of sprinkles++
+        }
+
     }
 
     void Cherries()//&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
     {
-        //grabbable 
+        if (cake.atTopping)
+        {
+            //grabbable 
+        }
+
     }
 }

@@ -20,6 +20,12 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject counter;
     public GameObject cakeBox;
 
+    public bool atBatterStation;
+    public bool atOven;
+    public bool atFlip;
+    public bool atFrosting;
+    public bool atTopping;
+
     //public TextMeshProUGUI debug;
 
 
@@ -82,42 +88,76 @@ public class ConveyorBelt : MonoBehaviour
     {
         if (other.gameObject.CompareTag("BatterStop"))
         {
+            atBatterStation = true;
             gm.beltOn = false;
-            print("batter stop");
-            gm.debug.text = "batter stop";
+
+
+            atOven = false;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = false;          
+        }
+
+        if (other.gameObject.CompareTag("OvenDoorHandle"))
+        {
             gm.beltOn = false;
         }
 
         if (other.gameObject.CompareTag("OvenStop"))
         {
             gm.beltOn = false;
+
+            atBatterStation = false;
+            atOven = true;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = false;
         }
 
         if (other.gameObject.CompareTag("FlipStop"))
         {
             gm.beltOn = false;
+
+            atBatterStation = false;
+            atOven = false;
+            atFlip = true;
+            atFrosting = false;
+            atTopping = false; 
         }
 
         if (other.gameObject.CompareTag("FrostingStop"))
         {
             gm.beltOn = false;
+
+            atBatterStation = false;
+            atOven = false;
+            atFlip = false;
+            atFrosting = true;
+            atTopping = false;
         }
 
         if (other.gameObject.CompareTag("ToppingStop"))
         {
             gm.beltOn = false;
+
+            atBatterStation = false;
+            atOven = false;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = true;
         }
 
         if (other.gameObject.CompareTag("CakeBoxStop"))
         {
             gm.beltOn = false;
-        }
 
-        if (other.gameObject.CompareTag ("OvenDoorHandle"))
-        {
-            gm.beltOn = false; 
+            atBatterStation = false;
+            atOven = false;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = false;
         }
+        
     }
-
 
 }
