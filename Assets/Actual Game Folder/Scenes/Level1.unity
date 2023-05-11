@@ -1321,6 +1321,7 @@ GameObject:
   - component: {fileID: 211043258}
   - component: {fileID: 211043256}
   - component: {fileID: 211043255}
+  - component: {fileID: 211043259}
   m_Layer: 0
   m_Name: FrontOvenDoor
   m_TagString: Untagged
@@ -1361,7 +1362,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2100000, guid: d001c20cbe6f94f9d986e510955e66d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1403,6 +1404,14 @@ RectTransform:
   m_AnchoredPosition: {x: 4.51, y: 0.72}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!33 &211043259
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211043253}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &227657834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1863,7 @@ MonoBehaviour:
   closeCredits: {fileID: 693252463}
   soundOn: {fileID: 664857032}
   colorOn: {fileID: 1079879181}
+  fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
   - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
@@ -1871,6 +1881,9 @@ MonoBehaviour:
   CherriesPrompt: {fileID: 0}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
+  underFilled: {fileID: 0}
+  overFilled: {fileID: 0}
+  rightSized: {fileID: 0}
   cakeTin: {fileID: 506036147}
   sprinkles: {fileID: 0}
   liquid: {fileID: 0}
@@ -5008,6 +5021,7 @@ MonoBehaviour:
   closeCredits: {fileID: 693252463}
   soundOn: {fileID: 664857032}
   colorOn: {fileID: 1079879181}
+  fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
   - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
@@ -5025,6 +5039,9 @@ MonoBehaviour:
   CherriesPrompt: {fileID: 0}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
+  underFilled: {fileID: 0}
+  overFilled: {fileID: 0}
+  rightSized: {fileID: 0}
   cakeTin: {fileID: 506036147}
   sprinkles: {fileID: 0}
   liquid: {fileID: 0}
