@@ -488,6 +488,7 @@ public class Player : MonoBehaviour
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
                 Credits.SetActive(false);
+                TextCredits.SetActive(false);
                 LevelSelect.SetActive(false);
             }
 

@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
-  backButton: {fileID: 577600276}
+  backButton: {fileID: 525309530}
   playVideo0: {fileID: 945651071}
   playVideo1: {fileID: 913873841}
   clockIn: {fileID: 316344121}
@@ -3846,6 +3846,12 @@ CapsuleCollider:
   m_Height: 3.2723873
   m_Direction: 1
   m_Center: {x: 0.00000006208813, y: 0.43619487, z: -0.00000009313223}
+--- !u!1 &525309530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3245501626275612286, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 232936144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530296816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,12 +3967,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &577600276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3245501627403966772, guid: d2526772bf8ec427ab829bdb40e1d1ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 232936144}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &588111419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5360,7 +5360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
-  backButton: {fileID: 577600276}
+  backButton: {fileID: 525309530}
   playVideo0: {fileID: 945651071}
   playVideo1: {fileID: 913873841}
   clockIn: {fileID: 316344121}
