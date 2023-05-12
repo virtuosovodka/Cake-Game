@@ -64,6 +64,11 @@ TagManager:
   - review
   - CakeBoxStop
   - OvenDoorStop
+  - Level 1
+  - Level 2
+  - Level 3
+  - ColorOn
+  - SoundOn
   layers:
   - Default
   - TransparentFX

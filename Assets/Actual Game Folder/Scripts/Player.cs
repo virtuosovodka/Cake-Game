@@ -6,6 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    #region "initialize variables"
     public GameManager gm;
     //light
     public GameObject Light;
@@ -66,9 +67,9 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
     float buttonCooldownTimer = 0;
+    #endregion
 
-    
-
+    #region "TODO"
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
     //TODO: show up to work one day and someone threw a cake at your face limited vision
@@ -76,6 +77,10 @@ public class Player : MonoBehaviour
 
     //TODO: stack of plates under flip station -> have to grab plate and put on belt to flip cake
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
+    #endregion
+
+    #region "vr button guide"
+
 
     /*        //if (other.gameObject.CompareTag("StartBelt"))
         //{
@@ -114,10 +119,10 @@ public class Player : MonoBehaviour
         //}*/
 
     /*bool IsDragging = false;
-public Transform Parent;
-public GameObject Block;
-public GameObject parentObject;
-if (Input.GetKeyDown(KeyCode.O))
+    public Transform Parent;
+    public GameObject Block;
+    public GameObject parentObject;
+    if (Input.GetKeyDown(KeyCode.O))
     {
         Block.transform.Translate(.1f, 0, 0);
 
@@ -136,17 +141,13 @@ if (Input.GetKeyDown(KeyCode.O))
             collision.transform.SetParent(Parent);
             IsDragging = true;
 
-
-        */
-
-
-    private void Awake()
-    {
-        //videoPlayer = GetComponent<VideoPlayer>();
-
-        //delete the material changer in the player inspector
-        //materialChanger = GetComponent<MaterialChanger>();
+        }
     }
+
+*/
+
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -156,12 +157,13 @@ if (Input.GetKeyDown(KeyCode.O))
         Light.SetActive(false);
         lightOn = false;
 
+        #region "ipad buttons"
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
         materialChanger.meshRenderer.material = materialChanger.mats[1];
         backButtonMesh = backButton.GetComponent<MeshRenderer>();
         //playButton.SetActive(false);
-        backButton.SetActive(false);
+        backButton.SetActive(true);
         playVideo0.SetActive(true);
         playVideo1.SetActive(true);
         clockIn.SetActive(false);
@@ -176,7 +178,9 @@ if (Input.GetKeyDown(KeyCode.O))
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
+        #endregion
 
+        #region "prompts"
         //button press prompts
         StartBeltPrompt.SetActive(false);
         BatterPrompt.SetActive(false);
@@ -188,6 +192,7 @@ if (Input.GetKeyDown(KeyCode.O))
         LiquidPrompt.SetActive(false);
         SprinklesPrompt.SetActive(false);
         CherriesPrompt.SetActive(false);
+        #endregion
 
         // oven set false
         underFilled.SetActive(false);
@@ -199,6 +204,7 @@ if (Input.GetKeyDown(KeyCode.O))
     // Update is called once per frame
     void Update()
     {
+        #region "vr debug and settings"
         OVRInput.Update();
         buttonCooldownTimer += Time.deltaTime;
 
@@ -207,8 +213,10 @@ if (Input.GetKeyDown(KeyCode.O))
             gm.debug.text = "button b";
         }
 
-        //gm.debug.text = "batter amount" + gm.chocolateBatterAmount;
         
+        #endregion
+
+        #region "oven on"
         if (gm.ovenOn)
         {
             //gm.timeInOven += Time.deltaTime;
@@ -248,7 +256,9 @@ if (Input.GetKeyDown(KeyCode.O))
                 // run fire animationk
             }
         }
+        #endregion
 
+        #region "buttons"
 
         if (gm.currentObject != null)
         {
@@ -330,6 +340,9 @@ if (Input.GetKeyDown(KeyCode.O))
                 // cherries on collision front button && y/b to pick it up
             }
 
+            #endregion
+
+            #region "Level1 buttons"
             /*
             //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
             if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
@@ -421,16 +434,15 @@ if (Input.GetKeyDown(KeyCode.O))
             {
                 CherriesPrompt.SetActive(false);
             }*/
+            #endregion
 
 
-            //IPAD MAGIC
+
+            #region "ipad"
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
-                print("ipad play 0");
-                //debug.text = "play video zero";
-                //ipad.PlayPause(videoClips[0]);
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
-                backButton.SetActive(true);
+                //backButton.SetActive(true);
                 //playButton.SetActive(true);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
@@ -447,11 +459,8 @@ if (Input.GetKeyDown(KeyCode.O))
 
             if (gm.currentObject.CompareTag("PlayVideo1") || Input.GetKeyDown(KeyCode.S)) //&& OVRInput.Get(OVRInput.Button.One))
             {
-                print("ipad play 1");
-                //debug.text = "play video one";
-                //ipad.PlayPause(videoClips[1]);
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
-                backButton.SetActive(true);
+                //backButton.SetActive(true);
                 //playButton.SetActive(true);
                 playVideo1.SetActive(false);
                 playVideo0.SetActive(false);
@@ -468,13 +477,11 @@ if (Input.GetKeyDown(KeyCode.O))
 
             if (gm.currentObject.CompareTag("BackButton") || Input.GetKeyDown(KeyCode.D))//&& OVRInput.Get(OVRInput.Button.One))
             {
-                print("ipad back");
-                //debug.text = "back to home screen";
                 materialChanger.meshRenderer.material = materialChanger.mats[1];
                 //playButton.SetActive(false);
                 playVideo0.SetActive(true);
                 playVideo1.SetActive(true);
-                backButton.SetActive(false);
+                //backButton.SetActive(false);
                 clockOut.SetActive(true);
                 clockIn.SetActive(false);
                 Settings.SetActive(true);
@@ -486,13 +493,11 @@ if (Input.GetKeyDown(KeyCode.O))
 
             if (gm.currentObject.CompareTag("Settings") || Input.GetKeyDown(KeyCode.W))//&& OVRInput.Get(OVRInput.Button.One))
             {
-                print("settings");
-                //debug.text = "back to home screen";
                 materialChanger.meshRenderer.material = materialChanger.mats[1];
                 //playButton.SetActive(false);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
-                backButton.SetActive(true);
+                //backButton.SetActive(true);
                 clockOut.SetActive(false);
                 clockIn.SetActive(false);
                 Settings.SetActive(false);
@@ -502,16 +507,15 @@ if (Input.GetKeyDown(KeyCode.O))
                 LevelSelect.SetActive(true);
             }
 
-
-
-            if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.G))
+            if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.M))
             {
-                clockOut.SetActive(false);
                 clockIn.SetActive(true);
+                clockOut.SetActive(false);
+                print("clocked in");
                 buttonCooldownTimer = 0;
             }
 
-            if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.G))
+            if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.N))
             {
                 clockOut.SetActive(true);
                 clockIn.SetActive(false);
@@ -527,68 +531,75 @@ if (Input.GetKeyDown(KeyCode.O))
             if (gm.currentObject.CompareTag("Credits") || Input.GetKeyDown(KeyCode.P))
             {
                 TextCredits.gameObject.SetActive(true);
-                closeCredits.gameObject.SetActive(true);
+                //closeCredits.gameObject.SetActive(true);
 
             }
 
-            if (gm.currentObject.CompareTag("closeCredits") || Input.GetKeyDown(KeyCode.J))
-            {
-                TextCredits.gameObject.SetActive(false);
-                closeCredits.gameObject.SetActive(false);
-            }
-
-
-            if (gm.currentObject.CompareTag("Mute") || Input.GetKeyDown(KeyCode.K))
+            if ((gm.currentObject.CompareTag("Mute") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.K))
             {
                 //turn off the sound on the game
                 soundOn.SetActive(true);
+                TextCredits.gameObject.SetActive(false);
+            
                 Mute.SetActive(false);
+                buttonCooldownTimer = 0;
             }
-            if (gm.currentObject.CompareTag("soundOn") || Input.GetKeyDown(KeyCode.H))
+            if ((gm.currentObject.CompareTag("SoundOn") && buttonCooldownTimer > .5f )|| Input.GetKeyDown(KeyCode.H))
             {
-                //turn on the sound on the game
-                soundOn.SetActive(false);
                 Mute.SetActive(true);
+                //turn on the sound on the game
+                TextCredits.gameObject.SetActive(false);
+                soundOn.SetActive(false);
+                
+                buttonCooldownTimer = 0;
             }
 
-            if (gm.currentObject.CompareTag("ColorBlind") || Input.GetKeyDown(KeyCode.L))
+            if ((gm.currentObject.CompareTag("ColorBlind") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.L))
             {
                 //ColorBlindMode.SetActive
+                TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(true);
                 ColorBlind.SetActive(false);
+                buttonCooldownTimer = 0;
             }
 
-            if (gm.currentObject.CompareTag("colorOn") || Input.GetKeyDown(KeyCode.G))
+            if ((gm.currentObject.CompareTag("ColorOn") && buttonCooldownTimer > .5f)|| Input.GetKeyDown(KeyCode.G))
             {
                 //ColorBlindMode turn off, color is back on
+                TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(false);
                 ColorBlind.SetActive(true);
+                buttonCooldownTimer = 0;
             }
 
-            if (gm.currentObject.CompareTag("Level1") || Input.GetKeyDown(KeyCode.G))
+            if (gm.currentObject.CompareTag("Level 1") || Input.GetKeyDown(KeyCode.G))
             {
+                TextCredits.gameObject.SetActive(false);
                 //Level One Set Active
                 //Anmation highlight the level selected maybe
             }
 
-            if (gm.currentObject.CompareTag("Level2") || Input.GetKeyDown(KeyCode.F))
+            if (gm.currentObject.CompareTag("Level 2") || Input.GetKeyDown(KeyCode.F))
             {
+                TextCredits.gameObject.SetActive(false);
                 //Level Two Set Active
                 //Anmation highlight the level selected maybe
             }
 
-            if (gm.currentObject.CompareTag("Level3") || Input.GetKeyDown(KeyCode.G))
+            if (gm.currentObject.CompareTag("Level 3") || Input.GetKeyDown(KeyCode.G))
             {
+                TextCredits.gameObject.SetActive(false);
                 //Level Three Set Active
                 //Anmation highlight the level selected maybe
             }
-
+            
+            /*
             if (gm.currentObject.CompareTag("review") || Input.GetKeyDown(KeyCode.Y))
             {
                 //stars appear on page
 
             }
-
+            */
             //if (Input.GetKeyDown(KeyCode.Y (if fired is true) 
             // {
             //    fired.SetActive(true);
@@ -623,6 +634,7 @@ if (Input.GetKeyDown(KeyCode.O))
 
 
          }*/
+        #endregion
 
         if (gm.holdingLiquid == true)
         {
@@ -635,6 +647,7 @@ if (Input.GetKeyDown(KeyCode.O))
         
     }
 
+    #region "triggers and collisions"
     private void OnCollisionEnter(Collision collision)
     {
         // if the player collides with the cherry container then the cherry instatiates and count them too see if yu have the right amount
@@ -652,6 +665,9 @@ if (Input.GetKeyDown(KeyCode.O))
         //debug.text = "off " + currentObject.name;
     }
 
+    #endregion
+
+    #region "functions"
     void Belt()
     {
         //debug.text = "Belt on";
@@ -758,4 +774,5 @@ if (Input.GetKeyDown(KeyCode.O))
     {
         //grabbable 
     }
+    #endregion
 }
