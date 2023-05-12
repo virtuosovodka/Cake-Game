@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public GameObject Credits;
     public GameObject LevelSelect;
     public GameObject TextCredits;
-    public GameObject closeCredits;
+   
     public GameObject soundOn;
     public GameObject colorOn;
     public GameObject fired;
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
         Credits.SetActive(false);
         LevelSelect.SetActive(false);
         TextCredits.SetActive(false);
-        closeCredits.SetActive(false);
+        
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
@@ -558,18 +558,20 @@ public class Player : MonoBehaviour
             if ((gm.currentObject.CompareTag("ColorBlind") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.L))
             {
                 //ColorBlindMode.SetActive
-                TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(true);
+                TextCredits.gameObject.SetActive(false);
+                
                 ColorBlind.SetActive(false);
                 buttonCooldownTimer = 0;
             }
 
             if ((gm.currentObject.CompareTag("ColorOn") && buttonCooldownTimer > .5f)|| Input.GetKeyDown(KeyCode.G))
             {
+                ColorBlind.SetActive(true);
                 //ColorBlindMode turn off, color is back on
                 TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(false);
-                ColorBlind.SetActive(true);
+               
                 buttonCooldownTimer = 0;
             }
 
@@ -601,7 +603,7 @@ public class Player : MonoBehaviour
 
             }
             */
-            //if (Input.GetKeyDown(KeyCode.Y (if fired is true) 
+            //if (if fired is true) make public bool that if percent<= 30 (or whatever number) then fired=true
             // {
             //    fired.SetActive(true);
             //    backButton.SetActive(true);

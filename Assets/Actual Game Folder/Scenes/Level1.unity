@@ -1692,6 +1692,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 232936144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &232936147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2525905279253464573, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 232936144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240947275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,8 +1992,7 @@ MonoBehaviour:
   Credits: {fileID: 1667504635}
   LevelSelect: {fileID: 1770982917}
   TextCredits: {fileID: 693252463}
-  closeCredits: {fileID: 664857032}
-  soundOn: {fileID: 664857032}
+  soundOn: {fileID: 232936147}
   colorOn: {fileID: 1079879181}
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
@@ -5371,8 +5376,7 @@ MonoBehaviour:
   Credits: {fileID: 1667504635}
   LevelSelect: {fileID: 1770982917}
   TextCredits: {fileID: 693252463}
-  closeCredits: {fileID: 664857032}
-  soundOn: {fileID: 664857032}
+  soundOn: {fileID: 232936147}
   colorOn: {fileID: 1079879181}
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
