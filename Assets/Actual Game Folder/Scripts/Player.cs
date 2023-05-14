@@ -37,20 +37,6 @@ public class Player : MonoBehaviour
     public MaterialChanger materialChanger;
     MeshRenderer backButtonMesh;
 
-    //level 1 button prompts
-    public GameObject StartBeltPrompt;
-    public GameObject BatterPrompt;
-    public GameObject OvenDoorPrompt;
-    public GameObject OvenOnPrompt;
-    public GameObject OvenLightPrompt;
-    public GameObject OvenOffPrompt;
-    public GameObject FrostingPrompt;
-
-    //toppings
-    public GameObject LiquidPrompt;
-    public GameObject SprinklesPrompt;
-    public GameObject CherriesPrompt;
-
     //parent batter to cake tin and plate
     public Transform Parent;
     public GameObject parentObject;
@@ -70,6 +56,8 @@ public class Player : MonoBehaviour
     #endregion
 
     #region "TODO"
+    //TODO: plates are located under the conveyor belt, knife is down there too -> is you don't use the plate the cake will crumble/ layers wil separate when its supposed to slide into cake box, spreader for frositng is in topping station before liquids
+
     //TODO: make separate scene for color blind mode
     //TODO: make tags for individual flavors i.e. chocolate batter, vanilla batter, strawberry batter, green frosting etc. (and color blind version)
     //TODO: show up to work one day and someone threw a cake at your face limited vision
@@ -180,20 +168,6 @@ public class Player : MonoBehaviour
         fired.SetActive(false);
         #endregion
 
-        #region "prompts"
-        //button press prompts
-        StartBeltPrompt.SetActive(false);
-        BatterPrompt.SetActive(false);
-        OvenDoorPrompt.SetActive(false);
-        OvenOnPrompt.SetActive(false);
-        OvenLightPrompt.SetActive(false);
-        OvenOffPrompt.SetActive(false);
-        FrostingPrompt.SetActive(false);
-        LiquidPrompt.SetActive(false);
-        SprinklesPrompt.SetActive(false);
-        CherriesPrompt.SetActive(false);
-        #endregion
-
         // oven set false
         underFilled.SetActive(false);
         overFilled.SetActive(false);
@@ -212,11 +186,10 @@ public class Player : MonoBehaviour
         {
             gm.debug.text = "button b";
         }
-
         
         #endregion
 
-        #region "oven on"
+        #region "Cooking the cake"
         if (gm.ovenOn)
         {
             //gm.timeInOven += Time.deltaTime;
@@ -258,7 +231,7 @@ public class Player : MonoBehaviour
         }
         #endregion
 
-        #region "buttons"
+        #region "Buttons"
 
         if (gm.currentObject != null)
         {
@@ -282,7 +255,6 @@ public class Player : MonoBehaviour
                 ChocolateBatter();
             }
 
-
             if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
             {
                 LemonBatter();
@@ -293,18 +265,14 @@ public class Player : MonoBehaviour
             {
                 OvenOn();
                 // on collision and B or Y
-
             }
-
 
             if (gm.currentObject.CompareTag("OvenLight") && buttonCooldownTimer > .5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
-
                 buttonCooldownTimer = 0;
                 OvenLight();
                 // on collision and B or Y
             }
-
 
             //stop oven function
             if (gm.currentObject.CompareTag("OvenOff"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
@@ -342,103 +310,7 @@ public class Player : MonoBehaviour
 
             #endregion
 
-            #region "Level1 buttons"
-            /*
-            //BUTTON INSTRUCTIONS FOR LEVEL 1 *ONLY*
-            if (gm.currentObject.gameObject.CompareTag("StartBelt")) //&& in level 1
-            {
-                StartBeltPrompt.SetActive(true);
-            }
-            else
-            {
-                StartBeltPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("BatterButton")) //&& in level 1
-            {
-                BatterPrompt.SetActive(true);
-            }
-            else
-            {
-                BatterPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenDoor"))//&& in level 1
-            {
-                OvenDoorPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenDoorPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOn"))//&& in level 1
-            {
-                OvenOnPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOnPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenLight"))//&& in level 1
-            {
-                OvenLightPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenLightPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("OvenOff"))//&& in level 1
-            {
-                OvenOffPrompt.SetActive(true);
-            }
-            else 
-            {
-                OvenOffPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("FrostingButton"))//&& in level 1
-            {
-                FrostingPrompt.SetActive(true);
-            }
-            else
-            {
-                FrostingPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Liquid"))//&& in level 1
-            {
-                LiquidPrompt.SetActive(true);
-            }
-            else 
-            {
-                LiquidPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Sprinkles"))//&& in level 1
-            {
-                SprinklesPrompt.SetActive(true);
-            }
-            else
-            {
-                SprinklesPrompt.SetActive(false);
-            }
-
-            if (gm.currentObject.gameObject.CompareTag("Cherries"))//&& in level 1
-            {
-                CherriesPrompt.SetActive(true);
-            }
-            else 
-            {
-                CherriesPrompt.SetActive(false);
-            }*/
-            #endregion
-
-
-
-            #region "ipad"
+            #region "iPad"
             if (gm.currentObject.CompareTag("PlayVideo0") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
@@ -533,7 +405,6 @@ public class Player : MonoBehaviour
             {
                 TextCredits.gameObject.SetActive(true);
                 //closeCredits.gameObject.SetActive(true);
-
             }
 
             if ((gm.currentObject.CompareTag("Mute") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.K))
@@ -623,20 +494,6 @@ public class Player : MonoBehaviour
 
             //}
         }
-
-        /* if (gm.chocolateBatterInstantiated == true)
-         {
-
-             //instantiate batter
-             Instantiate(chocolateBatter, cakeTin.transform.position, cakeTin.transform.rotation);
-             chocolateBatter.transform.SetParent(Parent);
-             chocolateBatter.transform.position += new Vector3(0, gm.batterAmount, 0);
-
-             gm.debug.text = " batter instantiated";
-             gm.chocolateBatterInstantiated = false;
-
-
-         }*/
         #endregion
 
         if (gm.holdingLiquid == true)
