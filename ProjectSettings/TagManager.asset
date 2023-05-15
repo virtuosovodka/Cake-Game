@@ -69,6 +69,8 @@ TagManager:
   - Level 3
   - ColorOn
   - SoundOn
+  - FrontOvenDoorStop
+  - BackOvenDoorStop
   layers:
   - Default
   - TransparentFX
