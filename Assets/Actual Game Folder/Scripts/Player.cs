@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
-    MeshRenderer backButtonMesh;
+    //MeshRenderer backButtonMesh;
 
     //parent batter to cake tin and plate
     public Transform Parent;
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();
         materialChanger.meshRenderer.material = materialChanger.mats[1];
-        backButtonMesh = backButton.GetComponent<MeshRenderer>();
+        //backButtonMesh = backButton.GetComponent<MeshRenderer>();
         //playButton.SetActive(false);
         backButton.SetActive(true);
         playVideo0.SetActive(true);
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
                 cookingCake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
             }
 
-            //deciding level of cooknessß
+            //deciding level of cookness
             if (gm.timeInOven <= gm.cookTime - 1)
             {
                 //run not baked animation
@@ -260,7 +260,7 @@ public class Player : MonoBehaviour
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
-            //print(gm.currentObject.name);
+            print(gm.currentObject.name);
 
             if (gm.currentObject.CompareTag("StartBelt"))
             {
