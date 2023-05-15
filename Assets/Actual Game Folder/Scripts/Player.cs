@@ -596,6 +596,7 @@ public class Player : MonoBehaviour
         gm.beltOn = true;
     }
 
+    //TODO: particles
     void VanillaBatter()
     {
         gm.vanillaBatter.SetActive(true);
