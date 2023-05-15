@@ -8,7 +8,6 @@ public class DoorHandle : MonoBehaviour
     //create a batterAmount that increments whenever there is batter is being added
     //add in a boolean that batteramount is no zero
     //if chocolate batter amount is greater than 0, the color should be chocolate
-
     public Player leftHand;
     public Player rightHand;
     public GameManager gm;
@@ -20,7 +19,6 @@ public class DoorHandle : MonoBehaviour
     bool up = false;
 
     // Start is called before the first frame update
-
     void Start()
     {
 
@@ -30,6 +28,7 @@ public class DoorHandle : MonoBehaviour
     void Update()
     {
         OVRInput.Update();
+
         if (gm != null)
         {
             if (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
@@ -63,5 +62,3 @@ public class DoorHandle : MonoBehaviour
         gm.ovenDoorHit = false;
     }
 }
-
-

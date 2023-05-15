@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject currentObject;
+
     //Rigidbody rb;
+
     public TextMeshProUGUI debug;
 
     //stations
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
     public float chocolateBatterAmount;
     public float vanillaBatterAmount;
     public float lemonBatterAmount;
+
     public float tooMuchBatter;
     public bool createdChocolateBatter = false;
     public bool createdVanillaBatter = false;
@@ -36,15 +39,21 @@ public class GameManager : MonoBehaviour
     public float cookTimePerOunce;
     public float timeInOven;
     public bool ovenDoorHit;
+    public GameObject underfilled;
+    public GameObject average;
+    public GameObject overfilled;
 
     //toppings
     public bool holdingLiquid = false;
     public float timeSqueezingLiquid;
 
+
     //ipad
     public bool ipadHit;
+
     public CakeOrder cakeOrder;
 
+    // Start is called before the first frame update
     private void Awake()
     {
         if (instance != null)
@@ -55,18 +64,18 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-
         DontDestroyOnLoad(instance);
     }
 
-    // Start is called before the first frame update
     private void Start()
-
     {
         vanillaBatter.SetActive(false);
         chocolateBatter.SetActive(false);
         lemonBatter.SetActive(false);
         uncookedBatter.SetActive(false);
+        underfilled.SetActive(false);
+        overfilled.SetActive(false);
+        average.SetActive(false);
     }
 
     public string BatterType()
@@ -87,7 +96,7 @@ public class GameManager : MonoBehaviour
             batterAmount = vanillaBatterAmount;
             _batterType = "Vanilla";
         }
-
         return _batterType;
     }
+
 }

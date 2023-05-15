@@ -42,9 +42,7 @@ public class Player : MonoBehaviour
     public GameObject parentObject;
 
     //oven
-    public GameObject underFilled;
-    public GameObject overFilled;
-    public GameObject rightSized;
+    public GameObject cookingCake;
 
     //batter
     
@@ -53,6 +51,10 @@ public class Player : MonoBehaviour
     public GameObject sprinkles;
     public GameObject liquid;
     float buttonCooldownTimer = 0;
+
+    //oven
+    public Material caramel;
+    public Material darkBrown;
     #endregion
 
     #region "TODO"
@@ -169,9 +171,6 @@ public class Player : MonoBehaviour
         #endregion
 
         // oven set false
-        underFilled.SetActive(false);
-        overFilled.SetActive(false);
-        rightSized.SetActive(false);
         gm.cookTimePerOunce = 1;
     }
 
@@ -192,36 +191,61 @@ public class Player : MonoBehaviour
         #region "Cooking the cake"
         if (gm.ovenOn)
         {
-            //gm.timeInOven += Time.deltaTime;
+            //deciding size of the cake that is being baked
+            if (gm.batterAmount < .35)
+            {
+                cookingCake = gm.underfilled;
+            }
+            else if (gm.batterAmount < .9)
+            {
+                cookingCake = gm.average;
+            }
+            else
+            {
+                cookingCake = gm.overfilled;
+            }
 
-            //debug.text = "time in oven is " + timeInOven;
+            //deciding color of the cake that is being baked
+            if (gm.BatterType() == "Chocolate")
+            {
+                cookingCake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
+            }
+            else if (gm.BatterType() == "Vanilla"){
+                cookingCake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
+            }
+            else if (gm.BatterType() == "Vanilla")
+            {
+                cookingCake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
+            }
 
+            //deciding level of cooknessß
             if (gm.timeInOven <= gm.cookTime - 1)
             {
-                //debug.text = "raw";
                 //run not baked animation
                 gm.debug.text = "raw";
-                overFilled.SetActive(false);
-                rightSized.SetActive(false);
-                underFilled.SetActive(true);
             }
             else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
-                // debug.text = "cooked";
                 // run cooked animation
-                gm.debug.text = "right";
-                overFilled.SetActive(false);
-                underFilled.SetActive(false);
-                rightSized.SetActive(true);
+                if (gm.BatterType() == "Vanilla")
+                {
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 100);
+                }
+                else if(gm.BatterType() == "Lemon")
+                {
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 100);
+                }
+                else if (gm.BatterType() == "Chocolate")
+                {
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, darkBrown.color, Time.deltaTime / 100);
+                }
+                
             }
             else if (gm.timeInOven >= gm.cookTime + 2)
             {
                 // debug.text = "overcooked";
                 // run overbaked animation
-                gm.debug.text = "overcooked";
-                underFilled.SetActive(false);
-                rightSized.SetActive(false);
-                overFilled.SetActive(true);
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 100);
             }
             else if (gm.timeInOven >= gm.cookTime + 4)
             {
@@ -238,30 +262,30 @@ public class Player : MonoBehaviour
             //gm.debug.text = gm.currentObject.name;
             //print(gm.currentObject.name);
 
-            if (gm.currentObject.CompareTag("StartBelt"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.D)) // || Input.GetKeyDown(KeyCode.K))//OVRInput.GetDown(OVRInput.Button.One) && 
+            if (gm.currentObject.CompareTag("StartBelt"))
             {
                 Belt();
                 //start button is on collision &&  B or Y button 
             }
 
-            if (gm.currentObject.CompareTag("VanillaBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("VanillaBatterButton"))
             {
                 VanillaBatter();
                 //batter button is on collision && while B or Y button is down
             }
 
-            if (gm.currentObject.CompareTag("ChocolateBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("ChocolateBatterButton"))
             {
                 ChocolateBatter();
             }
 
-            if (gm.currentObject.CompareTag("LemonBatterButton"))// && OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("LemonBatterButton"))
             {
                 LemonBatter();
             }
 
             //start oven function
-            if (gm.currentObject.CompareTag("OvenOn"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
+            if (gm.currentObject.CompareTag("OvenOn"))
             {
                 OvenOn();
                 // on collision and B or Y
