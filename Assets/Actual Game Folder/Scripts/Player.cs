@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
     public GameObject parentObject;
 
     //oven
-    public GameObject cookingCake;
 
     //batter
     
@@ -55,6 +54,7 @@ public class Player : MonoBehaviour
     //oven
     public Material caramel;
     public Material darkBrown;
+    public DoorHandle handle;
     #endregion
 
     #region "TODO"
@@ -185,8 +185,10 @@ public class Player : MonoBehaviour
         {
             gm.debug.text = "button b";
         }
-        
+
         #endregion
+
+        gm.debug.text = "" + gm.batterAmount;
 
         #region "Cooking the cake"
         if (gm.ovenOn)
@@ -194,28 +196,28 @@ public class Player : MonoBehaviour
             //deciding size of the cake that is being baked
             if (gm.batterAmount < .35)
             {
-                cookingCake = gm.underfilled;
+                gm.cake = gm.underfilled;
             }
             else if (gm.batterAmount < .9)
             {
-                cookingCake = gm.average;
+                gm.cake = gm.average;
             }
             else
             {
-                cookingCake = gm.overfilled;
+                gm.cake = gm.overfilled;
             }
 
             //deciding color of the cake that is being baked
             if (gm.BatterType() == "Chocolate")
             {
-                cookingCake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
+                gm.cake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
             }
             else if (gm.BatterType() == "Vanilla"){
-                cookingCake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
+                gm.cake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
             }
             else if (gm.BatterType() == "Vanilla")
             {
-                cookingCake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
+                gm.cake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
             }
 
             //deciding level of cookness
@@ -229,22 +231,23 @@ public class Player : MonoBehaviour
                 // run cooked animation
                 if (gm.BatterType() == "Vanilla")
                 {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 100);
+                    gm.debug.text = "cooked";
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 50);
                 }
                 else if(gm.BatterType() == "Lemon")
                 {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 100);
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 50);
                 }
                 else if (gm.BatterType() == "Chocolate")
                 {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, darkBrown.color, Time.deltaTime / 100);
+                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, darkBrown.color, Time.deltaTime / 50);
                 }
                 
             }
             else if (gm.timeInOven >= gm.cookTime + 2)
             {
-                // debug.text = "overcooked";
                 // run overbaked animation
+                gm.debug.text = "overcooked";
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 100);
             }
             else if (gm.timeInOven >= gm.cookTime + 4)
@@ -285,7 +288,7 @@ public class Player : MonoBehaviour
             }
 
             //start oven function
-            if (gm.currentObject.CompareTag("OvenOn"))
+            if (gm.currentObject.CompareTag("OvenOn") && handle.up == false)
             {
                 OvenOn();
                 // on collision and B or Y
@@ -410,6 +413,7 @@ public class Player : MonoBehaviour
                 clockOut.SetActive(false);
                 print("clocked in");
                 buttonCooldownTimer = 0;
+                ClockOut();
             }
 
             if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.N))
@@ -552,6 +556,40 @@ public class Player : MonoBehaviour
     #endregion
 
     #region "functions"
+
+    void ClockOut()
+    {
+        gm.batterPerFrame = 0;
+        gm.chocolateBatterAmount = 0;
+        gm.vanillaBatterAmount = 0;
+        gm.lemonBatterAmount = 0;
+        gm.beltOn = false;
+        gm.batterOn = false;
+        gm.ovenOn = false;
+        gm.frostingOn = false;
+        gm.batterAmount = 0;
+        //gm.vanillaBatter.transform = new Vector3(0, .05, 0);
+        gm.vanillaBatter.SetActive(false);
+        //gm.chocolateBatter.transform = new Vector3(0, .05, 0);
+        gm.chocolateBatter.SetActive(false);
+        //gm.lemonBatter.transform = new Vector3(0, .05, 0);
+        gm.lemonBatter.SetActive(false);
+        gm.uncookedBatter.SetActive(false);
+        gm.cookTime = 0;
+        gm.cookTimePerOunce = 1;
+        gm.timeInOven = 0;
+        gm.ovenDoorHit = false;
+        gm.cake.SetActive(false);
+        gm.underfilled.SetActive(false);
+        gm.overfilled.SetActive(false);
+        gm.average.SetActive(false);
+        gm.holdingLiquid = false;
+        gm.timeSqueezingLiquid = 0;
+        gm.ipadHit = false;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     void Belt()
     {
         //debug.text = "Belt on";

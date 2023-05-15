@@ -26,6 +26,9 @@ public class ConveyorBelt : MonoBehaviour
     public bool atFrosting;
     public bool atTopping;
 
+    public GameObject frontOvenDoorStop;
+    public GameObject backOvenDoorStop;
+
     //public TextMeshProUGUI debug;
 
 
@@ -98,9 +101,16 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false;          
         }
 
-        if (other.gameObject.CompareTag("OvenDoorStop"))
+        if (other.gameObject.CompareTag("FrontOvenDoorStop"))
         {
             gm.beltOn = false;
+            frontOvenDoorStop.SetActive(false);
+        }
+        /*
+        if (other.gameObject.CompareTag("BackOvenDoorStop"))
+        {
+            gm.beltOn = false;
+            backOvenDoorStop.SetActive(false);
         }
 
         if (other.gameObject.CompareTag("OvenStop"))
@@ -113,6 +123,7 @@ public class ConveyorBelt : MonoBehaviour
             atFrosting = false;
             atTopping = false;
         }
+        */
 
         if (other.gameObject.CompareTag("FlipStop"))
         {

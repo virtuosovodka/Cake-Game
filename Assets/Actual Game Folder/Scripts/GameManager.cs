@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public GameObject underfilled;
     public GameObject average;
     public GameObject overfilled;
+    public GameObject cake;
 
     //toppings
     public bool holdingLiquid = false;
