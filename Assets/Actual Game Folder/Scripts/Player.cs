@@ -45,10 +45,16 @@ public class Player : MonoBehaviour
 
     //batter
     
-    public GameObject cakeTin;
+    public GameObject cakePan;
+
+    public bool cakeFlipped;
+
+    public bool holdingKnife;
+    public bool holdingSpatula;
+    public bool frostingPileInstantiated;
 
     public GameObject sprinkles;
-    public GameObject liquid;
+    public GameObject liquidBottle;
     float buttonCooldownTimer = 0;
 
     //oven
@@ -308,6 +314,11 @@ public class Player : MonoBehaviour
                 // on collision and B or Y
             }
 
+            if (gm.currentObject.CompareTag("CakePan") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+            {
+                Flip();
+            }
+
             //press hold and drag
             if (gm.currentObject.CompareTag("FrostingButton") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !frostingOn)
             {
@@ -316,10 +327,34 @@ public class Player : MonoBehaviour
                 //on collision and front button to hold/ move both bottoms to get frosting out
             }
 
-            //press hold and drag
-            if (gm.currentObject.CompareTag("Liquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            if (gm.currentObject.CompareTag("Knife") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
             {
-                Liquid();
+                Knife();
+            }
+            else
+            {
+                holdingKnife = false;
+            }
+
+            if (gm.currentObject.CompareTag("Spatula") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+            {
+                Spatula();
+            }
+            else
+            {
+                holdingSpatula = false;
+            }
+
+            //press hold and drag
+            if (gm.currentObject.CompareTag("ChocolateLiquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            {
+                Liquid(gm.currentObject);
+                // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
+            }
+
+            if (gm.currentObject.CompareTag("CaramelLiquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            {
+                Liquid(gm.currentObject);
                 // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
             }
 
@@ -523,6 +558,15 @@ public class Player : MonoBehaviour
             //}
         }
         #endregion
+        if (gm.frostingOn == true)
+        {
+            gm.timeSqueezingFrosting = Time.deltaTime;
+        }
+        else
+        {
+            gm.timeSqueezingFrosting = 0;
+        }
+
 
         if (gm.holdingLiquid == true)
         {
@@ -654,26 +698,60 @@ public class Player : MonoBehaviour
         gm.ovenOn = false;
     }
 
+    void Flip()
+    {
+        if (cakePan.transform.rotation.eulerAngles.y >= 160 && cakePan.transform.rotation.eulerAngles.y <= 200)
+        {
+            cakeFlipped = true;
+            //get component rigid body?
+        }
+    }
+
     void Frosting()
     {
-        //debug.text = "frosting";
+        gm.debug.text = "frosting";
         gm.frostingOn = true;
+
+        if (gm.timeSqueezingFrosting >= 5)
+        {
+            gm.frostingPilePrefab.SetActive(true);
+            frostingPileInstantiated = true;
+            //get correct material (corresponds to frosting bag material that you are holding)
+        }
         //instantiate/ run frosting coming out animation
         // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
     }
 
-    void Liquid()//&& press and hold (just like frosting just more liquidy))
+    void Knife ()
+    {
+        holdingKnife = true;
+    }
+
+    void Spatula()
+    {
+        if (frostingPileInstantiated == true)
+        {
+            holdingSpatula = true;
+        }
+    }
+
+    void Liquid(GameObject flavor)//&& press and hold (just like frosting just more liquidy))
     {
 
-        if (liquid.transform.rotation.eulerAngles.y >= 160 && liquid.transform.rotation.eulerAngles.y <= 200)
+        if (flavor.transform.rotation.eulerAngles.y >= 160 && flavor.transform.rotation.eulerAngles.y <= 200)
         {
             gm.debug.text = "pouring liquid";
             gm.holdingLiquid = true;
             // liquid particle machine
 
-            if (gm.timeSqueezingLiquid >= 3)
+            if (gm.timeSqueezingLiquid >= 3 && gm.cake != null)
             {
+                //flavor.GetComponent<Liquid>().liquidPrefab.SetActive(true);
+                //get correct material chocolate or caramel
+                //child liquid to cake
                 //instantiate liquid prefab
+                //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
+                Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
             }
            
         }

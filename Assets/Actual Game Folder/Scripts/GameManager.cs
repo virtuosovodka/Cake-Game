@@ -44,9 +44,15 @@ public class GameManager : MonoBehaviour
     public GameObject overfilled;
     public GameObject cake;
 
+    //frosting
+    public float timeSqueezingFrosting;
+    public GameObject frostingPilePrefab;
+    public GameObject frostingPrefab;
+
     //toppings
     public bool holdingLiquid = false;
     public float timeSqueezingLiquid;
+    public GameObject liquidPrefab;
 
 
     //ipad
@@ -77,6 +83,9 @@ public class GameManager : MonoBehaviour
         underfilled.SetActive(false);
         overfilled.SetActive(false);
         average.SetActive(false);
+        frostingPilePrefab.SetActive(false);
+        frostingPrefab.SetActive(false);
+        liquidPrefab.SetActive(false);
     }
 
     public string BatterType()

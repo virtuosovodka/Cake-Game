@@ -6,8 +6,7 @@ using TMPro;
 public class ConveyorBelt : MonoBehaviour
 {
     public GameManager gm;
-    public Player playerLeft;
-    public Player playerRight;
+    public Player p;
 
     public float moveSpeed;
     public bool moveX = true;
@@ -28,6 +27,7 @@ public class ConveyorBelt : MonoBehaviour
 
     public GameObject frontOvenDoorStop;
     public GameObject backOvenDoorStop;
+
 
     //public TextMeshProUGUI debug;
 
@@ -81,6 +81,8 @@ public class ConveyorBelt : MonoBehaviour
 
         }
 
+
+
         // if (cake has been flipped) child plate
         // notihing tells you to use plate can be found in training videos -> will make conveyor belt smoother
 
@@ -89,6 +91,11 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (p.cakeFlipped == true && other.gameObject.CompareTag("CakePlate"))
+        {
+
+        }
+
         if (other.gameObject.CompareTag("BatterStop"))
         {
             atBatterStation = true;
