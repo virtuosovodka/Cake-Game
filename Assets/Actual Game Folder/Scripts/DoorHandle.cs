@@ -5,42 +5,37 @@ using TMPro;
 
 public class DoorHandle : MonoBehaviour
 {
-    //create a batterAmount that increments whenever there is batter is being added
-    //add in a boolean that batteramount is no zero
-    //if chocolate batter amount is greater than 0, the color should be chocolate
+    //instantiating players and game manager
     public Player leftHand;
     public Player rightHand;
     public GameManager gm;
+    //instantiating the handles that will go up and down at the same time and where the conveyor belt should stop
     public GameObject frontHandle;
     public GameObject backHandle;
     public GameObject frontDoorStop;
     public GameObject backDoorStop;
-    public TextMeshProUGUI debug;
+    //boolean that decides whether the handles are already up or whether they are down
     public bool up = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         OVRInput.Update();
 
         if (gm != null)
         {
-            if (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+            //checking if the oven handle has been hit and if the left hand or right hand trigger is down
+            if ((gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) || (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)))
             {
                 if (!up)
                 {
+                    //if the handles are down, in other words not up, both handles will go up instantly and the boolean up is true
                     frontHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
                     backHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
                     up = true;
                 }
                 else if (up)
                 {
+                    //if the handles are up, both handles will go down instantly and the boolean up is false
                     frontHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
                     backHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
                     up = false;
@@ -51,6 +46,7 @@ public class DoorHandle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //this makes the boolean ovenDoorHit true if a collision is detected between the handle and the hands
         if (gm.currentObject.CompareTag("OvenDoorHandle"))
         {
             gm.ovenDoorHit = true;
@@ -59,6 +55,7 @@ public class DoorHandle : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //this makes the boolean ovenDoorHit false when the collision is over
         gm.ovenDoorHit = false;
     }
 }

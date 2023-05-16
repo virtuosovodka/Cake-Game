@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
 {
     #region "initialize variables"
     public GameManager gm;
-    //light
+
+    //oven light instantiation
     public GameObject Light;
     bool lightOn;
 
-    //ipad
+    //ipad instantiation
     //public Ipad ipad;
     public GameObject backButton;
     public GameObject playVideo0;
@@ -25,42 +26,37 @@ public class Player : MonoBehaviour
     public GameObject Credits;
     public GameObject LevelSelect;
     public GameObject TextCredits;
-   
     public GameObject soundOn;
     public GameObject colorOn;
     public GameObject fired;
-
-
     //public GameObject playButton;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
     public MaterialChanger materialChanger;
     //MeshRenderer backButtonMesh;
 
+    //batter
     //parent batter to cake tin and plate
     public Transform Parent;
     public GameObject parentObject;
-
-    //oven
-
-    //batter
-    
     public GameObject cakePan;
-
-    public bool cakeFlipped;
-
-    public bool holdingKnife;
-    public bool holdingSpatula;
-    public bool frostingPileInstantiated;
-
-    public GameObject sprinkles;
-    public GameObject liquidBottle;
-    float buttonCooldownTimer = 0;
 
     //oven
     public Material caramel;
     public Material darkBrown;
     public DoorHandle handle;
+
+    //flip station
+    public bool cakeFlipped;
+
+    //frosting and decorations
+    public bool holdingKnife;
+    public bool holdingSpatula;
+    public bool frostingPileInstantiated;
+    public GameObject sprinkles;
+    public GameObject liquidBottle;
+    float buttonCooldownTimer = 0;
+
     #endregion
 
     #region "TODO"
@@ -150,6 +146,7 @@ public class Player : MonoBehaviour
     {
         gm.currentObject = gameObject;
 
+        //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
         Light.SetActive(false);
         lightOn = false;
 
@@ -170,13 +167,13 @@ public class Player : MonoBehaviour
         Credits.SetActive(false);
         LevelSelect.SetActive(false);
         TextCredits.SetActive(false);
-        
+
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         fired.SetActive(false);
         #endregion
 
-        // oven set false
+        // per ounce, the cook time is set to 1
         gm.cookTimePerOunce = 1;
     }
 
@@ -194,6 +191,7 @@ public class Player : MonoBehaviour
 
         #endregion
 
+        //NOT TO BE INCLUDED IN FINAL GAME (NO DEBUG)
         gm.debug.text = "" + gm.batterAmount;
 
         #region "Cooking the cake"
@@ -202,6 +200,7 @@ public class Player : MonoBehaviour
             //deciding size of the cake that is being baked
             if (gm.batterAmount < .35)
             {
+              //test whether the right cake is being put in oven
                 gm.cake = gm.underfilled;
             }
             else if (gm.batterAmount < .9)
@@ -213,7 +212,7 @@ public class Player : MonoBehaviour
                 gm.cake = gm.overfilled;
             }
 
-            //deciding color of the cake that is being baked
+            //deciding color of the cake that is being baked depending on what color the batter chosen is
             if (gm.BatterType() == "Chocolate")
             {
                 gm.cake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
@@ -229,15 +228,14 @@ public class Player : MonoBehaviour
             //deciding level of cookness
             if (gm.timeInOven <= gm.cookTime - 1)
             {
-                //run not baked animation
+                //cake stays the same, no change
                 gm.debug.text = "raw";
             }
             else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
-                // run cooked animation
+                //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
                 if (gm.BatterType() == "Vanilla")
                 {
-                    gm.debug.text = "cooked";
                     gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 50);
                 }
                 else if(gm.BatterType() == "Lemon")
@@ -248,18 +246,17 @@ public class Player : MonoBehaviour
                 {
                     gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, darkBrown.color, Time.deltaTime / 50);
                 }
-                
+
             }
             else if (gm.timeInOven >= gm.cookTime + 2)
             {
-                // run overbaked animation
+                // all three cakes become black as time goes on
                 gm.debug.text = "overcooked";
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 100);
             }
             else if (gm.timeInOven >= gm.cookTime + 4)
             {
-                // debug.text = "on fire";
-                // run fire animationk
+                // the cake lights on fire
             }
         }
         #endregion
@@ -273,45 +270,47 @@ public class Player : MonoBehaviour
 
             if (gm.currentObject.CompareTag("StartBelt"))
             {
+                //when green button is pressed, the belt turns on
                 Belt();
-                //start button is on collision &&  B or Y button 
             }
 
             if (gm.currentObject.CompareTag("VanillaBatterButton"))
             {
+                //when the vanilla button on the batter machine is pressed, the vanilla batter animation happens
                 VanillaBatter();
-                //batter button is on collision && while B or Y button is down
             }
 
             if (gm.currentObject.CompareTag("ChocolateBatterButton"))
             {
+                //when the chocolate button on the batter machine is pressed, the chocolate batter animation happens
                 ChocolateBatter();
             }
 
             if (gm.currentObject.CompareTag("LemonBatterButton"))
             {
+                //when the lemon button on the batter machine is pressed, the lemon batter animation happens
                 LemonBatter();
             }
 
             //start oven function
             if (gm.currentObject.CompareTag("OvenOn") && handle.up == false)
             {
+                //when the green button on the oven is pressed, the oven turns on if the handles are down meaning doors are closed
                 OvenOn();
-                // on collision and B or Y
             }
 
             if (gm.currentObject.CompareTag("OvenLight") && buttonCooldownTimer > .5f)// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
+                //when the yellow button on the oven is pressed, the oven light turns on
                 buttonCooldownTimer = 0;
                 OvenLight();
-                // on collision and B or Y
             }
 
             //stop oven function
             if (gm.currentObject.CompareTag("OvenOff"))// && OVRInput.GetDown(OVRInput.Button.Two) || OVRInput.GetDown(OVRInput.RawButton.Y))
             {
+                //when the red button on the oven is pressed, the oven turns off but doors and everything stays as is
                 OvenOff();
-                // on collision and B or Y
             }
 
             if (gm.currentObject.CompareTag("CakePan") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
@@ -475,7 +474,7 @@ public class Player : MonoBehaviour
                 //turn off the sound on the game
                 soundOn.SetActive(true);
                 TextCredits.gameObject.SetActive(false);
-            
+
                 Mute.SetActive(false);
                 buttonCooldownTimer = 0;
             }
@@ -485,7 +484,7 @@ public class Player : MonoBehaviour
                 //turn on the sound on the game
                 TextCredits.gameObject.SetActive(false);
                 soundOn.SetActive(false);
-                
+
                 buttonCooldownTimer = 0;
             }
 
@@ -494,7 +493,7 @@ public class Player : MonoBehaviour
                 //ColorBlindMode.SetActive
                 colorOn.SetActive(true);
                 TextCredits.gameObject.SetActive(false);
-                
+
                 ColorBlind.SetActive(false);
                 buttonCooldownTimer = 0;
             }
@@ -505,7 +504,7 @@ public class Player : MonoBehaviour
                 //ColorBlindMode turn off, color is back on
                 TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(false);
-               
+
                 buttonCooldownTimer = 0;
             }
 
@@ -529,7 +528,7 @@ public class Player : MonoBehaviour
                 //Level Three Set Active
                 //Anmation highlight the level selected maybe
             }
-            
+
             /*
             if (gm.currentObject.CompareTag("review") || Input.GetKeyDown(KeyCode.Y))
             {
@@ -558,6 +557,7 @@ public class Player : MonoBehaviour
             //}
         }
         #endregion
+
         if (gm.frostingOn == true)
         {
             gm.timeSqueezingFrosting = Time.deltaTime;
@@ -576,7 +576,7 @@ public class Player : MonoBehaviour
         {
             gm.timeSqueezingLiquid = 0;
         }
-        
+
     }
 
     #region "triggers and collisions"
@@ -587,14 +587,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //when an object is hit and has a trigger, the current game object is the gameobject
         gm.currentObject = other.gameObject;
-        ///debug.text = "on " + currentObject.name;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        //when the object that was previously hit is left, then the current game object is null
         gm.currentObject = null;
-        //debug.text = "off " + currentObject.name;
     }
 
     #endregion
@@ -655,11 +655,11 @@ public class Player : MonoBehaviour
     {
         gm.chocolateBatter.SetActive(true);
         if (gm.chocolateBatterAmount < gm.tooMuchBatter)
-        { 
+        {
             gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
             gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
         }
-        
+
     }
 
     void LemonBatter()
@@ -674,15 +674,15 @@ public class Player : MonoBehaviour
 
     void OvenLight()
     {
-        
+
         lightOn = !lightOn;
         Light.SetActive(lightOn);
     }
 
-    //make a light button for oven 
+    //make a light button for oven
     void OvenOn()
     {
-        
+
         gm.cookTime = gm.cookTimePerOunce * gm.chocolateBatterAmount;
         //debug.text = "your cook time is " + cookTime;
 
@@ -753,7 +753,7 @@ public class Player : MonoBehaviour
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
                 Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
             }
-           
+
         }
         //if circular motion and held for 3 sec and flipped upside down
     }
@@ -773,7 +773,7 @@ public class Player : MonoBehaviour
 
     void Cherries()//&& press and hold cherries, when released cherries remain in that spot/ until it hits smth)
     {
-        //grabbable 
+        //grabbable
     }
     #endregion
 }
