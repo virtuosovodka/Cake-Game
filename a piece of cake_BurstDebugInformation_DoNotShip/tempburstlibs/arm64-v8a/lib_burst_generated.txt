@@ -1,4 +1,4 @@
-Library: /Users/vsheth1295/Documents/GitHub/Cake Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
+Library: /Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV8A_AARCH64
@@ -163,10 +163,10 @@ Library: /Users/vsheth1295/Documents/GitHub/Cake Game/Temp/StagingArea/tempburst
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_URP
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/Users/vsheth1295/Documents/GitHub/Cake Game/Temp/Burst
+--temp-folder=/Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/Burst
 --key-folder=/Applications/Unity/Hub/Editor/2021.3.24f1/PlaybackEngines/AndroidPlayer
---decode-folder=/Users/vsheth1295/Documents/GitHub/Cake Game/Library/Burst
---output=/Users/vsheth1295/Documents/GitHub/Cake Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
+--decode-folder=/Users/lcrow7824/Documents/GitHub/Cake-Game/Library/Burst
+--output=/Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobExtensions+JobStruct`1[[UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.Float4TweenJob, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.Float4TweenJob&, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--34aec427743d7d01c0cb7a219c9fbe32

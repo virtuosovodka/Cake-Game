@@ -1065,11 +1065,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227657834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.639999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.724299, y: 0.072983146, z: 0.036747742}
+  m_LocalScale: {x: 0.425, y: 0.025, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
+  m_Father: {fileID: 348780429}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &227657836
@@ -1648,6 +1648,7 @@ GameObject:
   - component: {fileID: 268510840}
   - component: {fileID: 268510847}
   - component: {fileID: 268510850}
+  - component: {fileID: 268510851}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: GameController
@@ -1800,14 +1801,6 @@ MonoBehaviour:
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
-  cakeTin: {fileID: 506036147}
-  sprinkles: {fileID: 0}
-  liquid: {fileID: 306488854}
-  batterParticle: {fileID: 1531837546}
-  batterParticleRenderer: {fileID: 1531837545}
-  vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
-  lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
-  chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   cakePan: {fileID: 0}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
@@ -1818,6 +1811,11 @@ MonoBehaviour:
   frostingPileInstantiated: 0
   sprinkles: {fileID: 0}
   liquidBottle: {fileID: 0}
+  batterParticle: {fileID: 1531837546}
+  batterParticleRenderer: {fileID: 1531837545}
+  vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
+  lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
+  chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
 --- !u!114 &268510850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,6 +1901,22 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &268510851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268510838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57da5398990324608b38df134e50a694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: {fileID: 0}
+  gm: {fileID: 65829483}
+  player: {fileID: 268510847}
+  oven: {fileID: 348780428}
 --- !u!1 &299193340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1950,7 @@ Transform:
   - {fileID: 628498932}
   - {fileID: 2063279857}
   m_Father: {fileID: 826052066}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &316344121 stripped
 GameObject:
@@ -2027,6 +2041,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335541285}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &348780428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348780429}
+  m_Layer: 0
+  m_Name: Oven
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &348780429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348780428}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.115998, y: 6.7206726, z: -0.073495485}
+  m_LocalScale: {x: 2.3529413, y: 40, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2067948486}
+  - {fileID: 663957859}
+  - {fileID: 727688034}
+  - {fileID: 1535376306}
+  - {fileID: 859305808}
+  - {fileID: 227657835}
+  m_Father: {fileID: 1526937107}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &375763631
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3715,12 +3766,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663957858}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.51388234, y: 1.08, z: -0.39859995}
-  m_LocalScale: {x: 0.2, y: 0.05882353, z: 16}
+  m_LocalPosition: {x: -4.942699, y: -0.14101684, z: -0.16255224}
+  m_LocalScale: {x: 0.1, y: 0.025, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
-  m_RootOrder: 9
+  m_Father: {fileID: 348780429}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &663957860
 BoxCollider:
@@ -4087,12 +4138,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727688033}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.5131765, y: 1.067, z: 0.40260002}
-  m_LocalScale: {x: 0.2, y: 0.05882353, z: 16}
+  m_LocalPosition: {x: -4.942399, y: -0.1413418, z: 0.23804776}
+  m_LocalScale: {x: 0.1, y: 0.025, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
-  m_RootOrder: 8
+  m_Father: {fileID: 348780429}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &727688035
 BoxCollider:
@@ -4620,6 +4671,7 @@ GameObject:
   - component: {fileID: 820255306}
   - component: {fileID: 820255315}
   - component: {fileID: 820255316}
+  - component: {fileID: 820255317}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: GameController
@@ -4772,14 +4824,6 @@ MonoBehaviour:
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
-  cakeTin: {fileID: 506036147}
-  sprinkles: {fileID: 0}
-  liquid: {fileID: 306488854}
-  batterParticle: {fileID: 1531837546}
-  batterParticleRenderer: {fileID: 0}
-  vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
-  lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
-  chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
   cakePan: {fileID: 0}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
@@ -4790,6 +4834,11 @@ MonoBehaviour:
   frostingPileInstantiated: 0
   sprinkles: {fileID: 0}
   liquidBottle: {fileID: 0}
+  batterParticle: {fileID: 1531837546}
+  batterParticleRenderer: {fileID: 0}
+  vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
+  lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
+  chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
 --- !u!114 &820255316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4875,6 +4924,22 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &820255317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820255304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57da5398990324608b38df134e50a694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: {fileID: 0}
+  gm: {fileID: 65829483}
+  player: {fileID: 268510847}
+  oven: {fileID: 348780428}
 --- !u!1 &826052065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,18 +4974,11 @@ Transform:
   - {fileID: 87287994}
   - {fileID: 1321271826}
   - {fileID: 1465407390}
-  - {fileID: 112974949}
-  - {fileID: 716083310}
-  - {fileID: 232124248}
-  - {fileID: 1885506832}
-  - {fileID: 232936145}
-  - {fileID: 2035783325}
-  - {fileID: 506036148}
-  - {fileID: 299193341}
   - {fileID: 543450652521194830}
   - {fileID: 232936145}
   - {fileID: 506036148}
   - {fileID: 1215768614}
+  - {fileID: 299193341}
   - {fileID: 175364640}
   - {fileID: 2010374296}
   - {fileID: 153750678}
@@ -5146,12 +5204,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859305807}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.435, y: 1.0800004, z: 0}
-  m_LocalScale: {x: 1, y: 0.14, z: 18}
+  m_LocalPosition: {x: -4.539424, y: -0.14101684, z: 0.036747742}
+  m_LocalScale: {x: 0.5, y: 0.059500005, z: 0.45000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
-  m_RootOrder: 6
+  m_Father: {fileID: 348780429}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &859305809
 BoxCollider:
@@ -6575,7 +6633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1526937107}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1218075665
 MonoBehaviour:
@@ -8103,12 +8161,7 @@ Transform:
   - {fileID: 615082611}
   - {fileID: 74422541}
   - {fileID: 814619651}
-  - {fileID: 227657835}
-  - {fileID: 859305808}
-  - {fileID: 1535376306}
-  - {fileID: 727688034}
-  - {fileID: 663957859}
-  - {fileID: 2067948486}
+  - {fileID: 348780429}
   - {fileID: 1218075664}
   - {fileID: 1254042990}
   - {fileID: 518207642}
@@ -12922,12 +12975,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535376305}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.5136471, y: 9.16, z: 0}
-  m_LocalScale: {x: 1, y: 0.05882353, z: 2}
+  m_LocalPosition: {x: -4.9425993, y: 0.06098316, z: 0.036747742}
+  m_LocalScale: {x: 0.5, y: 0.025, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
-  m_RootOrder: 7
+  m_Father: {fileID: 348780429}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &1535376307
 BoxCollider:
@@ -15247,12 +15300,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067948485}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.5129412, y: -3.9, z: 0.03000002}
-  m_LocalScale: {x: 0.8, y: 0.05882353, z: 6}
+  m_LocalPosition: {x: -4.9422994, y: -0.26551688, z: 0.051747777}
+  m_LocalScale: {x: 0.4, y: 0.025, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1526937107}
-  m_RootOrder: 10
+  m_Father: {fileID: 348780429}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!65 &2067948487
 BoxCollider:
