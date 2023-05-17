@@ -28,16 +28,19 @@ public class OvenStuff : MonoBehaviour
             {
                 //test whether the right cake is being put in oven
                 gm.cake = gm.underfilled;
+                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
             }
             else if (gm.batterAmount < .9)
             {
                 gm.cake = gm.average;
+                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
             }
             else
             { 
                 gm.cake = gm.overfilled;
+                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
             }
 
