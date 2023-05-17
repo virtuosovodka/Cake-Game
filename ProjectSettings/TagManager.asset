@@ -71,6 +71,11 @@ TagManager:
   - SoundOn
   - FrontOvenDoorStop
   - BackOvenDoorStop
+  - CaramelLiquid
+  - ChocolateLiquid
+  - CakePan
+  - Spatula
+  - Knife
   layers:
   - Default
   - TransparentFX
