@@ -268,7 +268,7 @@ public class Player : MonoBehaviour
             //gm.debug.text = gm.currentObject.name;
             print(gm.currentObject.name);
 
-            if (gm.currentObject.CompareTag("StartBelt"))
+            if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.O))
             {
                 //when green button is pressed, the belt turns on
                 Belt();

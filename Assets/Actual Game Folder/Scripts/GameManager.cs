@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
 
     public CakeOrder cakeOrder;
 
+    //animator
+    [SerializeField]
+    Animator longConveyerAnim;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -86,6 +90,11 @@ public class GameManager : MonoBehaviour
         frostingPilePrefab.SetActive(false);
         frostingPrefab.SetActive(false);
         liquidPrefab.SetActive(false);
+    }
+
+    private void Update()
+    {
+        longConveyerAnim.SetBool("Running", beltOn);
     }
 
     public string BatterType()

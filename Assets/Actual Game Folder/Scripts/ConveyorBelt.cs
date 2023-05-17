@@ -96,23 +96,7 @@ public class ConveyorBelt : MonoBehaviour
 
         }
 
-        if (other.gameObject.CompareTag("BatterStop"))
-        {
-            atBatterStation = true;
-            gm.beltOn = false;
 
-
-            atOven = false;
-            atFlip = false;
-            atFrosting = false;
-            atTopping = false;          
-        }
-
-        if (other.gameObject.CompareTag("FrontOvenDoorStop"))
-        {
-            gm.beltOn = false;
-            frontOvenDoorStop.SetActive(false);
-        }
         /*
         if (other.gameObject.CompareTag("BackOvenDoorStop"))
         {
@@ -131,8 +115,21 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false;
         }
         */
+        if (other.gameObject.CompareTag("BatterStop"))
+        {
+            atBatterStation = true;
+            gm.beltOn = false;
 
-        if (other.gameObject.CompareTag("FlipStop"))
+
+            atOven = false;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = false;          
+        } else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
+        {
+            gm.beltOn = false;
+            frontOvenDoorStop.SetActive(false);
+        } else if (other.gameObject.CompareTag("FlipStop"))
         {
             gm.beltOn = false;
 
@@ -141,9 +138,7 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = true;
             atFrosting = false;
             atTopping = false; 
-        }
-
-        if (other.gameObject.CompareTag("FrostingStop"))
+        } else if (other.gameObject.CompareTag("FrostingStop"))
         {
             gm.beltOn = false;
 
@@ -152,9 +147,7 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = true;
             atTopping = false;
-        }
-
-        if (other.gameObject.CompareTag("ToppingStop"))
+        } else if (other.gameObject.CompareTag("ToppingStop"))
         {
             gm.beltOn = false;
 
@@ -163,9 +156,7 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = false;
             atTopping = true;
-        }
-
-        if (other.gameObject.CompareTag("CakeBoxStop"))
+        } else if (other.gameObject.CompareTag("CakeBoxStop"))
         {
             gm.beltOn = false;
 

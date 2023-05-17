@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17267816, g: 0.21577376, b: 0.2976624, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276788, g: 0.21589147, b: 0.29782534, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -480,10 +480,15 @@ MonoBehaviour:
   average: {fileID: 175831863}
   overfilled: {fileID: 1199880774}
   cake: {fileID: 0}
+  timeSqueezingFrosting: 0
+  frostingPilePrefab: {fileID: 0}
+  frostingPrefab: {fileID: 0}
   holdingLiquid: 0
   timeSqueezingLiquid: 0
+  liquidPrefab: {fileID: 0}
   ipadHit: 0
   cakeOrder: {fileID: 0}
+  longConveyerAnim: {fileID: 163404615}
 --- !u!1 &74422535
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +627,6 @@ MonoBehaviour:
   backHandle: {fileID: 814619645}
   frontDoorStop: {fileID: 0}
   backDoorStop: {fileID: 0}
-  debug: {fileID: 0}
   up: 0
 --- !u!1 &87287993
 GameObject:
@@ -825,6 +829,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3780415, y: 0.55574954, z: 14.243152}
   m_Center: {x: 0.11296599, y: -0.22212535, z: 0.04851639}
+--- !u!95 &163404615
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163404613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e53f117590204ab4a7ac265ef0ef066, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &175364640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2cd69e1fed4354e3e9c26755e5a033e9,
@@ -1775,12 +1800,16 @@ MonoBehaviour:
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
-  cakeTin: {fileID: 506036147}
-  sprinkles: {fileID: 0}
-  liquid: {fileID: 306488854}
+  cakePan: {fileID: 0}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
   handle: {fileID: 74422542}
+  cakeFlipped: 0
+  holdingKnife: 0
+  holdingSpatula: 0
+  frostingPileInstantiated: 0
+  sprinkles: {fileID: 0}
+  liquidBottle: {fileID: 0}
 --- !u!114 &268510850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,12 +1930,6 @@ Transform:
   m_Father: {fileID: 826052066}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &306488854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 53be439f882fd44ab88ef554332a87d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1783210674}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &316344121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8971271757863104119, guid: d2526772bf8ec427ab829bdb40e1d1ed,
@@ -2374,8 +2397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
-  playerLeft: {fileID: 820255315}
-  playerRight: {fileID: 268510847}
+  p: {fileID: 0}
   moveSpeed: 0.1
   moveX: 1
   moveZ: 1
@@ -2554,8 +2576,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0.5, y: 0, z: 0.5}
+  m_Size: {x: 1.91, y: 1, z: 2.19}
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!1001 &518207641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4574,7 +4596,6 @@ MonoBehaviour:
   backHandle: {fileID: 814619645}
   frontDoorStop: {fileID: 0}
   backDoorStop: {fileID: 0}
-  debug: {fileID: 0}
   up: 0
 --- !u!1 &820255304
 GameObject:
@@ -4743,12 +4764,16 @@ MonoBehaviour:
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
   parentObject: {fileID: 0}
-  cakeTin: {fileID: 506036147}
-  sprinkles: {fileID: 0}
-  liquid: {fileID: 306488854}
+  cakePan: {fileID: 0}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
   handle: {fileID: 74422542}
+  cakeFlipped: 0
+  holdingKnife: 0
+  holdingSpatula: 0
+  frostingPileInstantiated: 0
+  sprinkles: {fileID: 0}
+  liquidBottle: {fileID: 0}
 --- !u!114 &820255316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6915,8 +6940,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286652978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.78, y: -1.71, z: -0.19000006}
-  m_LocalScale: {x: 1.5, y: 0.25, z: 1.5}
+  m_LocalPosition: {x: 1.23, y: -1.71, z: 0.185}
+  m_LocalScale: {x: 1.8314999, y: 0.30525, z: 1.8314999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454659053}
@@ -14331,8 +14356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
-  playerLeft: {fileID: 820255315}
-  playerRight: {fileID: 268510847}
+  p: {fileID: 0}
   moveSpeed: 1
   moveX: 1
   moveZ: 1
