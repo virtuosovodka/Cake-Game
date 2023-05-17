@@ -210,6 +210,7 @@ public class Player : MonoBehaviour
         gm.debug.text = "" + gm.batterAmount;
 
         #region "Cooking the cake"
+        /*
         if (gm.ovenOn)
         {
             //deciding size of the cake that is being baked
@@ -273,7 +274,7 @@ public class Player : MonoBehaviour
             {
                 // the cake lights on fire
             }
-        }
+        }*/
         #endregion
 
         #region "Buttons"
