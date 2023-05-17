@@ -8,20 +8,20 @@ public class OvenStuff : MonoBehaviour
     public TextMeshProUGUI debug;
     public GameManager gm;
     public Player player;
+    public GameObject oven;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm.ovenOn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        debug.text = "" + gm.ovenOn;
-
         if (gm.ovenOn)
         {
+            oven.GetComponent<MeshRenderer>().material.color = Color.red;
             //deciding size of the cake that is being baked
             if (gm.batterAmount < .35)
             {
