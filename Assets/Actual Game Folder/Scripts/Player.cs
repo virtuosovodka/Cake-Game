@@ -69,11 +69,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     Material chocolateMat;
 
-    //oven
-    public Material caramel;
-    public Material darkBrown;
-    public DoorHandle handle;
-
     private float batterFillSpeed = 0.05f;
     #endregion
 
