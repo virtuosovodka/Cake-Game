@@ -57,6 +57,24 @@ public class Player : MonoBehaviour
     public GameObject liquidBottle;
     float buttonCooldownTimer = 0;
 
+    [SerializeField]
+    ParticleSystem batterParticle;
+    [SerializeField]
+    ParticleSystemRenderer batterParticleRenderer;
+
+    [SerializeField]
+    Material vanillaMat;
+    [SerializeField]
+    Material lemonMat;
+    [SerializeField]
+    Material chocolateMat;
+
+    //oven
+    public Material caramel;
+    public Material darkBrown;
+    public DoorHandle handle;
+
+    private float batterFillSpeed = 0.05f;
     #endregion
 
     #region "TODO"
@@ -170,11 +188,13 @@ public class Player : MonoBehaviour
 
         colorOn.SetActive(false);
         soundOn.SetActive(false);
-        fired.SetActive(false);
+        //fired.SetActive(false);
         #endregion
 
         // per ounce, the cook time is set to 1
         gm.cookTimePerOunce = 1;
+
+        batterParticle.Stop();
     }
 
     // Update is called once per frame
@@ -266,7 +286,7 @@ public class Player : MonoBehaviour
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
-            print(gm.currentObject.name);
+           // print(gm.currentObject.name);
 
             if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.O))
             {
@@ -274,22 +294,21 @@ public class Player : MonoBehaviour
                 Belt();
             }
 
-            if (gm.currentObject.CompareTag("VanillaBatterButton"))
+            if (gm.currentObject.CompareTag("VanillaBatterButton") || Input.GetKey(KeyCode.Comma))
             {
                 //when the vanilla button on the batter machine is pressed, the vanilla batter animation happens
                 VanillaBatter();
-            }
-
-            if (gm.currentObject.CompareTag("ChocolateBatterButton"))
+                //batter button is on collision && while B or Y button is down
+            } else if (gm.currentObject.CompareTag("ChocolateBatterButton") || Input.GetKey(KeyCode.Period))
             {
                 //when the chocolate button on the batter machine is pressed, the chocolate batter animation happens
                 ChocolateBatter();
-            }
-
-            if (gm.currentObject.CompareTag("LemonBatterButton"))
+            } else if (gm.currentObject.CompareTag("LemonBatterButton") || Input.GetKey(KeyCode.Slash))
             {
                 //when the lemon button on the batter machine is pressed, the lemon batter animation happens
                 LemonBatter();
+            } else if (batterParticle.isPlaying) {
+                batterParticle.Stop();
             }
 
             //start oven function
@@ -618,7 +637,7 @@ public class Player : MonoBehaviour
         gm.chocolateBatter.SetActive(false);
         //gm.lemonBatter.transform = new Vector3(0, .05, 0);
         gm.lemonBatter.SetActive(false);
-        gm.uncookedBatter.SetActive(false);
+        //gm.uncookedBatter.SetActive(false);
         gm.cookTime = 0;
         gm.cookTimePerOunce = 1;
         gm.timeInOven = 0;
@@ -646,8 +665,17 @@ public class Player : MonoBehaviour
         gm.vanillaBatter.SetActive(true);
         if (gm.vanillaBatterAmount < gm.tooMuchBatter)
         {
-            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * .001f, 0);
+            if (batterParticle.isStopped)
+            {
+                batterParticleRenderer.material = vanillaMat;
+                batterParticle.Play();
+            }
+
+            gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
+            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * 0.00022f * batterFillSpeed, 0);
+        } else if (batterParticle.isPlaying)
+        {
+            batterParticle.Stop();
         }
     }
 
@@ -656,8 +684,17 @@ public class Player : MonoBehaviour
         gm.chocolateBatter.SetActive(true);
         if (gm.chocolateBatterAmount < gm.tooMuchBatter)
         {
-            gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount*.001f, 0);
+            if (batterParticle.isStopped)
+            {
+                batterParticleRenderer.material = chocolateMat;
+                batterParticle.Play();
+            }
+
+            gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
+            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount * 0.00022f * batterFillSpeed, 0);
+        } else if (batterParticle.isPlaying)
+        {
+            batterParticle.Stop();
         }
 
     }
@@ -667,8 +704,17 @@ public class Player : MonoBehaviour
         gm.lemonBatter.SetActive(true);
         if (gm.lemonBatterAmount < gm.tooMuchBatter)
         {
-            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime;
-            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * .001f, 0);
+            if (batterParticle.isStopped)
+            {
+                batterParticleRenderer.material = lemonMat;
+                batterParticle.Play();
+            }
+
+            gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
+            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * 0.00022f * batterFillSpeed, 0);
+        } else if (batterParticle.isPlaying)
+        {
+            batterParticle.Stop();
         }
     }
 
