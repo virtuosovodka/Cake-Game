@@ -16,7 +16,7 @@ public class ConveyorBelt : MonoBehaviour
 
     public GameObject Belt2;
     public GameObject Belt3;
-    public GameObject counter;
+    //public GameObject counter;
     public GameObject cakeBox;
 
     public bool atBatterStation;
@@ -47,6 +47,13 @@ public class ConveyorBelt : MonoBehaviour
         {
             if (gm.beltOn)
             {
+                atBatterStation = false;
+                atOven = false;
+                atFlip = false;
+                atFrosting = false;
+                atTopping = false;
+
+
                 if (moveX == true)
                 {
                     print("start to belt 2");
@@ -65,12 +72,13 @@ public class ConveyorBelt : MonoBehaviour
                     transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
                     //blah = true;
                 }
+                /*
                 if (gameObject.transform.position.x <= counter.transform.position.x && moveNegZ == true && moveX != true && moveZ != true)
                 {
                     print("counter to box");
                     moveNegX = false;
                     transform.Translate(0, 0, moveSpeed * Time.deltaTime);
-                }
+                }*/
                 if (gameObject.transform.position.z >= cakeBox.transform.position.z && moveX != true && moveZ != true)
                 {
                     moveNegZ = false;
@@ -91,10 +99,11 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        /*
         if (p.cakeFlipped == true && other.gameObject.CompareTag("CakePlate"))
         {
 
-        }
+        }*/
 
 
         /*
@@ -117,6 +126,7 @@ public class ConveyorBelt : MonoBehaviour
         */
         if (other.gameObject.CompareTag("BatterStop"))
         {
+            Debug.Log("test");
             atBatterStation = true;
             gm.beltOn = false;
 

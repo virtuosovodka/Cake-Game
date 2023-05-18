@@ -69,6 +69,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Material chocolateMat;
 
+    [SerializeField]
+    ConveyorBelt cakePanConveyorScript;
+
     private float batterFillSpeed = 0.05f;
     #endregion
 
@@ -282,7 +285,8 @@ public class Player : MonoBehaviour
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
-           // print(gm.currentObject.name);
+            // print(gm.currentObject.name);
+
 
             if (gm.currentObject.CompareTag("StartBelt") || Input.GetKeyDown(KeyCode.O))
             {
@@ -290,19 +294,24 @@ public class Player : MonoBehaviour
                 Belt();
             }
 
-            if (gm.currentObject.CompareTag("VanillaBatterButton") || Input.GetKey(KeyCode.Comma))
+            if (cakePanConveyorScript.atBatterStation)
             {
-                //when the vanilla button on the batter machine is pressed, the vanilla batter animation happens
-                VanillaBatter();
-                //batter button is on collision && while B or Y button is down
-            } else if (gm.currentObject.CompareTag("ChocolateBatterButton") || Input.GetKey(KeyCode.Period))
-            {
-                //when the chocolate button on the batter machine is pressed, the chocolate batter animation happens
-                ChocolateBatter();
-            } else if (gm.currentObject.CompareTag("LemonBatterButton") || Input.GetKey(KeyCode.Slash))
-            {
-                //when the lemon button on the batter machine is pressed, the lemon batter animation happens
-                LemonBatter();
+                if (gm.currentObject.CompareTag("VanillaBatterButton") || Input.GetKey(KeyCode.Comma))
+                {
+                    //when the vanilla button on the batter machine is pressed, the vanilla batter animation happens
+                    VanillaBatter();
+                    //batter button is on collision && while B or Y button is down
+                }
+                else if (gm.currentObject.CompareTag("ChocolateBatterButton") || Input.GetKey(KeyCode.Period))
+                {
+                    //when the chocolate button on the batter machine is pressed, the chocolate batter animation happens
+                    ChocolateBatter();
+                }
+                else if (gm.currentObject.CompareTag("LemonBatterButton") || Input.GetKey(KeyCode.Slash))
+                {
+                    //when the lemon button on the batter machine is pressed, the lemon batter animation happens
+                    LemonBatter();
+                }
             }
 
             //start oven function
@@ -669,7 +678,7 @@ public class Player : MonoBehaviour
             }
 
             gm.vanillaBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
-            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * 0.00022f * batterFillSpeed, 0);
+            gm.vanillaBatter.transform.position += new Vector3(0, gm.vanillaBatterAmount * 0.0004f * batterFillSpeed, 0);
         } else if (batterParticle.isPlaying)
         {
             batterParticle.Stop();
@@ -688,7 +697,7 @@ public class Player : MonoBehaviour
             }
 
             gm.chocolateBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
-            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount * 0.00022f * batterFillSpeed, 0);
+            gm.chocolateBatter.transform.position += new Vector3(0, gm.chocolateBatterAmount * 0.0004f * batterFillSpeed, 0);
         } else if (batterParticle.isPlaying)
         {
             batterParticle.Stop();
@@ -708,7 +717,7 @@ public class Player : MonoBehaviour
             }
 
             gm.lemonBatterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
-            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * 0.00022f * batterFillSpeed, 0);
+            gm.lemonBatter.transform.position += new Vector3(0, gm.lemonBatterAmount * 0.0004f * batterFillSpeed, 0);
         } else if (batterParticle.isPlaying)
         {
             batterParticle.Stop();
