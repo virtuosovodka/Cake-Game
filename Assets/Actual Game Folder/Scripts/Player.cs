@@ -303,6 +303,8 @@ public class Player : MonoBehaviour
             {
                 //when the lemon button on the batter machine is pressed, the lemon batter animation happens
                 LemonBatter();
+            } else if (batterParticle.isPlaying) {
+                batterParticle.Stop();
             }
 
             //start oven function
@@ -568,9 +570,6 @@ public class Player : MonoBehaviour
             //    soundOn.SetActive(false);
 
             //}
-        } else if (batterParticle.isPlaying)
-        {
-            batterParticle.Stop();
         }
         #endregion
 
