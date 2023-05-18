@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     //animator
     [SerializeField]
-    Animator longConveyerAnim;
+    Animator[] longConveyerAnim;
 
     // Start is called before the first frame update
     private void Awake()
@@ -97,14 +97,13 @@ public class GameManager : MonoBehaviour
         underfilled.SetActive(false);
         overfilled.SetActive(false);
         average.SetActive(false);
-        frostingPilePrefab.SetActive(false);
-        frostingPrefab.SetActive(false);
         liquidPrefab.SetActive(false);
     }
 
     private void Update()
     {
-        longConveyerAnim.SetBool("Running", beltOn);
+        for (int i = 0; i < longConveyerAnim.Length; i++)
+            longConveyerAnim[i].SetBool("Running", beltOn);
     }
 
     public string BatterType()
