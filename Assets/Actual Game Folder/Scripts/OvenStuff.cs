@@ -14,48 +14,43 @@ public class OvenStuff : MonoBehaviour
     void Start()
     {
         testCube.GetComponent<MeshRenderer>().material.color = Color.black;
+        gm.batterAmount = .250f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        gm.chocolateBatter.SetActive(true);
         if (gm.ovenOn)
         {
             testCube.GetComponent<MeshRenderer>().material.color = Color.red;
 
             //deciding size of the cake that is being baked
+            //deciding color of the cake that is being baked depending on what color the batter chosen is
             if (gm.batterAmount < .35)
             {
                 //test whether the right cake is being put in oven
                 gm.cake = gm.underfilled;
-                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
+                findColor();
+                gm.underfilled.SetActive(true);
+                testCube.GetComponent<MeshRenderer>().material.color = Color.yellow;
             }
             else if (gm.batterAmount < .9)
             {
                 gm.cake = gm.average;
-                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
+                findColor();
+                gm.underfilled.SetActive(true);
+                testCube.GetComponent<MeshRenderer>().material.color = Color.blue;
             }
             else
-            { 
+            {
                 gm.cake = gm.overfilled;
-                gm.underfilled.SetActive(true);
                 turnOffFirstBatter();
-            }
-
-            //deciding color of the cake that is being baked depending on what color the batter chosen is
-            if (gm.BatterType() == "Chocolate")
-            {
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
-            }
-            else if (gm.BatterType() == "Vanilla")
-            {
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
-            }
-            else if (gm.BatterType() == "Vanilla")
-            {
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
+                findColor();
+                gm.underfilled.SetActive(true);
+                testCube.GetComponent<MeshRenderer>().material.color = Color.green;
             }
 
             //deciding level of cookness
@@ -99,5 +94,21 @@ public class OvenStuff : MonoBehaviour
         gm.vanillaBatter.SetActive(false);
         gm.chocolateBatter.SetActive(false);
         gm.lemonBatter.SetActive(false);
+    }
+
+    public void findColor()
+    {
+        if (gm.BatterType() == "Chocolate")
+        {
+            gm.cake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
+        }
+        else if (gm.BatterType() == "Vanilla")
+        {
+            gm.cake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
+        }
+        else if (gm.BatterType() == "Vanilla")
+        {
+            gm.cake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
+        }
     }
 }
