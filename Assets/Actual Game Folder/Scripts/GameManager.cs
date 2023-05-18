@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public float batterAmount;
     public GameObject uncookedBatter;
 
+    
+
     //oven
     public float cookTime;
     public float cookTimePerOunce;
@@ -48,12 +50,21 @@ public class GameManager : MonoBehaviour
     public float timeSqueezingFrosting;
     public GameObject frostingPilePrefab;
     public GameObject frostingPrefab;
+    public GameObject frosting;
+
+    public string frostingType;
 
     //toppings
     public bool holdingLiquid = false;
     public float timeSqueezingLiquid;
     public GameObject liquidPrefab;
 
+    public bool cherries;
+    public int cherryAmount;
+    public string sprinkles;
+
+    //liquid
+    public string liquid;
 
     //ipad
     public bool ipadHit;
