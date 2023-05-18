@@ -358,12 +358,12 @@ public class CakeOrder : MonoBehaviour
         //GetComponent<MeshRenderer>().material = Material1
 
     }
-    /*
+    
     void ClockOut()
     {
         colorblind = false;
         //all of the things that influence points
-        if (gm.batter == bOrder.name)
+        if (gm.BatterType() == bOrder.name)
         {
             points++;
             // add cooked enough and amount of batter
@@ -373,7 +373,7 @@ public class CakeOrder : MonoBehaviour
             points++;
         }
 
-        if (gm.frosting == fOrder.name)
+        if (gm.frostingType == fOrder.name)
         {
             points++;
             // amount so do the same calculation for batter but for frosting
@@ -388,7 +388,7 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        
+        /*
         if (cherry.transform.position.x >= ((playerCake.transform.position.x/2) - (playerCherry.transform.position.x/2)) -.1 && cherry.transform.position.x <= ((playerCake.transform.position.x / 2) + (cherry.transform.position.x/2)) + .1)
         {
             points++;
@@ -396,7 +396,7 @@ public class CakeOrder : MonoBehaviour
         if (cherry.transform.position.z >= ((playerCake.transform.position.z / 2) - (playerCherry.transform.position.z / 2)) - .1 && cherry.transform.position.z <= ((playerCake.transform.position.z / 2) + (cherry.transform.position.z / 2)) + .1)
         {
             points++;
-        }
+        }*/
         if (gm.sprinkles == sOrder.name)
         {
             points++;
@@ -406,12 +406,13 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
+        /*
         if ((lOrder == caramelL && gm.carmelSauce) || (tOrder == blank && (!gm.chocolateSauce && !gm.carmelSauce && !gm.raspberryJam)) || (lOrder == rasberryJamL && gm.raspberryJam) || (lOrder == chocolateSyrupL && gm.chocolateSauce))
         {
             points++;
             // placement and amount
         }
-
+        */
         if (points<= 2 )
         {
             fired();
