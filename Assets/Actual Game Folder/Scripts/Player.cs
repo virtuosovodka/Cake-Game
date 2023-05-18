@@ -780,7 +780,7 @@ public class Player : MonoBehaviour
         {
            // gm.frostingPilePrefab.SetActive(true);
             frostingPileInstantiated = true;
-            gm.frostingDollop = Instantiate(gm.frostingDollop, gm.cake.transform.GetChild(0), gm.cake.transform.GetChild(0).rotation);
+            gm.frostingDollop = Instantiate(gm.frostingDollop, gm.cake.transform.GetChild(0).position, gm.cake.transform.GetChild(0).rotation);
             //get correct material (corresponds to frosting bag material that you are holding)
         }
         //instantiate/ run frosting coming out animation

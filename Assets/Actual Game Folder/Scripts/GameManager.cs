@@ -48,8 +48,7 @@ public class GameManager : MonoBehaviour
 
     //frosting
     public float timeSqueezingFrosting;
-    public GameObject frostingPilePrefab;
-    public GameObject frostingPrefab;
+    public GameObject frostingDollop;
     public GameObject frosting;
 
     public string frostingType;

@@ -24,7 +24,7 @@ public class Spatula : MonoBehaviour
             {
                 Destroy (gm.frostingDollop);
                 //TODO: set frosting material 
-                gm.frostingFinal = Instantiate(gm.frostingFinal, gm.cake.transform.GetChild(0), gm.cake.transform.GetChild(0).rotation);
+                gm.frosting = Instantiate(gm.frosting, gm.cake.transform.GetChild(0).position, gm.cake.transform.GetChild(0).rotation);
 
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
