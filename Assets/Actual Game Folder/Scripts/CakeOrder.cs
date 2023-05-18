@@ -99,6 +99,7 @@ public class CakeOrder : MonoBehaviour
     GameObject playerCake;
     int cherryAmount;
     bool hasCherries;
+    int cherriesOnCake;
     // Start is called before the first frame update
     void Start()
     {
@@ -199,6 +200,7 @@ public class CakeOrder : MonoBehaviour
 
         if (colorblind == false)
         {
+            cherriesOnCake = 5;
             // all possible materials
             batterList = new List<Material> { vanillaBatter, chocolateBatter, lemonBatter };
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
@@ -243,6 +245,7 @@ public class CakeOrder : MonoBehaviour
 
             if (tierIndex == 2)
             {
+                cherriesOnCake = 10;
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -275,6 +278,7 @@ public class CakeOrder : MonoBehaviour
         }
         if (colorblind == true)
         {
+            cherriesOnCake = 5;
             batterList = new List<Material> { vanillaMColorblind, chocolateMColorblind, lemonBatter };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             toppingsList = new List<Material> { cherriesTColorblind, blank };
@@ -316,6 +320,7 @@ public class CakeOrder : MonoBehaviour
 
             if (tierIndex == 2)
             {
+                cherriesOnCake = 10;
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -367,11 +372,7 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        
-        if (gm.cookTime >= ?? && gm.cookTime <= ??)
-        {
-            points++;
-        }
+
         if (gm.frosting == fOrder.name)
         {
             points++;
@@ -383,10 +384,11 @@ public class CakeOrder : MonoBehaviour
             points++;
             // placement and amount
         }
-        if (gm.cherryAmount == 5 && gm.cherries == true)
+        if (gm.cherryAmount == cherriesOnCake && gm.cherries == true)
         {
             points++;
         }
+        
         if (cherry.transform.position.x >= ((playerCake.transform.position.x/2) - (playerCherry.transform.position.x/2)) -.1 && cherry.transform.position.x <= ((playerCake.transform.position.x / 2) + (cherry.transform.position.x/2)) + .1)
         {
             points++;
@@ -414,8 +416,8 @@ public class CakeOrder : MonoBehaviour
         {
             fired();
         }
-    }*/
-
+    }
+    /*
     void ColorBlind()
     {
         if (colorblind == true)
@@ -453,5 +455,10 @@ public class CakeOrder : MonoBehaviour
         rasberryJamLColorblind = rasberryJamL;
         chocolateSyrupLColorblind = chocolateSyrupL;
         caramelLColorblind = caramelL;
+    }*/
+    void fired()
+    {
+
     }
+        
 }
