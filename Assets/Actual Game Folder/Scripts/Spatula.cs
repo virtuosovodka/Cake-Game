@@ -22,9 +22,9 @@ public class Spatula : MonoBehaviour
         {
             if (spreadingFrosting == true && smoothingFrosting == 3)
             {
-                gm.frostingPilePrefab.SetActive(false);
+                Destroy (gm.frostingDollop);
                 //TODO: set frosting material 
-                gm.frostingPrefab.SetActive(true);
+                gm.frostingFinal = Instantiate(gm.frostingFinal, gm.cake.transform.GetChild(0), gm.cake.transform.GetChild(0).rotation);
 
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);

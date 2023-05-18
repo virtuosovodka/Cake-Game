@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public GameObject soundOn;
     public GameObject colorOn;
     public GameObject fired;
+
     //public GameObject playButton;
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;
@@ -50,12 +51,15 @@ public class Player : MonoBehaviour
     public bool cakeFlipped;
 
     //frosting and decorations
+    Spatula spatula;
     public bool holdingKnife;
     public bool holdingSpatula;
     public bool frostingPileInstantiated;
     public GameObject sprinkles;
     public GameObject liquidBottle;
     float buttonCooldownTimer = 0;
+    public GameObject dollop;
+    public GameObject frosting;
 
     [SerializeField]
     ParticleSystem batterParticle;
@@ -359,6 +363,7 @@ public class Player : MonoBehaviour
 
             if (gm.currentObject.CompareTag("Spatula") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
             {
+                spatula = gm.currentObject.GetComponent<Spatula>();
                 Spatula();
             }
             else
@@ -759,6 +764,13 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    void Knife ()
+    {
+        holdingKnife = true;
+    }
+
+
     void Frosting()
     {
         gm.debug.text = "frosting";
@@ -766,25 +778,23 @@ public class Player : MonoBehaviour
 
         if (gm.timeSqueezingFrosting >= 5)
         {
-            gm.frostingPilePrefab.SetActive(true);
+           // gm.frostingPilePrefab.SetActive(true);
             frostingPileInstantiated = true;
+            gm.frostingDollop = Instantiate(gm.frostingDollop, gm.cake.transform.GetChild(0), gm.cake.transform.GetChild(0).rotation);
             //get correct material (corresponds to frosting bag material that you are holding)
         }
         //instantiate/ run frosting coming out animation
         // if spatula used on cake (swiped over 3+ times) do fully covered animation (individual frosting states for each one)
     }
 
-    void Knife ()
-    {
-        holdingKnife = true;
-    }
-
     void Spatula()
     {
         if (frostingPileInstantiated == true)
         {
+
             holdingSpatula = true;
         }
+
     }
 
     void Liquid(GameObject flavor)//&& press and hold (just like frosting just more liquidy))
