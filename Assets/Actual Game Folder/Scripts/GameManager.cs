@@ -64,9 +64,7 @@ public class GameManager : MonoBehaviour
     public string sprinkles;
 
     //liquid
-    public string carmelSauce;
-    public string chocolateSauce;
-    public string raspberryJam;
+    public string liquid;
 
     //ipad
     public bool ipadHit;

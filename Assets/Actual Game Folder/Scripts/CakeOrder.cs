@@ -406,6 +406,10 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
+        if (gm.liquid == lOrder.name)
+        {
+            points++;
+        }
         /*
         if ((lOrder == caramelL && gm.carmelSauce) || (tOrder == blank && (!gm.chocolateSauce && !gm.carmelSauce && !gm.raspberryJam)) || (lOrder == rasberryJamL && gm.raspberryJam) || (lOrder == chocolateSyrupL && gm.chocolateSauce))
         {
