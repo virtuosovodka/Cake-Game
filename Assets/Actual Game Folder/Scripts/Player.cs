@@ -288,7 +288,7 @@ public class Player : MonoBehaviour
         #endregion
 
         #region "Buttons"
-        gm.currentObject = gm.cbb;
+        
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
@@ -662,15 +662,13 @@ public class Player : MonoBehaviour
         
         if (!batterInstantiated)
         {
-<<<<<<< Updated upstream
-            //gm.batter.SetActive(true);
-            gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
-=======
+
             gm.batter.SetActive(true);
-            print("change color");
-            gm.batter.GetComponent<MeshRenderer>().material = _currentObject.GetComponent<MeshRenderer>().material;
+            gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
+
+           
             batterInstantiated = true;
->>>>>>> Stashed changes
+
         }
 
         if (gm.batterAmount < gm.tooMuchBatter)
