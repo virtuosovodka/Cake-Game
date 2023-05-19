@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public AudioSource doorBell;
+    public AudioSource hitCakePan;
+    public AudioSource cakePanOnCounter;
+    public AudioSource ovenWhirring;
+    public AudioSource conveyorBelt;
+
     #region "initialize variables"
     public GameManager gm;
 

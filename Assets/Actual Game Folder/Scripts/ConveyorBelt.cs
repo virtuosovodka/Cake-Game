@@ -28,14 +28,14 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject frontOvenDoorStop;
     public GameObject backOvenDoorStop;
 
-
+    public AudioSource conveyorBelt;
     //public TextMeshProUGUI debug;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        conveyorBelt = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class ConveyorBelt : MonoBehaviour
         {
             if (gm.beltOn)
             {
+                conveyorBelt.Play();
                 atBatterStation = false;
                 atOven = false;
                 atFlip = false;
@@ -126,6 +127,7 @@ public class ConveyorBelt : MonoBehaviour
         */
         if (other.gameObject.CompareTag("BatterStop"))
         {
+            conveyorBelt.Stop();
             Debug.Log("test");
             atBatterStation = true;
             gm.beltOn = false;
@@ -137,10 +139,12 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false;          
         } else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
         {
+            conveyorBelt.Stop();
             gm.beltOn = false;
             frontOvenDoorStop.SetActive(false);
         } else if (other.gameObject.CompareTag("FlipStop"))
         {
+            conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -150,6 +154,7 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false; 
         } else if (other.gameObject.CompareTag("FrostingStop"))
         {
+            conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -159,6 +164,7 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false;
         } else if (other.gameObject.CompareTag("ToppingStop"))
         {
+            conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -168,6 +174,7 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = true;
         } else if (other.gameObject.CompareTag("CakeBoxStop"))
         {
+            conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
