@@ -15,7 +15,7 @@ public class DoorHandle : MonoBehaviour
     public GameObject frontDoorStop;
     public GameObject backDoorStop;
     //boolean that decides whether the handles are already up or whether they are down
-    public bool up = false;
+    public bool up = true;
 
     void Update()
     {
