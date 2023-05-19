@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     #region "initialize variables"
     public GameManager gm;
+    public DoorHandle dh;
 
     //oven light instantiation
     public GameObject Light;
@@ -48,7 +49,6 @@ public class Player : MonoBehaviour
     //oven
     public Material caramel;
     public Material darkBrown;
-    public DoorHandle handle;
 
     //flip station
     public bool cakeFlipped;
@@ -311,7 +311,7 @@ public class Player : MonoBehaviour
             }
 
             //start oven function
-            if (gm.currentObject.CompareTag("OvenOn") && handle.up == false)
+            if (gm.currentObject.CompareTag("OvenOn") && dh.ovenDoorUp == false)
             {
                 //when the green button on the oven is pressed, the oven turns on if the handles are down meaning doors are closed
                 OvenOn();
