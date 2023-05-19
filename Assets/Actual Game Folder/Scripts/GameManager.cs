@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
         //vanillaBatter.SetActive(false);
         //chocolateBatter.SetActive(false);
         //lemonBatter.SetActive(false);
-        batter.SetActive(false);
         uncookedBatter.SetActive(false);
         underfilled.SetActive(false);
         overfilled.SetActive(false);
