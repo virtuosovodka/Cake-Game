@@ -8,17 +8,17 @@ public class OvenStuff : MonoBehaviour
     public TextMeshProUGUI debug;
     public GameManager gm;
     public Player player;
-    public GameObject testCube;
+   
     Material material;
     public Material chocolate;
 
     // Start is called before the first frame update
     void Start()
     {
-        testCube.GetComponent<MeshRenderer>().material.color = Color.black;
+       
         gm.batterAmount = .250f;
         gm.batter.SetActive(true);
-        gm.batter.GetComponent<Renderer>().material = chocolate;
+        //gm.batter.GetComponent<Renderer>().material = chocolate;
     }
 
     // Update is called once per frame
