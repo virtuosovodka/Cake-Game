@@ -49,7 +49,7 @@ public class CakeOrder : MonoBehaviour
     public Material whiteF;
     public Material brownF;
     public Material rainbowSprinklesS;
-    public Material chocolateSprinklesS;
+    
     public Material cherriesT;
     public Material rasberryJamL;
     public Material chocolateSyrupL;
@@ -66,7 +66,7 @@ public class CakeOrder : MonoBehaviour
     public Material pinkFColorblind;
     public Material brownFColorblind;
     public Material rainbowSprinklesSColorblind;
-    public Material chocolateSprinklesSColorblind;
+    
     public Material cherriesTColorblind;
     public Material rasberryJamLColorblind;
     public Material chocolateSyrupLColorblind;
@@ -194,15 +194,16 @@ public class CakeOrder : MonoBehaviour
 
         if (colorblind == false)
         {
+            /*
             if (tOrder.name != "blank")
             {
                 cherriesOnCake = 5;
-            }
+            }*/
             // all possible materials
             batterList = new List<Material> { vanillaBatter, chocolateBatter, lemonBatter };
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             toppingsList = new List<Material> { cherriesT, blank };
-            sprinklesList = new List<Material> { rainbowSprinklesS, chocolateSprinklesS, blank };
+            sprinklesList = new List<Material> { rainbowSprinklesS,  blank };
             liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL, blank };
 
             bOrder = batterList[bIndex];
@@ -241,11 +242,11 @@ public class CakeOrder : MonoBehaviour
 
 
             if (tierIndex == 2)
-            {
+            {/*
                 if (tOrder.name != "blank")
                 {
                     cherriesOnCake = 10;
-                }
+                }*/
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -277,15 +278,15 @@ public class CakeOrder : MonoBehaviour
             }
         }
         if (colorblind == true)
-        {
+        {/*
             if (tOrder.name != "blank")
             {
                 cherriesOnCake = 5;
-            }
+            }*/
             batterList = new List<Material> { vanillaMColorblind, chocolateMColorblind, lemonBatter };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             toppingsList = new List<Material> { cherriesTColorblind, blank };
-            sprinklesList = new List<Material> { rainbowSprinklesSColorblind, chocolateSprinklesSColorblind, blank };
+            sprinklesList = new List<Material> { rainbowSprinklesSColorblind,  blank };
             liquidList = new List<Material> { rasberryJamLColorblind, chocolateSyrupLColorblind, caramelLColorblind, blank };
 
             bOrder = batterList[bIndex];
@@ -322,11 +323,11 @@ public class CakeOrder : MonoBehaviour
             }
 
             if (tierIndex == 2)
-            {
+            {/*
                 if (tOrder.name != "blank")
                 {
                     cherriesOnCake = 10;
-                }
+                }*/
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
