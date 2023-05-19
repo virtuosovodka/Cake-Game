@@ -300,7 +300,7 @@ public class Player : MonoBehaviour
 
             if (cakePanConveyorScript.atBatterStation)
             {
-                if (gm.currentObject.CompareTag("BatterButton") || Input.GetKey(KeyCode.Comma))
+                if (gm.currentObject.CompareTag("BatterButton") || Input.GetKeyDown(KeyCode.Comma))
                 {
                     FillBatter(gm.currentObject);
                 }

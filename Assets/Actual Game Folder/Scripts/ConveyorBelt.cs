@@ -27,7 +27,7 @@ public class ConveyorBelt : MonoBehaviour
     public GameObject frontOvenDoorStop;
     public GameObject backOvenDoorStop;
 
-    public AudioSource conveyorBelt;
+    //public AudioSource conveyorBelt;
     //public TextMeshProUGUI debug;
 
 
@@ -61,6 +61,7 @@ public class ConveyorBelt : MonoBehaviour
                 }
                 if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
                 {
+                    gm.debug.text = "turning towards oven";
                     print("Belt2 to belt3");
                     moveX = false;
                     transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
