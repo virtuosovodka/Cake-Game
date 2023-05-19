@@ -658,7 +658,7 @@ public class Player : MonoBehaviour
     {
         if (gm.batterAmount == 0)
         {
-            gm.batter.SetActive(true);
+            //gm.batter.SetActive(true);
             gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
         }
 
