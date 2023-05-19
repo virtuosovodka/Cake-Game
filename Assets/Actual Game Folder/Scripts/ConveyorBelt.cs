@@ -89,12 +89,8 @@ public class ConveyorBelt : MonoBehaviour
             }
 
         }
-
-
-
         // if (cake has been flipped) child plate
         // notihing tells you to use plate can be found in training videos -> will make conveyor belt smoother
-
 
     }
 
@@ -147,6 +143,12 @@ public class ConveyorBelt : MonoBehaviour
         else if (other.gameObject.CompareTag("OvenStop"))
         {
             gm.beltOn = false;
+
+            atBatterStation = false;
+            atOven = true;
+            atFlip = false;
+            atFrosting = false;
+            atTopping = false;
         }
         else if (other.gameObject.CompareTag("FlipStop"))
         {
