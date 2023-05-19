@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public AudioSource doorBell;
-    public AudioSource hitCakePan;
-    public AudioSource cakePanOnCounter;
-    public AudioSource ovenWhirring;
-    public AudioSource conveyorBelt;
+
 
     #region "initialize variables"
     public GameManager gm;
@@ -691,7 +687,7 @@ public class Player : MonoBehaviour
     //make a light button for oven
     void OvenOn()
     {
-        ovenWhirring.Play();
+
         gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
@@ -703,7 +699,7 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
-        ovenWhirring.Stop();
+
         gm.debug.text = "Oven off";
         gm.ovenOn = false;
     }

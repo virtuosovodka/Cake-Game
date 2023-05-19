@@ -1169,7 +1169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  p: {fileID: 0}
   moveSpeed: 1
   moveX: 1
   moveZ: 1
@@ -7156,7 +7155,7 @@ MonoBehaviour:
   vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
   lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
   chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
-  cakePanConveyorScript: {fileID: 506036149}
+  cakePanConveyorScript: {fileID: 0}
 --- !u!114 &268510850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7257,7 +7256,6 @@ MonoBehaviour:
   debug: {fileID: 0}
   gm: {fileID: 65829483}
   player: {fileID: 268510847}
-  testCube: {fileID: 0}
   chocolate: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
 --- !u!1 &299193340
 GameObject:
@@ -12888,36 +12886,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 506036146}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &506036149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506036147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gm: {fileID: 65829483}
-  p: {fileID: 0}
-  moveSpeed: 0.06
-  moveX: 1
-  moveZ: 1
-  moveNegX: 1
-  moveNegZ: 1
-  Belt2: {fileID: 1718450269}
-  Belt3: {fileID: 1948087836}
-  cakeBox: {fileID: 240947275}
-  atBatterStation: 0
-  atOven: 0
-  atFlip: 0
-  atFrosting: 0
-  atTopping: 0
-  frontOvenDoorStop: {fileID: 1873206354}
-  backOvenDoorStop: {fileID: 615082610}
-  conveyorBelt: {fileID: 0}
 --- !u!114 &506036150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13082,6 +13050,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.91, y: 1, z: 2.19}
   m_Center: {x: 0, y: 0.27, z: 0}
+--- !u!114 &506036153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506036147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 65829483}
+  moveSpeed: 0.08
+  moveX: 1
+  moveZ: 0
+  moveNegX: 0
+  moveNegZ: 0
+  Belt2: {fileID: 163404613}
+  Belt3: {fileID: 1948087836}
+  cakeBox: {fileID: 240947275}
+  atBatterStation: 0
+  atOven: 0
+  atFlip: 0
+  atFrosting: 0
+  atTopping: 0
+  frontOvenDoorStop: {fileID: 0}
+  backOvenDoorStop: {fileID: 0}
+  conveyorBelt: {fileID: 0}
 --- !u!1 &508030619
 GameObject:
   m_ObjectHideFlags: 0
@@ -15739,7 +15736,7 @@ MonoBehaviour:
   vanillaMat: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
   lemonMat: {fileID: 2100000, guid: 7288200dbaa374a80b7e4be8465c210a, type: 2}
   chocolateMat: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
-  cakePanConveyorScript: {fileID: 506036149}
+  cakePanConveyorScript: {fileID: 0}
 --- !u!114 &820255316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15840,7 +15837,6 @@ MonoBehaviour:
   debug: {fileID: 0}
   gm: {fileID: 65829483}
   player: {fileID: 820255315}
-  testCube: {fileID: 0}
   chocolate: {fileID: 2100000, guid: 76b6c918a8ed34280b76d8e8d1d4191c, type: 2}
 --- !u!1 &826052065
 GameObject:
@@ -26523,7 +26519,7 @@ PrefabInstance:
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}

@@ -1,4 +1,4 @@
-Library: /Users/hnakamura4022/Unity Projects/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
+Library: /Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV8A_AARCH64
@@ -119,16 +119,16 @@ Library: /Users/hnakamura4022/Unity Projects/Cake-Game/Temp/StagingArea/tempburs
 --compilation-defines=BURST_PRESENT
 --compilation-defines=CSHARP_7_OR_LATER
 --compilation-defines=CSHARP_7_3_OR_NEWER
---compilation-defines=USING_XR_MANAGEMENT
---compilation-defines=USING_XR_SDK_OCULUS
---compilation-defines=ENABLE_VR_MODULE
---compilation-defines=ENABLE_XR_MODULE
---compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
+--compilation-defines=USING_XR_MANAGEMENT
+--compilation-defines=USING_XR_SDK_OCULUS
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
+--compilation-defines=ENABLE_INPUT_SYSTEM_PACKAGE
 --compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
@@ -163,10 +163,10 @@ Library: /Users/hnakamura4022/Unity Projects/Cake-Game/Temp/StagingArea/tempburs
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_URP
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/Users/hnakamura4022/Unity Projects/Cake-Game/Temp/Burst
+--temp-folder=/Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/Burst
 --key-folder=/Applications/Unity/Hub/Editor/2021.3.24f1/PlaybackEngines/AndroidPlayer
---decode-folder=/Users/hnakamura4022/Unity Projects/Cake-Game/Library/Burst
---output=/Users/hnakamura4022/Unity Projects/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
+--decode-folder=/Users/lcrow7824/Documents/GitHub/Cake-Game/Library/Burst
+--output=/Users/lcrow7824/Documents/GitHub/Cake-Game/Temp/StagingArea/tempburstlibs/arm64-v8a/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobExtensions+JobStruct`1[[UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.Float4TweenJob, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Jobs.Float4TweenJob&, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--34aec427743d7d01c0cb7a219c9fbe32

@@ -6,7 +6,6 @@ using TMPro;
 public class ConveyorBelt : MonoBehaviour
 {
     public GameManager gm;
-    public Player p;
 
     public float moveSpeed;
     public bool moveX = true;
@@ -35,7 +34,7 @@ public class ConveyorBelt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        conveyorBelt = GetComponent<AudioSource>();
+        //conveyorBelt = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,7 +46,7 @@ public class ConveyorBelt : MonoBehaviour
         {
             if (gm.beltOn)
             {
-                conveyorBelt.Play();
+                //conveyorBelt.Play();
                 atBatterStation = false;
                 atOven = false;
                 atFlip = false;
@@ -127,7 +126,7 @@ public class ConveyorBelt : MonoBehaviour
         */
         if (other.gameObject.CompareTag("BatterStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             Debug.Log("test");
             atBatterStation = true;
             gm.beltOn = false;
@@ -137,14 +136,16 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = false;
             atTopping = false;          
-        } else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
+        }
+        else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             gm.beltOn = false;
             frontOvenDoorStop.SetActive(false);
-        } else if (other.gameObject.CompareTag("FlipStop"))
+        }
+        else if (other.gameObject.CompareTag("FlipStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -154,7 +155,7 @@ public class ConveyorBelt : MonoBehaviour
             atTopping = false; 
         } else if (other.gameObject.CompareTag("FrostingStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -162,9 +163,10 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = true;
             atTopping = false;
-        } else if (other.gameObject.CompareTag("ToppingStop"))
+        }
+        else if (other.gameObject.CompareTag("ToppingStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;
@@ -172,9 +174,10 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = false;
             atTopping = true;
-        } else if (other.gameObject.CompareTag("CakeBoxStop"))
+        }
+        else if (other.gameObject.CompareTag("CakeBoxStop"))
         {
-            conveyorBelt.Stop();
+            //conveyorBelt.Stop();
             gm.beltOn = false;
 
             atBatterStation = false;

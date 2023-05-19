@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
     public float batterAmount;
     public GameObject uncookedBatter;
 
-    
-
     //oven
     public float cookTime;
     public float cookTimePerOunce;
