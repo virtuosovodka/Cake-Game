@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276788, g: 0.21589147, b: 0.29782534, a: 1}
+  m_IndirectSpecularColor: {r: 0.17267816, g: 0.21577376, b: 0.2976624, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   atTopping: 0
   frontOvenDoorStop: {fileID: 0}
   backOvenDoorStop: {fileID: 0}
+  conveyorBelt: {fileID: 0}
 --- !u!114 &193777127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7094,25 +7095,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &264780428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1924770784}
-  - component: {fileID: 1924770783}
-  - component: {fileID: 1924770786}
-  - component: {fileID: 1924770785}
-  m_Layer: 0
-  m_Name: Cube (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &268510838
 GameObject:
   m_ObjectHideFlags: 0
@@ -7258,6 +7240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorBell: {fileID: 0}
+  hitCakePan: {fileID: 0}
+  cakePanOnCounter: {fileID: 0}
+  ovenWhirring: {fileID: 0}
+  conveyorBelt: {fileID: 0}
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
   backButton: {fileID: 525309530}
@@ -13109,7 +13096,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.62
+      value: -0.747
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
@@ -13119,7 +13106,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.244
+      value: 0.748
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
@@ -13219,6 +13206,7 @@ MonoBehaviour:
   atTopping: 0
   frontOvenDoorStop: {fileID: 1873206354}
   backOvenDoorStop: {fileID: 615082610}
+  conveyorBelt: {fileID: 0}
 --- !u!114 &506036150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15995,6 +15983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b34387766e9408688a0f90937c7861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorBell: {fileID: 0}
+  hitCakePan: {fileID: 0}
+  cakePanOnCounter: {fileID: 0}
+  ovenWhirring: {fileID: 0}
+  conveyorBelt: {fileID: 0}
   gm: {fileID: 65829483}
   Light: {fileID: 1218075663}
   backButton: {fileID: 525309530}
@@ -16167,12 +16160,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1454659053}
-  - {fileID: 1621088825}
   - {fileID: 1526937107}
+  - {fileID: 1621088825}
   - {fileID: 87287994}
   - {fileID: 1321271826}
   - {fileID: 1465407390}
   - {fileID: 299193341}
+  - {fileID: 1418613678}
   - {fileID: 232936145}
   - {fileID: 1215768614}
   - {fileID: 175364640}
@@ -16183,7 +16177,6 @@ Transform:
   - {fileID: 9500501}
   - {fileID: 806065430}
   - {fileID: 572746692}
-  - {fileID: 1418613678}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20143,7 +20136,7 @@ Transform:
   - {fileID: 508030620}
   - {fileID: 848798651}
   m_Father: {fileID: 826052066}
-  m_RootOrder: 17
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!328 &1448105970 stripped
 VideoPlayer:
@@ -20404,7 +20397,7 @@ Transform:
   - {fileID: 518207642}
   - {fileID: 2036546954}
   m_Father: {fileID: 826052066}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1531837545
 ParticleSystemRenderer:
