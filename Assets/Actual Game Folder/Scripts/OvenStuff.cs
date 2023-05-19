@@ -55,11 +55,11 @@ public class OvenStuff : MonoBehaviour
             else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
                 //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
-                if (gm.cake.GetComponent<MeshRenderer>().material.name != "chocolate")
+                if (gm.cake.GetComponent<MeshRenderer>().material.name != "Chocolate")
                 {
                     gm.cake.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, player.caramel.color, Time.deltaTime / 10);
                 }
-                else if (gm.BatterType() == "chocolate")
+                else 
                 {
                     gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, player.darkBrown.color, Time.deltaTime / 10);
                 }
