@@ -21,6 +21,9 @@ public class frostingSqueezeDetector : MonoBehaviour
     [SerializeField]
     GameObject squeezed;
 
+    [SerializeField]
+    ParticleSystem frostingParticle;
+
     private void Start()
     {
         squeezing = false;
@@ -34,24 +37,32 @@ public class frostingSqueezeDetector : MonoBehaviour
 
         if (devices.Count > 0)
             targetDevice = devices[0];
+
+        //frostingParticle.Stop();
     }
 
     private void Update()
     {
         targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButtonValue);
 
-        if (triggerButtonValue && holding)
+        if (triggerButtonValue && holding || Input.GetKey(KeyCode.N))
         {
             squeezing = true;
 
             full.SetActive(false);
-            full.SetActive(true);
+            squeezed.SetActive(true);
+
+            if (frostingParticle.isStopped)
+                frostingParticle.Play();
         } else
         {
             squeezing = false;
 
             full.SetActive(true);
-            full.SetActive(false);
+            squeezed.SetActive(false);
+
+            if (frostingParticle.isPlaying)
+                frostingParticle.Stop();
         }
     }
 
