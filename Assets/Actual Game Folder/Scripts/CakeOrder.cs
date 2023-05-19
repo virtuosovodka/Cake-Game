@@ -19,14 +19,11 @@ public class CakeOrder : MonoBehaviour
     public GameObject frostingButton2;
     public GameObject frostingButton3;
     int FIndex;
-    public Material wrongFrosting1;
-    public Material wrongFrosting2;
+    public Material wrongFrosting;
     public List<Material> frostingList2 = new List<Material> { };
     public List<Material> rightColors = new List<Material> { };
     public List<Material> colorblindFrosting = new List<Material> { };
-    Material chosenMaterial;
-    Material chosenMaterial1;
-    Material chosenMaterial2;
+    
 
     int bIndex;
     int fIndex;
@@ -127,21 +124,18 @@ public class CakeOrder : MonoBehaviour
 
             // randommly generating three frosting colors for the three different piping bags
             frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
-            chosenMaterial = fOrder;
             frostingButtons.RemoveAt(correctButton);
             frostingList2.RemoveAt(fIndex);
-
             FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting1 = frostingList2[FIndex];
-            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting1;
-            chosenMaterial1 = wrongFrosting1;
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
             frostingList2.RemoveAt(FIndex);
+            FIndex = Random.Range(0, frostingList2.Count);
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
 
-            FIndex = Random.Range(0, frostingList2.Count);           
-            wrongFrosting2 = frostingList2[FIndex];
-            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting2;
-            chosenMaterial2 = wrongFrosting2;
-        }/*
+
+        }
         if (colorblind == true)
         {
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
@@ -159,12 +153,12 @@ public class CakeOrder : MonoBehaviour
             lIndex = Random.Range(0, liquidList.Count);
             tierIndex = Random.Range(1, 3);
 
-            rightButton = Random.Range(0, 3);
+            correctButton = Random.Range(0, 3);
             fOrder = frostingList[fIndex];
 
             // randommly generating three frosting colors for the three different piping bags
-            frostingButtons[rightButton].GetComponent<MeshRenderer>().material = fOrder;
-            frostingButtons.RemoveAt(rightButton);
+            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
+            frostingButtons.RemoveAt(correctButton);
             frostingList2.RemoveAt(fIndex);
             FIndex = Random.Range(0, frostingList2.Count);
             wrongFrosting = frostingList2[FIndex];
@@ -173,7 +167,7 @@ public class CakeOrder : MonoBehaviour
             FIndex = Random.Range(0, frostingList2.Count);
             wrongFrosting = frostingList2[FIndex];
             frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
-        }*/
+        }
 
 
         //pOrder = patternList[pIndex];
@@ -200,7 +194,10 @@ public class CakeOrder : MonoBehaviour
 
         if (colorblind == false)
         {
-            cherriesOnCake = 5;
+            if (tOrder.name != "blank")
+            {
+                cherriesOnCake = 5;
+            }
             // all possible materials
             batterList = new List<Material> { vanillaBatter, chocolateBatter, lemonBatter };
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
@@ -245,7 +242,10 @@ public class CakeOrder : MonoBehaviour
 
             if (tierIndex == 2)
             {
-                cherriesOnCake = 10;
+                if (tOrder.name != "blank")
+                {
+                    cherriesOnCake = 10;
+                }
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -278,7 +278,10 @@ public class CakeOrder : MonoBehaviour
         }
         if (colorblind == true)
         {
-            cherriesOnCake = 5;
+            if (tOrder.name != "blank")
+            {
+                cherriesOnCake = 5;
+            }
             batterList = new List<Material> { vanillaMColorblind, chocolateMColorblind, lemonBatter };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             toppingsList = new List<Material> { cherriesTColorblind, blank };
@@ -320,7 +323,10 @@ public class CakeOrder : MonoBehaviour
 
             if (tierIndex == 2)
             {
-                cherriesOnCake = 10;
+                if (tOrder.name != "blank")
+                {
+                    cherriesOnCake = 10;
+                }
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
