@@ -15,10 +15,8 @@ public class OvenStuff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         gm.batterAmount = .250f;
         gm.batter.SetActive(true);
-        //gm.batter.GetComponent<Renderer>().material = chocolate;
     }
 
     // Update is called once per frame
@@ -33,7 +31,6 @@ public class OvenStuff : MonoBehaviour
 
             if (gm.batterAmount < .35)
             {
-                //test whether the right cake is being put in oven
                 gm.cake = gm.underfilled;
                 gm.underfilled.SetActive(true);
                 gm.cake.GetComponent<MeshRenderer>().material = material;
@@ -48,11 +45,7 @@ public class OvenStuff : MonoBehaviour
             gm.batter.SetActive(false);
 
             //deciding level of cookness
-            if (gm.timeInOven <= gm.cookTime - 1)
-            {
-                //cake stays the same, no change
-            }
-            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+            if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
             {
                 //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
                 if (gm.cake.GetComponent<MeshRenderer>().material.name != "chocolate")
