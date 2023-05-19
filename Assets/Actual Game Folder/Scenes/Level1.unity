@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276788, g: 0.21589147, b: 0.29782534, a: 1}
+  m_IndirectSpecularColor: {r: 0.17267816, g: 0.21577376, b: 0.2976624, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -460,7 +460,8 @@ MonoBehaviour:
   ovenOn: 0
   frostingOn: 0
   batterPerFrame: 1
-  tooMuchBatter: 1.25
+  cbb: {fileID: 8513859189168467390}
+  tooMuchBatter: 1
   batter: {fileID: 748017715}
   createdChocolateBatter: 0
   createdVanillaBatter: 0
@@ -26156,7 +26157,7 @@ PrefabInstance:
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.046
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}

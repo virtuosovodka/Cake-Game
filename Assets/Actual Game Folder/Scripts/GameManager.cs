@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     //public float chocolateBatterAmount;
     //public float vanillaBatterAmount;
     //public float lemonBatterAmount;
+    
 
     public float tooMuchBatter;
     public GameObject batter;

@@ -56,19 +56,19 @@ public class ConveyorBelt : MonoBehaviour
 
                 if (moveX == true)
                 {
-                    print("start to belt 2");
+                    //print("start to belt 2");
                     transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
                 }
                 if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
                 {
                     gm.debug.text = "turning towards oven";
-                    print("Belt2 to belt3");
+                    //print("Belt2 to belt3");
                     moveX = false;
                     transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
                 }
                 if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
                 {
-                    print("Belt3 to counter");
+                    //print("Belt3 to counter");
                     moveZ = false;
                     transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
                     //blah = true;
