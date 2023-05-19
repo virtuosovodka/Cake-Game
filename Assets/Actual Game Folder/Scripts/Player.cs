@@ -341,7 +341,7 @@ public class Player : MonoBehaviour
             if (gm.currentObject.CompareTag("FrostingButton") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !frostingOn)
             {
                 Frosting();
-                gm.debug.text = "frosting is ocming out";
+                gm.debug.text = "frosting is coming out";
                 //on collision and front button to hold/ move both bottoms to get frosting out
             }
 
@@ -691,7 +691,7 @@ public class Player : MonoBehaviour
     //make a light button for oven
     void OvenOn()
     {
-
+        ovenWhirring.Play();
         gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
@@ -703,6 +703,7 @@ public class Player : MonoBehaviour
 
     void OvenOff()
     {
+        ovenWhirring.Stop();
         gm.debug.text = "Oven off";
         gm.ovenOn = false;
     }
@@ -711,6 +712,7 @@ public class Player : MonoBehaviour
     {
         if (cakePan.transform.rotation.eulerAngles.y >= 160 && cakePan.transform.rotation.eulerAngles.y <= 200)
         {
+
             cakeFlipped = true;
             //get component rigid body?
         }
