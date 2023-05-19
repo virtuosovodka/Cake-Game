@@ -5,6 +5,7 @@ using TMPro;
 
 public class OvenStuff : MonoBehaviour
 {
+    /*
     public TextMeshProUGUI debug;
     public GameManager gm;
     public Player player;
@@ -111,4 +112,5 @@ public class OvenStuff : MonoBehaviour
             gm.cake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
         }
     }
+    */
 }

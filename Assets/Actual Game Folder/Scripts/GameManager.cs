@@ -20,17 +20,19 @@ public class GameManager : MonoBehaviour
 
     //batter
     public float batterPerFrame;
-    public float chocolateBatterAmount;
-    public float vanillaBatterAmount;
-    public float lemonBatterAmount;
+    //public float chocolateBatterAmount;
+    //public float vanillaBatterAmount;
+    //public float lemonBatterAmount;
 
     public float tooMuchBatter;
+    public GameObject batter;
+
     public bool createdChocolateBatter = false;
     public bool createdVanillaBatter = false;
     public bool createdLemonBatter = false;
-    public GameObject vanillaBatter;
-    public GameObject chocolateBatter;
-    public GameObject lemonBatter;
+    //public GameObject vanillaBatter;
+    //public GameObject chocolateBatter;
+    //public GameObject lemonBatter;
     public float batterAmount;
     public GameObject uncookedBatter;
 
@@ -90,9 +92,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        vanillaBatter.SetActive(false);
-        chocolateBatter.SetActive(false);
-        lemonBatter.SetActive(false);
+        //vanillaBatter.SetActive(false);
+        //chocolateBatter.SetActive(false);
+        //lemonBatter.SetActive(false);
+        batter.SetActive(false);
         uncookedBatter.SetActive(false);
         underfilled.SetActive(false);
         overfilled.SetActive(false);
@@ -108,23 +111,8 @@ public class GameManager : MonoBehaviour
 
     public string BatterType()
     {
-        string _batterType;
-        if (chocolateBatterAmount > vanillaBatterAmount && chocolateBatterAmount > lemonBatterAmount)
-        {
-            batterAmount = chocolateBatterAmount;
-            _batterType = "Chocolate";
-        }
-        else if (lemonBatterAmount > vanillaBatterAmount && lemonBatterAmount > chocolateBatterAmount)
-        {
-            batterAmount = lemonBatterAmount;
-            _batterType = "Lemon";
-        }
-        else
-        {
-            batterAmount = vanillaBatterAmount;
-            _batterType = "Vanilla";
-        }
-        return _batterType;
+        
+        return batter.GetComponent<Renderer>().material.name;
     }
 
 }
