@@ -16,6 +16,11 @@ public class frostingSqueezeDetector : MonoBehaviour
 
     InputDevice targetDevice;
 
+    [SerializeField]
+    GameObject full;
+    [SerializeField]
+    GameObject squeezed;
+
     private void Start()
     {
         squeezing = false;
@@ -38,9 +43,15 @@ public class frostingSqueezeDetector : MonoBehaviour
         if (triggerButtonValue && holding)
         {
             squeezing = true;
+
+            full.SetActive(false);
+            full.SetActive(true);
         } else
         {
             squeezing = false;
+
+            full.SetActive(true);
+            full.SetActive(false);
         }
     }
 
