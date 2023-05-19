@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276788, g: 0.21589147, b: 0.29782534, a: 1}
+  m_IndirectSpecularColor: {r: 0.17267816, g: 0.21577376, b: 0.2976624, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1569,6 +1569,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875566, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3245501626486720733, guid: d2526772bf8ec427ab829bdb40e1d1ed,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2152,7 +2167,7 @@ MonoBehaviour:
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: a7d996c3578ca44e3a8e33807ab716d1, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
@@ -10565,7 +10580,7 @@ MonoBehaviour:
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: a7d996c3578ca44e3a8e33807ab716d1, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
@@ -33519,10 +33534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669ec3bb95c324555989157e8feff037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squeezing: 0
-  full: {fileID: 5339074582986913215}
-  squeezed: {fileID: 3780080714590507124}
-  frostingParticle: {fileID: 919132148895526646}
 --- !u!199 &919132148895526645
 ParticleSystemRenderer:
   serializedVersion: 6

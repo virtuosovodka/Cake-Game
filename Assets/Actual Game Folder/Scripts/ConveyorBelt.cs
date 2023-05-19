@@ -136,13 +136,17 @@ public class ConveyorBelt : MonoBehaviour
             atOven = false;
             atFlip = false;
             atFrosting = false;
-            atTopping = false;          
+            atTopping = false;
         }
         else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
         {
             //conveyorBelt.Stop();
             gm.beltOn = false;
             frontOvenDoorStop.SetActive(false);
+        }
+        else if (other.gameObject.CompareTag("OvenStop"))
+        {
+            gm.beltOn = false;
         }
         else if (other.gameObject.CompareTag("FlipStop"))
         {
@@ -153,8 +157,9 @@ public class ConveyorBelt : MonoBehaviour
             atOven = false;
             atFlip = true;
             atFrosting = false;
-            atTopping = false; 
-        } else if (other.gameObject.CompareTag("FrostingStop"))
+            atTopping = false;
+        }
+        else if (other.gameObject.CompareTag("FrostingStop"))
         {
             //conveyorBelt.Stop();
             gm.beltOn = false;
