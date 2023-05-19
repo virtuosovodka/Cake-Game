@@ -442,6 +442,7 @@ public class Player : MonoBehaviour
                 Credits.SetActive(false);
                 TextCredits.SetActive(false);
                 LevelSelect.SetActive(false);
+                videoPlayer.Stop();
             }
 
             if (gm.currentObject.CompareTag("Settings") || Input.GetKeyDown(KeyCode.W))//&& OVRInput.Get(OVRInput.Button.One))

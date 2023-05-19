@@ -460,7 +460,11 @@ MonoBehaviour:
   ovenOn: 0
   frostingOn: 0
   batterPerFrame: 1
+<<<<<<< Updated upstream
   tooMuchBatter: 1
+=======
+  tooMuchBatter: 2
+>>>>>>> Stashed changes
   batter: {fileID: 748017715}
   createdChocolateBatter: 0
   createdVanillaBatter: 0
@@ -1273,8 +1277,8 @@ Transform:
   m_LocalScale: {x: 0.19999999, y: 0.005, z: 0.19999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 681196456}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &211043257
 MeshFilter:
@@ -1568,6 +1572,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875566, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875566, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_ControlledAudioTrackCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_DirectAudioMutes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_TargetAudioSources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245501626322875567, guid: d2526772bf8ec427ab829bdb40e1d1ed,
+        type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3245501626486720733, guid: d2526772bf8ec427ab829bdb40e1d1ed,
         type: 3}
@@ -2152,7 +2216,7 @@ MonoBehaviour:
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: a7d996c3578ca44e3a8e33807ab716d1, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
@@ -7332,7 +7396,7 @@ Transform:
   - {fileID: 1286897048}
   - {fileID: 1164635191}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: -90}
 --- !u!1 &316344121 stripped
 GameObject:
@@ -7883,7 +7947,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
@@ -7908,7 +7972,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0969
+      value: 1.099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 175f5a05343294600bc32e84f8b8ffd7,
         type: 3}
@@ -9673,7 +9737,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 193777131}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10565,7 +10630,7 @@ MonoBehaviour:
   fired: {fileID: 0}
   videoPlayer: {fileID: 1448105970}
   videoClips:
-  - {fileID: 32900000, guid: 7854f525706064b73a9c8139d2683232, type: 3}
+  - {fileID: 32900000, guid: a7d996c3578ca44e3a8e33807ab716d1, type: 3}
   - {fileID: 32900000, guid: 1a0bb10e00fb94d029eb533eddf27196, type: 3}
   materialChanger: {fileID: 2085515286}
   Parent: {fileID: 506036148}
@@ -12109,7 +12174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1143073840 stripped
 Transform:
@@ -12216,7 +12281,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3bd6852cd72c34b7e809e0f2632add9a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3bd6852cd72c34b7e809e0f2632add9a,
         type: 3}
@@ -13334,7 +13399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1286652980
 BoxCollider:
@@ -14048,7 +14113,7 @@ PrefabInstance:
     - target: {fileID: 834597596459662493, guid: 1b6f1f04aad774b51a06370d388244e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 834597596459662493, guid: 1b6f1f04aad774b51a06370d388244e4,
         type: 3}
@@ -25651,7 +25716,7 @@ Transform:
   - {fileID: 1666491676}
   - {fileID: 1900932171}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: -90}
 --- !u!1 &1762226389
 GameObject:
@@ -25870,7 +25935,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 90, y: 213, z: 0}
 --- !u!33 &1823256660
 MeshFilter:
@@ -26156,7 +26221,7 @@ PrefabInstance:
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: 7727491238958275130, guid: c07d3bf10f64c4b45bdbc50f0d644298,
         type: 3}
@@ -33166,7 +33231,7 @@ Transform:
   - {fileID: 7282602688360380048}
   - {fileID: 1609928026861540383}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: -90}
 --- !u!4 &543450652202605769
 Transform:
@@ -33185,7 +33250,7 @@ Transform:
   - {fileID: 5728614493047812317}
   - {fileID: 1789869918647718534}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &543450652284939110
 Transform:
@@ -33226,7 +33291,7 @@ Transform:
   - {fileID: 5728614492893489712}
   - {fileID: 1789869918769989739}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &543450652886398025
 Transform:
@@ -33245,7 +33310,7 @@ Transform:
   - {fileID: 5728614493463124061}
   - {fileID: 1789869919272532486}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &609388428681200039
 MeshRenderer:
