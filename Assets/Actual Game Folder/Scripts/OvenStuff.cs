@@ -36,7 +36,7 @@ public class OvenStuff : MonoBehaviour
 
 
 
-            gm.cake = gm.batterAmount < 1 ? gm.underfilled : gm.average;
+            gm.cake = gm.batterAmount < 1.5 ? gm.underfilled : gm.average;
 
             Transform[] allChildren = gm.cake.GetComponentsInChildren<Transform>();
 
