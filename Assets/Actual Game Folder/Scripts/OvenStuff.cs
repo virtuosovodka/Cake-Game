@@ -93,4 +93,12 @@ public class OvenStuff : MonoBehaviour
 
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+      if (collision.gameObject.CompareTag("Knife"))
+      {
+        //gm.cake.GetChild(0).SetActive(false);
+      }
+    }
 }
