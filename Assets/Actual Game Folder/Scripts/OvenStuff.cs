@@ -61,7 +61,8 @@ public class OvenStuff : MonoBehaviour
                     allChildren[i].gameObject.GetComponent<Renderer>().material = gm.batter.GetComponent<Renderer>().material;
                 }
 
-                gm.finalCake = gm.average;
+                gm.finalCake.GetComponent<Renderer>().material = gm.batter.GetComponent<Renderer>().material;
+                /*gm.finalCake = gm.average;
                 Transform[] allFinalChildren = gm.finalCake.GetComponentsInChildren<Transform>();
 
                 Debug.Log(allFinalChildren.Length);
@@ -69,7 +70,7 @@ public class OvenStuff : MonoBehaviour
                 for (int i = 1; i < allFinalChildren.Length; i++)
                 {
                     allFinalChildren[i].gameObject.GetComponent<Renderer>().material = gm.batter.GetComponent<Renderer>().material;
-                }
+                }*/
 
                 gm.cake.SetActive(true);
                 //gm.cake.AddComponent<Cake>();

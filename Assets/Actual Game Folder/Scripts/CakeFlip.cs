@@ -83,7 +83,8 @@ public class CakeFlip : MonoBehaviour
             if (collision.gameObject.CompareTag("CakePan"))
             {
                 gm.cakeSwapping = true;
-            //gm.moveX = true;
+            gm.moveX = true;
+            gm.moveZ = true;
         }
         }
 
