@@ -894,7 +894,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b56dcae818df04cbaabc07176fee45b7,
         type: 3}
       propertyPath: m_Name
-      value: masonjar (2)
+      value: Spatula Holder (decor)
       objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: b56dcae818df04cbaabc07176fee45b7,
         type: 3}
@@ -10135,7 +10135,7 @@ PrefabInstance:
     - target: {fileID: 62705951457617447, guid: 1b6f1f04aad774b51a06370d388244e4,
         type: 3}
       propertyPath: m_Name
-      value: knife (1)
+      value: Knife Decor
       objectReference: {fileID: 0}
     - target: {fileID: 62705951457617447, guid: 1b6f1f04aad774b51a06370d388244e4,
         type: 3}
