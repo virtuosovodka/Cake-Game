@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+using TMPro;
 
 public class CakeOrder : MonoBehaviour
 {
@@ -97,6 +97,9 @@ public class CakeOrder : MonoBehaviour
     int cherryAmount;
     bool hasCherries;
     int cherriesOnCake;
+
+    public TextMeshProUGUI batterType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -218,6 +221,18 @@ public class CakeOrder : MonoBehaviour
             {
                 batter.GetComponent<MeshRenderer>().material = bOrder;
 
+                if (bOrder == vanillaBatter)
+                {
+                    batterType.text = "Vanilla Batter";
+                }
+                else if(bOrder == chocolateBatter)
+                {
+                    batterType.text = "Chocolate Batter";
+                }
+                else if (bOrder == lemonBatter)
+                {
+                    batterType.text = "Lemon Batter";
+                }
             }
             GameObject[] Frostings = GameObject.FindGameObjectsWithTag("OrderFrosting");
             foreach (GameObject frosting in Frostings)
