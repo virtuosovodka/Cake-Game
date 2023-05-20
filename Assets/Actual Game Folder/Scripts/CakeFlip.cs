@@ -6,6 +6,10 @@ public class CakeFlip : MonoBehaviour
 {
     public GameObject cakePan;
     public GameManager gm;
+    public OvenStuff oven;
+    public GameObject underfilledAO;
+    public GameObject averageAO;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +26,17 @@ public class CakeFlip : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CakePan"))
         {
-            gm.cake.transform.SetParent(transform, true);
             cakePan.SetActive(false);
+            if (oven.underfilledTrue == true)
+            {
+              underfilledAO.gameObject.GetComponent<Renderer>().material = gm.underfilled.GetComponent<Renderer>().material;
+              underfilledAO.SetActive(true);
+            }
+            else if (oven.underfilledTrue == true)
+            {
+              averageAO.gameObject.GetComponent<Renderer>().material = gm.average.GetComponent<Renderer>().material;
+              averageAO.SetActive(true);
+            }
         }
     }
 }
