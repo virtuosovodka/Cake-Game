@@ -8,11 +8,11 @@ public class ConveyorBelt : MonoBehaviour
     public GameManager gm;
     public DoorHandle dh;
 
-    public float moveSpeed;
+    /*public float moveSpeed;
     public bool moveX = true;
     public bool moveZ = true;
     public bool moveNegX = true;
-    public bool moveNegZ = true;
+    public bool moveNegZ = true;*/
 
     public GameObject Belt2;
     public GameObject Belt3;
@@ -24,6 +24,10 @@ public class ConveyorBelt : MonoBehaviour
     public bool atFlip;
     public bool atFrosting;
     public bool atTopping;
+
+    public bool cakeSwapping;
+    public GameObject cakePan;
+    public GameObject cakePlate;
 
     public GameObject frontOvenDoorStop;
     public GameObject backOvenDoorStop;
@@ -55,23 +59,23 @@ public class ConveyorBelt : MonoBehaviour
                 atTopping = false;
 
 
-                if (moveX == true)
+                if (gm.moveX == true)
                 {
                     //print("start to belt 2");
-                    transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                    cakePan.transform.Translate(gm.moveSpeed * Time.deltaTime, 0, 0);
                 }
-                if (gameObject.transform.position.x >= Belt2.transform.position.x & moveZ == true)
+                if (cakePan.transform.position.x >= Belt2.transform.position.x & gm.moveZ == true)
                 {
                     gm.debug.text = "turning towards oven";
                     //print("Belt2 to belt3");
-                    moveX = false;
-                    transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
+                    gm.moveX = false;
+                    cakePan.transform.Translate(0, 0, -gm.moveSpeed * Time.deltaTime);
                 }
-                if (gameObject.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
+                if (cakePan.transform.position.z <= Belt3.transform.position.z & gm.moveNegX == true)
                 {
                     //print("Belt3 to counter");
-                    moveZ = false;
-                    transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+                    gm.moveZ = false;
+                    cakePan.transform.Translate(-gm.moveSpeed * Time.deltaTime, 0, 0);
                     //blah = true;
                 }
                 /*
@@ -81,11 +85,36 @@ public class ConveyorBelt : MonoBehaviour
                     moveNegX = false;
                     transform.Translate(0, 0, moveSpeed * Time.deltaTime);
                 }*/
-                if (gameObject.transform.position.z >= cakeBox.transform.position.z && moveX != true && moveZ != true)
+                if (cakePan.transform.position.z >= cakeBox.transform.position.z && gm.moveX != true && gm.moveZ != true)
                 {
-                    moveNegZ = false;
+                    gm.moveNegZ = false;
 
                 }
+
+                /* if (gm.cakeSwapping == true)
+                 {
+
+                     if (cakePlate.transform.position.x >= Belt2.transform.position.x & gm.moveZ == true)
+                     {
+                         gm.debug.text = "turning towards oven";
+                         //print("Belt2 to belt3");
+                         moveX = false;
+                         cakePlate.transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
+                     }
+                     if (cakePlate.transform.position.z <= Belt3.transform.position.z & moveNegX == true)
+                     {
+                         //print("Belt3 to counter");
+                         moveZ = false;
+                         cakePlate.transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+
+                     }
+
+                     if (cakePlate.transform.position.z >= cakeBox.transform.position.z && moveX != true && moveZ != true)
+                     {
+                         moveNegZ = false;
+
+                     }
+                 }*/
 
             }
 
@@ -97,18 +126,7 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        /*
-        if (p.cakeFlipped == true && other.gameObject.CompareTag("CakePlate"))
-        {
-
-        }
-
-        if (other.gameObject.CompareTag("BackOvenDoorStop"))
-        {
-            gm.beltOn = false;
-            backOvenDoorStop.SetActive(false);
-        }
-        */
+       
         if (other.gameObject.CompareTag("BatterStop"))
         {
             //conveyorBelt.Stop();
@@ -135,6 +153,12 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = false;
             atTopping = false;
+        }
+        else if (other.gameObject.CompareTag("CakeSwap"))
+        {
+            cakeSwapping = true;
+
+            Destroy(cakePan);
         }
         else if (other.gameObject.CompareTag("FlipStop"))
         {

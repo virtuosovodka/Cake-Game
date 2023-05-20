@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     #region "initialize variables"
     public GameManager gm;
     public DoorHandle dh;
+    public ConveyorBelt cb;
 
     //oven light instantiation
     public GameObject Light;
@@ -95,6 +96,41 @@ public class Player : MonoBehaviour
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
     #endregion
 
+    /*
+     * if (OVRInput.GetDown(OVRInput.RawButton.X))
+            {
+                text.text = "X pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.Y))
+            {
+                text.text = "Y pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.One))
+            {
+                text.text = "A pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.Two))
+            {
+                text.text = "B pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                text.text = "Left Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+            {
+                text.text = "Right Index Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //left hand trigger
+            {
+                text.text = "Left Hand Trigger Pressed!";
+            }
+            else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //right hand trigger
+            {
+                text.text = "Right Hand Trigger Pressed!";
+            }
+    */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -138,14 +174,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gm.cakeSwapping == true)
+        {
+            Destroy(cakePan);
+           
+        }
+
         #region "vr debug and settings"
-        OVRInput.Update();
+        //OVRInput.Update();
         buttonCooldownTimer += Time.deltaTime;
 
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        /*if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             gm.debug.text = "button b";
-        }
+        }*/
 
         #endregion
 
@@ -200,20 +242,20 @@ public class Player : MonoBehaviour
                 OvenOff();
             }
 
-            if (gm.currentObject.CompareTag("CakePan") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+            if (gm.currentObject.CompareTag("CakePan"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
             {
                 Flip();
             }
 
             //press hold and drag
-            if (gm.currentObject.CompareTag("FrostingButton") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !frostingOn)
+            if (gm.currentObject.CompareTag("FrostingButton"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !frostingOn)
             {
-                Frosting();
+                Frosting(gm.currentObject);
                 gm.debug.text = "frosting is coming out";
                 //on collision and front button to hold/ move both bottoms to get frosting out
             }
 
-            if (gm.currentObject.CompareTag("Knife") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+            if (gm.currentObject.CompareTag("Knife"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
             {
                 Knife();
             }
@@ -222,7 +264,7 @@ public class Player : MonoBehaviour
                 holdingKnife = false;
             }
 
-            if (gm.currentObject.CompareTag("Spatula") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+            if (gm.currentObject.CompareTag("Spatula"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger))
             {
                 spatula = gm.currentObject.GetComponent<Spatula>();
                 Spatula();
@@ -233,19 +275,19 @@ public class Player : MonoBehaviour
             }
 
             //press hold and drag
-            if (gm.currentObject.CompareTag("ChocolateLiquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            if (gm.currentObject.CompareTag("ChocolateLiquid"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
             {
                 Liquid(gm.currentObject);
                 // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
             }
 
-            if (gm.currentObject.CompareTag("CaramelLiquid") && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            if (gm.currentObject.CompareTag("CaramelLiquid"))// && OVRInput.Get(OVRInput.RawButton.LIndexTrigger) && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
             {
                 Liquid(gm.currentObject);
                 // sauce on collision and front button to hold/ move both bottoms to get topping out same as frosting
             }
 
-            if (gm.currentObject.CompareTag("Sprinkles") && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
+            /*if (gm.currentObject.CompareTag("Sprinkles") && OVRInput.Get(OVRInput.RawButton.LHandTrigger) || OVRInput.Get(OVRInput.RawButton.RHandTrigger)) //&& !toppingOn)
             {
                 Sprinkles();
                 // sprinklies on collision flipped 180, will make a range~ 120-240? and shaken- Y value changes by x or more
@@ -255,7 +297,7 @@ public class Player : MonoBehaviour
             {
                 Cherries();
                 // cherries on collision front button && y/b to pick it up
-            }
+            }*/
 
             #endregion
 
@@ -620,17 +662,19 @@ public class Player : MonoBehaviour
         holdingKnife = true;
     }
 
-
-    void Frosting()
+    void Frosting(GameObject _currentObject)
     {
+
+
         gm.debug.text = "frosting";
         gm.frostingOn = true;
 
         if (gm.timeSqueezingFrosting >= 5)
         {
-           // gm.frostingPilePrefab.SetActive(true);
+            // gm.frostingPilePrefab.SetActive(true);
             frostingPileInstantiated = true;
             gm.frostingDollop = Instantiate(gm.frostingDollop, gm.cake.transform.GetChild(0).position, gm.cake.transform.GetChild(0).rotation);
+            gm.frostingDollop.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
             //get correct material (corresponds to frosting bag material that you are holding)
         }
         //instantiate/ run frosting coming out animation
@@ -662,8 +706,8 @@ public class Player : MonoBehaviour
                 //get correct material chocolate or caramel
                 //child liquid to cake
                 //instantiate liquid prefab
-                //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
-                Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
+                Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
+                //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
             }
 
         }

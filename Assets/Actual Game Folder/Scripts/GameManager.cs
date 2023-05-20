@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     public GameObject average;
     public GameObject overfilled;
     public GameObject cake;
+    public GameObject finalCake;
+    public bool cakeSwapping;
 
     //frosting
     public float timeSqueezingFrosting;
@@ -66,6 +68,13 @@ public class GameManager : MonoBehaviour
     public bool ipadHit;
 
     public CakeOrder cakeOrder;
+
+    public float moveSpeed;
+    public bool moveX = true;
+    public bool moveZ = true;
+    public bool moveNegX = true;
+    public bool moveNegZ = true;
+
 
     //animator
     [SerializeField]

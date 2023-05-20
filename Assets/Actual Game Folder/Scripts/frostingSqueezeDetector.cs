@@ -53,7 +53,7 @@ public class frostingSqueezeDetector : MonoBehaviour
     {
         targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerButtonValue);
 
-        if (triggerButtonValue && holding || Input.GetKey(KeyCode.N))
+        if (/*triggerButtonValue &&*/ holding || Input.GetKey(KeyCode.N))
         {
             squeezing = true;
 

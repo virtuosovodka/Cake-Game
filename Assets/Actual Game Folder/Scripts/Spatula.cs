@@ -20,11 +20,12 @@ public class Spatula : MonoBehaviour
     {
         if (p.holdingSpatula == true)
         {
-            if (spreadingFrosting == true && smoothingFrosting == 3)
+            if (spreadingFrosting == true) // && smoothingFrosting == 3)
             {
                 Destroy (gm.frostingDollop);
                 //TODO: set frosting material 
                 gm.frosting = Instantiate(gm.frosting, gm.cake.transform.GetChild(0).position, gm.cake.transform.GetChild(0).rotation);
+                gm.frosting.GetComponent<Renderer>().material = gm.frostingDollop.GetComponent<Renderer>().material;
 
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform.GetChild(0));
                 //Instantiate(flavor.GetComponent<Liquid>().liquidPrefab, gm.cake.transform);
@@ -37,7 +38,7 @@ public class Spatula : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FrostingPile"))
         {
-            smoothingFrosting++;
+            //smoothingFrosting++;
             spreadingFrosting = true;
         }
 

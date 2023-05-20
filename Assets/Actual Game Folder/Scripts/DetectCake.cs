@@ -28,7 +28,7 @@ public class DetectCake : MonoBehaviour
             //cb.moveNegZ = true;
 
             cb.enabled = true;
-            cb.moveX = true;
+            gm.moveX = true;
             gm.debug.text = " the conveyorBelt is eneabled " + cb.enabled;
         }
     }
@@ -40,11 +40,11 @@ public class DetectCake : MonoBehaviour
         {
             cakeTin.enabled = false;
             ConveyorBelt cb = GetComponent<ConveyorBelt>();
-            cb.enabled = true;
-            cb.moveX = true;
-            cb.moveZ = true;
-            cb.moveNegX = true;
-            cb.moveNegZ = true;
+            gm.enabled = true;
+            gm.moveX = true;
+            gm.moveZ = true;
+            gm.moveNegX = true;
+            gm.moveNegZ = true;
 
             
             gm.debug.text = " the conveyorBelt is eneabled " + cb.enabled;
