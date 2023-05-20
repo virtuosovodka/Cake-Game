@@ -35,9 +35,5 @@ public class Cake : MonoBehaviour
         {
             collision.transform.SetParent(Parent);
         }
-
-        if (collision.gameObject.CompareTag("Knife")){
-            gm.cake.GetChild(0).SetActive(false);
-        }
     }
 }
