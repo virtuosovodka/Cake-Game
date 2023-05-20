@@ -23,7 +23,7 @@ public class CakeFlip : MonoBehaviour
       if (collision.gameObject.CompareTag("CakePan"))
       {
         gm.cake.transform.SetParent(transform);
-        //cakePan.SetActive(false);
+        cakePan.SetActive(false);
       }
     }
 }

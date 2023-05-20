@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-
-
     #region "initialize variables"
     public GameManager gm;
     public DoorHandle dh;
@@ -45,8 +43,7 @@ public class Player : MonoBehaviour
     public Transform Parent;
     public GameObject parentObject;
     public GameObject cakePan;
-    public bool batterClogged =true;
-    
+    public bool batterClogged;
 
     //oven
     public Material caramel;
@@ -98,74 +95,6 @@ public class Player : MonoBehaviour
     //TODO: child tin to cake empty unchild at cake flip station then cake plate childs to cake then unchilds at end of topping station
     #endregion
 
-    #region "vr button guide"
-    /*        //if (other.gameObject.CompareTag("StartBelt"))
-        //{
-            if (OVRInput.GetDown(OVRInput.RawButton.X))
-            {
-                text.text = "X pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.Y))
-            {
-                text.text = "Y pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.One))
-            {
-                text.text = "A pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.Two))
-            {
-                text.text = "B pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-            {
-                text.text = "Left Index Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-            {
-                text.text = "Right Index Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //left hand trigger
-            {
-                text.text = "Left Hand Trigger Pressed!";
-            }
-            else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //right hand trigger
-            {
-                text.text = "Right Hand Trigger Pressed!";
-            }
-        //}*/
-
-    /*bool IsDragging = false;
-    public Transform Parent;
-    public GameObject Block;
-    public GameObject parentObject;
-    if (Input.GetKeyDown(KeyCode.O))
-    {
-        Block.transform.Translate(.1f, 0, 0);
-
-        Transform childToRemove = parentObject.transform.Find("Push Block");
-        childToRemove.parent = null;
-
-        //transform.DetachChildren();
-        //how to detahc specific child not include camera
-    }
-
-
-    if (collision.gameObject.CompareTag("Push Block"))
-    {
-        if (IsDragging == false)
-        {
-            collision.transform.SetParent(Parent);
-            IsDragging = true;
-
-        }
-    }
-
-*/
-
-
-    #endregion
-
     // Start is called before the first frame update
     void Start()
     {
@@ -201,8 +130,9 @@ public class Player : MonoBehaviour
 
         // per ounce, the cook time is set to 1
         gm.cookTimePerOunce = 1;
+        batterClogged = false;
 
-        batterParticle.Stop();
+        //batterParticle.Stop();
     }
 
     // Update is called once per frame
@@ -222,76 +152,8 @@ public class Player : MonoBehaviour
         //NOT TO BE INCLUDED IN FINAL GAME (NO DEBUG)
         gm.debug.text = "" + gm.batterAmount;
 
-        #region "Cooking the cake"
-        /*
-        if (gm.ovenOn)
-        {
-            //deciding size of the cake that is being baked
-            if (gm.batterAmount < .35)
-            {
-              //test whether the right cake is being put in oven
-                gm.cake = gm.underfilled;
-            }
-            else if (gm.batterAmount < .9)
-            {
-                gm.cake = gm.average;
-            }
-            else
-            {
-                gm.cake = gm.overfilled;
-            }
-
-            //deciding color of the cake that is being baked depending on what color the batter chosen is
-            if (gm.BatterType() == "Chocolate")
-            {
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.chocolateBatter.GetComponent<MeshRenderer>().material.color;
-            }
-            else if (gm.BatterType() == "Vanilla"){
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.vanillaBatter.GetComponent<MeshRenderer>().material.color;
-            }
-            else if (gm.BatterType() == "Vanilla")
-            {
-                gm.cake.GetComponent<MeshRenderer>().material.color = gm.lemonBatter.GetComponent<MeshRenderer>().material.color;
-            }
-
-            //deciding level of cookness
-            if (gm.timeInOven <= gm.cookTime - 1)
-            {
-                //cake stays the same, no change
-                gm.debug.text = "raw";
-            }
-            else if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
-            {
-                //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
-                if (gm.BatterType() == "Vanilla")
-                {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 50);
-                }
-                else if(gm.BatterType() == "Lemon")
-                {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, caramel.color, Time.deltaTime / 50);
-                }
-                else if (gm.BatterType() == "Chocolate")
-                {
-                    gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, darkBrown.color, Time.deltaTime / 50);
-                }
-
-            }
-            else if (gm.timeInOven >= gm.cookTime + 2)
-            {
-                // all three cakes become black as time goes on
-                gm.debug.text = "overcooked";
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(gameObject.GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 100);
-            }
-            else if (gm.timeInOven >= gm.cookTime + 4)
-            {
-                // the cake lights on fire
-            }
-        }*/
-        #endregion
-
         #region "Buttons"
-        
+
         if (gm.currentObject != null)
         {
             //gm.debug.text = gm.currentObject.name;
@@ -304,7 +166,7 @@ public class Player : MonoBehaviour
                 Belt();
             }
 
-            
+
 
             if (cakePanConveyorScript.atBatterStation)
             {
@@ -318,7 +180,7 @@ public class Player : MonoBehaviour
                 {
                     FillBatter(gm.currentObject);
                 }
-                    
+
             }
 
 
@@ -664,14 +526,14 @@ public class Player : MonoBehaviour
     void ClockOut()
     {
         gm.batterPerFrame = 0;
-        
+
         gm.beltOn = false;
         gm.batterOn = false;
         gm.ovenOn = false;
         gm.frostingOn = false;
         gm.batterAmount = 0;
-        
-        
+
+
         gm.batter.SetActive(false);
         //gm.uncookedBatter.SetActive(false);
         gm.cookTime = 0;
@@ -701,13 +563,9 @@ public class Player : MonoBehaviour
         {
             if (!batterInstantiated)
             {
-
                 gm.batter.SetActive(true);
                 gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
-
-
                 batterInstantiated = true;
-
             }
 
             if (gm.batterAmount < gm.tooMuchBatter)
@@ -723,12 +581,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        
+
     }
 
     void OvenLight()
     {
-
         lightOn = !lightOn;
         Light.SetActive(lightOn);
     }
