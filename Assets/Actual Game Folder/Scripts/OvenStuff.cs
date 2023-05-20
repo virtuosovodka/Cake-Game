@@ -9,6 +9,7 @@ public class OvenStuff : MonoBehaviour
     public GameManager gm;
     public Player player;
     public bool burnt;
+    public bool underfilledTrue;
 
     Material mat;
 
@@ -40,7 +41,13 @@ public class OvenStuff : MonoBehaviour
                 //deciding color of the cake that is being baked depending on what color the batter chosen is
 
                 //mat = gm.batter.GetComponent<Renderer>().material;
-
+                if (gm.batterAmount < 1.5){
+                  underfilledTrue = true;
+                }
+                else
+                {
+                  underfilledTrue = false;
+                }
 
 
                 gm.cake = gm.batterAmount < 1.5 ? gm.underfilled : gm.average;
