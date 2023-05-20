@@ -6,6 +6,7 @@ using TMPro;
 public class ConveyorBelt : MonoBehaviour
 {
     public GameManager gm;
+    public DoorHandle dh;
 
     public float moveSpeed;
     public bool moveX = true;
@@ -100,25 +101,12 @@ public class ConveyorBelt : MonoBehaviour
         if (p.cakeFlipped == true && other.gameObject.CompareTag("CakePlate"))
         {
 
-        }*/
+        }
 
-
-        /*
         if (other.gameObject.CompareTag("BackOvenDoorStop"))
         {
             gm.beltOn = false;
             backOvenDoorStop.SetActive(false);
-        }
-
-        if (other.gameObject.CompareTag("OvenStop"))
-        {
-            gm.beltOn = false;
-
-            atBatterStation = false;
-            atOven = true;
-            atFlip = false;
-            atFrosting = false;
-            atTopping = false;
         }
         */
         if (other.gameObject.CompareTag("BatterStop"))
@@ -134,11 +122,9 @@ public class ConveyorBelt : MonoBehaviour
             atFrosting = false;
             atTopping = false;
         }
-        else if (other.gameObject.CompareTag("FrontOvenDoorStop"))
+        else if (other.gameObject.CompareTag("FrontOvenDoorStop") && dh.ovenDoorUp == false)
         {
-            //conveyorBelt.Stop();
             gm.beltOn = false;
-            frontOvenDoorStop.SetActive(false);
         }
         else if (other.gameObject.CompareTag("OvenStop"))
         {
@@ -149,6 +135,10 @@ public class ConveyorBelt : MonoBehaviour
             atFlip = false;
             atFrosting = false;
             atTopping = false;
+        }
+        else if (other.gameObject.CompareTag("BackOvenDoorStop") && dh.ovenDoorUp == false)
+        {
+            gm.beltOn = false;
         }
         else if (other.gameObject.CompareTag("FlipStop"))
         {
