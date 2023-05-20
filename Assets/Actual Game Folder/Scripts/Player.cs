@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public Transform Parent;
     public GameObject parentObject;
     public GameObject cakePan;
-    public bool batterClogged;
+    //public bool batterClogged;
 
     //oven
     public Material caramel;
@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
 
         // per ounce, the cook time is set to 1
         gm.cookTimePerOunce = 1;
-        batterClogged = false;
+        //batterClogged = false;
 
         //batterParticle.Stop();
     }
@@ -166,24 +166,18 @@ public class Player : MonoBehaviour
                 Belt();
             }
 
-
-
             if (cakePanConveyorScript.atBatterStation)
             {
-                if (batterClogged && gm.currentObject.CompareTag("BatterMachine"))
+                /*if (batterClogged && gm.currentObject.CompareTag("BatterMachine"))
                 {
                     batterClogged = false;
-
-                }
+                }*/
 
                 if (gm.currentObject.CompareTag("BatterButton") || Input.GetKeyDown(KeyCode.Comma))
                 {
                     FillBatter(gm.currentObject);
                 }
-
             }
-
-
 
             //start oven function
             if (gm.currentObject.CompareTag("OvenOn")/* && dh.ovenDoorUp == false*/)
@@ -476,7 +470,7 @@ public class Player : MonoBehaviour
             //}
         } else if (batterParticle.isPlaying)
         {
-            batterParticle.Stop();
+            //batterParticle.Stop();
         }
         #endregion
 
@@ -559,8 +553,8 @@ public class Player : MonoBehaviour
 
     void FillBatter(GameObject _currentObject)
     {
-        if (!batterClogged)
-        {
+        //if (!batterClogged)
+        //{
             if (!batterInstantiated)
             {
                 gm.batter.SetActive(true);
@@ -579,7 +573,7 @@ public class Player : MonoBehaviour
                 gm.batter.transform.position += new Vector3(0, gm.batterAmount * 0.0004f * batterFillSpeed, 0);
                 gm.batterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
             }
-        }
+        //}
 
 
     }
