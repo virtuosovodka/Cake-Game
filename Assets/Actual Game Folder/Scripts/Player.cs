@@ -470,7 +470,7 @@ public class Player : MonoBehaviour
             //}
         } else if (batterParticle.isPlaying)
         {
-            //batterParticle.Stop();
+            batterParticle.Stop();
         }
         #endregion
 
