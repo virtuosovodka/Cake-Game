@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public Transform Parent;
     public GameObject parentObject;
     public GameObject cakePan;
+    public bool batterClogged =true;
     
 
     //oven
@@ -301,14 +302,24 @@ public class Player : MonoBehaviour
                 Belt();
             }
 
+            
+
             if (cakePanConveyorScript.atBatterStation)
             {
+                if (batterClogged && gm.currentObject.CompareTag("BatterMachine"))
+                {
+                    batterClogged = false;
+
+                }
+
                 if (gm.currentObject.CompareTag("BatterButton") || Input.GetKeyDown(KeyCode.Comma))
                 {
                     FillBatter(gm.currentObject);
                 }
                     
             }
+
+
 
             //start oven function
             if (gm.currentObject.CompareTag("OvenOn") && dh.ovenDoorUp == false)
@@ -660,28 +671,30 @@ public class Player : MonoBehaviour
 
     void FillBatter(GameObject _currentObject)
     {
-        
-        if (!batterInstantiated)
+        if (!batterClogged)
         {
-
-            gm.batter.SetActive(true);
-            gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
-
-           
-            batterInstantiated = true;
-
-        }
-
-        if (gm.batterAmount < gm.tooMuchBatter)
-        {
-            if (batterParticle.isStopped)
+            if (!batterInstantiated)
             {
-                batterParticleRenderer.material = _currentObject.GetComponent<Renderer>().material;
-                batterParticle.Play();
+
+                gm.batter.SetActive(true);
+                gm.batter.GetComponent<Renderer>().material = _currentObject.GetComponent<Renderer>().material;
+
+
+                batterInstantiated = true;
+
             }
 
-            gm.batter.transform.position += new Vector3(0, gm.batterAmount * 0.0004f * batterFillSpeed, 0);
-            gm.batterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
+            if (gm.batterAmount < gm.tooMuchBatter)
+            {
+                if (batterParticle.isStopped)
+                {
+                    batterParticleRenderer.material = _currentObject.GetComponent<Renderer>().material;
+                    batterParticle.Play();
+                }
+
+                gm.batter.transform.position += new Vector3(0, gm.batterAmount * 0.0004f * batterFillSpeed, 0);
+                gm.batterAmount += gm.batterPerFrame * Time.deltaTime * batterFillSpeed;
+            }
         }
 
         
