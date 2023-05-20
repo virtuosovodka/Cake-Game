@@ -21,17 +21,18 @@ public class Player : MonoBehaviour
     public GameObject backButton;
     public GameObject playVideo0;
     public GameObject playVideo1;
+    public GameObject playVideo2;
     public GameObject clockIn;
     public GameObject clockOut;
     public GameObject Settings;
     public GameObject ColorBlind;
     public GameObject Mute;
     public GameObject Credits;
-    public GameObject LevelSelect;
+    //public GameObject LevelSelect;
     public GameObject TextCredits;
     public GameObject soundOn;
     public GameObject colorOn;
-    public GameObject fired;
+    //public GameObject fired;
 
     //public GameObject playButton;
     public VideoPlayer videoPlayer;
@@ -183,13 +184,14 @@ public class Player : MonoBehaviour
         backButton.SetActive(true);
         playVideo0.SetActive(true);
         playVideo1.SetActive(true);
+        playVideo2.SetActive(true);
         clockIn.SetActive(false);
         clockOut.SetActive(true);
         Settings.SetActive(true);
         ColorBlind.SetActive(false);
         Mute.SetActive(false);
         Credits.SetActive(false);
-        LevelSelect.SetActive(false);
+        //LevelSelect.SetActive(false);
         TextCredits.SetActive(false);
 
         colorOn.SetActive(false);
@@ -409,14 +411,34 @@ public class Player : MonoBehaviour
                 //playButton.SetActive(true);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
+                playVideo2.SetActive(false);
                 clockOut.SetActive(false);
                 clockIn.SetActive(false);
                 Settings.SetActive(false);
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
                 Credits.SetActive(false);
-                LevelSelect.SetActive(false);
+               // LevelSelect.SetActive(false);
                 videoPlayer.clip = videoClips[0];
+                videoPlayer.Play();
+            }
+
+            if (gm.currentObject.CompareTag("PlayVideo3") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
+            {
+                materialChanger.meshRenderer.material = materialChanger.mats[0];
+                //backButton.SetActive(true);
+                //playButton.SetActive(true);
+                playVideo2.SetActive(false);
+                playVideo0.SetActive(false);
+                playVideo1.SetActive(false);
+                clockOut.SetActive(false);
+                clockIn.SetActive(false);
+                Settings.SetActive(false);
+                ColorBlind.SetActive(false);
+                Mute.SetActive(false);
+                Credits.SetActive(false);
+                //LevelSelect.SetActive(false);
+                videoPlayer.clip = videoClips[2];
                 videoPlayer.Play();
             }
 
@@ -426,6 +448,7 @@ public class Player : MonoBehaviour
                 //backButton.SetActive(true);
                 //playButton.SetActive(true);
                 playVideo1.SetActive(false);
+                playVideo2.SetActive(false);
                 playVideo0.SetActive(false);
                 clockOut.SetActive(false);
                 clockIn.SetActive(false);
@@ -433,7 +456,7 @@ public class Player : MonoBehaviour
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
                 Credits.SetActive(false);
-                LevelSelect.SetActive(false);
+                //LevelSelect.SetActive(false);
                 videoPlayer.clip = videoClips[1];
                 videoPlayer.Play();
             }
@@ -444,15 +467,17 @@ public class Player : MonoBehaviour
                 //playButton.SetActive(false);
                 playVideo0.SetActive(true);
                 playVideo1.SetActive(true);
+                playVideo2.SetActive(true);
                 //backButton.SetActive(false);
                 clockOut.SetActive(true);
                 clockIn.SetActive(false);
                 Settings.SetActive(true);
                 ColorBlind.SetActive(false);
                 Mute.SetActive(false);
+                soundOn.SetActive(false);
                 Credits.SetActive(false);
                 TextCredits.SetActive(false);
-                LevelSelect.SetActive(false);
+                //LevelSelect.SetActive(false);
                 videoPlayer.Stop();
             }
 
@@ -462,6 +487,7 @@ public class Player : MonoBehaviour
                 //playButton.SetActive(false);
                 playVideo0.SetActive(false);
                 playVideo1.SetActive(false);
+                playVideo2.SetActive(false);
                 //backButton.SetActive(true);
                 clockOut.SetActive(false);
                 clockIn.SetActive(false);
@@ -469,7 +495,7 @@ public class Player : MonoBehaviour
                 ColorBlind.SetActive(true);
                 Mute.SetActive(true);
                 Credits.SetActive(true);
-                LevelSelect.SetActive(true);
+                //LevelSelect.SetActive(true);
             }
 
             if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.M))
