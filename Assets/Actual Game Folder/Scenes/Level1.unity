@@ -492,7 +492,7 @@ MonoBehaviour:
   liquid: 
   ipadHit: 0
   cakeOrder: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 0.75
   moveX: 1
   moveZ: 1
   moveNegX: 1
@@ -1749,7 +1749,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
-  Belt2: {fileID: 0}
+  Belt2: {fileID: 2089861294}
   Belt3: {fileID: 1948087836}
   cakeBox: {fileID: 240947275}
   atBatterStation: 0
@@ -1768,14 +1768,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193777123}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cb49e58a409b44fc945a146a8835d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   dh: {fileID: 74422542}
-  Belt2: {fileID: 0}
+  Belt2: {fileID: 2089861294}
   Belt3: {fileID: 1948087836}
   cakeBox: {fileID: 240947275}
   atBatterStation: 0
@@ -9278,7 +9278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   dh: {fileID: 74422542}
-  Belt2: {fileID: 0}
+  Belt2: {fileID: 2089861294}
   Belt3: {fileID: 1948087836}
   cakeBox: {fileID: 240947275}
   atBatterStation: 0
@@ -15863,7 +15863,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ec3444ff80a71428eab27432f22a2ff6,
         type: 3}
       propertyPath: m_Name
-      value: ConveyerBeltLong 1 (1)
+      value: ConveyerBeltLong 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3444ff80a71428eab27432f22a2ff6, type: 3}
