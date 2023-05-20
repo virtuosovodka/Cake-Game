@@ -21,7 +21,6 @@ public class CakeKnives : MonoBehaviour
     {
       if (collision.gameObject.CompareTag("Knife"))
       {
-        Debug.Log("dude");
         gm.cake.transform.GetChild(0).gameObject.SetActive(false);
       }
     }
