@@ -5,17 +5,25 @@ using UnityEngine;
 public class Cake : MonoBehaviour
 {
     public Transform Parent;
+    public bool cakeFlipped;
+    public GameObject cakePlate;
+    public GameObject cakePan;
+    public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (cakePan.transform.rotation.eulerAngles.y >= 160 && cakePan.transform.rotation.eulerAngles.y <= 200)
+        {
+            cakeFlipped = true;
+            gm.cake.transform.position = cakePlate.transform.position;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
