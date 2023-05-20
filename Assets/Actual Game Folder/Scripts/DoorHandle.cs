@@ -37,8 +37,6 @@ public class DoorHandle : MonoBehaviour
                     backHandle.transform.Translate(Time.deltaTime * 25, 0, 0);
                     ovenDoorUp = true;
 
-                    cb.frontOvenDoorStop.SetActive(false);
-                    cb.backOvenDoorStop.SetActive(false);
                 }
                 else if (ovenDoorUp)
                 {
@@ -46,6 +44,10 @@ public class DoorHandle : MonoBehaviour
                     frontHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
                     backHandle.transform.Translate(Time.deltaTime * -25, 0, 0);
                     ovenDoorUp = false;
+
+
+                    cb.frontOvenDoorStop.SetActive(false);
+                    cb.backOvenDoorStop.SetActive(false);
 
                 }
             }

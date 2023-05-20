@@ -322,7 +322,7 @@ public class Player : MonoBehaviour
 
 
             //start oven function
-            if (gm.currentObject.CompareTag("OvenOn") && dh.ovenDoorUp == false)
+            if (gm.currentObject.CompareTag("OvenOn")/* && dh.ovenDoorUp == false*/)
             {
                 //when the green button on the oven is pressed, the oven turns on if the handles are down meaning doors are closed
                 OvenOn();
@@ -711,7 +711,7 @@ public class Player : MonoBehaviour
     void OvenOn()
     {
 
-        gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
+        //gm.cookTime = gm.cookTimePerOunce * gm.batterAmount;
         //debug.text = "your cook time is " + cookTime;
 
         gm.ovenOn = true;
