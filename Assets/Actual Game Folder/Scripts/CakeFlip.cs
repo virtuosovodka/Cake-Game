@@ -22,7 +22,13 @@ public class CakeFlip : MonoBehaviour
     {
       if (collision.gameObject.CompareTag("CakePan"))
       {
+        if (collision.gameObject.CompareTag("CakePan"))
+      {
+        Vector3 prevScale = gm.cake.transform.localScale;
         gm.cake.transform.SetParent(transform);
+        gm.cake.transform.localScale = prevScale;
+        cakePan.SetActive(false);
+      }
         cakePan.SetActive(false);
       }
     }

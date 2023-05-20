@@ -23,11 +23,8 @@ public class GameManager : MonoBehaviour
     //public float chocolateBatterAmount;
     //public float vanillaBatterAmount;
     //public float lemonBatterAmount;
-    
-
     public float tooMuchBatter;
     public GameObject batter;
-
     public bool createdChocolateBatter = false;
     public bool createdVanillaBatter = false;
     public bool createdLemonBatter = false;
@@ -58,7 +55,6 @@ public class GameManager : MonoBehaviour
     public bool holdingLiquid = false;
     public float timeSqueezingLiquid;
     public GameObject liquidPrefab;
-
     public bool cherries;
     public int cherryAmount;
     public string sprinkles;
@@ -109,7 +105,6 @@ public class GameManager : MonoBehaviour
 
     public string BatterType()
     {
-        
         return batter.GetComponent<Renderer>().material.name;
     }
 
