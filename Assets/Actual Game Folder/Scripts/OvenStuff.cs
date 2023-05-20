@@ -9,7 +9,7 @@ public class OvenStuff : MonoBehaviour
     public GameManager gm;
     public Player player;
     public bool burnt;
-   
+
     Material mat;
 
     static bool baked;
@@ -55,6 +55,7 @@ public class OvenStuff : MonoBehaviour
                 }
 
                 gm.cake.SetActive(true);
+                gm.cake.AddComponent<Cake>();
                 gm.batter.SetActive(false);
             }
 
@@ -79,7 +80,7 @@ public class OvenStuff : MonoBehaviour
 
             else if (gm.timeInOven >= 75)
             {
-                Debug.Log("burning"); 
+                Debug.Log("burning");
                 // all three cakes become black as time goes on
                 gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 20);
                 gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 20);
@@ -89,7 +90,7 @@ public class OvenStuff : MonoBehaviour
             {
                 // the cake lights on fire
             }
-            
+
         }
     }
 }

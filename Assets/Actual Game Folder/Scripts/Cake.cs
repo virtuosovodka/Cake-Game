@@ -9,6 +9,7 @@ public class Cake : MonoBehaviour
     public GameObject cakePlate;
     public GameObject cakePan;
     public GameManager gm;
+    public GameObject knife;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,10 @@ public class Cake : MonoBehaviour
         if (collision.gameObject.CompareTag("CakeBox"))
         {
             collision.transform.SetParent(Parent);
+        }
+
+        if (collision.gameObject.CompareTag("Knife")){
+            gm.cake.GetChild(0).SetActive(false);
         }
     }
 }
