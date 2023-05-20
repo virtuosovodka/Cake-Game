@@ -105,8 +105,8 @@ public class CakeOrder : MonoBehaviour
     {
         if (colorblind == false)
         {
-            frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
-            frostingList2 = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
+            frostingList = new List<Material> { redF,  yellowF,  blueF,  };
+            frostingList2 = new List<Material> { redF,  yellowF,  blueF, };
             colorblindFrosting = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             
             //tier2.SetActive(false);
@@ -141,8 +141,8 @@ public class CakeOrder : MonoBehaviour
         }
         if (colorblind == true)
         {
-            frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
-            frostingList2 = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
+            frostingList = new List<Material> { redFColorblind, yellowF, blueF, };
+            frostingList2 = new List<Material> { redFColorblind, yellowF, blueF,  };
             tier2.SetActive(false);
             tier2nd.SetActive(false);
 
