@@ -32,7 +32,7 @@ public class CakeFlip : MonoBehaviour
               underfilledAO.gameObject.GetComponent<Renderer>().material = gm.underfilled.GetComponent<Renderer>().material;
               underfilledAO.SetActive(true);
             }
-            else if (oven.underfilledTrue == true)
+            else
             {
               averageAO.gameObject.GetComponent<Renderer>().material = gm.average.GetComponent<Renderer>().material;
               averageAO.SetActive(true);
