@@ -106,16 +106,16 @@ public class CakeOrder : MonoBehaviour
             frostingList2 = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
             colorblindFrosting = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
             
-            tier2.SetActive(false);
-            tier2nd.SetActive(false);
+            //tier2.SetActive(false);
+            //tier2nd.SetActive(false);
 
             frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
 
 
             bIndex = Random.Range(0, batterList.Count);
             fIndex = Random.Range(0, frostingList.Count);
-            tIndex = Random.Range(0, toppingsList.Count);
-            sIndex = Random.Range(0, sprinklesList.Count);
+            //tIndex = Random.Range(0, toppingsList.Count);
+            //sIndex = Random.Range(0, sprinklesList.Count);
             lIndex = Random.Range(0, liquidList.Count);
             tierIndex = Random.Range(1, 3);
 
@@ -202,14 +202,14 @@ public class CakeOrder : MonoBehaviour
             // all possible materials
             batterList = new List<Material> { vanillaBatter, chocolateBatter, lemonBatter };
             frostingList = new List<Material> { redF, orangeF, yellowF, greenF, blueF, pinkF, brownF, whiteF };
-            toppingsList = new List<Material> { cherriesT, blank };
-            sprinklesList = new List<Material> { rainbowSprinklesS,  blank };
+            //toppingsList = new List<Material> { cherriesT, blank };
+            //sprinklesList = new List<Material> { rainbowSprinklesS,  blank };
             liquidList = new List<Material> { rasberryJamL, chocolateSyrupL, caramelL, blank };
 
             bOrder = batterList[bIndex];
             fOrder = frostingList[fIndex];
-            tOrder = toppingsList[tIndex];
-            sOrder = sprinklesList[sIndex];
+            //tOrder = toppingsList[tIndex];
+            //sOrder = sprinklesList[sIndex];
             lOrder = liquidList[lIndex];
 
             // setting random material to the right thing
@@ -223,7 +223,7 @@ public class CakeOrder : MonoBehaviour
             foreach (GameObject frosting in Frostings)
             {
                 frosting.GetComponent<MeshRenderer>().material = fOrder;
-            }
+            }/*
             GameObject[] Toppings = GameObject.FindGameObjectsWithTag("OrderTopping");
             foreach (GameObject topping in Toppings)
             {
@@ -233,20 +233,20 @@ public class CakeOrder : MonoBehaviour
             foreach (GameObject sprinkles in Sprinkles)
             {
                 sprinkles.GetComponent<MeshRenderer>().material = sOrder;
-            }
+            }*/
             GameObject[] Liquids = GameObject.FindGameObjectsWithTag("OrderLiquid");
             foreach (GameObject liquid in Liquids)
             {
                 liquid.GetComponent<MeshRenderer>().material = lOrder;
             }
 
-
+            /*
             if (tierIndex == 2)
-            {/*
+            {
                 if (tOrder.name != "blank")
                 {
                     cherriesOnCake = 10;
-                }*/
+                }
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -275,7 +275,7 @@ public class CakeOrder : MonoBehaviour
                 {
                     liquid.GetComponent<MeshRenderer>().material = lOrder;
                 }
-            }
+            }*/
         }
         if (colorblind == true)
         {/*
@@ -285,14 +285,14 @@ public class CakeOrder : MonoBehaviour
             }*/
             batterList = new List<Material> { vanillaMColorblind, chocolateMColorblind, lemonBatter };
             frostingList = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
-            toppingsList = new List<Material> { cherriesTColorblind, blank };
-            sprinklesList = new List<Material> { rainbowSprinklesSColorblind,  blank };
+            //toppingsList = new List<Material> { cherriesTColorblind, blank };
+            //sprinklesList = new List<Material> { rainbowSprinklesSColorblind,  blank };
             liquidList = new List<Material> { rasberryJamLColorblind, chocolateSyrupLColorblind, caramelLColorblind, blank };
 
             bOrder = batterList[bIndex];
             fOrder = frostingList[fIndex];
-            tOrder = toppingsList[tIndex];
-            sOrder = sprinklesList[sIndex];
+            //tOrder = toppingsList[tIndex];
+            //sOrder = sprinklesList[sIndex];
             lOrder = liquidList[lIndex];
 
             GameObject[] Batters = GameObject.FindGameObjectsWithTag("OrderBatter");
@@ -305,7 +305,7 @@ public class CakeOrder : MonoBehaviour
             foreach (GameObject frosting in Frostings)
             {
                 frosting.GetComponent<MeshRenderer>().material = fOrder;
-            }
+            }/*
             GameObject[] Toppings = GameObject.FindGameObjectsWithTag("OrderTopping");
             foreach (GameObject topping in Toppings)
             {
@@ -315,19 +315,19 @@ public class CakeOrder : MonoBehaviour
             foreach (GameObject sprinkles in Sprinkles)
             {
                 sprinkles.GetComponent<MeshRenderer>().material = sOrder;
-            }
+            }*/
             GameObject[] Liquids = GameObject.FindGameObjectsWithTag("OrderLiquid");
             foreach (GameObject liquid in Liquids)
             {
                 liquid.GetComponent<MeshRenderer>().material = lOrder;
             }
-
+            /*
             if (tierIndex == 2)
-            {/*
+            {
                 if (tOrder.name != "blank")
                 {
                     cherriesOnCake = 10;
-                }*/
+                }
                 tier2.SetActive(true);
                 tier2nd.SetActive(true);
                 GameObject[] Batters2 = GameObject.FindGameObjectsWithTag("OrderBatter2");
@@ -356,7 +356,7 @@ public class CakeOrder : MonoBehaviour
                 {
                     liquid.GetComponent<MeshRenderer>().material = lOrder;
                 }
-            }
+            }*/
 
         }
 
@@ -375,7 +375,7 @@ public class CakeOrder : MonoBehaviour
             points++;
             // add cooked enough and amount of batter
         }
-        if (gm.timeInOven >= gm.cookTime - 1 && gm.timeInOven <= gm.cookTime + 2)
+        if (gm.timeInOven < 75)
         {
             points++;
         }
@@ -385,7 +385,7 @@ public class CakeOrder : MonoBehaviour
             points++;
             // amount so do the same calculation for batter but for frosting
         }
-        
+        /*
         if (tOrder == cherriesT && gm.cherries || tOrder == blank && !gm.cherries)
         {
             points++;
@@ -395,7 +395,7 @@ public class CakeOrder : MonoBehaviour
         {
             points++;
         }
-        /*
+        
         if (cherry.transform.position.x >= ((playerCake.transform.position.x/2) - (playerCherry.transform.position.x/2)) -.1 && cherry.transform.position.x <= ((playerCake.transform.position.x / 2) + (cherry.transform.position.x/2)) + .1)
         {
             points++;
@@ -403,7 +403,7 @@ public class CakeOrder : MonoBehaviour
         if (cherry.transform.position.z >= ((playerCake.transform.position.z / 2) - (playerCherry.transform.position.z / 2)) - .1 && cherry.transform.position.z <= ((playerCake.transform.position.z / 2) + (cherry.transform.position.z / 2)) + .1)
         {
             points++;
-        }*/
+        }
         if (gm.sprinkles == sOrder.name)
         {
             points++;
@@ -412,7 +412,7 @@ public class CakeOrder : MonoBehaviour
         if (sprinkleShakes <= 3 && sprinkleShakes >= 5)
         {
             points++;
-        }
+        }*/
         if (gm.liquid == lOrder.name)
         {
             points++;
