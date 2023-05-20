@@ -20,11 +20,7 @@ public class Cake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cakePan.transform.rotation.eulerAngles.y >= 160 && cakePan.transform.rotation.eulerAngles.y <= 200)
-        {
-            cakeFlipped = true;
-            gm.cake.transform.position = cakePlate.transform.position;
-        }
+        
     }
 
     void OnCollisionEnter(Collision collision)

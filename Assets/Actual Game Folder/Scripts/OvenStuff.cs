@@ -98,7 +98,8 @@ public class OvenStuff : MonoBehaviour
     {
       if (collision.gameObject.CompareTag("Knife"))
       {
-        //gm.cake.GetChild(0).SetActive(false);
+        Debug.Log("dude");
+        gm.cake.transform.GetChild(0).gameObject.SetActive(false);
       }
     }
 }
