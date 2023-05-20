@@ -136,10 +136,6 @@ public class ConveyorBelt : MonoBehaviour
             atFrosting = false;
             atTopping = false;
         }
-        else if (other.gameObject.CompareTag("BackOvenDoorStop") && dh.ovenDoorUp == false)
-        {
-            gm.beltOn = false;
-        }
         else if (other.gameObject.CompareTag("FlipStop"))
         {
             //conveyorBelt.Stop();

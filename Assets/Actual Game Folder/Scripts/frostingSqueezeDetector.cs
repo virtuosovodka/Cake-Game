@@ -24,6 +24,12 @@ public class frostingSqueezeDetector : MonoBehaviour
     [SerializeField]
     ParticleSystem frostingParticle;
 
+    [SerializeField]
+    ParticleSystemRenderer particleRenderer;
+
+    [SerializeField]
+    Material colorMat;
+
     private void Start()
     {
         squeezing = false;
@@ -37,6 +43,8 @@ public class frostingSqueezeDetector : MonoBehaviour
 
         if (devices.Count > 0)
             targetDevice = devices[0];
+
+        particleRenderer.material = colorMat;
 
         //frostingParticle.Stop();
     }

@@ -21,6 +21,7 @@ public class OvenStuff : MonoBehaviour
         gm.batter.SetActive(true);
 
         baked = false;
+        burnt = true;
 
         gm.timeInOven = 0f;
     }
@@ -60,7 +61,7 @@ public class OvenStuff : MonoBehaviour
             Debug.Log(gm.timeInOven);
             //part 2
             //deciding level of cookness
-            if (gm.timeInOven < 75)
+            if (gm.timeInOven > 35 && gm.timeInOven < 75)
             {
                 //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
                 if (gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.name != "chocolate")

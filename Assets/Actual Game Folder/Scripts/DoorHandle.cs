@@ -20,6 +20,10 @@ public class DoorHandle : MonoBehaviour
 
     public bool ovenDoorUp = false;
 
+    private void Start()
+    {
+        ovenDoorUp = true;
+    }
 
     void Update()
     {
@@ -28,7 +32,7 @@ public class DoorHandle : MonoBehaviour
         if (gm != null)
         {
             //checking if the oven handle has been hit and if the left hand or right hand trigger is down
-            if ((gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) || (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)))
+            if ((gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger) && gm.ovenOn == false) || (gm.ovenDoorHit && OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger) && gm.ovenOn == false))
             {
                 if (!ovenDoorUp)
                 {
