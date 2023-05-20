@@ -8,6 +8,7 @@ public class OvenStuff : MonoBehaviour
     public TextMeshProUGUI debug;
     public GameManager gm;
     public Player player;
+    public bool burnt;
    
     Material mat;
 
@@ -59,12 +60,11 @@ public class OvenStuff : MonoBehaviour
             Debug.Log(gm.timeInOven);
             //part 2
             //deciding level of cookness
-            if (gm.timeInOven >= gm.cookTime - 3 && gm.timeInOven <= gm.cookTime)
+            if (gm.timeInOven < 75)
             {
                 //cake becomes darker, the vanilla and lemon cake become caramel colored and the chocolate becomes dark brown
                 if (gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.name != "chocolate")
                 {
-                    
                     gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color, player.caramel.color, Time.deltaTime / 40); //player.caramel.color
                     gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color, player.caramel.color, Time.deltaTime / 40);
                 }
@@ -73,23 +73,22 @@ public class OvenStuff : MonoBehaviour
                     gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color, player.darkBrown.color, Time.deltaTime / 40);
                     gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color, player.darkBrown.color, Time.deltaTime / 40);
                 }
+                burnt = false;
             }
 
-            else if (gm.timeInOven >= gm.cookTime + 2)
+            else if (gm.timeInOven >= 75)
             {
                 Debug.Log("burning"); 
                 // all three cakes become black as time goes on
-                gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 40);
-                gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 40);
+                gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(0).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 20);
+                gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.Lerp(gm.cake.transform.GetChild(1).GetComponent<MeshRenderer>().material.color, Color.black, Time.deltaTime / 20);
+                burnt = true;
             }
             else if (gm.timeInOven >= gm.cookTime + 4)
             {
                 // the cake lights on fire
             }
             
-        } else
-        {
-            gm.timeInOven = 0f;
         }
     }
 }
