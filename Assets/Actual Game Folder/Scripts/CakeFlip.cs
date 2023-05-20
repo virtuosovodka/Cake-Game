@@ -5,6 +5,7 @@ using UnityEngine;
 public class CakeFlip : MonoBehaviour
 {
     public GameObject cakePan;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class CakeFlip : MonoBehaviour
     {
       if (collision.gameObject.CompareTag("CakePan"))
       {
-        cakePan.SetActive(false);
+        gm.cake.transform.SetParent(transform);
+        //cakePan.SetActive(false);
       }
     }
 }
