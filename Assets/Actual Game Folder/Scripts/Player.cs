@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public GameObject ColorBlind;
     public GameObject Mute;
     public GameObject Credits;
+    public bool muted;
+
     //public GameObject LevelSelect;
     public GameObject TextCredits;
     public GameObject soundOn;
@@ -158,7 +160,7 @@ public class Player : MonoBehaviour
         Credits.SetActive(false);
         //LevelSelect.SetActive(false);
         TextCredits.SetActive(false);
-
+        muted = false;
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         //fired.SetActive(false);
@@ -429,7 +431,7 @@ public class Player : MonoBehaviour
                 //turn off the sound on the game
                 soundOn.SetActive(true);
                 TextCredits.gameObject.SetActive(false);
-
+                muted = true;
                 Mute.SetActive(false);
                 buttonCooldownTimer = 0;
             }
@@ -439,7 +441,7 @@ public class Player : MonoBehaviour
                 //turn on the sound on the game
                 TextCredits.gameObject.SetActive(false);
                 soundOn.SetActive(false);
-
+                muted = false;
                 buttonCooldownTimer = 0;
             }
 

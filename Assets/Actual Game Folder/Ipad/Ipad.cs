@@ -5,14 +5,21 @@ using UnityEngine.Video;
 public class Ipad : MonoBehaviour
 {
     VideoPlayer videoPlayer;
-    
+    public Player player;
+
+    AudioSource audioSource;
     public VideoClip[] videoClips;
     //public VideoClip[] materials;
     private int materialIndex;
     private int videoClipIndex;
+    //bool muted;
+
+
     private void Awake()
+
     {
         videoPlayer = GetComponent<VideoPlayer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -20,13 +27,14 @@ public class Ipad : MonoBehaviour
     {
         //start with black screen
         videoPlayer.clip = videoClips[1];
+        //muted = false;
         
     }
 
     public void SwitchingMaterial()
     {
         materialIndex++;
-}
+    }
 
     public void SwitchingClip()
     {
@@ -34,7 +42,7 @@ public class Ipad : MonoBehaviour
 
         videoClipIndex++;
 
-        if(videoClipIndex >= videoClips.Length)
+        if (videoClipIndex >= videoClips.Length)
         {
             videoClipIndex = videoClipIndex % videoClips.Length;
         }
@@ -43,9 +51,23 @@ public class Ipad : MonoBehaviour
         videoPlayer.Play();
     }
 
+    public void Muting()
+    {
+        if(player.muted == true)
+        {
+            audioSource.mute = !audioSource.mute;
+        }
+
+        else
+        {
+            player.muted = false;
+        }
+    }
+  
+
     public void PlayPause(VideoClip _clip)
     {
-        
+
         videoPlayer.clip = _clip;
         videoPlayer.Play();
         /*
@@ -69,4 +91,5 @@ public class Ipad : MonoBehaviour
 
         return videoPlayer.clip;
     }
+
 }
