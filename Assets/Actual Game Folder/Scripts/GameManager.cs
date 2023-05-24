@@ -96,9 +96,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //vanillaBatter.SetActive(false);
-        //chocolateBatter.SetActive(false);
-        //lemonBatter.SetActive(false);
         uncookedBatter.SetActive(false);
         underfilled.SetActive(false);
         overfilled.SetActive(false);
@@ -115,6 +112,54 @@ public class GameManager : MonoBehaviour
     public string BatterType()
     {
         return batter.GetComponent<Renderer>().material.name;
+    }
+
+    public void ResetBakery()
+    {
+        //stations
+        beltOn = false;
+        batterOn = false;
+        ovenOn = false;
+        frostingOn = false;
+
+
+        createdChocolateBatter = false;
+        createdVanillaBatter = false;
+        createdLemonBatter = false;
+
+
+        batterAmount = 0;
+
+
+        cookTime = 0;
+        //public float cookTimePerOunce;
+        timeInOven = 0;
+        //ovenDoorHit = false;
+        //public bool cakeSwapping;
+
+
+        timeSqueezingFrosting = 0;
+        frostingType = "";
+        holdingLiquid = false;
+        timeSqueezingLiquid = 0;
+
+
+        cherries = false;
+        cherryAmount = 0;
+        sprinkles = "";
+
+        liquid = "";
+
+        //ipad
+        // public bool ipadHit = false;
+
+        //public CakeOrder cakeOrder;
+
+
+        moveX = true;
+        moveZ = true;
+        moveNegX = true;
+        moveNegZ = true;
     }
 
 }

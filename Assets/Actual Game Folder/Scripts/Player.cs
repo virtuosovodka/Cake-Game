@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public GameManager gm;
     public DoorHandle dh;
     public ConveyorBelt cb;
+    public CakeOrder co;
 
     //oven light instantiation
     public GameObject Light;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     public GameObject Mute;
     public GameObject Credits;
     public bool muted;
-
+    public bool colorBlinded;
     //public GameObject LevelSelect;
     public GameObject TextCredits;
     public GameObject soundOn;
@@ -136,6 +137,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        co = GetComponent<CakeOrder>();
         gm.currentObject = gameObject;
 
         //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
@@ -161,6 +163,7 @@ public class Player : MonoBehaviour
         //LevelSelect.SetActive(false);
         TextCredits.SetActive(false);
         muted = false;
+        colorBlinded = false;
         colorOn.SetActive(false);
         soundOn.SetActive(false);
         //fired.SetActive(false);
@@ -373,6 +376,7 @@ public class Player : MonoBehaviour
                 clockIn.SetActive(false);
                 Settings.SetActive(true);
                 ColorBlind.SetActive(false);
+                colorOn.SetActive(false);
                 Mute.SetActive(false);
                 soundOn.SetActive(false);
                 Credits.SetActive(false);
@@ -393,7 +397,28 @@ public class Player : MonoBehaviour
                 clockIn.SetActive(false);
                 Settings.SetActive(false);
                 ColorBlind.SetActive(true);
-                Mute.SetActive(true);
+
+                if(muted == true)
+                {
+                    Mute.SetActive(false);
+                    soundOn.SetActive(true);
+                }
+                else
+                {
+                    Mute.SetActive(true);
+                    soundOn.SetActive(false);
+                }
+
+                if (colorBlinded == true)
+                {
+                    ColorBlind.SetActive(false);
+                    colorOn.SetActive(true);
+                }
+                else
+                {
+                    ColorBlind.SetActive(true);
+                    colorOn.SetActive(false);
+                }
                 Credits.SetActive(true);
                 //LevelSelect.SetActive(true);
             }
@@ -412,6 +437,7 @@ public class Player : MonoBehaviour
                 clockOut.SetActive(true);
                 clockIn.SetActive(false);
                 buttonCooldownTimer = 0;
+                co.ClockIn();
             }
 
             if (gm.currentObject.CompareTag("PlayButton"))
@@ -434,6 +460,12 @@ public class Player : MonoBehaviour
                 muted = true;
                 Mute.SetActive(false);
                 buttonCooldownTimer = 0;
+
+                muted = true; 
+                //if other videos added/ sound effects add them to here
+                videoPlayer.SetDirectAudioMute(0, true);
+                videoPlayer.SetDirectAudioMute(1,true);
+                videoPlayer.SetDirectAudioMute(2, true);
             }
             if ((gm.currentObject.CompareTag("SoundOn") && buttonCooldownTimer > .5f )|| Input.GetKeyDown(KeyCode.H))
             {
@@ -443,6 +475,12 @@ public class Player : MonoBehaviour
                 soundOn.SetActive(false);
                 muted = false;
                 buttonCooldownTimer = 0;
+
+                muted = false;
+                //if other videos added/ sound effects add them to here
+                videoPlayer.SetDirectAudioMute(0, false);
+                videoPlayer.SetDirectAudioMute(1, false);
+                videoPlayer.SetDirectAudioMute(2, false);
             }
 
             if ((gm.currentObject.CompareTag("ColorBlind") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.L))
@@ -451,6 +489,7 @@ public class Player : MonoBehaviour
                 colorOn.SetActive(true);
                 TextCredits.gameObject.SetActive(false);
 
+                colorBlinded = true;
                 ColorBlind.SetActive(false);
                 buttonCooldownTimer = 0;
             }
@@ -462,6 +501,7 @@ public class Player : MonoBehaviour
                 TextCredits.gameObject.SetActive(false);
                 colorOn.SetActive(false);
 
+                colorBlinded = false;
                 buttonCooldownTimer = 0;
             }
 

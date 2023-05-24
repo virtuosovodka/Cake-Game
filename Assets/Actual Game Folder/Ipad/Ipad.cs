@@ -6,12 +6,13 @@ public class Ipad : MonoBehaviour
 {
     VideoPlayer videoPlayer;
     public Player player;
-
-    AudioSource audioSource;
+   
     public VideoClip[] videoClips;
+  
     //public VideoClip[] materials;
     private int materialIndex;
     private int videoClipIndex;
+    
     //bool muted;
 
 
@@ -19,7 +20,7 @@ public class Ipad : MonoBehaviour
 
     {
         videoPlayer = GetComponent<VideoPlayer>();
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class Ipad : MonoBehaviour
     {
         //start with black screen
         videoPlayer.clip = videoClips[1];
+       
         //muted = false;
         
     }
@@ -49,13 +51,18 @@ public class Ipad : MonoBehaviour
 
         videoPlayer.clip = videoClips[videoClipIndex];
         videoPlayer.Play();
+
+        //audio index section
+
+ 
     }
 
+    /*
     public void Muting()
     {
         if(player.muted == true)
         {
-            audioSource.mute = !audioSource.mute;
+            videoPlayer.SetDirectAudioMute(h);
         }
 
         else
@@ -64,12 +71,13 @@ public class Ipad : MonoBehaviour
         }
     }
   
-
+    */
     public void PlayPause(VideoClip _clip)
     {
 
         videoPlayer.clip = _clip;
         videoPlayer.Play();
+
         /*
         if (videoPlayer.isPlaying)
         {
@@ -90,6 +98,8 @@ public class Ipad : MonoBehaviour
     {
 
         return videoPlayer.clip;
+
+       
     }
 
 }

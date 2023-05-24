@@ -103,74 +103,7 @@ public class CakeOrder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (colorblind == false)
-        {
-            frostingList = new List<Material> { redF,  yellowF,  blueF,  };
-            frostingList2 = new List<Material> { redF,  yellowF,  blueF, };
-            colorblindFrosting = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
-            
-            //tier2.SetActive(false);
-            //tier2nd.SetActive(false);
-
-            frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
-
-
-            bIndex = Random.Range(0, batterList.Count);
-            fIndex = Random.Range(0, frostingList.Count);
-            //tIndex = Random.Range(0, toppingsList.Count);
-            //sIndex = Random.Range(0, sprinklesList.Count);
-            lIndex = Random.Range(0, liquidList.Count);
-            tierIndex = Random.Range(1, 3);
-
-            correctButton = Random.Range(0, 3);
-            fOrder = frostingList[fIndex];
-
-            // randommly generating three frosting colors for the three different piping bags
-            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
-            frostingButtons.RemoveAt(correctButton);
-            frostingList2.RemoveAt(fIndex);
-            FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
-            frostingList2.RemoveAt(FIndex);
-            FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
-
-
-        }
-        if (colorblind == true)
-        {
-            frostingList = new List<Material> { redFColorblind, yellowF, blueF, };
-            frostingList2 = new List<Material> { redFColorblind, yellowF, blueF,  };
-            tier2.SetActive(false);
-            tier2nd.SetActive(false);
-
-            frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
-
-
-            bIndex = Random.Range(0, batterList.Count);
-            fIndex = Random.Range(0, frostingList.Count);
-            tIndex = Random.Range(0, toppingsList.Count);
-            sIndex = Random.Range(0, sprinklesList.Count);
-            lIndex = Random.Range(0, liquidList.Count);
-            tierIndex = Random.Range(1, 3);
-
-            correctButton = Random.Range(0, 3);
-            fOrder = frostingList[fIndex];
-
-            // randommly generating three frosting colors for the three different piping bags
-            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
-            frostingButtons.RemoveAt(correctButton);
-            frostingList2.RemoveAt(fIndex);
-            FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
-            frostingList2.RemoveAt(FIndex);
-            FIndex = Random.Range(0, frostingList2.Count);
-            wrongFrosting = frostingList2[FIndex];
-            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
-        }
+        CreateOrder();
 
 
         //pOrder = patternList[pIndex];
@@ -381,7 +314,7 @@ public class CakeOrder : MonoBehaviour
 
     }
     
-    void ClockOut()
+    public void ClockOut()
     {
         colorblind = false;
         //all of the things that influence points
@@ -444,7 +377,14 @@ public class CakeOrder : MonoBehaviour
             fired();
         }
     }
+
+    public void ClockIn()
+    {
+        gm.ResetBakery();
+        CreateOrder();
+    }
     /*
+     * 
     void ColorBlind()
     {
         if (colorblind == true)
@@ -485,6 +425,81 @@ public class CakeOrder : MonoBehaviour
     }*/
     void fired()
     {
+
+    }
+
+    void CreateOrder()
+    {
+
+        if (colorblind == false)
+        {
+            frostingList = new List<Material> { redF, yellowF, blueF, };
+            frostingList2 = new List<Material> { redF, yellowF, blueF, };
+            colorblindFrosting = new List<Material> { redFColorblind, orangeFColorblind, yellowF, greenFColorblind, blueF, pinkFColorblind, brownFColorblind, whiteF };
+
+            //tier2.SetActive(false);
+            //tier2nd.SetActive(false);
+
+            frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
+
+
+            bIndex = Random.Range(0, batterList.Count);
+            fIndex = Random.Range(0, frostingList.Count);
+            //tIndex = Random.Range(0, toppingsList.Count);
+            //sIndex = Random.Range(0, sprinklesList.Count);
+            lIndex = Random.Range(0, liquidList.Count);
+            tierIndex = Random.Range(1, 3);
+
+            correctButton = Random.Range(0, 3);
+            fOrder = frostingList[fIndex];
+
+            // randommly generating three frosting colors for the three different piping bags
+            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
+            frostingButtons.RemoveAt(correctButton);
+            frostingList2.RemoveAt(fIndex);
+            FIndex = Random.Range(0, frostingList2.Count);
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
+            frostingList2.RemoveAt(FIndex);
+            FIndex = Random.Range(0, frostingList2.Count);
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
+
+
+        }
+        if (colorblind == true)
+        {
+            frostingList = new List<Material> { redFColorblind, yellowF, blueF, };
+            frostingList2 = new List<Material> { redFColorblind, yellowF, blueF, };
+            tier2.SetActive(false);
+            tier2nd.SetActive(false);
+
+            frostingButtons = new List<GameObject> { frostingButton1, frostingButton2, frostingButton3 };
+
+
+            bIndex = Random.Range(0, batterList.Count);
+            fIndex = Random.Range(0, frostingList.Count);
+            tIndex = Random.Range(0, toppingsList.Count);
+            sIndex = Random.Range(0, sprinklesList.Count);
+            lIndex = Random.Range(0, liquidList.Count);
+            tierIndex = Random.Range(1, 3);
+
+            correctButton = Random.Range(0, 3);
+            fOrder = frostingList[fIndex];
+
+            // randommly generating three frosting colors for the three different piping bags
+            frostingButtons[correctButton].GetComponent<MeshRenderer>().material = fOrder;
+            frostingButtons.RemoveAt(correctButton);
+            frostingList2.RemoveAt(fIndex);
+            FIndex = Random.Range(0, frostingList2.Count);
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[0].GetComponent<MeshRenderer>().material = wrongFrosting;
+            frostingList2.RemoveAt(FIndex);
+            FIndex = Random.Range(0, frostingList2.Count);
+            wrongFrosting = frostingList2[FIndex];
+            frostingButtons[1].GetComponent<MeshRenderer>().material = wrongFrosting;
+        }
+
 
     }
         
