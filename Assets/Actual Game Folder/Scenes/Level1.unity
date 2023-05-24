@@ -1179,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: 2024246905755799536, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
       propertyPath: m_AudioOutputMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2024246905755799537, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
@@ -1189,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 2024246905755799537, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2024246905755799537, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
@@ -2660,6 +2660,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
+  co: {fileID: 0}
   Light: {fileID: 1218075663}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
@@ -2672,6 +2673,7 @@ MonoBehaviour:
   Mute: {fileID: 159380793}
   Credits: {fileID: 159380791}
   muted: 0
+  colorBlinded: 0
   TextCredits: {fileID: 159380790}
   soundOn: {fileID: 159380792}
   colorOn: {fileID: 159380789}
@@ -8885,6 +8887,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
+  co: {fileID: 0}
   Light: {fileID: 1218075663}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
@@ -8897,6 +8900,7 @@ MonoBehaviour:
   Mute: {fileID: 159380793}
   Credits: {fileID: 159380791}
   muted: 0
+  colorBlinded: 0
   TextCredits: {fileID: 159380790}
   soundOn: {fileID: 159380792}
   colorOn: {fileID: 159380789}
@@ -12658,6 +12662,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
+  co: {fileID: 0}
   Light: {fileID: 1218075663}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
@@ -12670,6 +12675,7 @@ MonoBehaviour:
   Mute: {fileID: 159380793}
   Credits: {fileID: 159380791}
   muted: 0
+  colorBlinded: 0
   TextCredits: {fileID: 159380790}
   soundOn: {fileID: 159380792}
   colorOn: {fileID: 159380789}
@@ -12856,6 +12862,7 @@ Transform:
   - {fileID: 1096556936}
   - {fileID: 2089861295}
   - {fileID: 558456828}
+  - {fileID: 1996035136}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37158,6 +37165,104 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 28f001c471fd042798b27f1d93c49efe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3414f9431ea27417b9a7c059b345a318, type: 3}
+--- !u!1 &1996035135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1996035136}
+  - component: {fileID: 1996035137}
+  m_Layer: 0
+  m_Name: Cakeorder script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1996035136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996035135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 826052066}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996035137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996035135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fe0202a01c34480939bd1de5b3e457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batterList: []
+  frostingList: []
+  toppingsList: []
+  sprinklesList: []
+  liquidList: []
+  frostingButtons: []
+  frostingButton1: {fileID: 0}
+  frostingButton2: {fileID: 0}
+  frostingButton3: {fileID: 0}
+  wrongFrosting: {fileID: 0}
+  frostingList2: []
+  rightColors: []
+  colorblindFrosting: []
+  bOrder: {fileID: 0}
+  fOrder: {fileID: 0}
+  tOrder: {fileID: 0}
+  sOrder: {fileID: 0}
+  lOrder: {fileID: 0}
+  vanillaBatter: {fileID: 0}
+  chocolateBatter: {fileID: 0}
+  lemonBatter: {fileID: 0}
+  redF: {fileID: 2100000, guid: daf51dfd9593f446cae39c3016c84348, type: 2}
+  orangeF: {fileID: 2100000, guid: 9f9ebafe7a087431d87e8ec7e1075309, type: 2}
+  yellowF: {fileID: 2100000, guid: 7d49964f0f5614b64ad2bd3b078eae98, type: 2}
+  greenF: {fileID: 2100000, guid: 93b8d4e54696248b8813e09cd82f74ce, type: 2}
+  blueF: {fileID: 2100000, guid: 0c10d536a2d784ccc8901f653e5b105e, type: 2}
+  pinkF: {fileID: 2100000, guid: fc0398379b3074701b0e8f11c7b1371f, type: 2}
+  whiteF: {fileID: 2100000, guid: 5a12382c8a9e14349ac7bb93a38c8721, type: 2}
+  brownF: {fileID: 0}
+  rainbowSprinklesS: {fileID: 0}
+  cherriesT: {fileID: 2100000, guid: d3239a44ad22f47dab43667e694bd25b, type: 2}
+  rasberryJamL: {fileID: 0}
+  chocolateSyrupL: {fileID: 0}
+  caramelL: {fileID: 0}
+  blank: {fileID: 0}
+  vanillaMColorblind: {fileID: 0}
+  chocolateMColorblind: {fileID: 0}
+  redFColorblind: {fileID: 0}
+  orangeFColorblind: {fileID: 0}
+  greenFColorblind: {fileID: 0}
+  pinkFColorblind: {fileID: 0}
+  brownFColorblind: {fileID: 0}
+  rainbowSprinklesSColorblind: {fileID: 0}
+  cherriesTColorblind: {fileID: 0}
+  rasberryJamLColorblind: {fileID: 0}
+  chocolateSyrupLColorblind: {fileID: 0}
+  caramelLColorblind: {fileID: 0}
+  colorblind: 0
+  tier2: {fileID: 0}
+  tier2nd: {fileID: 0}
+  gm: {fileID: 0}
+  cherry: {fileID: 0}
+  playerCherry: {fileID: 0}
+  batterType: {fileID: 0}
 --- !u!1 &2003794503
 GameObject:
   m_ObjectHideFlags: 0
