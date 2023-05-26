@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     //batter
     //parent batter to cake tin and plate
     public Transform Parent;
-    public GameObject parentObject;
+    //public GameObject parentObject;
     public GameObject cakePan;
     //public bool batterClogged;
 
@@ -438,6 +438,7 @@ public class Player : MonoBehaviour
                 clockIn.SetActive(false);
                 buttonCooldownTimer = 0;
                 co.ClockIn();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
             if (gm.currentObject.CompareTag("PlayButton"))

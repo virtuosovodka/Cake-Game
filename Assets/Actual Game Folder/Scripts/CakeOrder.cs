@@ -381,7 +381,7 @@ public class CakeOrder : MonoBehaviour
     public void ClockIn()
     {
         gm.ResetBakery();
-        CreateOrder();
+        //CreateOrder();
     }
     /*
      * 

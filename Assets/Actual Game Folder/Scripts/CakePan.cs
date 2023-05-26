@@ -24,7 +24,7 @@ public class CakePan : MonoBehaviour
       
 
 
-                if (cb.cakeSwapping == true)
+                if (cb.cakeSwapping)
                 {
            
             transform.Translate(0, 0, 0);

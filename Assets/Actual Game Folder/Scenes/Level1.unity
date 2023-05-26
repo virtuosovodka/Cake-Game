@@ -498,7 +498,7 @@ MonoBehaviour:
   moveNegX: 1
   moveNegZ: 1
   longConveyerAnim:
-  - {fileID: 0}
+  - {fileID: 2089861296}
   - {fileID: 163404615}
   - {fileID: 1948087838}
 --- !u!1 &74422535
@@ -756,6 +756,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93849754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2421810174799921933, guid: 691a3f3c06f6742ec800d3e8ce335963,
+    type: 3}
+  m_PrefabInstance: {fileID: 135731566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &120692345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9425,8 +9437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb3bcc5047aa4f808a29cb4af7a884a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  cb: {fileID: 0}
+  gm: {fileID: 65829483}
+  cb: {fileID: 506036153}
   Belt2: {fileID: 0}
   Belt3: {fileID: 1948087836}
   cakeBox: {fileID: 240947275}
@@ -12662,7 +12674,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
-  co: {fileID: 0}
+  co: {fileID: 1996035137}
   Light: {fileID: 1218075663}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
@@ -37262,7 +37274,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   cherry: {fileID: 0}
   playerCherry: {fileID: 0}
-  batterType: {fileID: 0}
+  batterType: {fileID: 93849754}
 --- !u!1 &2003794503
 GameObject:
   m_ObjectHideFlags: 0
