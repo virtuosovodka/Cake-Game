@@ -1213,6 +1213,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5592797271814296872, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6624949670444142703, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
       propertyPath: player
@@ -1227,6 +1232,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834110973298288036, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_TagString
+      value: TextCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875462737451498981, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec769b287b04141f88fc02a97f3cffda, type: 3}
@@ -2672,7 +2687,7 @@ MonoBehaviour:
   gm: {fileID: 65829483}
   dh: {fileID: 0}
   cb: {fileID: 0}
-  co: {fileID: 0}
+  co: {fileID: 1996035137}
   Light: {fileID: 1218075663}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
@@ -2696,7 +2711,6 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 6e71e2394de8e47ee9a984f9c0c8f145, type: 3}
   materialChanger: {fileID: 159380800}
   Parent: {fileID: 506036148}
-  parentObject: {fileID: 0}
   cakePan: {fileID: 506036147}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
@@ -8923,7 +8937,6 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 6e71e2394de8e47ee9a984f9c0c8f145, type: 3}
   materialChanger: {fileID: 159380800}
   Parent: {fileID: 506036148}
-  parentObject: {fileID: 0}
   cakePan: {fileID: 506036147}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
@@ -12698,7 +12711,6 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 6e71e2394de8e47ee9a984f9c0c8f145, type: 3}
   materialChanger: {fileID: 159380800}
   Parent: {fileID: 506036148}
-  parentObject: {fileID: 0}
   cakePan: {fileID: 506036147}
   caramel: {fileID: 2100000, guid: 4865c1602b0f441299cb84747b0a042f, type: 2}
   darkBrown: {fileID: 2100000, guid: d433fdf3c865a49bcaba9c48a0bad2cb, type: 2}
@@ -18887,7 +18899,7 @@ GameObject:
   - component: {fileID: 1475156973}
   m_Layer: 0
   m_Name: PlayVideo2
-  m_TagString: PlayVideo3
+  m_TagString: PlayVideo2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

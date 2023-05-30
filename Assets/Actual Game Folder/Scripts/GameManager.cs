@@ -96,14 +96,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        uncookedBatter.SetActive(false);
-        underfilled.SetActive(false);
-        overfilled.SetActive(false);
-        average.SetActive(false);
-        liquidPrefab.SetActive(false);
+        ResetBakery();
     }
 
-    private void Update()
+    private void Conveyor()
     {
         for (int i = 0; i < longConveyerAnim.Length; i++)
             longConveyerAnim[i].SetBool("Running", beltOn);
@@ -116,6 +112,12 @@ public class GameManager : MonoBehaviour
 
     public void ResetBakery()
     {
+        uncookedBatter.SetActive(false);
+        underfilled.SetActive(false);
+        overfilled.SetActive(false);
+        average.SetActive(false);
+        liquidPrefab.SetActive(false);
+
         //stations
         beltOn = false;
         batterOn = false;
@@ -129,7 +131,7 @@ public class GameManager : MonoBehaviour
 
 
         batterAmount = 0;
-
+        cookTimePerOunce = 1;
 
         cookTime = 0;
         //public float cookTimePerOunce;
@@ -160,6 +162,12 @@ public class GameManager : MonoBehaviour
         moveZ = true;
         moveNegX = true;
         moveNegZ = true;
+
+
+        //after ResetBakery the longConveyorAnim components need to be reasigned 
+
+        Conveyor();
+
     }
 
 }

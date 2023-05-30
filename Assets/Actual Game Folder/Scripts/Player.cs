@@ -137,43 +137,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        co = GetComponent<CakeOrder>();
-        gm.currentObject = gameObject;
-
-        //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
-        Light.SetActive(false);
-        lightOn = false;
-
-        #region "ipad buttons"
-        //ipad setup
-        //ipad = gameObject.GetComponent<Ipad>();
-        materialChanger.meshRenderer.material = materialChanger.mats[1];
-        //backButtonMesh = backButton.GetComponent<MeshRenderer>();
-        //playButton.SetActive(false);
-        backButton.SetActive(true);
-        playVideo0.SetActive(true);
-        playVideo1.SetActive(true);
-        playVideo2.SetActive(true);
-        clockIn.SetActive(false);
-        clockOut.SetActive(true);
-        Settings.SetActive(true);
-        ColorBlind.SetActive(false);
-        Mute.SetActive(false);
-        Credits.SetActive(false);
-        //LevelSelect.SetActive(false);
-        TextCredits.SetActive(false);
-        muted = false;
-        colorBlinded = false;
-        colorOn.SetActive(false);
-        soundOn.SetActive(false);
-        //fired.SetActive(false);
-        #endregion
-
-        // per ounce, the cook time is set to 1
-        gm.cookTimePerOunce = 1;
-        //batterClogged = false;
-
-        //batterParticle.Stop();
+        ClockIn();
     }
 
     // Update is called once per frame
@@ -326,7 +290,7 @@ public class Player : MonoBehaviour
                 videoPlayer.Play();
             }
 
-            if (gm.currentObject.CompareTag("PlayVideo3") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
+            if (gm.currentObject.CompareTag("PlayVideo2") || Input.GetKeyDown(KeyCode.A)) //&& OVRInput.Get(OVRInput.Button.One))
             {
                 materialChanger.meshRenderer.material = materialChanger.mats[0];
                 //backButton.SetActive(true);
@@ -425,20 +389,17 @@ public class Player : MonoBehaviour
 
             if ((gm.currentObject.CompareTag("ClockOut") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.M))
             {
-                clockIn.SetActive(true);
-                clockOut.SetActive(false);
-                print("clocked in");
-                buttonCooldownTimer = 0;
+               
                 ClockOut();
             }
 
             if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.N))
             {
-                clockOut.SetActive(true);
-                clockIn.SetActive(false);
-                buttonCooldownTimer = 0;
-                co.ClockIn();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                
+               
+
+                ClockIn();
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
             if (gm.currentObject.CompareTag("PlayButton"))
@@ -493,6 +454,8 @@ public class Player : MonoBehaviour
                 colorBlinded = true;
                 ColorBlind.SetActive(false);
                 buttonCooldownTimer = 0;
+
+                co.colorblind = true;
             }
 
             if ((gm.currentObject.CompareTag("ColorOn") && buttonCooldownTimer > .5f)|| Input.GetKeyDown(KeyCode.G))
@@ -504,6 +467,7 @@ public class Player : MonoBehaviour
 
                 colorBlinded = false;
                 buttonCooldownTimer = 0;
+                co.colorblind = false;
             }
 
             if (gm.currentObject.CompareTag("Level 1") || Input.GetKeyDown(KeyCode.G))
@@ -601,34 +565,94 @@ public class Player : MonoBehaviour
     #endregion
 
     #region "functions"
+    void ClockIn()
+    {
+
+        clockOut = GameObject.FindGameObjectWithTag("ClockOut");
+        clockOut.SetActive(true);
+
+        clockIn = GameObject.FindGameObjectWithTag("ClockIn");
+        clockIn.SetActive(false);
+        buttonCooldownTimer = 0;
+        co = GetComponent<CakeOrder>();
+        gm.currentObject = gameObject;
+
+        //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
+        Light = GameObject.FindGameObjectWithTag("OvenLight");
+        Light.SetActive(false);
+        lightOn = false;
+
+        #region "ipad buttons"
+        //ipad setup
+        //ipad = gameObject.GetComponent<Ipad>();
+        materialChanger.meshRenderer.material = materialChanger.mats[1];
+        //backButtonMesh = backButton.GetComponent<MeshRenderer>();
+        //playButton.SetActive(false);
+        backButton = GameObject.FindGameObjectWithTag("BackButton");
+        backButton.SetActive(true);
+
+        playVideo0 = GameObject.FindGameObjectWithTag("PlayVideo0");
+        playVideo0.SetActive(true);
+
+        playVideo1 = GameObject.FindGameObjectWithTag("PlayVideo1");
+        playVideo1.SetActive(true);
+
+        playVideo2 = GameObject.FindGameObjectWithTag("PlayVideo2");
+        playVideo2.SetActive(true);
+
+
+        Settings = GameObject.FindGameObjectWithTag("Settings");
+        Settings.SetActive(true);
+
+        ColorBlind = GameObject.FindGameObjectWithTag("ColorBlind");
+        ColorBlind.SetActive(false);
+
+        Mute = GameObject.FindGameObjectWithTag("Mute");
+        Mute.SetActive(false);
+
+        Credits = GameObject.FindGameObjectWithTag("Credits");
+        Credits.SetActive(false);
+        //LevelSelect.SetActive(false);
+
+        TextCredits = GameObject.FindGameObjectWithTag("TextCredits");
+        TextCredits.SetActive(false);
+
+
+        muted = false;
+        colorBlinded = false;
+
+        colorOn = GameObject.FindGameObjectWithTag("ColorOn");
+        colorOn.SetActive(false);
+
+        soundOn = GameObject.FindGameObjectWithTag("SoundOn");
+        soundOn.SetActive(false);
+        //fired.SetActive(false);
+
+        co.colorblind = false;
+        #endregion
+
+        
+        //batterClogged = false;
+
+        //batterParticle.Stop();
+        gm.ResetBakery();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     void ClockOut()
     {
-        gm.batterPerFrame = 0;
+        clockIn.SetActive(true);
+        clockOut.SetActive(false);
+        print("clocked in");
+        buttonCooldownTimer = 0;
+        //calculate points
+        co.CalculatePoints();
 
-        gm.beltOn = false;
-        gm.batterOn = false;
-        gm.ovenOn = false;
-        gm.frostingOn = false;
-        gm.batterAmount = 0;
-
-
-        gm.batter.SetActive(false);
-        //gm.uncookedBatter.SetActive(false);
-        gm.cookTime = 0;
-        gm.cookTimePerOunce = 1;
-        gm.timeInOven = 0;
-        gm.ovenDoorHit = false;
-        gm.cake.SetActive(false);
-        gm.underfilled.SetActive(false);
-        gm.overfilled.SetActive(false);
-        gm.average.SetActive(false);
-        gm.holdingLiquid = false;
-        gm.timeSqueezingLiquid = 0;
-        gm.ipadHit = false;
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
+
+    
 
     void Belt()
     {

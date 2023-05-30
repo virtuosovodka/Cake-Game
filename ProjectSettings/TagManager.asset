@@ -79,6 +79,7 @@ TagManager:
   - BatterMachine
   - PlayVideo3
   - Cake Swap
+  - TextCredits
   layers:
   - Default
   - TransparentFX

@@ -314,7 +314,7 @@ public class CakeOrder : MonoBehaviour
 
     }
     
-    public void ClockOut()
+    public void CalculatePoints()
     {
         colorblind = false;
         //all of the things that influence points
@@ -378,11 +378,7 @@ public class CakeOrder : MonoBehaviour
         }
     }
 
-    public void ClockIn()
-    {
-        gm.ResetBakery();
-        //CreateOrder();
-    }
+    
     /*
      * 
     void ColorBlind()
