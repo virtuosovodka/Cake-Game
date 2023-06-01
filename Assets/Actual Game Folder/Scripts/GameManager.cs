@@ -164,6 +164,9 @@ public class GameManager : MonoBehaviour
         moveNegZ = true;
 
 
+
+        cakeSwapping = false;
+
         //after ResetBakery the longConveyorAnim components need to be reasigned 
 
         Conveyor();

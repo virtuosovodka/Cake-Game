@@ -80,6 +80,9 @@ TagManager:
   - PlayVideo3
   - Cake Swap
   - TextCredits
+  - CLOCKIN
+  - HomeScreen
+  - SettingScreen
   layers:
   - Default
   - TransparentFX

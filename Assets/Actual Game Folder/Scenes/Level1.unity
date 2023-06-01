@@ -1118,6 +1118,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 826052066}
     m_Modifications:
+    - target: {fileID: 164796371390029411, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_TagString
+      value: SettingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 297758081326928276, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_TagString
+      value: HomeScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 2024246904514144844, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
       propertyPath: m_RootOrder
@@ -1217,6 +1227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592797271814296872, guid: ec769b287b04141f88fc02a97f3cffda,
+        type: 3}
+      propertyPath: m_TagString
+      value: CLOCKIN
       objectReference: {fileID: 0}
     - target: {fileID: 6624949670444142703, guid: ec769b287b04141f88fc02a97f3cffda,
         type: 3}
@@ -2686,9 +2701,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   dh: {fileID: 0}
-  cb: {fileID: 0}
   co: {fileID: 1996035137}
   Light: {fileID: 1218075663}
+  settingsScreen: {fileID: 0}
+  homeScreen: {fileID: 0}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
   playVideo1: {fileID: 159380798}
@@ -8912,9 +8928,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   dh: {fileID: 0}
-  cb: {fileID: 0}
   co: {fileID: 0}
   Light: {fileID: 1218075663}
+  settingsScreen: {fileID: 0}
+  homeScreen: {fileID: 0}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
   playVideo1: {fileID: 159380798}
@@ -12686,9 +12703,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 65829483}
   dh: {fileID: 0}
-  cb: {fileID: 0}
   co: {fileID: 1996035137}
   Light: {fileID: 1218075663}
+  settingsScreen: {fileID: 0}
+  homeScreen: {fileID: 0}
   backButton: {fileID: 159380788}
   playVideo0: {fileID: 159380799}
   playVideo1: {fileID: 159380798}

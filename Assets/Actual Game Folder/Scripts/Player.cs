@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     #region "initialize variables"
     public GameManager gm;
     public DoorHandle dh;
-    public ConveyorBelt cb;
+    //public ConveyorBelt cb;
     public CakeOrder co;
 
     //oven light instantiation
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     //ipad instantiation
     //public Ipad ipad;
+    public GameObject settingsScreen;
+    public GameObject homeScreen;
     public GameObject backButton;
     public GameObject playVideo0;
     public GameObject playVideo1;
@@ -393,7 +395,7 @@ public class Player : MonoBehaviour
                 ClockOut();
             }
 
-            if ((gm.currentObject.CompareTag("ClockIn") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.N))
+            if ((gm.currentObject.CompareTag("CLOCKIN") && buttonCooldownTimer > .5f) || Input.GetKeyDown(KeyCode.N))
             {
                 
                
@@ -567,14 +569,20 @@ public class Player : MonoBehaviour
     #region "functions"
     void ClockIn()
     {
+        //to find a child
+        //gameObject.transform.GetChild(0);
 
-        clockOut = GameObject.FindGameObjectWithTag("ClockOut");
-        clockOut.SetActive(true);
+        co = GameObject.FindObjectOfType<CakeOrder>();
+        gm = GameObject.FindObjectOfType<GameManager>();
+       // cb = GetComponent<ConveyorBelt>();
+        dh = GameObject.FindObjectOfType<DoorHandle>();
 
-        clockIn = GameObject.FindGameObjectWithTag("ClockIn");
-        clockIn.SetActive(false);
+       
+
+        
+
         buttonCooldownTimer = 0;
-        co = GetComponent<CakeOrder>();
+       
         gm.currentObject = gameObject;
 
         //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
@@ -588,43 +596,58 @@ public class Player : MonoBehaviour
         materialChanger.meshRenderer.material = materialChanger.mats[1];
         //backButtonMesh = backButton.GetComponent<MeshRenderer>();
         //playButton.SetActive(false);
-        backButton = GameObject.FindGameObjectWithTag("BackButton");
+        homeScreen = GameObject.FindGameObjectWithTag("HomeScreen");
+
+        clockIn = homeScreen.transform.GetChild(3).gameObject;
+        clockIn.SetActive(true);
+
+        clockOut = homeScreen.transform.GetChild(4).gameObject;
+        clockOut.SetActive(true);
+
+        backButton = homeScreen.transform.GetChild(0).gameObject;
         backButton.SetActive(true);
 
-        playVideo0 = GameObject.FindGameObjectWithTag("PlayVideo0");
+        playVideo0 = homeScreen.transform.GetChild(0).gameObject;
         playVideo0.SetActive(true);
 
-        playVideo1 = GameObject.FindGameObjectWithTag("PlayVideo1");
+        playVideo1 = homeScreen.transform.GetChild(1).gameObject;
         playVideo1.SetActive(true);
 
-        playVideo2 = GameObject.FindGameObjectWithTag("PlayVideo2");
+        playVideo2 = homeScreen.transform.GetChild(0).gameObject;
         playVideo2.SetActive(true);
 
 
-        Settings = GameObject.FindGameObjectWithTag("Settings");
+        Settings = homeScreen.transform.GetChild(6).gameObject;
         Settings.SetActive(true);
 
-        ColorBlind = GameObject.FindGameObjectWithTag("ColorBlind");
+
+        //ipad parent
+       // ipadBody = GameObject.
+
+        //settings parent
+        settingsScreen = GameObject.FindGameObjectWithTag("SettingScreen");
+
+        ColorBlind = settingsScreen.transform.GetChild(0).gameObject;
         ColorBlind.SetActive(false);
 
-        Mute = GameObject.FindGameObjectWithTag("Mute");
+        Mute = settingsScreen.transform.GetChild(1).gameObject;
         Mute.SetActive(false);
 
-        Credits = GameObject.FindGameObjectWithTag("Credits");
+        Credits = settingsScreen.transform.GetChild(3).gameObject;
         Credits.SetActive(false);
         //LevelSelect.SetActive(false);
 
-        TextCredits = GameObject.FindGameObjectWithTag("TextCredits");
+        TextCredits = settingsScreen.transform.GetChild(9).gameObject;
         TextCredits.SetActive(false);
 
 
         muted = false;
         colorBlinded = false;
 
-        colorOn = GameObject.FindGameObjectWithTag("ColorOn");
+        colorOn = settingsScreen.transform.GetChild(10).gameObject;
         colorOn.SetActive(false);
 
-        soundOn = GameObject.FindGameObjectWithTag("SoundOn");
+        soundOn = settingsScreen.transform.GetChild(2).gameObject;
         soundOn.SetActive(false);
         //fired.SetActive(false);
 
@@ -642,7 +665,9 @@ public class Player : MonoBehaviour
 
     void ClockOut()
     {
-        clockIn.SetActive(true);
+        //clockIn = GameObject.FindGameObjectWithTag("CLOCKIN");
+       
+         clockIn.SetActive(true);
         clockOut.SetActive(false);
         print("clocked in");
         buttonCooldownTimer = 0;
