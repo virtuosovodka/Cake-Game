@@ -569,6 +569,9 @@ public class Player : MonoBehaviour
     #region "functions"
     void ClockIn()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gm.ResetBakery();
+        print("it is working");
         //to find a child
         //gameObject.transform.GetChild(0);
 
@@ -587,7 +590,9 @@ public class Player : MonoBehaviour
 
         //light is not on yet and all ipad buttons that are meant to be ready are on and those that aren't are off
         Light = GameObject.FindGameObjectWithTag("OvenLight");
-        Light.SetActive(false);
+
+        //had to comment this out 
+        //Light.SetActive(false);
         lightOn = false;
 
         #region "ipad buttons"
@@ -658,8 +663,8 @@ public class Player : MonoBehaviour
         //batterClogged = false;
 
         //batterParticle.Stop();
-        gm.ResetBakery();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+        
     }
 
 
@@ -669,7 +674,7 @@ public class Player : MonoBehaviour
        
          clockIn.SetActive(true);
         clockOut.SetActive(false);
-        print("clocked in");
+        print("clocked out");
         buttonCooldownTimer = 0;
         //calculate points
         co.CalculatePoints();

@@ -112,6 +112,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetBakery()
     {
+
+       
         uncookedBatter.SetActive(false);
         underfilled.SetActive(false);
         overfilled.SetActive(false);

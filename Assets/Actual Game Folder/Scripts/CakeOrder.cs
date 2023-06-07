@@ -316,6 +316,8 @@ public class CakeOrder : MonoBehaviour
     
     public void CalculatePoints()
     {
+        gm = GameObject.FindObjectOfType<GameManager>();
+
         colorblind = false;
         //all of the things that influence points
         if (gm.BatterType() == bOrder.name)

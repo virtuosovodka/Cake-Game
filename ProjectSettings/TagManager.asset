@@ -83,6 +83,7 @@ TagManager:
   - CLOCKIN
   - HomeScreen
   - SettingScreen
+  - UncookedBatter
   layers:
   - Default
   - TransparentFX
