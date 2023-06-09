@@ -114,11 +114,12 @@ public class GameManager : MonoBehaviour
     {
 
        
-        uncookedBatter.SetActive(false);
+       
         underfilled.SetActive(false);
         overfilled.SetActive(false);
         average.SetActive(false);
         liquidPrefab.SetActive(false);
+        //uncookedBatter.SetActive(false);
 
         //stations
         beltOn = false;

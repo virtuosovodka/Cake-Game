@@ -569,6 +569,7 @@ public class Player : MonoBehaviour
     #region "functions"
     void ClockIn()
     {
+        //for some reason the game keeps Clocking In when its not being called and reloading the scene or just switching the cake material
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gm.ResetBakery();
         print("it is working");
@@ -595,6 +596,9 @@ public class Player : MonoBehaviour
         //Light.SetActive(false);
         lightOn = false;
 
+
+
+        batterParticle = GetComponent<ParticleSystem>();
         #region "ipad buttons"
         //ipad setup
         //ipad = gameObject.GetComponent<Ipad>();

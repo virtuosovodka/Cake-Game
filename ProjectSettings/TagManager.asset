@@ -84,6 +84,7 @@ TagManager:
   - HomeScreen
   - SettingScreen
   - UncookedBatter
+  - BatterHolder
   layers:
   - Default
   - TransparentFX
